@@ -51,6 +51,7 @@
 
                     #table-header {
                         display: block !important;
+                        width: 100%;
                     }
 
 
@@ -59,25 +60,27 @@
                         display: block;
                         width: 100%;
 
-
-                    }
-                    
-                    .col-cover {
-                        min-width: 48px;
-                        width: 48px;
-                        img {
-                            object-fit: cover;
+                        td {
+                            vertical-align: middle;
                         }
-                    }
-                    .col-title {
-                        min-width: 320px;
-                    }
-                    .col-authors {
-                        width: 320px;
-                        min-width: 320px;
-                    }
-                    .col-added-on {
-                        width: 120px;
+
+                        .col-cover {
+                            min-width: 48px;
+                            width: 48px;
+                            img {
+                                object-fit: cover;
+                            }
+                        }
+                        .col-title {
+                            min-width: 320px;
+                        }
+                        .col-authors {
+                            width: 320px;
+                            min-width: 320px;
+                        }
+                        .col-added-on {
+                            width: 120px;
+                        }
                     }
 
                     .book {
@@ -150,10 +153,10 @@
     </head>
     <body class="container-fluid">
         <div class="row g-0">
-            <main class="col">
+            <main class="col pe-3">
                 <h1>Martin&#39;s eBooks Library</h1>
 
-                <div id="search-box" class="me-3 py-1">
+                <div id="search-box" class="py-1">
                     <input class="form-control border" placeholder="Search by title or author">
                 </div>
                 <div id="controls-area" class="d-flex me-3 py-1">
@@ -180,6 +183,18 @@
                         </button>
                     </div>
 
+                    <div class="view-qr ms-2 border-start ps-2 ">
+                        <button type="button" class="btn btn-sm" data-bs-toggle="modal" data-bs-target="#qr-modal" title="View catalog QR code">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-qr-code" viewbox="0 0 16 16">
+                                <path d="M2 2h2v2H2z"/>
+                                <path d="M6 0v6H0V0zM5 1H1v4h4zM4 12H2v2h2z"/>
+                                <path d="M6 10v6H0v-6zm-5 1v4h4v-4zm11-9h2v2h-2z"/>
+                                <path d="M10 0v6h6V0zm5 1v4h-4V1zM8 1V0h1v2H8v2H7V1zm0 5V4h1v2zM6 8V7h1V6h1v2h1V7h5v1h-4v1H7V8zm0 0v1H2V8H1v1H0V7h3v1zm10 1h-1V7h1zm-1 0h-1v2h2v-1h-1zm-4 0h2v1h-1v1h-1zm2 3v-1h-1v1h-1v1H9v1h3v-2zm0 0h3v1h-2v1h-1zm-4-1v1h1v-2H7v1z"/>
+                                <path d="M7 12h1v3h4v1H7zm9 2v2h-3v-1h2v-1z"/>
+                            </svg>
+                        </button>
+                    </div>
+
                     <div id="views-box" class="d-inline-block ms-2 border-start ps-2 ">
                         <label>
                             <strong class="d-none">View:</strong>
@@ -197,14 +212,13 @@
                     </div>
                 </div>
 
-
                 <section id="books-list" class="row g-2 m-0">
 
-                    <table id="table-header" class="table table-bordered table-sm d-none m-0">
-                        <thead>
-                            <tr>
-                                <th class="col-cover">Cover</th>
-                                <th class="col-title">Title</th>
+                    <table id="table-header" class="table table-sm d-none m-0">
+                        <thead class="d-block">
+                            <tr class="d-flex">
+                                <th class="col-cover"></th>
+                                <th class="col-title flex-grow-1">Title</th>
                                 <th class="col-authors">Authors</th>
                                 <th class="col-added-on">Added on</th>
                             </tr>
@@ -214,7 +228,7 @@
                     
                         <article id="book-1" class="book col-auto" title="El Pie De Jaipur" data-added-timestamp="1711224452000" data-authors="Javier Moro" data-title="El Pie De Jaipur" data-index="1">
                             <header>
-                                <img src="covers/eBooksMartinElPieDeJaipur1.jpg" alt="El Pie De Jaipur" class="d-block mx-auto shadow"/>
+                                <img src="covers/eBooksMartinElPieDeJaipur1.jpg" alt="El Pie De Jaipur" class="d-block mx-auto shadow" loading="lazy" />
                             </header>
                             <div class="book__body">
                                 <h1 class="h3 text-center my-3">El Pie De Jaipur</h1>
@@ -281,7 +295,7 @@
                     
                         <article id="book-2" class="book col-auto" title="Una Columna De Fuego" data-added-timestamp="1711224452000" data-authors="Ken Follett" data-title="Una Columna De Fuego" data-index="2">
                             <header>
-                                <img src="covers/eBooksMartinUnaColumnaDeFuego2.jpg" alt="Una Columna De Fuego" class="d-block mx-auto shadow"/>
+                                <img src="covers/eBooksMartinUnaColumnaDeFuego2.jpg" alt="Una Columna De Fuego" class="d-block mx-auto shadow" loading="lazy" />
                             </header>
                             <div class="book__body">
                                 <h1 class="h3 text-center my-3">Una Columna De Fuego</h1>
@@ -367,7 +381,7 @@
                     
                         <article id="book-3" class="book col-auto" title="Un Mundo Sin Fin" data-added-timestamp="1711224452000" data-authors="Ken Follett" data-title="Un Mundo Sin Fin" data-index="3">
                             <header>
-                                <img src="covers/eBooksMartinUnMundoSinFin3.jpg" alt="Un Mundo Sin Fin" class="d-block mx-auto shadow"/>
+                                <img src="covers/eBooksMartinUnMundoSinFin3.jpg" alt="Un Mundo Sin Fin" class="d-block mx-auto shadow" loading="lazy" />
                             </header>
                             <div class="book__body">
                                 <h1 class="h3 text-center my-3">Un Mundo Sin Fin</h1>
@@ -434,7 +448,7 @@
                     
                         <article id="book-4" class="book col-auto" title="Las Tinieblas y El Alba" data-added-timestamp="1711224452000" data-authors="Ken Follett" data-title="Las Tinieblas y El Alba" data-index="4">
                             <header>
-                                <img src="covers/eBooksMartinLasTinieblasyElAlba4.jpg" alt="Las Tinieblas y El Alba" class="d-block mx-auto shadow"/>
+                                <img src="covers/eBooksMartinLasTinieblasyElAlba4.jpg" alt="Las Tinieblas y El Alba" class="d-block mx-auto shadow" loading="lazy" />
                             </header>
                             <div class="book__body">
                                 <h1 class="h3 text-center my-3">Las Tinieblas y El Alba</h1>
@@ -504,7 +518,7 @@
                     
                         <article id="book-5" class="book col-auto" title="Los Pilares Se La Tierra (edición ilustrada)" data-added-timestamp="1711224452000" data-authors="Ken Follett" data-title="Los Pilares Se La Tierra (edición ilustrada)" data-index="5">
                             <header>
-                                <img src="covers/eBooksMartinLosPilaresSeLaTierraedicionilustrada5.jpg" alt="Los Pilares Se La Tierra (edición ilustrada)" class="d-block mx-auto shadow"/>
+                                <img src="covers/eBooksMartinLosPilaresSeLaTierraedicionilustrada5.jpg" alt="Los Pilares Se La Tierra (edición ilustrada)" class="d-block mx-auto shadow" loading="lazy" />
                             </header>
                             <div class="book__body">
                                 <h1 class="h3 text-center my-3">Los Pilares Se La Tierra (edición ilustrada)</h1>
@@ -571,7 +585,7 @@
                     
                         <article id="book-6" class="book col-auto" title="Las Montañas De Buda" data-added-timestamp="1711224452000" data-authors="Javier Moro" data-title="Las Montañas De Buda" data-index="6">
                             <header>
-                                <img src="covers/eBooksMartinLasMontanasDeBuda6.jpg" alt="Las Montañas De Buda" class="d-block mx-auto shadow"/>
+                                <img src="covers/eBooksMartinLasMontanasDeBuda6.jpg" alt="Las Montañas De Buda" class="d-block mx-auto shadow" loading="lazy" />
                             </header>
                             <div class="book__body">
                                 <h1 class="h3 text-center my-3">Las Montañas De Buda</h1>
@@ -638,7 +652,7 @@
                     
                         <article id="book-7" class="book col-auto" title="La Sangre De Los Inocentes" data-added-timestamp="1711224452000" data-authors="Julia Navarro" data-title="La Sangre De Los Inocentes" data-index="7">
                             <header>
-                                <img src="covers/eBooksMartinLaSangreDeLosInocentes7.jpg" alt="La Sangre De Los Inocentes" class="d-block mx-auto shadow"/>
+                                <img src="covers/eBooksMartinLaSangreDeLosInocentes7.jpg" alt="La Sangre De Los Inocentes" class="d-block mx-auto shadow" loading="lazy" />
                             </header>
                             <div class="book__body">
                                 <h1 class="h3 text-center my-3">La Sangre De Los Inocentes</h1>
@@ -705,7 +719,7 @@
                     
                         <article id="book-8" class="book col-auto" title="La Armadura De La Luz" data-added-timestamp="1711224452000" data-authors="Ken Follett" data-title="La Armadura De La Luz" data-index="8">
                             <header>
-                                <img src="covers/eBooksMartinLaArmaduraDeLaLuz8.jpg" alt="La Armadura De La Luz" class="d-block mx-auto shadow"/>
+                                <img src="covers/eBooksMartinLaArmaduraDeLaLuz8.jpg" alt="La Armadura De La Luz" class="d-block mx-auto shadow" loading="lazy" />
                             </header>
                             <div class="book__body">
                                 <h1 class="h3 text-center my-3">La Armadura De La Luz</h1>
@@ -790,7 +804,7 @@
                     
                         <article id="book-9" class="book col-auto" title="Era Medianoche en Bhopal" data-added-timestamp="1711229325000" data-authors="Dominique Lapierre, Javier Moro" data-title="Era Medianoche en Bhopal" data-index="9">
                             <header>
-                                <img src="covers/eBooksMartinEraMedianocheenBhopal9.jpg" alt="Era Medianoche en Bhopal" class="d-block mx-auto shadow"/>
+                                <img src="covers/eBooksMartinEraMedianocheenBhopal9.jpg" alt="Era Medianoche en Bhopal" class="d-block mx-auto shadow" loading="lazy" />
                             </header>
                             <div class="book__body">
                                 <h1 class="h3 text-center my-3">Era Medianoche en Bhopal</h1>
@@ -858,7 +872,7 @@
                     
                         <article id="book-10" class="book col-auto" title="Nos quieren muertos" data-added-timestamp="1711229326000" data-authors="Javier Moro" data-title="Nos quieren muertos" data-index="10">
                             <header>
-                                <img src="covers/eBooksMartinNosquierenmuertos10.jpg" alt="Nos quieren muertos" class="d-block mx-auto shadow"/>
+                                <img src="covers/eBooksMartinNosquierenmuertos10.jpg" alt="Nos quieren muertos" class="d-block mx-auto shadow" loading="lazy" />
                             </header>
                             <div class="book__body">
                                 <h1 class="h3 text-center my-3">Nos quieren muertos</h1>
@@ -932,7 +946,7 @@
                     
                         <article id="book-12" class="book col-auto" title="Plantación exitosa de viñedos" data-added-timestamp="1725559254000" data-authors="Marcelo Canatella" data-title="Plantación exitosa de viñedos" data-index="11">
                             <header>
-                                <img src="covers/eBooksMartinPlantacionexitosadevinedos12.jpg" alt="Plantación exitosa de viñedos" class="d-block mx-auto shadow"/>
+                                <img src="covers/eBooksMartinPlantacionexitosadevinedos12.jpg" alt="Plantación exitosa de viñedos" class="d-block mx-auto shadow" loading="lazy" />
                             </header>
                             <div class="book__body">
                                 <h1 class="h3 text-center my-3">Plantación exitosa de viñedos</h1>
@@ -1010,6 +1024,7 @@
                         </article>
                     
                 </section>
+
             </main>
 
             <aside id="book-preview" class="col-auto g-0 show bg-light shadow">
@@ -1024,7 +1039,25 @@
         </div>
 
 
+        <div id="qr-modal" class="modal" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="h4">Catalog QR code link</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body text-center">
+                        <div id="qr-code" class="d-inline-block"></div>
+                        <p>Scan this QR code to acess <br/>Martin's eBooks Library.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
         <script>
             const books = document.querySelectorAll( '.book' );
             const bookPreview = document.querySelector( '#book-preview' );
@@ -1133,6 +1166,9 @@
             btn_sort_date.click(); // Sort by date by default
 
             document.querySelector( '.book' ).click(); // Open the first book in the preview pannel by default
+
+            // Get the current page URL and generate a QR code for it
+            const qrCode = new QRCode( 'qr-code', window.location.href );
         </script>
     </body>
 </html></body></html>

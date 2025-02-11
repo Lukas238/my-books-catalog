@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Martin&#39;s eBooks Library
+            | Catalog</title>
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+        <style>
+            html,
+            body {
+                margin: 0;
+                padding: 0;
+            }
+            body {
+                min-width: 890px;
+                height: 100%;
+                overflow: hidden;
+            }
+            main {
+                overflow-y: auto;
+                height: 100vh;
+            }
+            #controls-area {
+                font-size: 0.8em;
+                button {
+                    padding: 0 0.2em !important;
+                }
+            }
+
+            #sort-box {
+                .btn-sort {
+                    padding: 0 0.2em !important;
+                }
+                .btn-sort:after {
+                    vertical-align: middle;
+                    display: inline-block;
+                    height: 17px;
+                    width: 10px;
+                    content: url('data:image/svg+xml, <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-short" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4"/></svg>');
+                }
+                .btn-sort.desc:after {
+                    content: url('data:image/svg+xml, <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-short" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5"/></svg>');
+                }
+
+            }
+
+
+            #books-list {
+                &.-view-list .book .book__body {
+                    display: block;
+                }
+
+                .book {
+                    display: inline-block;
+
+                    header {
+                        cursor: pointer;
+                    }
+
+                    img {
+                        min-width: 200px;
+                        max-width: 200px;
+                        min-height: 300px;
+                        max-height: 300px;
+                    }
+                    .book__body {
+                        display: none;
+                    }
+                }
+            }
+            .book__body .book__meta {
+                font-size: 0.8em;
+                label {
+                    font-style: italic;
+                    font-size: 0.8em;
+                }
+            }
+            #book-preview {
+                width: 430px;
+                display: none;
+
+                &.show {
+                    display: block;
+                }
+
+                overflow-y: auto;
+                height: 100vh;
+                .book-preview__content {
+                    .book {
+                        header {
+                            text-align: center;
+                            margin: 0 auto;
+
+                            img {
+                                max-width: 300px;
+                                max-height: 400px;
+                            }
+                        }
+                    }
+                }
+            }
+        </style>
+    </head>
+    <body class="container-fluid">
+        <div class="row g-0">
+            <main class="col">
+                <h1>Martin&#39;s eBooks Library</h1>
+
+                <div id="search-box" class="me-3 py-1">
+                    <input class="form-control border" placeholder="Search by title or author">
+                </div>
+                <div id="controls-area" class="d-flex me-3 py-1">
+                    <div id="sort-box" class="d-inline-block" title="Sort by">
+                        <label>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-filter" viewbox="0 0 16 16">
+                                <path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5"/>
+                            </svg>
+                            <strong class="d-none">Sort by:</strong>
+                        </label>
+
+
+                        <button id="sort-title" type="button" class="p-1 btn btn-sm btn-sort">Title</button>,
+                        <button id="sort-author" type="button" class="p-1 btn btn-sm btn-sort">Author</button>,
+                        <button id="sort-date" type="button" class="p-1 btn btn-sm btn-sort">Date</button>
+                    </div>
+
+                    <div class="border-start ms-2 ps-2 flex-grow-1">
+                        <button id="sort-reset" type="button" class="text-end btn btn-sm btn-reset">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewbox="0 0 16 16">
+                                <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
+                            </svg>
+                            Clear
+                        </button>
+                    </div>
+
+                    <div id="views-box" class="d-inline-block ms-2 border-start ps-2 ">
+                        <label>
+                            <strong class="d-none">View:</strong>
+                        </label>
+                        <button id="viewGrid" type="button" class="btn btn-sm">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-grid" viewbox="0 0 16 16">
+                                <path d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5z"/>
+                            </svg>
+                        </button>
+                        <button id="viewList" type="button" class="btn btn-sm">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewbox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+
+                <section id="books-list" class="row g-2 m-0">
+                    
+                        <article id="book-1" class="book col-auto" title="El Pie De Jaipur" data-added-timestamp="1711224452000" data-authors="Javier Moro" data-title="El Pie De Jaipur" data-index="1">
+                            <header>
+                                <img src="covers/eBooksMartinElPieDeJaipur1.jpg" alt="El Pie De Jaipur" class="d-block mx-auto shadow"/>
+                            </header>
+                            <div class="book__body">
+                                <h1 class="h3 text-center my-3">El Pie De Jaipur</h1>
+                                <ul class="book__meta list-group">
+                                    <li class="list-group-item">
+                                        <label>Authors:</label>
+                                        <span class="fs-6">Javier Moro</span>
+                                    </li>
+                                    
+                                        <li class="list-group-item">
+                                            <label>ISBN:</label>
+                                            <a href="https://www.goodreads.com/search?q=9788432217340" target="_blank">9788432217340</a>
+                                        </li>
+                                    
+                                    <li class="list-group-item">
+                                        <label>Added On:</label>
+                                        2024-03-23
+                                    </li>
+                                </ul>
+                                <div class="text-center m-3">
+
+                                    
+                                        <div>
+                                            <a href="https://drive.google.com/uc?export=download&id=1dBxIfGDL-L2Fk4ThxYA4jlH_dGFl1Rxh" class="btn btn-primary mb-3" target="_blank">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewbox="0 0 16 16">
+                                                    <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+                                                    <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
+                                                </svg>
+                                                Download EPUB</a>
+                                        </div>
+                                    
+
+                                    <div>
+                                        <small>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-dots" viewbox="0 0 16 16">
+                                                <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                                                <path d="M5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                                            </svg>
+                                            <a href="https://www.goodreads.com/search?q=El+Pie+De+Jaipur%2C+Javier+Moro&search_type=books" target="_blank">Search on Goodreads</a>
+                                        </small>
+                                    </div>
+                                </div>
+                                
+                                    <div class="book_description border-top pt-3 ">
+                                        <h2 class="h4 d-none">Summary:</h2>
+                                        <div>
+<p>En 1984, un joven estudiante víctima de un grave accidente coincide en una clínica del sur de Francia con un camboyano, superviviente de la época de los Jemeres Rojos. Decididos a desafiar los pronósticos más pesimistas y dar lo mejor de sí mismos, se ayudan mutuamente, luchan y vencen en un combate lleno de valor, y también de compasión, que nos lleva de Montpellier a Nueva York, de Phom Penh a Jaipur y más tarde a Barcelona; un combate que es una lección de esperanza que nos arroja luz sobre la sorprendente capacidad de los seres humanos para sobrevivir y hacer frente a la adversidad extrema.</p></div>
+                                    </div>
+                                
+                            </div>
+                        </article>
+                    
+                        <article id="book-2" class="book col-auto" title="Una Columna De Fuego" data-added-timestamp="1711224452000" data-authors="Ken Follett" data-title="Una Columna De Fuego" data-index="2">
+                            <header>
+                                <img src="covers/eBooksMartinUnaColumnaDeFuego2.jpg" alt="Una Columna De Fuego" class="d-block mx-auto shadow"/>
+                            </header>
+                            <div class="book__body">
+                                <h1 class="h3 text-center my-3">Una Columna De Fuego</h1>
+                                <ul class="book__meta list-group">
+                                    <li class="list-group-item">
+                                        <label>Authors:</label>
+                                        <span class="fs-6">Ken Follett</span>
+                                    </li>
+                                    
+                                        <li class="list-group-item">
+                                            <label>ISBN:</label>
+                                            <a href="https://www.goodreads.com/search?q=9788401018251" target="_blank">9788401018251</a>
+                                        </li>
+                                    
+                                    <li class="list-group-item">
+                                        <label>Added On:</label>
+                                        2024-03-23
+                                    </li>
+                                </ul>
+                                <div class="text-center m-3">
+
+                                    
+                                        <div>
+                                            <a href="https://drive.google.com/uc?export=download&id=1fACHm1fUgKQsHYBlpBzLyV8AL5BufYXv" class="btn btn-primary mb-3" target="_blank">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewbox="0 0 16 16">
+                                                    <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+                                                    <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
+                                                </svg>
+                                                Download EPUB</a>
+                                        </div>
+                                    
+
+                                    <div>
+                                        <small>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-dots" viewbox="0 0 16 16">
+                                                <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                                                <path d="M5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                                            </svg>
+                                            <a href="https://www.goodreads.com/search?q=Una+Columna+De+Fuego%2C+Ken+Follett&search_type=books" target="_blank">Search on Goodreads</a>
+                                        </small>
+                                    </div>
+                                </div>
+                                
+                                    <div class="book_description border-top pt-3 ">
+                                        <h2 class="h4 d-none">Summary:</h2>
+                                        <div>
+<p><strong>La saga de</strong> Los pilares de la Tierra <strong>y</strong> Un mundo sin fin <strong>, que ha cautivado a millones de lectores, prosigue ahora con la magnífica y apasionante nueva novela de Ken Follett.</strong></p>
+<p><strong>Uno de los mejores</strong> thrillers <strong>del año 2017 según Amazon y uno de los mejores libros publicados en 2017 para</strong> The Washington Post <strong>y Barnes &amp; Noble.</strong></p>
+<p><em>Una columna de fuego</em> arranca cuando el joven Ned Willard regresa asu hogar en Kingsbridge por Navidad. Corre el año 1558, un año que trastocará la vida de Ned y que cambiará Europa para siempre.</p>
+<p>Las antiguas piedras de la catedral de Kingsbridge contemplan una ciudad dividida por el odio religioso. Los principios elevados chocan con la amistad, la lealtad y el amor, y provocan derramamientos de sangre. Ned se encuentra de pronto en el bando contrario al de la muchacha con quien anhela casarse, Margery Fitzgerald.</p>
+<p>Cuando Isabel I llega al trono, toda Europa se vuelve en contra de Inglaterra. La joven monarca, astuta y decidida, organiza el primer servicio secreto del país para estar avisada ante cualquier indicio de intrigas homicidas, levantamientos o planes de invasión.</p>
+<p>En París, a la espera, se encuentra la seductora y obstinada María Estuardo, reina de los escoceses, en el seno de una familia francesa con una ambición descomunal. Proclamada legítima soberana de Inglaterra, María cuenta con sus propios partidarios, que conspiran para deshacerse de Isabel.</p>
+<p>Entretanto, Ned Willard busca a Jean Langlais, un personaje escurridizo y enigmático, sin saber que tras ese nombre falso se esconde un compañero de clase de su infancia, alguien que lo conoce demasiado bien.</p>
+<p>A lo largo de medio siglo turbulento, el amor entre Ned y Margery parece condenado al fracaso mientras el extremismo hace estallar la violencia desde Edimburgo hasta Ginebra. Isabel se aferra precariamente a su trono y a sus principios, protegida por un pequeño y entregado grupo de espías hábiles y agentes secretos valerosos.</p>
+<p>Los auténticos enemigos, tanto entonces como ahora, no son las religiones rivales. La verdadera batalla es la que enfrenta a quienes creen en la tolerancia y el acuerdo contra tiranos dispuestos a imponer sus ideas a todo el mundo... y a cualquier precio.</p>
+<p>Descubre la <strong>Saga Los pilares de la tierra</strong> :</p>
+<p style="font-style: italic">Las tinieblas y el alba</p>
+<p style="font-style: italic">Los pilares de la tierra</p>
+<p style="font-style: italic">Un mundo sin fin</p>
+<p style="font-style: italic">Una columna de fuego</p>
+<p><strong>Reseñas...</strong><br>«Lo he leído en un fin de semana largo, me lo he pasado como un enano y sigo envidiando como el primer día la capacidad de Follett para entretener. Sus tramas funcionan siempre y te mantiene pegado a cada página.»<br>Juan Gómez Jurado, <em>ABC</em></p>
+<p>« <em>Una columna de fuego</em> , muy en resumen, coge la melodía de <em>Guerra y paz</em> y la lleva a las guerras de religión del siglo XVI. A veces tiende a novela de espías y otras se convierte en una novela romántica. Y todo eso, en 935 páginas.»<br><em>El Mundo</em></p>
+<p>«Ken Follett arrasa con cada libro. Lo hará de nuevo con <em>Una columna de fuego</em> , novelón de casi mil páginas que prosigue la saga que comenzó con <em>Los pilares de la Tierra</em> , el libro más leído en España.»<br><em>La Verdad</em></p>
+<p>«Amor, violencia, pasión y una dosis justa de sexo - marca de la casa - hacen de estapropuesta un pasatiempo perfecto para las tardes-noches del otoño. <em>Una columna de fuego</em> es la enésima confirmación de que el universo Follett parece no tener límites.»<br><em>El Correo Web</em></p>
+<h3>Biografía del autor</h3>
+<p>Ken Follett es uno de los autores más queridos y admirados por los lectores de todo el mundo, y las ventas de sus treinta y seis libros superan los ciento ochenta y ocho millones de ejemplares. Su primer best seller fue <em>La isla de las tormentas (El ojo de la aguja),</em> un thriller de espionaje ambientado en la Segunda Guerra Mundial. En 1989 publicó <em>Los pilares de la Tierra,</em> que alcanzó el número uno en las listas de más vendidos en un gran número de países y que se ha convertido en su novela más popular. Sus secuelas, <em>Un mundo sin fin</em> y <em>Una columna de fuego,</em> y la precuela, <em>Las tinieblas y el alba,</em> fueron también grandes éxitos y la saga en su conjunto ha superado los cincuenta millones de ejemplares vendidos en todo el mundo. Follett vive en Hertfordshire con su esposa, Barbara. Entre los dos tienen cinco hijos, seis nietos y tres perros labradores.</p></div>
+                                    </div>
+                                
+                            </div>
+                        </article>
+                    
+                        <article id="book-3" class="book col-auto" title="Un Mundo Sin Fin" data-added-timestamp="1711224452000" data-authors="Ken Follett" data-title="Un Mundo Sin Fin" data-index="3">
+                            <header>
+                                <img src="covers/eBooksMartinUnMundoSinFin3.jpg" alt="Un Mundo Sin Fin" class="d-block mx-auto shadow"/>
+                            </header>
+                            <div class="book__body">
+                                <h1 class="h3 text-center my-3">Un Mundo Sin Fin</h1>
+                                <ul class="book__meta list-group">
+                                    <li class="list-group-item">
+                                        <label>Authors:</label>
+                                        <span class="fs-6">Ken Follett</span>
+                                    </li>
+                                    
+                                        <li class="list-group-item">
+                                            <label>ISBN:</label>
+                                            <a href="https://www.goodreads.com/search?q=9788401338328" target="_blank">9788401338328</a>
+                                        </li>
+                                    
+                                    <li class="list-group-item">
+                                        <label>Added On:</label>
+                                        2024-03-23
+                                    </li>
+                                </ul>
+                                <div class="text-center m-3">
+
+                                    
+                                        <div>
+                                            <a href="https://drive.google.com/uc?export=download&id=1snaG-G_MNdmdHfLFFddyoWC5blKd_bJ6" class="btn btn-primary mb-3" target="_blank">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewbox="0 0 16 16">
+                                                    <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+                                                    <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
+                                                </svg>
+                                                Download EPUB</a>
+                                        </div>
+                                    
+
+                                    <div>
+                                        <small>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-dots" viewbox="0 0 16 16">
+                                                <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                                                <path d="M5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                                            </svg>
+                                            <a href="https://www.goodreads.com/search?q=Un+Mundo+Sin+Fin%2C+Ken+Follett&search_type=books" target="_blank">Search on Goodreads</a>
+                                        </small>
+                                    </div>
+                                </div>
+                                
+                                    <div class="book_description border-top pt-3 ">
+                                        <h2 class="h4 d-none">Summary:</h2>
+                                        <div>
+<p>Veinte años después de la publicación de Los pilares de la Tierra, Ken Follett volvía al fascinante mundo de Kingsbridge para presentar a sus lectores un retrato admirable del mundo medieval y una magnífica saga épica que aporta una nueva dimensión a la ficción histórica. Esta nueva edición incluye un prefacio del autor con motivo del 10o aniversario de la publicación. La publicación de Los pilares de la Tierra supuso un acontecimiento editorial sin precedentes que cautivó a millones de lectores. En Un mundo sin fin Ken Follett vuelve al fascinante mundo de Kingsbridge dos siglos después de la construcción de su majestuoso templo gótico. La catedral y el priorato ocupan de nuevo el centro de una encrucijada de amor y de odio, orgullo y codicia. En un mundo en que defensores a ultranza de las viejas costumbres luchan con encono con las mentes más progresistas, la intriga y la tensión llegan rápidamente a límites insoportables con el devastador telón de fondo de la Peste Negra, que aniquiló a la mitad de la población europea. Intriga, asesinatos, hambruna, plagas y guerras. Un retrato admirable del mundo medieval y una novela extraordinaria que aporta una nueva dimensión a la ficción histórica. Reseña: «No hay rincón sin sorpresa, ni página tediosa.» Qué leer Reseña: «No hay rincón sin sorpresa, ni página tediosa.» Qué leer</p></div>
+                                    </div>
+                                
+                            </div>
+                        </article>
+                    
+                        <article id="book-4" class="book col-auto" title="Las Tinieblas y El Alba" data-added-timestamp="1711224452000" data-authors="Ken Follett" data-title="Las Tinieblas y El Alba" data-index="4">
+                            <header>
+                                <img src="covers/eBooksMartinLasTinieblasyElAlba4.jpg" alt="Las Tinieblas y El Alba" class="d-block mx-auto shadow"/>
+                            </header>
+                            <div class="book__body">
+                                <h1 class="h3 text-center my-3">Las Tinieblas y El Alba</h1>
+                                <ul class="book__meta list-group">
+                                    <li class="list-group-item">
+                                        <label>Authors:</label>
+                                        <span class="fs-6">Ken Follett</span>
+                                    </li>
+                                    
+                                        <li class="list-group-item">
+                                            <label>ISBN:</label>
+                                            <a href="https://www.goodreads.com/search?q=9786073196987" target="_blank">9786073196987</a>
+                                        </li>
+                                    
+                                    <li class="list-group-item">
+                                        <label>Added On:</label>
+                                        2024-03-23
+                                    </li>
+                                </ul>
+                                <div class="text-center m-3">
+
+                                    
+                                        <div>
+                                            <a href="https://drive.google.com/uc?export=download&id=12e7a61g8SxbesMhy7pETpVkPbBxHRQ4-" class="btn btn-primary mb-3" target="_blank">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewbox="0 0 16 16">
+                                                    <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+                                                    <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
+                                                </svg>
+                                                Download EPUB</a>
+                                        </div>
+                                    
+
+                                    <div>
+                                        <small>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-dots" viewbox="0 0 16 16">
+                                                <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                                                <path d="M5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                                            </svg>
+                                            <a href="https://www.goodreads.com/search?q=Las+Tinieblas+y+El+Alba%2C+Ken+Follett&search_type=books" target="_blank">Search on Goodreads</a>
+                                        </small>
+                                    </div>
+                                </div>
+                                
+                                    <div class="book_description border-top pt-3 ">
+                                        <h2 class="h4 d-none">Summary:</h2>
+                                        <div>
+<p>En Las tinieblas y el alba, Ken Follett embarca al lector en un épico viaje que termina donde Los pilares de la Tierra comienza. </p>
+<p>Año 997, finales de la Edad Oscura. Inglaterra se enfrenta a los ataques de los galeses por el oeste y de los vikingos por el este. La vida es difícil y aquellos que ostentan algo de poder lo ejercen con puño de hierro y, a menudo, en conflicto con el propio rey. </p>
+<p>En estos tiempos turbulentos, tres vidas se entrecruzan: el joven constructor de barcos Edgar, a punto de fugarse con la mujer a la que ama, comprende que su futuro será muy diferente a lo que había imaginado cuando su hogar es arrasado por los vikingos; Ragna, la rebelde hija de un noble normando, acompaña a su marido a una nueva tierra al otro lado del mar solo para descubrir que las costumbres allí son peligrosamente distintas; y Aldred, un monje idealista, sueña con transformar su humilde abadía en un centro de saber admirado en toda Europa. Los tres se verán abocados a un enfrentamiento con el despiadado obispo Wynstan, decidido a aumentar su poder a cualquier precio. </p>
+<p>El gran maestro de la narrativa de acción y suspense nos transporta al ocaso de una época violenta y brutal y al comienzo de un nuevo tiempo en un monumental y emocionante relato de ambición y rivalidad, nacimiento y muerte, amor y odio.</p></div>
+                                    </div>
+                                
+                            </div>
+                        </article>
+                    
+                        <article id="book-5" class="book col-auto" title="Los Pilares Se La Tierra (edición ilustrada)" data-added-timestamp="1711224452000" data-authors="Ken Follett" data-title="Los Pilares Se La Tierra (edición ilustrada)" data-index="5">
+                            <header>
+                                <img src="covers/eBooksMartinLosPilaresSeLaTierraedicionilustrada5.jpg" alt="Los Pilares Se La Tierra (edición ilustrada)" class="d-block mx-auto shadow"/>
+                            </header>
+                            <div class="book__body">
+                                <h1 class="h3 text-center my-3">Los Pilares Se La Tierra (edición ilustrada)</h1>
+                                <ul class="book__meta list-group">
+                                    <li class="list-group-item">
+                                        <label>Authors:</label>
+                                        <span class="fs-6">Ken Follett</span>
+                                    </li>
+                                    
+                                        <li class="list-group-item">
+                                            <label>ISBN:</label>
+                                            <a href="https://www.goodreads.com/search?q=9788401024283" target="_blank">9788401024283</a>
+                                        </li>
+                                    
+                                    <li class="list-group-item">
+                                        <label>Added On:</label>
+                                        2024-03-23
+                                    </li>
+                                </ul>
+                                <div class="text-center m-3">
+
+                                    
+                                        <div>
+                                            <a href="https://drive.google.com/uc?export=download&id=1wa9F3iaYAxxLffc_ZAlCB6DYM45hloUf" class="btn btn-primary mb-3" target="_blank">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewbox="0 0 16 16">
+                                                    <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+                                                    <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
+                                                </svg>
+                                                Download EPUB</a>
+                                        </div>
+                                    
+
+                                    <div>
+                                        <small>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-dots" viewbox="0 0 16 16">
+                                                <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                                                <path d="M5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                                            </svg>
+                                            <a href="https://www.goodreads.com/search?q=Los+Pilares+Se+La+Tierra+(edici%C3%B3n+ilustrada)%2C+Ken+Follett&search_type=books" target="_blank">Search on Goodreads</a>
+                                        </small>
+                                    </div>
+                                </div>
+                                
+                                    <div class="book_description border-top pt-3 ">
+                                        <h2 class="h4 d-none">Summary:</h2>
+                                        <div>
+<p>La obra maestra de Ken Follett en una lujosa edición especial 30 aniversario con más de un centenar de ilustraciones. Hace treinta años, Ken Follett publicó en español su novela más popular, Los pilares de la Tierra, que ha vendido más de veintisiete millones de ejemplares en todo el mundo. Ahora, por primera vez en una edición ilustrada, el gran maestro de la narrativa de acción y suspense nos transporta de nuevo a la Edad Media, a un fascinante mundo de reyes, damas, caballeros, pugnas feudales, castillos y ciudades amuralladas. El amor y la muerte se entrecruzan vibrantemente en este magistral tapiz cuyo centro es la construcción de una catedral gótica. Esta edición contiene un prólogo del autor y más de cien ilustraciones del artista Markus Weber. Sobre Los pilares de la Tierra han dicho: «Fantástico desde todos los puntos de vista.» El Mundo « Los pilares de la Tierra fue un hito en España, donde todavía sigue siendo el libro más leído de la historia según la Federación del Gremio de Editores.» ABC «Alta política y bajas pasiones (y viceversa) conforman un folletín de grandes dimensiones que confirman a Follett como relojero mayor del reino del bestseller.» Qué leer «Maravilloso... Te atrapará, fascinará y envolverá.» Chicago Tribune « Los pilares de la Tierra hizo de Ken Follet uno de los autores más queridos de nuestro país.» ABC Sevilla «Ken Follett sabe cómo tejer una historia fascinante, con personajes complejos, que todo actor sueña con interpretar.» Donald Sutherland «Me encanta Los pilares de la Tierra, lo recuerdo con mucho cariño [...] es uno de aquellos títulos que se quedan grabados...» Ildefonso Falcones «En Los pilares de la Tierra, Ken Follett nos presenta a unos personajes que consiguen que la historia cobre vida.» Ridley Scott</p></div>
+                                    </div>
+                                
+                            </div>
+                        </article>
+                    
+                        <article id="book-6" class="book col-auto" title="Las Montañas De Buda" data-added-timestamp="1711224452000" data-authors="Javier Moro" data-title="Las Montañas De Buda" data-index="6">
+                            <header>
+                                <img src="covers/eBooksMartinLasMontanasDeBuda6.jpg" alt="Las Montañas De Buda" class="d-block mx-auto shadow"/>
+                            </header>
+                            <div class="book__body">
+                                <h1 class="h3 text-center my-3">Las Montañas De Buda</h1>
+                                <ul class="book__meta list-group">
+                                    <li class="list-group-item">
+                                        <label>Authors:</label>
+                                        <span class="fs-6">Javier Moro</span>
+                                    </li>
+                                    
+                                        <li class="list-group-item">
+                                            <label>ISBN:</label>
+                                            <a href="https://www.goodreads.com/search?q=9788432235191" target="_blank">9788432235191</a>
+                                        </li>
+                                    
+                                    <li class="list-group-item">
+                                        <label>Added On:</label>
+                                        2024-03-23
+                                    </li>
+                                </ul>
+                                <div class="text-center m-3">
+
+                                    
+                                        <div>
+                                            <a href="https://drive.google.com/uc?export=download&id=11DaCU_OK9qjXpfx9cPnWoIc4e8waFRNo" class="btn btn-primary mb-3" target="_blank">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewbox="0 0 16 16">
+                                                    <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+                                                    <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
+                                                </svg>
+                                                Download EPUB</a>
+                                        </div>
+                                    
+
+                                    <div>
+                                        <small>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-dots" viewbox="0 0 16 16">
+                                                <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                                                <path d="M5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                                            </svg>
+                                            <a href="https://www.goodreads.com/search?q=Las+Monta%C3%B1as+De+Buda%2C+Javier+Moro&search_type=books" target="_blank">Search on Goodreads</a>
+                                        </small>
+                                    </div>
+                                </div>
+                                
+                                    <div class="book_description border-top pt-3 ">
+                                        <h2 class="h4 d-none">Summary:</h2>
+                                        <div>
+<p>Monjas budistas de quince años se atreven a desafiar a los invasores chinos, niños que son reencarnaciones de dioses, adolescentes heroicos y ancianos de leyenda, torturadores y sabios ermitaños, policías corruptos y guerreros nómadas… <em>Las montañas de Buda</em> cuenta lo que se niega a desaparecer al otro lado del Himalaya: el espíritu de la resistencia, la fe, el alma del Tíbet. Es la historia verídica de dos mujeres jóvenes que se unen a un grupo de refugiados para cruzar, de noche y a pie, las cumbres más altas del mundo. Es la historia del Dalai Lama, que dedica su vida a mantener viva la llama de la esperanza. Es la historia reciente del Tíbet. Y es, ante todo, la prueba de que la fuerza bruta no puede destruir el espíritu humano.</p></div>
+                                    </div>
+                                
+                            </div>
+                        </article>
+                    
+                        <article id="book-7" class="book col-auto" title="La Sangre De Los Inocentes" data-added-timestamp="1711224452000" data-authors="Julia Navarro" data-title="La Sangre De Los Inocentes" data-index="7">
+                            <header>
+                                <img src="covers/eBooksMartinLaSangreDeLosInocentes7.jpg" alt="La Sangre De Los Inocentes" class="d-block mx-auto shadow"/>
+                            </header>
+                            <div class="book__body">
+                                <h1 class="h3 text-center my-3">La Sangre De Los Inocentes</h1>
+                                <ul class="book__meta list-group">
+                                    <li class="list-group-item">
+                                        <label>Authors:</label>
+                                        <span class="fs-6">Julia Navarro</span>
+                                    </li>
+                                    
+                                        <li class="list-group-item">
+                                            <label>ISBN:</label>
+                                            <a href="https://www.goodreads.com/search?q=9789506441067" target="_blank">9789506441067</a>
+                                        </li>
+                                    
+                                    <li class="list-group-item">
+                                        <label>Added On:</label>
+                                        2024-03-23
+                                    </li>
+                                </ul>
+                                <div class="text-center m-3">
+
+                                    
+                                        <div>
+                                            <a href="https://drive.google.com/uc?export=download&id=1ztMNOH5wNpCyVbb6J-8Wx7TjnGyteXYC" class="btn btn-primary mb-3" target="_blank">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewbox="0 0 16 16">
+                                                    <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+                                                    <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
+                                                </svg>
+                                                Download EPUB</a>
+                                        </div>
+                                    
+
+                                    <div>
+                                        <small>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-dots" viewbox="0 0 16 16">
+                                                <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                                                <path d="M5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                                            </svg>
+                                            <a href="https://www.goodreads.com/search?q=La+Sangre+De+Los+Inocentes%2C+Julia+Navarro&search_type=books" target="_blank">Search on Goodreads</a>
+                                        </small>
+                                    </div>
+                                </div>
+                                
+                                    <div class="book_description border-top pt-3 ">
+                                        <h2 class="h4 d-none">Summary:</h2>
+                                        <div>
+<p>Soy espia y tengo miedo...Asi empieza la cronica que escribe en el siglo XIII fray Julian sobre el cruel asedio a Montsegur y la lucha entre cataros y catolicos. Siglos despues, en 1939, un medievalista agnostico emprende un peligroso viaje por el Berlin nazi en busca de su esposa de origen judio. En la actualidad, un grupo de musulmanes radicales se inmola en Frankfurt dejando tras de si un mensaje criptico que pone en estado de alerta al Centro Antiterrorista de la Union Europea, cuyos agentes, con la ayuda de los servicios secretos del Vaticano, intentaran desvelar un enigma que une la intolerancia de la Inquisicion, la sinrazon fascista y el integrismo islamico en una Algun dia alguien vengara la sangre de los inocentes. Un musulman captado por una celula terrorista, un jesuita experto en herejias, un conde frances obsesionado por una dramatica herencia familiar, un hombre misterioso -El Facilitador- que desde la sombra maneja los hilos del poder junto a una intrepida joven de los servicios antiterroristas protagonizan este apasionante libro sobre la venganza y la traicion, con el violento conflicto entre Oriente y Occidente como telon de fondo. En su novela mas madura y ambiciosa, Julia Navarro sorprende con una vertiginosa aventura que nos transporta a lugares como Jerusalen, Granada, Roma o Estambul, y que indaga en las causas del fanatismo religioso y la intolerancia a lo largo de los siglos.</p></div>
+                                    </div>
+                                
+                            </div>
+                        </article>
+                    
+                        <article id="book-8" class="book col-auto" title="La Armadura De La Luz" data-added-timestamp="1711224452000" data-authors="Ken Follett" data-title="La Armadura De La Luz" data-index="8">
+                            <header>
+                                <img src="covers/eBooksMartinLaArmaduraDeLaLuz8.jpg" alt="La Armadura De La Luz" class="d-block mx-auto shadow"/>
+                            </header>
+                            <div class="book__body">
+                                <h1 class="h3 text-center my-3">La Armadura De La Luz</h1>
+                                <ul class="book__meta list-group">
+                                    <li class="list-group-item">
+                                        <label>Authors:</label>
+                                        <span class="fs-6">Ken Follett</span>
+                                    </li>
+                                    
+                                        <li class="list-group-item">
+                                            <label>ISBN:</label>
+                                            <a href="https://www.goodreads.com/search?q=9788401032554" target="_blank">9788401032554</a>
+                                        </li>
+                                    
+                                    <li class="list-group-item">
+                                        <label>Added On:</label>
+                                        2024-03-23
+                                    </li>
+                                </ul>
+                                <div class="text-center m-3">
+
+                                    
+                                        <div>
+                                            <a href="https://drive.google.com/uc?export=download&id=14Mgwc_N-pKa-po10QixXI6uCEV6P8btz" class="btn btn-primary mb-3" target="_blank">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewbox="0 0 16 16">
+                                                    <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+                                                    <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
+                                                </svg>
+                                                Download EPUB</a>
+                                        </div>
+                                    
+
+                                    <div>
+                                        <small>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-dots" viewbox="0 0 16 16">
+                                                <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                                                <path d="M5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                                            </svg>
+                                            <a href="https://www.goodreads.com/search?q=La+Armadura+De+La+Luz%2C+Ken+Follett&search_type=books" target="_blank">Search on Goodreads</a>
+                                        </small>
+                                    </div>
+                                </div>
+                                
+                                    <div class="book_description border-top pt-3 ">
+                                        <h2 class="h4 d-none">Summary:</h2>
+                                        <div>
+<p style="font-weight: bold">Vuelve el mejor Follett con la emocionante quinta entrega de la saga «Los pilares de la Tierra».</p>
+<p style="font-weight: bold">El choque de progreso y tradición y una guerra que amenaza con engullir toda Europa en la más ambiciosa y épica novela del maestro de la ficción histórica.</p>
+<p style="font-weight: bold">La revolución está en el aire </p>
+<p>1792. Un gobierno despótico está decidido a convertir Inglaterra en un poderoso imperio comercial. Y, desde el otro lado del mar, suenan tambores de guerra mientras Napoleón Bonaparte comienza su ascenso al poder y prepara un violento plan para convertirse en emperador del mundo.</p>
+<p style="font-weight: bold">Kingsbridge se asoma al abismo </p>
+<p>Los nuevos avances industriales se imponen de manera implacable, sacudiendo las vidas de los trabajadores de las prósperas fábricas textiles de Kingsbridge. Las máquinas abren un mundo de oportunidades ligado, sin embargo, a la crueldad más despiadada.</p>
+<p style="font-weight: bold">Una nueva tiranía surge en el horizonte </p>
+<p>Y a medida que el estallido de un conflicto parece cada vez más cerca, la historia de un pequeño grupo de personas -la decidida hilandera Sal Clitheroe, el idealista David Shoveller y Kit, el brillante hijo de Sal- se convertirá en el símbolo de la lucha de toda una generación que desea progresar y pelea por un futuro sin opresión...</p>
+<p style="font-weight: bold">Sobra la saga «Los pilares de la Tierra» han dicho: </p>
+<p>«Sigo envidiando como el primer día la capacidad de Follett para entretener. Sus tramas funcionan siempre y te mantiene pegado a cada página». </p>
+<p>Juan Gómez Jurado, <em>ABC</em></p>
+<p>«Fantástico desde todos los puntos de vista».<br><em>El Mundo</em></p>
+<p>«Follett es un maestro».<br><em>The Washington Post</em></p>
+<p>«Una obra que destaca como un triunfo del esfuerzo y la profesionalidad».<br><em>The Guardian</em></p>
+<p>«No hay rincón sin sorpresa ni página tediosa».<br><em>Qué leer</em></p>
+<p>«Sus libros crean adicción. No se leen. Se devoran».<br><em>La Voz de Asturias</em></p>
+<h3>About the Author</h3>
+<p><strong>Ken Follett</strong> nació en Cardiff (Gales) y a los diez años su familia se trasladó a la capital británica. Realizó sus estudios en distintas escuelas públicas antes de licenciarse con honores en Filosofía en el University College de Londres. Comenzó su carrera como periodista en el periódico de su ciudad natal, el <em>South Wales Echo,</em> y luego trabajó en el <em>London Evening News.</em> Posteriormente se incorporó a una pequeña editorial, Everest Books, de la que terminó siendo director adjunto. Su primer gran éxito literario llegó en 1978 con la publicación de <em>El ojo de la aguja</em> , un thriller de espionaje ambientado en la Segunda Guerra Mundial. <em>.<br></em><br>Ken Follett es uno de los autores más queridos y admirados por los lectores de todo el mundo, y las ventas de sus libros superan los ciento setenta y ocho millones de ejemplares. En 1989 publicó <em>Los pilares de la Tierra,</em> el épico relato de la construcción de una catedral medieval del que se han vendido veintisiete millones de ejemplares y que se ha convertido en su novela más popular. Su continuación, <em>Un mundo sin fin</em> , se publicó en 2007, y en 2017 vio la luz <em>Una columna de fuego,</em> que transcurre en la Inglaterra del siglo XVI, durante el reinado de Isabel I. En 2020 llegó a las librerías la aclamada precuela de la saga, <em>Las tinieblas y el alba,</em> que se remonta al año 1000, cuando Kingsbridge era un asentamiento anglosajón bajo la amenaza de los invasores vikingos. </p>
+<p>Follett, que ama la música casi tanto como los libros, es un gran aficionado a tocar el bajo. Vive en Stevenage, Hertfordshire, con su esposa Barbara, exparlamentaria laborista por su circunscripción. Entre los dos tienen cinco hijos, seis nietos y dos perros labradores. --Este texto se refiere a la edición paperback.</p></div>
+                                    </div>
+                                
+                            </div>
+                        </article>
+                    
+                        <article id="book-9" class="book col-auto" title="Era Medianoche en Bhopal" data-added-timestamp="1711229325000" data-authors="Dominique Lapierre, Javier Moro" data-title="Era Medianoche en Bhopal" data-index="9">
+                            <header>
+                                <img src="covers/eBooksMartinEraMedianocheenBhopal9.jpg" alt="Era Medianoche en Bhopal" class="d-block mx-auto shadow"/>
+                            </header>
+                            <div class="book__body">
+                                <h1 class="h3 text-center my-3">Era Medianoche en Bhopal</h1>
+                                <ul class="book__meta list-group">
+                                    <li class="list-group-item">
+                                        <label>Authors:</label>
+                                        <span class="fs-6">Dominique Lapierre,Javier Moro</span>
+                                    </li>
+                                    
+                                        <li class="list-group-item">
+                                            <label>ISBN:</label>
+                                            <a href="https://www.goodreads.com/search?q=9788408083931" target="_blank">9788408083931</a>
+                                        </li>
+                                    
+                                    <li class="list-group-item">
+                                        <label>Added On:</label>
+                                        2024-03-23
+                                    </li>
+                                </ul>
+                                <div class="text-center m-3">
+
+                                    
+                                        <div>
+                                            <a href="https://drive.google.com/uc?export=download&id=1Iqy1Z6HZCKS0oFsvZKgZc6cDBcI9HKFa" class="btn btn-primary mb-3" target="_blank">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewbox="0 0 16 16">
+                                                    <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+                                                    <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
+                                                </svg>
+                                                Download EPUB</a>
+                                        </div>
+                                    
+
+                                    <div>
+                                        <small>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-dots" viewbox="0 0 16 16">
+                                                <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                                                <path d="M5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                                            </svg>
+                                            <a href="https://www.goodreads.com/search?q=Era+Medianoche+en+Bhopal%2C+Dominique+Lapierre%2C+Javier+Moro&search_type=books" target="_blank">Search on Goodreads</a>
+                                        </small>
+                                    </div>
+                                </div>
+                                
+                                    <div class="book_description border-top pt-3 ">
+                                        <h2 class="h4 d-none">Summary:</h2>
+                                        <div>
+<p>Doce y cinco de la noche del 2 al 3 de diciembre de 1984. Una fulgurante nube de gas tóxico se escapa de una fábrica norteamericana de pesticidas construida en el corazón de la antigua ciudad india de Bhopal. Causa treinta mil muertos y quinientos mil heridos. Es la catástrofe industrial más mortífera de la historia. Este libro narra la emocionante aventura humana y tecnológica que desembocó en esta tragedia. </p>
+<p>Cientos de personajes, situaciones y aventuras se entremezclan en este fresco desbordante de amor, heroísmo, fe y esperanza. Una historia verídica. Una tragedia en el corazón de nuestro tiempo que advierte a todos los aprendices de brujo que amenazan la supervivencia de nuestro planeta.</p></div>
+                                    </div>
+                                
+                            </div>
+                        </article>
+                    
+                        <article id="book-10" class="book col-auto" title="Nos quieren muertos" data-added-timestamp="1711229326000" data-authors="Javier Moro" data-title="Nos quieren muertos" data-index="10">
+                            <header>
+                                <img src="covers/eBooksMartinNosquierenmuertos10.jpg" alt="Nos quieren muertos" class="d-block mx-auto shadow"/>
+                            </header>
+                            <div class="book__body">
+                                <h1 class="h3 text-center my-3">Nos quieren muertos</h1>
+                                <ul class="book__meta list-group">
+                                    <li class="list-group-item">
+                                        <label>Authors:</label>
+                                        <span class="fs-6">Javier Moro</span>
+                                    </li>
+                                    
+                                        <li class="list-group-item">
+                                            <label>ISBN:</label>
+                                            <a href="https://www.goodreads.com/search?q=9788467069778" target="_blank">9788467069778</a>
+                                        </li>
+                                    
+                                    <li class="list-group-item">
+                                        <label>Added On:</label>
+                                        2024-03-23
+                                    </li>
+                                </ul>
+                                <div class="text-center m-3">
+
+                                    
+                                        <div>
+                                            <a href="https://drive.google.com/uc?export=download&id=1d3AdzYAhx6-nDjt9Ff4rSuOTn_3B30ek" class="btn btn-primary mb-3" target="_blank">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewbox="0 0 16 16">
+                                                    <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+                                                    <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
+                                                </svg>
+                                                Download EPUB</a>
+                                        </div>
+                                    
+
+                                    <div>
+                                        <small>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-dots" viewbox="0 0 16 16">
+                                                <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                                                <path d="M5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                                            </svg>
+                                            <a href="https://www.goodreads.com/search?q=Nos+quieren+muertos%2C+Javier+Moro&search_type=books" target="_blank">Search on Goodreads</a>
+                                        </small>
+                                    </div>
+                                </div>
+                                
+                                    <div class="book_description border-top pt-3 ">
+                                        <h2 class="h4 d-none">Summary:</h2>
+                                        <div>
+<p style="font-weight: bold">El sacrificio de un hombre, la lucha de una familia, la conciencia de un país.</p>
+<p>En 2014, tras liderar las mayores manifestaciones de protesta en la historia de Venezuela contra el régimen de Nicolas Maduro, el joven político Leopoldo López se vio enfrentado a la decisión más difícil de su vida: o abandonaba su país y seguía la lucha desde el extranjero, o permanecía en Caracas hasta que lo detuvieran. Debía elegir entre la libertad, o la cárcel. Decidió sacrificar su vida familiar y confortable —y entregarse. Al hacer lo que nadie esperaba, se convirtió en héroe.</p>
+<p>Escrita con vigoroso pulso narrativo, Javier Moro nos cuenta la historia de un padre de familia que de la noche a la mañana se encuentra en una celda por un crimen que no cometió, de una madre que se ve obligada a maquillar la realidad ante sus hijos al tiempo que clama en la ONU y en la Casa Blanca por la liberación de su marido, de unos padres que no se resignan a que su hijo pierda la vida entre rejas. Y de cómo, poco a poco, el mundo fue conociendo la verdad sobre lo que realmente sucede en Venezuela.</p>
+<p>Por el autor de <em>Pasión india, El imperio eres tú</em> o <em>A flor de piel,</em> entre otros.</p>
+<h3>Book Description</h3>
+<p>El sacrificio de un hombre, la lucha de una familia, la conciencia de un país. --Este texto se refiere a una edición agotada o no disponible de este título.</p>
+<h3>About the Author</h3>
+<p>Javier Moro es uno de los autores más querido por los lectores y valorado por la crítica del panorama literario en español. Periodista y escritor, también ha trabajado en el mundo del cine como guionista y productor. Entre sus libros, destacan Senderos de libertad (1992), El pie de Jaipur (1995), Las montañas de Buda (1998), Era medianoche en Bhopal (2001), en colaboración con Dominique Lapierre, Pasión india (2005), El sari rojo (2008), El imperio eres tú (Premio Planeta 2011), A flor de piel (2015), Mi pecado (Premio Primavera 2017) y A prueba de fuego (2020). --Este texto se refiere a una edición agotada o no disponible de este título.</p></div>
+                                    </div>
+                                
+                            </div>
+                        </article>
+                    
+                        <article id="book-12" class="book col-auto" title="Plantación exitosa de viñedos" data-added-timestamp="1725559254000" data-authors="Marcelo Canatella" data-title="Plantación exitosa de viñedos" data-index="11">
+                            <header>
+                                <img src="covers/eBooksMartinPlantacionexitosadevinedos12.jpg" alt="Plantación exitosa de viñedos" class="d-block mx-auto shadow"/>
+                            </header>
+                            <div class="book__body">
+                                <h1 class="h3 text-center my-3">Plantación exitosa de viñedos</h1>
+                                <ul class="book__meta list-group">
+                                    <li class="list-group-item">
+                                        <label>Authors:</label>
+                                        <span class="fs-6">Marcelo Canatella</span>
+                                    </li>
+                                    
+                                        <li class="list-group-item">
+                                            <label>ISBN:</label>
+                                            <a href="https://www.goodreads.com/search?q=9786310042633" target="_blank">9786310042633</a>
+                                        </li>
+                                    
+                                    <li class="list-group-item">
+                                        <label>Added On:</label>
+                                        2024-09-05
+                                    </li>
+                                </ul>
+                                <div class="text-center m-3">
+
+                                    
+                                        <div>
+                                            <a href="https://drive.google.com/uc?export=download&id=1gIJZeOug9_O2FhwMwrpva3m2tOOc91Op" class="btn btn-primary mb-3" target="_blank">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewbox="0 0 16 16">
+                                                    <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+                                                    <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
+                                                </svg>
+                                                Download EPUB</a>
+                                        </div>
+                                    
+
+                                    <div>
+                                        <small>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-dots" viewbox="0 0 16 16">
+                                                <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                                                <path d="M5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                                            </svg>
+                                            <a href="https://www.goodreads.com/search?q=Plantaci%C3%B3n+exitosa+de+vi%C3%B1edos%2C+Marcelo+Canatella&search_type=books" target="_blank">Search on Goodreads</a>
+                                        </small>
+                                    </div>
+                                </div>
+                                
+                                    <div class="book_description border-top pt-3 ">
+                                        <h2 class="h4 d-none">Summary:</h2>
+                                        <div>
+<p style="font-weight: bold; font-family: 'InconsolataGo Nerd Font Complete','Menlo','Monaco','Courier New','monospace','Menlo','Monaco','Courier New','monospace'; font-size: 12px"><span style="color: #d4d4d4; background-color: #1e1e1e">Sinopsis</span></p>
+<p style="font-family: 'InconsolataGo Nerd Font Complete','Menlo','Monaco','Courier New','monospace','Menlo','Monaco','Courier New','monospace'; font-size: 12px"><span style="color: #d4d4d4; background-color: #1e1e1e">Este libro te permitirá adquirir las herramientas necesarias para plantar de manera exitosa un viñedo. También te brindará las pautas generales a tener en cuenta al momento de tomar decisiones y realizar las diferentes tareas en cada etapa del proceso de plantación.</span></p>
+<p style="font-family: 'InconsolataGo Nerd Font Complete','Menlo','Monaco','Courier New','monospace','Menlo','Monaco','Courier New','monospace'; font-size: 12px"><span style="color: #d4d4d4; background-color: #1e1e1e">Las recomendaciones que encontrarás aquí son aplicables tanto en cultivos a secano, como en aquellos proyectos pensados para áreas de regadío, es decir, donde se utiliza un sistema de riego presurizado o gravitacional, como complemento de las precipitaciones en los requerimientos hídricos anuales de la planta.</span></p>
+<p style="font-weight: bold; font-family: 'InconsolataGo Nerd Font Complete','Menlo','Monaco','Courier New','monospace','Menlo','Monaco','Courier New','monospace'; font-size: 12px"><span style="color: #d4d4d4; background-color: #1e1e1e">¿Qué vas a encontrar en este libro?</span></p>
+<p style="font-family: 'InconsolataGo Nerd Font Complete','Menlo','Monaco','Courier New','monospace','Menlo','Monaco','Courier New','monospace'; font-size: 12px"><span style="color: #d4d4d4; background-color: #1e1e1e">Un recorrido que incluye desde los análisis previos a realizar al inicio del trabajo de plantación, hasta el manejo agronómico del viñedo durante su primer año de vida.</span></p>
+<p style="font-family: 'InconsolataGo Nerd Font Complete','Menlo','Monaco','Courier New','monospace','Menlo','Monaco','Courier New','monospace'; font-size: 12px"><span style="color: #d4d4d4; background-color: #1e1e1e">Los conceptos y recomendaciones que detallo en este libro están basados en una trayectoria profesional de más de 25 años, y más de 7.000 hectáreas cultivadas a lo largo y a lo ancho de toda Argentina, y también en algunos otros países de Latinoamérica.<br></span></p>
+<p style="font-weight: bold; font-family: 'InconsolataGo Nerd Font Complete','Menlo','Monaco','Courier New','monospace','Menlo','Monaco','Courier New','monospace'; font-size: 12px"><span style="color: #d4d4d4; background-color: #1e1e1e">Sobre el autor</span></p>
+<p style="font-family: 'InconsolataGo Nerd Font Complete','Menlo','Monaco','Courier New','monospace','Menlo','Monaco','Courier New','monospace'; font-size: 12px"><span style="color: #d4d4d4; background-color: #1e1e1e">Marcelo Pablo Canatella es ingeniero agrónomo y cuenta con una destacada trayectoria en el ámbito vitivinícola.</span></p>
+<p style="font-family: 'InconsolataGo Nerd Font Complete','Menlo','Monaco','Courier New','monospace','Menlo','Monaco','Courier New','monospace'; font-size: 12px"><span style="color: #d4d4d4; background-color: #1e1e1e">Nacido en Mendoza, egresó del Liceo Agrícola y Enológico “Domingo Faustino Sarmiento” y obtuvo su título universitario en la Facultad de Ciencias Agrarias de la Universidad Nacional de Cuyo.</span></p>
+<p style="font-family: 'InconsolataGo Nerd Font Complete','Menlo','Monaco','Courier New','monospace','Menlo','Monaco','Courier New','monospace'; font-size: 12px"><span style="color: #d4d4d4; background-color: #1e1e1e">Desde 1998, trabaja en viticultura de alta gama y se ha especializado en el manejo orgánico y sostenible de viñedos.</span></p>
+<p style="font-family: 'InconsolataGo Nerd Font Complete','Menlo','Monaco','Courier New','monospace','Menlo','Monaco','Courier New','monospace'; font-size: 12px"><span style="color: #d4d4d4; background-color: #1e1e1e">Es cofundador de la plataforma Vanguarvid, un portal de contenidos vitícolas y enológicos creado para quienes quieren aprender y disfrutar de la vid y el vino.</span></p>
+<p style="font-family: 'InconsolataGo Nerd Font Complete','Menlo','Monaco','Courier New','monospace','Menlo','Monaco','Courier New','monospace'; font-size: 12px"><span style="color: #d4d4d4; background-color: #1e1e1e">Es una figura clave en la promoción de prácticas sostenibles y en el desarrollo de nuevas técnicas para la producción de uvas de calidad, consolidando así su reputación como un líder en el campo de la vitivinicultura de alta gama.</span></p>
+<p style="font-family: 'InconsolataGo Nerd Font Complete','Menlo','Monaco','Courier New','monospace','Menlo','Monaco','Courier New','monospace'; font-size: 12px; color: #d4d4d4"> </p></div>
+                                    </div>
+                                
+                            </div>
+                        </article>
+                    
+                </section>
+            </main>
+
+            <aside id="book-preview" class="col-auto g-0 show bg-light shadow">
+
+                <h2 class="h4 py-2 px-3">Book preview
+                    <button type="button" class="btn-close fs-6 float-end mt-1" aria-label="Close" data-bs-toggle="collapse" data-bs-target="#book-preview"></button>
+                </h1>
+                <div class="book-preview__content px-3"></div>
+
+            </aside>
+
+        </div>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script>
+            const books = document.querySelectorAll( '.book' );
+            const bookPreview = document.querySelector( '#book-preview' );
+            const bookPreviewConten = document.querySelector( '#book-preview .book-preview__content ' );
+
+            books.forEach( book => {
+                book.addEventListener( 'click', () => {
+                    bookPreview.classList.add( 'show' );
+                    const bookClone = book.cloneNode( true );
+                    bookPreviewConten.innerHTML = '';
+                    bookPreviewConten.appendChild( bookClone );
+                } );
+            } );
+
+
+// Sort books by article data attribute title, authors, timestampwithsupport for ASC or DESC sorting
+            function sortBooks( sortBy = 'title', order = 'asc' ) {
+                const booksList = document.querySelector( '#books-list' );
+                const books = Array.from( booksList.children );
+
+                books.sort( ( a, b ) => {
+                    const aData = a.getAttribute( `data-${ sortBy }` );
+                    const bData = b.getAttribute( `data-${ sortBy }` );
+
+// For number based comparison
+                    if ( sortBy === 'added-timestamp' ) {
+                        return order === 'asc' ? aData - bData : bData - aData;
+                    }
+
+// For text based comparison
+                    return order === 'asc' ? aData.localeCompare( bData ) : bData.localeCompare( aData );
+                } );
+
+                books.forEach( book => booksList.appendChild( book ) );
+            }
+
+
+            const btn_sort_title = document.querySelector( '#sort-title' );
+            btn_sort_title.addEventListener( 'click', ( e ) => {
+                btn_sort_title.classList.toggle( 'desc' );
+                sortBooks( 'title', btn_sort_title.classList.contains( 'desc' ) ? 'desc' : 'asc' );
+            } );
+
+            const btn_sort_author = document.querySelector( '#sort-author' );
+            btn_sort_author.addEventListener( 'click', ( e ) => {
+                btn_sort_author.classList.toggle( 'desc' );
+                sortBooks( 'authors', btn_sort_author.classList.contains( 'desc' ) ? 'desc' : 'asc' );
+            } );
+
+            const btn_sort_date = document.querySelector( '#sort-date' );
+            btn_sort_date.addEventListener( 'click', ( e ) => {
+                btn_sort_date.classList.toggle( 'desc' );
+                sortBooks( 'added-timestamp', btn_sort_date.classList.contains( 'desc' ) ? 'desc' : 'asc' );
+            } );
+
+            const btn_reset = document.querySelector( '#sort-reset' );
+// Remove all the sorting setting and classes
+            btn_reset.addEventListener( 'click', ( e ) => {
+                btn_sort_title.classList.remove( 'desc' );
+                btn_sort_author.classList.remove( 'desc' );
+                btn_sort_date.classList.remove( 'desc' );
+
+// Clear the serch box too
+                document.querySelector( '#search-box input' ).value = '';
+// And restore the inline-block to all books
+                books.forEach( book => book.style.display = 'inline-block' );
+
+
+                btn_sort_date.classList.add( 'desc' );
+                sortBooks( 'added-timestamp', 'desc' );
+
+                document.querySelector( '.book' ).click();
+
+            } );
+
+
+// Use the search box to filter books by title or author
+            const searchBox = document.querySelector( '#search-box input' );
+            searchBox.addEventListener( 'input', ( e ) => {
+                const searchValue = e.target.value.trim().toLowerCase();
+                books.forEach( book => {
+                    const title = book.getAttribute( 'data-title' ).toLowerCase();
+                    const authors = book.getAttribute( 'data-authors' ).toLowerCase();
+                    if ( title.includes( searchValue ) || authors.includes( searchValue ) ) {
+                        book.style.display = 'inline-block';
+                    } else {
+                        book.style.display = 'none';
+                    }
+                } );
+            } );
+
+// On grid and list buttons add the corresponding class to the book list div
+            const btn_viewGrid = document.querySelector( '#viewGrid' );
+            btn_viewGrid.addEventListener( 'click', ( e ) => {
+                document.querySelector( '#books-list' ).classList.remove( '-view-list' );
+            } );
+
+            const btn_viewList = document.querySelector( '#viewList' );
+            btn_viewList.addEventListener( 'click', ( e ) => {
+                document.querySelector( '#books-list' ).classList.add( '-view-list' );
+            } );
+
+
+// Initialize the page view
+
+            btn_sort_date.click(); // Sort by date by default
+
+            document.querySelector( '.book' ).click(); // Open the first book in the preview pannel by default
+        </script>
+    </body>
+</html></body></html>

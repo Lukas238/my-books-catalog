@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Maripaz&#39;s eBooks Library
+            | Catalog</title>
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+        <style>
+            html,
+            body {
+                margin: 0;
+                padding: 0;
+            }
+            body {
+                min-width: 890px;
+                height: 100%;
+                overflow: hidden;
+            }
+            main {
+                overflow-y: auto;
+                height: 100vh;
+            }
+            #controls-area {
+                font-size: 0.8em;
+                button {
+                    padding: 0 0.2em !important;
+                }
+            }
+
+            #sort-box {
+                .btn-sort {
+                    padding: 0 0.2em !important;
+                }
+                .btn-sort:after {
+                    vertical-align: middle;
+                    display: inline-block;
+                    height: 17px;
+                    width: 10px;
+                    content: url('data:image/svg+xml, <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-short" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4"/></svg>');
+                }
+                .btn-sort.desc:after {
+                    content: url('data:image/svg+xml, <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-short" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5"/></svg>');
+                }
+
+            }
+
+
+            #books-list {
+                &.-view-list .book .book__body {
+                    display: block;
+                }
+
+                .book {
+                    display: inline-block;
+
+                    header {
+                        cursor: pointer;
+                    }
+
+                    img {
+                        min-width: 200px;
+                        max-width: 200px;
+                        min-height: 300px;
+                        max-height: 300px;
+                    }
+                    .book__body {
+                        display: none;
+                    }
+                }
+            }
+            .book__body .book__meta {
+                font-size: 0.8em;
+                label {
+                    font-style: italic;
+                    font-size: 0.8em;
+                }
+            }
+            #book-preview {
+                width: 430px;
+                display: none;
+
+                &.show {
+                    display: block;
+                }
+
+                overflow-y: auto;
+                height: 100vh;
+                .book-preview__content {
+                    .book {
+                        header {
+                            text-align: center;
+                            margin: 0 auto;
+
+                            img {
+                                max-width: 300px;
+                                max-height: 400px;
+                            }
+                        }
+                    }
+                }
+            }
+        </style>
+    </head>
+    <body class="container-fluid">
+        <div class="row g-0">
+            <main class="col">
+                <h1>Maripaz&#39;s eBooks Library</h1>
+
+                <div id="search-box" class="me-3 py-1">
+                    <input class="form-control border" placeholder="Search by title or author">
+                </div>
+                <div id="controls-area" class="d-flex me-3 py-1">
+                    <div id="sort-box" class="d-inline-block" title="Sort by">
+                        <label>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-filter" viewbox="0 0 16 16">
+                                <path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5"/>
+                            </svg>
+                            <strong class="d-none">Sort by:</strong>
+                        </label>
+
+
+                        <button id="sort-title" type="button" class="p-1 btn btn-sm btn-sort">Title</button>,
+                        <button id="sort-author" type="button" class="p-1 btn btn-sm btn-sort">Author</button>,
+                        <button id="sort-date" type="button" class="p-1 btn btn-sm btn-sort">Date</button>
+                    </div>
+
+                    <div class="border-start ms-2 ps-2 flex-grow-1">
+                        <button id="sort-reset" type="button" class="text-end btn btn-sm btn-reset">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewbox="0 0 16 16">
+                                <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
+                            </svg>
+                            Clear
+                        </button>
+                    </div>
+
+                    <div id="views-box" class="d-inline-block ms-2 border-start ps-2 ">
+                        <label>
+                            <strong class="d-none">View:</strong>
+                        </label>
+                        <button id="viewGrid" type="button" class="btn btn-sm">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-grid" viewbox="0 0 16 16">
+                                <path d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5z"/>
+                            </svg>
+                        </button>
+                        <button id="viewList" type="button" class="btn btn-sm">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewbox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+
+                <section id="books-list" class="row g-2 m-0">
+                    
+                        <article id="book-1" class="book col-auto" title="La Liebre Con Ojos De Ámbar" data-added-timestamp="1709824733000" data-authors="Edmund de Waal,  Marcelo Cohen" data-title="La Liebre Con Ojos De Ámbar" data-index="1">
+                            <header>
+                                <img src="covers/eBooksMaripazLaLiebreConOjosDeAmbar1.jpg" alt="La Liebre Con Ojos De Ámbar" class="d-block mx-auto shadow"/>
+                            </header>
+                            <div class="book__body">
+                                <h1 class="h3 text-center my-3">La Liebre Con Ojos De Ámbar</h1>
+                                <ul class="book__meta list-group">
+                                    <li class="list-group-item">
+                                        <label>Authors:</label>
+                                        <span class="fs-6">Edmund de Waal, Marcelo Cohen</span>
+                                    </li>
+                                    
+                                        <li class="list-group-item">
+                                            <label>ISBN:</label>
+                                            <a href="https://www.goodreads.com/search?q=9788415277712" target="_blank">9788415277712</a>
+                                        </li>
+                                    
+                                    <li class="list-group-item">
+                                        <label>Added On:</label>
+                                        2024-03-07
+                                    </li>
+                                </ul>
+                                <div class="text-center m-3">
+
+                                    
+                                        <div>
+                                            <a href="https://drive.google.com/uc?export=download&id=17EY0hgVBiJcD107rNoFdvS8qY07oSVxh" class="btn btn-primary mb-3" target="_blank">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewbox="0 0 16 16">
+                                                    <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+                                                    <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
+                                                </svg>
+                                                Download EPUB</a>
+                                        </div>
+                                    
+
+                                    <div>
+                                        <small>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-dots" viewbox="0 0 16 16">
+                                                <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                                                <path d="M5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                                            </svg>
+                                            <a href="https://www.goodreads.com/search?q=La+Liebre+Con+Ojos+De+%C3%81mbar%2C+Edmund+de+Waal%2C++Marcelo+Cohen&search_type=books" target="_blank">Search on Goodreads</a>
+                                        </small>
+                                    </div>
+                                </div>
+                                
+                                    <div class="book_description border-top pt-3 ">
+                                        <h2 class="h4 d-none">Summary:</h2>
+                                        <div>
+<p>Más de doscientas figuritas de madera y marfil, ninguna de ellas mayor que una caja de cerillas, son el origen de este fascinante libro en el que Edmund de Waal describe el viaje que han hecho a lo largo de los años. Un viaje lleno de aventuras, de guerra, de amor y de pérdida, que resume, en la historia de una familia, la historia de Europa en los siglos XIX y XX. Un texto evocativo y de gran belleza que comienza con una pequeña liebre de ojos de ámbar que se mezcla en un bolsillo con las monedas, y termina, como todo auténtico viaje, con el descubrimiento de uno mismo. Edmund de Waal (Nottingham, 1964) es ceramista y sus obras se han expuesto en diferentes museos y colecciones, entre ellos el Victoria &amp; Albert Museum y la Tate Britain. Es profesor de cerámica en la Universidad de Westminster y vive en Londres.</p>
+<h3>---</h3>
+<p>Edmund de Waal (Nottingham, 1964) es ceramista y sus obras se han expuesto en diferentes museos y colecciones, entre ellos el Victoria &amp; Albert Museum y la Tate Britain. Es profesor de cerámica en la Universidad de Westminster y vive en Londres.</p></div>
+                                    </div>
+                                
+                            </div>
+                        </article>
+                    
+                        <article id="book-2" class="book col-auto" title="La cocinera irlandesa" data-added-timestamp="1710185025000" data-authors="Mary Beth Keane" data-title="La cocinera irlandesa" data-index="2">
+                            <header>
+                                <img src="covers/eBooksMaripazLacocinerairlandesa2.jpg" alt="La cocinera irlandesa" class="d-block mx-auto shadow"/>
+                            </header>
+                            <div class="book__body">
+                                <h1 class="h3 text-center my-3">La cocinera irlandesa</h1>
+                                <ul class="book__meta list-group">
+                                    <li class="list-group-item">
+                                        <label>Authors:</label>
+                                        <span class="fs-6">Mary Beth Keane</span>
+                                    </li>
+                                    
+                                        <li class="list-group-item">
+                                            <label>ISBN:</label>
+                                            <a href="https://www.goodreads.com/search?q=9788491393849" target="_blank">9788491393849</a>
+                                        </li>
+                                    
+                                    <li class="list-group-item">
+                                        <label>Added On:</label>
+                                        2024-03-11
+                                    </li>
+                                </ul>
+                                <div class="text-center m-3">
+
+                                    
+                                        <div>
+                                            <a href="https://drive.google.com/uc?export=download&id=1hpP_3FObhYuLtExctfpAzi2dytkDhdDE" class="btn btn-primary mb-3" target="_blank">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewbox="0 0 16 16">
+                                                    <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+                                                    <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
+                                                </svg>
+                                                Download EPUB</a>
+                                        </div>
+                                    
+
+                                    <div>
+                                        <small>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-dots" viewbox="0 0 16 16">
+                                                <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                                                <path d="M5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                                            </svg>
+                                            <a href="https://www.goodreads.com/search?q=La+cocinera+irlandesa%2C+Mary+Beth+Keane&search_type=books" target="_blank">Search on Goodreads</a>
+                                        </small>
+                                    </div>
+                                </div>
+                                
+                                    <div class="book_description border-top pt-3 ">
+                                        <h2 class="h4 d-none">Summary:</h2>
+                                        <div>
+<p>A principios del siglo XX, Mary Mallon emigró a Nueva York desde Irlanda con quince años. Valiente, testaruda y con el sueño de ser cocinera, luchó para llegar a serlo desde los puestos más bajos del servicio doméstico. Descubrió que era una gran chef y pronto la aristocracia neoyorquina empezó a pelearse por sus servicios, lo que le dio una rara independencia para la época. Parecía que podría cumplir su sueño. Pero empezó a dejar un reguero de enfermos de tifus a su paso y fue identificada como portadora asintomática por los investigadores, que la pusieron en busca y captura.</p>
+<p>La llamaron Mary la Tifoidea. Decían que transmitía el tifus de sus manos a la comida de aquellos a los que servía. Decían que ella lo sabía. Pero Mary no estaba enferma. Ella no había hecho nada malo.</p>
+<p>No fue arrestada rápidamente. Hubo avisos, requerimientos y, cuando por fin fue detenida, no se dejó llevar tranquilamente. Tachada de asesina y condenada tanto por la prensa como por la opinión pública, Mary siguió luchando por su libertad, sin importarle el coste…</p>
+<p style="font-weight: bold">La cocinera irlandesa arroja luz sobre la que fue descrita como la «mujer más peligrosa de América».</p>
+<p>El relato de Mary Beth Keane es tan poderoso</p>
+<p><strong>«</strong> La cocinera irlandesa <strong>se convertirá en serie de la mano de Elisabeth Moss (Mad Men y El cuento de la criada)».</strong></p>
+<h3>Nota de la solapa</h3>
+<p>A principios del siglo XX, Mary Mallon emigró a Nueva York desde Irlanda con quince años. Valiente, testaruda y con el sueño de ser cocinera, luchó para llegar a serlo desde los puestos más bajos del servicio doméstico. Descubrió que era una gran chef y pronto la aristocracia neoyorquina empezó a pelearse por sus servicios, lo que le dio una rara independencia para la época. Parecía que podría cumplir su sueño. Pero empezó a dejar un reguero de enfermos de tifus a su paso y fue identificada como portadora asintomática por los investigadores, que la pusieron en busca y captura.</p>
+<p>La llamaron Mary la Tifoidea. Decían que transmitía el tifus de sus manos a la comida de aquellos a los que servía. Decían que ella lo sabía. Pero Mary no estaba enferma. Ella no había hecho nada malo.</p>
+<p>No fue arrestada rápidamente. Hubo avisos, requerimientos y, cuando por fin fue detenida, no se dejó llevar tranquilamente. Tachada de asesina y condenada tanto por la prensa como por la opinión pública, Mary siguió luchando por su libertad, sin importarle el coste…</p>
+<p style="font-weight: bold">La cocinera irlandesa arroja luz sobre la que fue descrita como la «mujer más peligrosa de América».</p>
+<p>El relato de Mary Beth Keane es tan poderoso</p>
+<p><strong>«</strong> La cocinera irlandesa <strong>se convertirá en serie de la mano de Elisabeth Moss (Mad Men y El cuento de la criada)».</strong></p>
+<h3>Contraportada</h3>
+<p>A principios del siglo XX, Mary Mallon emigró a Nueva York desde Irlanda con quince años. Valiente, testaruda y con el sueño de ser cocinera, luchó para llegar a serlo desde los puestos más bajos del servicio doméstico. Descubrió que era una gran chef y pronto la aristocracia neoyorquina empezó a pelearse por sus servicios, lo que le dio una rara independencia para la época. Parecía que podría cumplir su sueño. Pero empezó a dejar un reguero de enfermos de tifus a su paso y fue identificada como portadora asintomática por los investigadores, que la pusieron en busca y captura.</p>
+<p>La llamaron Mary la Tifoidea. Decían que transmitía el tifus de sus manos a la comida de aquellos a los que servía. Decían que ella lo sabía. Pero Mary no estaba enferma. Ella no había hecho nada malo.</p>
+<p>No fue arrestada rápidamente. Hubo avisos, requerimientos y, cuando por fin fue detenida, no se dejó llevar tranquilamente. Tachada de asesina y condenada tanto por la prensa como por la opinión pública, Mary siguió luchando por su libertad, sin importarle el coste…</p>
+<p style="font-weight: bold">La cocinera irlandesa arroja luz sobre la que fue descrita como la «mujer más peligrosa de América».</p>
+<p>El relato de Mary Beth Keane es tan poderoso</p>
+<p><strong>«</strong> La cocinera irlandesa <strong>se convertirá en serie de la mano de Elisabeth Moss (Mad Men y El cuento de la criada)».</strong></p></div>
+                                    </div>
+                                
+                            </div>
+                        </article>
+                    
+                        <article id="book-3" class="book col-auto" title="Las hijas de la criada: Premio Planeta 2023" data-added-timestamp="1710185025000" data-authors="Sonsoles Ónega" data-title="Las hijas de la criada: Premio Planeta 2023" data-index="3">
+                            <header>
+                                <img src="covers/eBooksMaripazLashijasdelacriadaPremioPlaneta20233.jpg" alt="Las hijas de la criada: Premio Planeta 2023" class="d-block mx-auto shadow"/>
+                            </header>
+                            <div class="book__body">
+                                <h1 class="h3 text-center my-3">Las hijas de la criada: Premio Planeta 2023</h1>
+                                <ul class="book__meta list-group">
+                                    <li class="list-group-item">
+                                        <label>Authors:</label>
+                                        <span class="fs-6">Sonsoles Ónega</span>
+                                    </li>
+                                    
+                                        <li class="list-group-item">
+                                            <label>ISBN:</label>
+                                            <a href="https://www.goodreads.com/search?q=9786073910255" target="_blank">9786073910255</a>
+                                        </li>
+                                    
+                                    <li class="list-group-item">
+                                        <label>Added On:</label>
+                                        2024-03-11
+                                    </li>
+                                </ul>
+                                <div class="text-center m-3">
+
+                                    
+                                        <div>
+                                            <a href="https://drive.google.com/uc?export=download&id=1sn-iTgRfkHihFf5u11ZL4TBnF5w-ap1S" class="btn btn-primary mb-3" target="_blank">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewbox="0 0 16 16">
+                                                    <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+                                                    <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
+                                                </svg>
+                                                Download EPUB</a>
+                                        </div>
+                                    
+
+                                    <div>
+                                        <small>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-dots" viewbox="0 0 16 16">
+                                                <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                                                <path d="M5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                                            </svg>
+                                            <a href="https://www.goodreads.com/search?q=Las+hijas+de+la+criada%3A+Premio+Planeta+2023%2C+Sonsoles+%C3%93nega&search_type=books" target="_blank">Search on Goodreads</a>
+                                        </small>
+                                    </div>
+                                </div>
+                                
+                                    <div class="book_description border-top pt-3 ">
+                                        <h2 class="h4 d-none">Summary:</h2>
+                                        <div>
+<p>Hay secretos de familia que merecen ser contados. </p>
+<p>Esta es la historia de uno de ellos. Una noche de febrero de 1900, recién estrenado el siglo XX, en el pazo de Espíritu Santo llegan al mundo dos niñas, Clara y Catalina, cuyos destinos ya estaban escritos. Sin embargo, una venganza inesperada sacudirá para siempre sus vidas y las de todos los Valdés. Doña Inés, matriarca de la saga y fiel esposa de don Gustavo, deberá sobrevivir al desamor, al dolor del abandono y a las luchas de poder hasta convertir a su verdadera hija en heredera de todo un imperio, en una época en la que a las mujeres no se les permitía ser dueñas de sus vidas. Las hijas de la criada es una historia mágica y realista al mismo tiempo, en una Galicia extraordinaria, sobre hombres y mujeres que se rebelan contra su propio destino en busca de la verdad.</p></div>
+                                    </div>
+                                
+                            </div>
+                        </article>
+                    
+                        <article id="book-4" class="book col-auto" title="La Última Rosa De Shanghái" data-added-timestamp="1710185025000" data-authors="Weina Dai Randel" data-title="La Última Rosa De Shanghái" data-index="4">
+                            <header>
+                                <img src="covers/eBooksMaripazLaUltimaRosaDeShanghai4.jpg" alt="La Última Rosa De Shanghái" class="d-block mx-auto shadow"/>
+                            </header>
+                            <div class="book__body">
+                                <h1 class="h3 text-center my-3">La Última Rosa De Shanghái</h1>
+                                <ul class="book__meta list-group">
+                                    <li class="list-group-item">
+                                        <label>Authors:</label>
+                                        <span class="fs-6">Weina Dai Randel</span>
+                                    </li>
+                                    
+                                        <li class="list-group-item">
+                                            <label>ISBN:</label>
+                                            <a href="https://www.goodreads.com/search?q=9788419767158" target="_blank">9788419767158</a>
+                                        </li>
+                                    
+                                    <li class="list-group-item">
+                                        <label>Added On:</label>
+                                        2024-03-11
+                                    </li>
+                                </ul>
+                                <div class="text-center m-3">
+
+                                    
+                                        <div>
+                                            <a href="https://drive.google.com/uc?export=download&id=1xXWoizZYYE1As-oogUuBt_XpVxCTXtAJ" class="btn btn-primary mb-3" target="_blank">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewbox="0 0 16 16">
+                                                    <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+                                                    <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
+                                                </svg>
+                                                Download EPUB</a>
+                                        </div>
+                                    
+
+                                    <div>
+                                        <small>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-dots" viewbox="0 0 16 16">
+                                                <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                                                <path d="M5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                                            </svg>
+                                            <a href="https://www.goodreads.com/search?q=La+%C3%9Altima+Rosa+De+Shangh%C3%A1i%2C+Weina+Dai+Randel&search_type=books" target="_blank">Search on Goodreads</a>
+                                        </small>
+                                    </div>
+                                </div>
+                                
+                                    <div class="book_description border-top pt-3 ">
+                                        <h2 class="h4 d-none">Summary:</h2>
+                                        <div>
+<p>1940. Aiyi Shao es una joven heredera y propietaria de un club nocturno en el viejo Shanghai, internacional y glamoroso. Ernest Reismann es un pobre refugiado judío expulsado de Alemania. Ha perdido casi toda esperanza hasta que se cruza con Aiyi, quien lo contrata para tocar el piano en su club, en un escandaloso desafío a las costumbres. Ernest logra un éxito inmediato que hace revivir el club de Aiyi. Rápidamente se dan cuenta de que comparten mucho más que una pasión por el jazz, pero sus diferencias son insuperables: Aiyi ya está comprometida y Ernest no le puede prometer ningún futuro. A medida que la guerra se hace más cruel, las vidas de Aiyi y Ernest se ven desgarradas por tener que elegir entre el amor y la supervivencia, y ya no queda más que sucumbir a la desesperación. Mientras todo parece ir en contra de ellos, se pone en marcha una cadena de eventos asombrosos, que cambiará la vida de los dos para siempre. Desde los brillantes clubes de jazz hasta las calles empobrecidas de una ciudad sitiada, La Última Rosa de Shanghái es una arrolladora historia de amor y redención.</p>
+<h3>Biografía del autor</h3>
+<p>Weina Dai Randel es la aclamada autora de cuatro novelas históricas, todas de enorme éxito. Ha ganado el premio Romantic Writers of America, fue candidata al premio Nacional del Libro Judío y al a la Selección de Goodread a la mejor Ficción Histórica. Sus novelas han sido traducidas a más de doce idiomas. Su tercera novela, La última rosa de Shanghái, saltó a los primeros puestos en las listas de más vendidos en las mayores plataformas de venta de libros en el mundo.</p></div>
+                                    </div>
+                                
+                            </div>
+                        </article>
+                    
+                        <article id="book-8" class="book col-auto" title="El Italiano" data-added-timestamp="1711018765000" data-authors="Arturo Pérez-Reverte" data-title="El Italiano" data-index="5">
+                            <header>
+                                <img src="covers/eBooksMaripazElItaliano8.jpg" alt="El Italiano" class="d-block mx-auto shadow"/>
+                            </header>
+                            <div class="book__body">
+                                <h1 class="h3 text-center my-3">El Italiano</h1>
+                                <ul class="book__meta list-group">
+                                    <li class="list-group-item">
+                                        <label>Authors:</label>
+                                        <span class="fs-6">Arturo Pérez-Reverte</span>
+                                    </li>
+                                    
+                                        <li class="list-group-item">
+                                            <label>ISBN:</label>
+                                            <a href="https://www.goodreads.com/search?q=9788420460499" target="_blank">9788420460499</a>
+                                        </li>
+                                    
+                                    <li class="list-group-item">
+                                        <label>Added On:</label>
+                                        2024-03-21
+                                    </li>
+                                </ul>
+                                <div class="text-center m-3">
+
+                                    
+                                        <div>
+                                            <a href="https://drive.google.com/uc?export=download&id=1qJk0bsvbpb7NbOMxKCJx0MUAjg1e-Jk8" class="btn btn-primary mb-3" target="_blank">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewbox="0 0 16 16">
+                                                    <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+                                                    <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
+                                                </svg>
+                                                Download EPUB</a>
+                                        </div>
+                                    
+
+                                    <div>
+                                        <small>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-dots" viewbox="0 0 16 16">
+                                                <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                                                <path d="M5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                                            </svg>
+                                            <a href="https://www.goodreads.com/search?q=El+Italiano%2C+Arturo+P%C3%A9rez-Reverte&search_type=books" target="_blank">Search on Goodreads</a>
+                                        </small>
+                                    </div>
+                                </div>
+                                
+                                    <div class="book_description border-top pt-3 ">
+                                        <h2 class="h4 d-none">Summary:</h2>
+                                        <div>
+<p style="font-weight: bold">UNA HISTORIA DE AMOR, MAR Y GUERRA.</p>
+<p style="font-style: italic">«Nada traiciona, tanto tiempo después, la mujer que desde hace dos años vive sola junto al mar con un perro y unos libros. Qué otra cosa, decide, sería el impulso, o el deseo, de permanecer abrazada a ese hombre para siempre. Ignora qué habrá en su cabeza dentro de un par de horas, cuando la claridad del día la despeje del todo e ilumine con más crudeza su conciencia. Lo cierto es que en este momento, sin duda alguna, desearía morir si él muriera».</p>
+<p>En los años 1942 y 1943, durante la Segunda Guerra Mundial, buzos de combate italianos hundieron o dañaron catorce barcos aliados en Gibraltar y la bahía de Algeciras. En esta novela, inspirada en hechos reales, sólo algunos personajes y situaciones son</p>
+<p>imaginarios. Elena Arbués, una librera de veintisiete años, encuentra una madrugada mientras pasea por la playa a uno de esos buzos, desvanecido entre la arena y el agua. Al socorrerlo, la joven ignora que esa determinación cambiará su vida y que el amor será sólo parte de una peligrosa aventura.</p>
+<p><strong>La crítica ha dicho:</strong><br>«Pérez-Reverte logra una novela intensa, de emociones sofrenadas y virtudes infrecuentes, incluida la virtud acaso controvertida del reconocimiento del mérito, valor y nobleza de los enemigos».<br>Domingo Ródenas de Moya, <em>Babelia</em></p>
+<p>« <em>El italiano</em> es para mí la mejor novela de Arturo Pérez Reverte hasta el momento. Todos sus capítulos huelen a limpio, al despertar de las mañanas de verano, a croissant, al Floyd de las peluquerías de antes, a los bares a eso de las nueve, recién barridos y fregados, cuando ya se les ha ido el olor de la lejía. A aquellas montañas mágicas de las primeras excursiones colegiales. Su prosa está atravesada por el temblor de la ilusión. [...] Leyéndolo he recordado a Graham Greene, a Simenon y a Conrad, a Vittorio De Sica y a Rossellini».<br>José Luis Garci</p>
+<p>«Un homenaje asombroso al Mediterráneo como patria, y al mármol y bronce de sus dioses y sus héroes».<br>Raúl del Pozo</p>
+<p>«Hay libros capaces de enclavijar al lector a la realidad mientras empujan a adentrarse en lo más insólito del mundo. Porque la vida se concreta mejor en lo pequeño. <em>El italiano</em> es uno de ellos: [...] un secreto guardado por las horas».<br>Antonio Lucas, <em>El Mundo</em></p>
+<p>«Pérez-Reverte en su mejor momento. Sus novelas trazan lazos de unión unas con otras, hasta formar unaurdimbre que es lo que los clásicos llamaban estilo, y los modernos, mundo».<br>José María Pozuelo Yvancos, <em>ABCultural</em></p>
+<p>«La magia consiste en que Arturo Pérez-Reverte es capaz de poner al lector, con toda la profundidad de campo que sea capaz de apreciar, porque le ofrece un tapiz con los datos históricos y las coordenadas mentales del momento. [...] Esto no es fácil, pero roza el virtuosismo cuandoademás la lección de vida y de historia viene vestida de aventura, de esas que no te deja levantar los ojos de la página».<br>Jesús García Calero, <em>Zenda</em></p>
+<p>«Por el mismo precio, una bella historia de amor y una historia de guerra. ¡Y qué historia de guerra!»<br>Jacinto Antón, <em>El País</em></p>
+<p>«Una estupenda aventura de amor, honor y guerra: gran historia real trufada de imaginación. [...] El Dumas español».<br>José María de Loma, <em>La Opinión de Málaga</em></p>
+<p>«Una trama de espionaje que le dará ese retumbar de los grandes thrillers, [...] un héroe mediterráneo [que] tiñe estas páginas de la melancolía que suele derivarse, por lo general, del inevitable paso del tiempo».<br>Javier Ors, <em>La Razón</em></p>
+<h3>About the Author</h3>
+<p><strong>Arturo Pérez-Reverte</strong> nació en Cartagena, España, en 1951. Fue reportero de guerra durante veintiún años y cubrió dieciocho conflictos armados para los diarios y la televisión. Con más de veinte millones de lectores en el mundo, traducido a cuarenta idiomas, muchas de sus obras han sido llevadas al cine y la televisión. Hoy comparte su vida entre la literatura, el mar y la navegación. Es miembro de la Real Academia Española y de la Asociación de Escritores de Marina de Francia.</p></div>
+                                    </div>
+                                
+                            </div>
+                        </article>
+                    
+                        <article id="book-10" class="book col-auto" title="Las Señoritas" data-added-timestamp="1711018765000" data-authors="Laura Ramos" data-title="Las Señoritas" data-index="6">
+                            <header>
+                                <img src="covers/eBooksMaripazLasSenoritas10.jpg" alt="Las Señoritas" class="d-block mx-auto shadow"/>
+                            </header>
+                            <div class="book__body">
+                                <h1 class="h3 text-center my-3">Las Señoritas</h1>
+                                <ul class="book__meta list-group">
+                                    <li class="list-group-item">
+                                        <label>Authors:</label>
+                                        <span class="fs-6">Laura Ramos</span>
+                                    </li>
+                                    
+                                        <li class="list-group-item">
+                                            <label>ISBN:</label>
+                                            <a href="https://www.goodreads.com/search?q=9788426481078" target="_blank">9788426481078</a>
+                                        </li>
+                                    
+                                    <li class="list-group-item">
+                                        <label>Added On:</label>
+                                        2024-03-21
+                                    </li>
+                                </ul>
+                                <div class="text-center m-3">
+
+                                    
+                                        <div>
+                                            <a href="https://drive.google.com/uc?export=download&id=1dVUBffbKaD1r7iv0sInPxWHSE9HVDK68" class="btn btn-primary mb-3" target="_blank">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewbox="0 0 16 16">
+                                                    <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+                                                    <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
+                                                </svg>
+                                                Download EPUB</a>
+                                        </div>
+                                    
+
+                                    <div>
+                                        <small>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-dots" viewbox="0 0 16 16">
+                                                <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                                                <path d="M5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                                            </svg>
+                                            <a href="https://www.goodreads.com/search?q=Las+Se%C3%B1oritas%2C+Laura+Ramos&search_type=books" target="_blank">Search on Goodreads</a>
+                                        </small>
+                                    </div>
+                                </div>
+                                
+                                    <div class="book_description border-top pt-3 ">
+                                        <h2 class="h4 d-none">Summary:</h2>
+                                        <div>
+<p>La historia más bella y mejor documentada de las sesenta y una jóvenes maestras que Sarmiento "importó" de los Estados Unidos a la Argentina en el siglo XIX. Sus amores, tragedias y relaciones prohibidas, y sus batallas pedagógicas y aventuras en las luchas políticas que asolaban la república, en un relato cautivante de la mano de Laura Ramos.<br>En la concreción de su febril sueño civilizador, Sarmiento no escatimó recursos pero tampoco tropelías. Su cruzada en favor de universalizar la lectoescritura en la Argentina se materializó en una sucesión de iniciativas signadas por un fuerte sentido de lo épico y una inocultable admiración por los Estados Unidos de América. Entre ellas, ninguna resulta tan cautivante como la "importación" de sesenta y una jóvenes maestras de ese país al nuestro.<br>Si en la batalla de la educación se jugaba la guerra por la construcción de una nación, las señoritas llegadas entre 1869 y 1898 configuraron un capítulo fundamental de esa lucha que contemporáneamente era fácil dar por perdida de antemano.<br>En este libro único por su rigor historiográfico y su delicadeza narrativa, Laura Ramos urde los hilos de sus biografías y borda la filigrana íntima y doméstica de su historia hecha de amores, tragedias, relaciones prohibidas, batallas pedagógicas y aventuras, recortada sobre el fondo de los antagonismos políticos que asolaban la república que dejaba atrás su pasado colonial.</p></div>
+                                    </div>
+                                
+                            </div>
+                        </article>
+                    
+                        <article id="book-11" class="book col-auto" title="La Sangre De Los Inocentes" data-added-timestamp="1711224452000" data-authors="Julia Navarro" data-title="La Sangre De Los Inocentes" data-index="7">
+                            <header>
+                                <img src="covers/eBooksMaripazLaSangreDeLosInocentes11.jpg" alt="La Sangre De Los Inocentes" class="d-block mx-auto shadow"/>
+                            </header>
+                            <div class="book__body">
+                                <h1 class="h3 text-center my-3">La Sangre De Los Inocentes</h1>
+                                <ul class="book__meta list-group">
+                                    <li class="list-group-item">
+                                        <label>Authors:</label>
+                                        <span class="fs-6">Julia Navarro</span>
+                                    </li>
+                                    
+                                        <li class="list-group-item">
+                                            <label>ISBN:</label>
+                                            <a href="https://www.goodreads.com/search?q=9789506441067" target="_blank">9789506441067</a>
+                                        </li>
+                                    
+                                    <li class="list-group-item">
+                                        <label>Added On:</label>
+                                        2024-03-23
+                                    </li>
+                                </ul>
+                                <div class="text-center m-3">
+
+                                    
+                                        <div>
+                                            <a href="https://drive.google.com/uc?export=download&id=17Uxz63Bmb53l91CvV577x-jv3b8axk4U" class="btn btn-primary mb-3" target="_blank">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewbox="0 0 16 16">
+                                                    <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+                                                    <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
+                                                </svg>
+                                                Download EPUB</a>
+                                        </div>
+                                    
+
+                                    <div>
+                                        <small>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-dots" viewbox="0 0 16 16">
+                                                <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                                                <path d="M5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                                            </svg>
+                                            <a href="https://www.goodreads.com/search?q=La+Sangre+De+Los+Inocentes%2C+Julia+Navarro&search_type=books" target="_blank">Search on Goodreads</a>
+                                        </small>
+                                    </div>
+                                </div>
+                                
+                                    <div class="book_description border-top pt-3 ">
+                                        <h2 class="h4 d-none">Summary:</h2>
+                                        <div>
+<p>Soy espia y tengo miedo...Asi empieza la cronica que escribe en el siglo XIII fray Julian sobre el cruel asedio a Montsegur y la lucha entre cataros y catolicos. Siglos despues, en 1939, un medievalista agnostico emprende un peligroso viaje por el Berlin nazi en busca de su esposa de origen judio. En la actualidad, un grupo de musulmanes radicales se inmola en Frankfurt dejando tras de si un mensaje criptico que pone en estado de alerta al Centro Antiterrorista de la Union Europea, cuyos agentes, con la ayuda de los servicios secretos del Vaticano, intentaran desvelar un enigma que une la intolerancia de la Inquisicion, la sinrazon fascista y el integrismo islamico en una Algun dia alguien vengara la sangre de los inocentes. Un musulman captado por una celula terrorista, un jesuita experto en herejias, un conde frances obsesionado por una dramatica herencia familiar, un hombre misterioso -El Facilitador- que desde la sombra maneja los hilos del poder junto a una intrepida joven de los servicios antiterroristas protagonizan este apasionante libro sobre la venganza y la traicion, con el violento conflicto entre Oriente y Occidente como telon de fondo. En su novela mas madura y ambiciosa, Julia Navarro sorprende con una vertiginosa aventura que nos transporta a lugares como Jerusalen, Granada, Roma o Estambul, y que indaga en las causas del fanatismo religioso y la intolerancia a lo largo de los siglos.</p></div>
+                                    </div>
+                                
+                            </div>
+                        </article>
+                    
+                        <article id="book-12" class="book col-auto" title="Las Gratitudes" data-added-timestamp="1711230131000" data-authors="Delphine de Vigan" data-title="Las Gratitudes" data-index="8">
+                            <header>
+                                <img src="covers/eBooksMaripazLasGratitudes12.jpg" alt="Las Gratitudes" class="d-block mx-auto shadow"/>
+                            </header>
+                            <div class="book__body">
+                                <h1 class="h3 text-center my-3">Las Gratitudes</h1>
+                                <ul class="book__meta list-group">
+                                    <li class="list-group-item">
+                                        <label>Authors:</label>
+                                        <span class="fs-6">Delphine de Vigan</span>
+                                    </li>
+                                    
+                                        <li class="list-group-item">
+                                            <label>ISBN:</label>
+                                            <a href="https://www.goodreads.com/search?q=9788433942487" target="_blank">9788433942487</a>
+                                        </li>
+                                    
+                                    <li class="list-group-item">
+                                        <label>Added On:</label>
+                                        2024-03-23
+                                    </li>
+                                </ul>
+                                <div class="text-center m-3">
+
+                                    
+                                        <div>
+                                            <a href="https://drive.google.com/uc?export=download&id=1sqpBC7T6Vo5R7zhbcqQXB3XMc4Q0Reit" class="btn btn-primary mb-3" target="_blank">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewbox="0 0 16 16">
+                                                    <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+                                                    <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
+                                                </svg>
+                                                Download EPUB</a>
+                                        </div>
+                                    
+
+                                    <div>
+                                        <small>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-dots" viewbox="0 0 16 16">
+                                                <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                                                <path d="M5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                                            </svg>
+                                            <a href="https://www.goodreads.com/search?q=Las+Gratitudes%2C+Delphine+de+Vigan&search_type=books" target="_blank">Search on Goodreads</a>
+                                        </small>
+                                    </div>
+                                </div>
+                                
+                                    <div class="book_description border-top pt-3 ">
+                                        <h2 class="h4 d-none">Summary:</h2>
+                                        <div>
+<p style="font-weight: bold">Una bellísima novela sobre la gratitud, sobre lo importante que es poder dar las gracias a aquellos que nos han ayudado en la vida.</p>
+<p>«Hoy ha muerto una anciana a la que yo quería. A menudo pensaba: ”Le debo tanto.“ O: ”Sin ella, probablemente ya no estaría aquí.“ Pensaba: ”Es tan importante para mí.“ Importar, deber. ¿Es así como se mide la gratitud? En realidad, ¿fui suficientemente agradecida? ¿Le mostré mi agradecimiento como se merecía? ¿Estuve a su lado cuando me necesitó, le hice compañía, fui constante?», reflexiona Marie, una de las narradoras de este libro. Su voz se alterna con la de Jérôme, que trabaja en un geriátrico y nos cuenta: «Soy logopeda. Trabajo con las palabras y con el silencio. Con lo que no se dice. Trabajo con la vergüenza, con los secretos, con los remordimientos. Trabajo con la ausencia, con los recuerdos que ya no están y con los que resurgen tras un nombre, una imagen, un perfume. Trabajo con el dolor de ayer y con el de hoy. Con las confidencias. Y con el miedo a morir. Forma parte de mi oficio.»</p>
+<p>A ambos personajes –Marie y Jérôme– los une su relación con Michka Seld, una anciana cuyos últimos meses de vida nos relatan estas dos voces cruzadas. Marie es su vecina: cuando era niña y su madre se ausentaba, Michka cuidaba de ella. Jérôme es el logopeda que intenta que la anciana, que acaba de ser ingresada en un geriátrico, recupere aunque sea parcialmente el habla, que va perdiendo por culpa de una afasia.</p>
+<p>Y ambos personajes se involucrarán en el último deseo de Michka: encontrar al matrimonio que, durante los años de la ocupación alemana, la salvó de morir en un campo de exterminio acogiéndola y ocultándola en su casa. Nunca les dio las gracias y ahora querría mostrarles su gratitud...</p>
+<p>Escrita con un estilo contenido, casi austero, esta narración a dos voces nos habla de la memoria, el pasado, el envejecimiento, las palabras, la bondad y la gratitud hacia aquellos que fueron importantes en nuestras vidas. Son las respectivas gratitudes las que unen a los tres inolvidables personajes cuyas historias se entrelazan en esta conmovedora y deslumbrante novela.</p>
+<h3>Críticas</h3>
+<p>«Delphine de Vigan continúa su valiosa exploración de los sentimientos íntimos que rigen nuestra existencia, iniciada con <em>Las lealtades»</em> (Corinne Renou-Nativel, <em>La Croix).</em></p>
+<p>«Una novela de una fuerza extraordinaria sobre las deudas morales y los lazos invisibles» (Mohammed Aïssaoui, <em>Le Figaro).</em></p>
+<p>«Una novela dulce como un bálsamo que habla del humanismo y de lo que debemos a los demás» (Nathalie Collard, <em>La Presse).</em></p>
+<p>«Conmovedora, realista, es a la vez un ejercicio de estilo y una invitación a decir gracias, con palabras y gestos, antes de que sea demasiado tarde» (Marie-France Bornais, <em>Le Journal de Québec).</em></p>
+<p>«Solar y delicada» (Raphaëlle Leyris, <em>Le Monde).</em></p>
+<h3>Descripción del Libro</h3>
+<p style="font-weight: bold">Una bellísima novela sobre la gratitud, sobre lo importante que es poder dar las gracias a aquellos que nos han ayudado en la vida.</p>
+<h3>Biografía del autor</h3>
+<p><strong>Delphine de Vigan</strong> (Boulogne-Billancourt, 1966) vive en París. En Anagrama ha publicado, desde 2012: Días sin hambre: «Maneja la materia autobiográfica con una contención que remite a Marguerite Duras» (Marta Sanz); No y yo: «Maestría y ternura... Una novela atípica» (Juanjo M. Jambrina, Jot Down); Las horas subterráneas: «Sensible, inquietante y un poco triste. Triste y soberbia» (François Busnel, <em>L’Express)</em> ; Nada se opone a la noche, que la consagró internacionalmente, ha vendido en Francia más de ochocientos mil ejemplares, ha sido publicada por una veintena de editoriales extranjeras y ha recibido el Premio de Novela Fnac, el Premio de Novela de las Televisiones Francesas, el Premio Renaudot de los Institutos de Francia, el Gran Premio de la Heroína Madame Figaro y el Gran Premio de las Lectoras de Elle: «Este magnífico testimonio la confirma como una escritora contemporánea de referencia. Imprescindible» (Sònia Hernández, <em>La Vanguardia);</em> «Con sobriedad y precisión, sin sentimentalismo (pero no sin sentimiento), Delphine de Vigan firma una inteligente, magnífica e implacable novela» (Elvira Navarro); Basada en hechos reales, galardonada con el Premio Renaudot y el Goncourt de los Estudiantes, y llevada al cine por Roman Polanski: «Hace alarde de maestría expresiva para disolver los límites de lo que es verdad y lo que es mentira... Apasiona» (Robert Saladrigas, <em>La Vanguardia);</em> Las lealtades: «Perturbadora» (Javier Aparicio Maydeu, <em>El País)</em> ; «Cuestiona a una sociedad que mira hacia otro lado, ante las violencias soterradas» (Lourdes Ventura, <em>El Mundo);</em> y Las gratitudes: «Pequeño prodigio con el que la autora francesa reflexiona sobre la vejez, la soledad y la importancia de las palabras» (David Morán <em>, ABC).</em></p></div>
+                                    </div>
+                                
+                            </div>
+                        </article>
+                    
+                        <article id="book-13" class="book col-auto" title="La Herencia De Eszter" data-added-timestamp="1722785901000" data-authors="Sándor Márai" data-title="La Herencia De Eszter" data-index="9">
+                            <header>
+                                <img src="covers/eBooksMaripazLaHerenciaDeEszter13.jpg" alt="La Herencia De Eszter" class="d-block mx-auto shadow"/>
+                            </header>
+                            <div class="book__body">
+                                <h1 class="h3 text-center my-3">La Herencia De Eszter</h1>
+                                <ul class="book__meta list-group">
+                                    <li class="list-group-item">
+                                        <label>Authors:</label>
+                                        <span class="fs-6">Sándor Márai</span>
+                                    </li>
+                                    
+                                        <li class="list-group-item">
+                                            <label>ISBN:</label>
+                                            <a href="https://www.goodreads.com/search?q=9788498386813" target="_blank">9788498386813</a>
+                                        </li>
+                                    
+                                    <li class="list-group-item">
+                                        <label>Added On:</label>
+                                        2024-08-04
+                                    </li>
+                                </ul>
+                                <div class="text-center m-3">
+
+                                    
+                                        <div>
+                                            <a href="https://drive.google.com/uc?export=download&id=1Vv03S3iE4f35pHuIti7kfQdUa0Y6tKQy" class="btn btn-primary mb-3" target="_blank">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewbox="0 0 16 16">
+                                                    <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+                                                    <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
+                                                </svg>
+                                                Download EPUB</a>
+                                        </div>
+                                    
+
+                                    <div>
+                                        <small>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-dots" viewbox="0 0 16 16">
+                                                <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                                                <path d="M5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                                            </svg>
+                                            <a href="https://www.goodreads.com/search?q=La+Herencia+De+Eszter%2C+S%C3%A1ndor+M%C3%A1rai&search_type=books" target="_blank">Search on Goodreads</a>
+                                        </small>
+                                    </div>
+                                </div>
+                                
+                                    <div class="book_description border-top pt-3 ">
+                                        <h2 class="h4 d-none">Summary:</h2>
+                                        <div>
+<p><strong>Escrita en 1939, tres años antes de</strong> El último encuentro <strong>, con la misma prosa depurada y precisa que ha admirado a miles de lectores, esta novela es una pequeña joya que merece su lugar entre las mejores obras literarias del siglo XX.</strong></p>
+<p>Con la placidez y tranquilidad de quien ha sabido adaptarse a lo que la vida le ha deparado, Eszter habita la casa que heredó de su padre en compañía de una pariente anciana. Hasta que un día, inesperadamente, recibe un telegrama de Lajos, viejo amigo de la familia, anunciando su inminente visita. Canalla, encantador y sin escrúpulos, con unas magníficas dotes de actor que le confieren un poderde seducción irresistible, Lajos no solo traicionó a Eszter, sino que también destruyó a su familia y les quitó todo lo que poseían, salvo la casa en la que viven, cuyo jardín es su único y escaso medio de subsistencia. Ahora, tras una prolongada ausencia, Lajos regresa y Eszter se prepara para recibirlo conmovida por un torbellino de sentimientos contradictorios.</p>
+<p>Conla inevitabilidad del destino como eje central de la narración, <em>La herencia de</em> <em>Eszter</em> se desarrolla de una forma totalmente inesperada y paradójica. El vividor y embustero Lajos es un vendaval de vitalidad, alegría y pasión, un hombre que por el mero hecho de existir pone en entredicho la solidez de las convenciones morales más arraigadas de la época.</p>
+<p><strong>La crítica ha dicho...</strong><br>«Escrita tres años antes que <em>El último encuentro</em> , esta novela anticipa el modelo: un lugar alejado, un regreso imprevisto, la enigmática irradiación del pasado sobre el presente, la vigilante compañía de dos mujeres (allí Nini, aquí Nunu). Se siente que Márai está perfilando, en la suprema nitidez del estilo, la capacidad de transformar una historia en un engranaje de mágica tensión.»<br><em>Corriere</em> <em>della</em> <em>sera</em></p>
+<p>«Esta novela de Márai lo tiene todo para gustar a quienes admiraron <em>El último encuentro</em>.»<br><em>L'Espresso</em></p>
+<p>«Márai conoce el ritmo de la historia, es un verdadero maestro del suspense y lleva a la total combustión la contradicción de los sentimientos, además de tener la capacidad de escribir páginas intensas sobrela dialéctica del bien y el mal, sobre la sutil linea que separa el impulso elementario del dominio de los sentimientos.»<br><em>Tuttolibri</em></p>
+<p>« <em>La herencia de</em> <em>Eszter</em> está a la altura de <em>El último encuentro</em> y consolida a Sándor Márai como el más bello descubrimiento editorial de los últimos tiempos.»<br><em>Il</em> <em>Giorno</em></p>
+<h3>Biografía del autor</h3>
+<p><strong>Sándor Márai</strong> nació en 1900 en Kassa, una pequeña ciudad húngara que hoy pertenece a Eslovaquia. Pasó un periodo de exilio voluntario en Europa durante el régimen de Horthy en los años veinte, hasta que abandonó definitivamente su país en 1948 con la llegada del régimen comunista y emigró a Estados Unidos. La subsiguiente prohibición de su obra en Hungría hizo caer en el olvido a quien en ese momento estaba considerado uno de los escritores más importantes de la literatura centroeuropea. Así, habría que esperar varios decenios, hasta el ocaso del comunismo, para que este extraordinario escritor fuese redescubierto en su país y en el mundo entero.</p>
+<p>Sándor Márai se quitó la vida en 1989 en San Diego, California, pocos meses antes de la caída del muro de Berlín.</p></div>
+                                    </div>
+                                
+                            </div>
+                        </article>
+                    
+                        <article id="book-14" class="book col-auto" title="Mi pecado" data-added-timestamp="1722785901000" data-authors="Javier Moro" data-title="Mi pecado" data-index="10">
+                            <header>
+                                <img src="covers/eBooksMaripazMipecado14.jpg" alt="Mi pecado" class="d-block mx-auto shadow"/>
+                            </header>
+                            <div class="book__body">
+                                <h1 class="h3 text-center my-3">Mi pecado</h1>
+                                <ul class="book__meta list-group">
+                                    <li class="list-group-item">
+                                        <label>Authors:</label>
+                                        <span class="fs-6">Javier Moro</span>
+                                    </li>
+                                    
+                                    <li class="list-group-item">
+                                        <label>Added On:</label>
+                                        2024-08-04
+                                    </li>
+                                </ul>
+                                <div class="text-center m-3">
+
+                                    
+                                        <div>
+                                            <a href="https://drive.google.com/uc?export=download&id=1NkSpO9s6mCPpNH0-spOUmWvNJyBQUvgZ" class="btn btn-primary mb-3" target="_blank">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewbox="0 0 16 16">
+                                                    <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+                                                    <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
+                                                </svg>
+                                                Download EPUB</a>
+                                        </div>
+                                    
+
+                                    <div>
+                                        <small>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-dots" viewbox="0 0 16 16">
+                                                <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                                                <path d="M5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                                            </svg>
+                                            <a href="https://www.goodreads.com/search?q=Mi+pecado%2C+Javier+Moro&search_type=books" target="_blank">Search on Goodreads</a>
+                                        </small>
+                                    </div>
+                                </div>
+                                
+                                    <div class="book_description border-top pt-3 ">
+                                        <h2 class="h4 d-none">Summary:</h2>
+                                        <div>
+<p style="font-weight: bold">La novela de la actriz española que triunfó en Hollywood e influyó en el papel de España durante la 2ª Guerra Mundial.</p>
+<p>Javier Moro recrea en <em>Mi pecado</em> una historia que sucedió realmente. Su protagonista es la actriz española Conchita Montenegro quien, en 1930 con apenas 19 años, desembarcó en Hollywood. </p>
+<p>Gracias a su belleza, inteligencia, personalidad y tesón, la joven promesa se hizo un hueco entre las principales estrellas del momento. Su extraordinaria mirada cautivó a Leslie Howard, uno de los actores más célebres de la época, un hombre casado que le doblaba la edad. Los amantes vivieron su idilio entre fiestas de ensueño y estrenos triunfales, paseos a caballo y vuelos en avioneta por la costa de California, entre la pasión y el engaño. </p>
+<p>Trece años más tarde, su historia de amor tuvo un desenlace inesperado cuando los dos se reencontraron en Madrid y, sin saberlo, influyeron en el curso de la Segunda Guerra Mundial.</p>
+<h3>Biografía del autor</h3>
+<p>Javier Moro es uno de los autores más querido por los lectores y valorado por la crítica del panorama literario en español. Periodista y escritor, también ha trabajado en el mundo del cine como guionista y productor. Entre sus libros, destacan Senderos de libertad (1992), El pie de Jaipur (1995), Las montañas de Buda (1998), Era medianoche en Bhopal (2001), en colaboración con Dominique Lapierre, Pasión india (2005), El sari rojo (2008), El imperio eres tú (Premio Planeta 2011), A flor de piel (2015), Mi pecado (Premio Primavera 2017) y A prueba de fuego (2020).</p></div>
+                                    </div>
+                                
+                            </div>
+                        </article>
+                    
+                        <article id="book-15" class="book col-auto" title="A Prueba De Fuego" data-added-timestamp="1722786002000" data-authors="Javier Moro" data-title="A Prueba De Fuego" data-index="11">
+                            <header>
+                                <img src="covers/eBooksMaripazAPruebaDeFuego15.jpg" alt="A Prueba De Fuego" class="d-block mx-auto shadow"/>
+                            </header>
+                            <div class="book__body">
+                                <h1 class="h3 text-center my-3">A Prueba De Fuego</h1>
+                                <ul class="book__meta list-group">
+                                    <li class="list-group-item">
+                                        <label>Authors:</label>
+                                        <span class="fs-6">Javier Moro</span>
+                                    </li>
+                                    
+                                        <li class="list-group-item">
+                                            <label>ISBN:</label>
+                                            <a href="https://www.goodreads.com/search?q=9789584291837" target="_blank">9789584291837</a>
+                                        </li>
+                                    
+                                    <li class="list-group-item">
+                                        <label>Added On:</label>
+                                        2024-08-04
+                                    </li>
+                                </ul>
+                                <div class="text-center m-3">
+
+                                    
+                                        <div>
+                                            <a href="https://drive.google.com/uc?export=download&id=1f0eyaUoJZ28P-a0Mp32hogbUksUZxGv8" class="btn btn-primary mb-3" target="_blank">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewbox="0 0 16 16">
+                                                    <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+                                                    <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
+                                                </svg>
+                                                Download EPUB</a>
+                                        </div>
+                                    
+
+                                    <div>
+                                        <small>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-dots" viewbox="0 0 16 16">
+                                                <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                                                <path d="M5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                                            </svg>
+                                            <a href="https://www.goodreads.com/search?q=A+Prueba+De+Fuego%2C+Javier+Moro&search_type=books" target="_blank">Search on Goodreads</a>
+                                        </small>
+                                    </div>
+                                </div>
+                                
+                                    <div class="book_description border-top pt-3 ">
+                                        <h2 class="h4 d-none">Summary:</h2>
+                                        <div>
+<p style="font-weight: bold">La aventura americana de Rafael Guastavino, el arquitecto español de Nueva York.</p>
+<p>Nueva York 1881: en uno de los barrios más populares malviven el pequeño Rafaelito y su padre, Rafael, un reputado maestro de obras valenciano que lucha por demostrar su talento en la gran urbe. Lo acecha la ruina absoluta. Pero gracias a su genio infatigable, ese hombre alcanzará fama y fortuna al construir los edificios emblemáticos que han dado su perfil a Nueva York.</p>
+<p>Javier Moro nos presenta al singularísimo Rafael Guastavino, un auténtico genio de la construcción que deslumbró a los grandes magnates norteamericanos, conquistados por las técnicas que empleaba en sus obras para evitar los incendios, el mayor mal de las megalópolis del siglo XIX. Tuvo una vida jalonada de éxitos: de su estudio salieron construcciones tan «neoyorquinas» como <strong>la Estación Central</strong> , el gran hall de la isla de Ellis, parte del metro, <strong>el Carnegie Hall</strong> o <strong>el Museo Americano de Historia Natural</strong>. </p>
+<p style="font-weight: bold">ENGLISH DESCRIPTION</p>
+<p style="font-weight: bold">The American adventure of Rafael Guastavino, the Spanish architect from New York.</p>
+<p>New York 1881: In one of the most popular neighborhoods, little Rafaelito and his father, Rafael, a renowned Valencian master builder who struggles to prove his talent in the big city, live poorly. Absolute ruin is lurking in his hands. But thanks to his indefatigable genius, that man will achieve fame and fortune by building the emblematic buildings that have given New York its profile.</p>
+<p>Javier Moro introduces us to the very unique Rafael Guastavino, a true construction genius who dazzled the great American magnates, conquered by the techniques he used in his works to prevent fires, the greatest evil of the megalopolises of the nineteenth century. He had a life marked by successes: his studio produced such "New York" constructions as <strong>Central Station</strong> , the great hall on Ellis Island, part of the subway, <strong>Carnegie Hall</strong> or <strong>The</strong> <strong>American Museum of Natural History.</strong></p>
+<h3>Biografía del autor</h3>
+<p><strong>Javier Moro</strong> colabora desde muy joven en medios de prensa nacionales y extranjeros. Ha trabajado como investigador en varios libros de Dominique Lapierre y Larry Collins. Coproductor y guionista de las películas <em>Valentina</em> y <em>1919 Crónica del alba,</em> ambas basadas en la obra de Ramón J. Sender, estuvo seis años desarrollando proyectos de cine y televisión en Estados Unidos, donde colaboró con directores como Ridley Scott. Es autor de Senderos de libertad (1992), El pie de Jaipur (1995), Las montañas de Buda (1997), La mundialización de la pobreza (1999) y El sari rojo (2008), todos publicados en Seix Barral; Es coautor, junto con Dominique Lapierre, de Era medianoche en Bhopal (Planeta, 2001). Su novela Pasión india (2005), la historia de la bailarina española que se casó con el maharajá de Kapurthala, ha sido uno de los grandes éxitos de crítica y ventas de los últimos años en España y en varios países europeos, y se ha traducido a diecisiete idiomas. Su obra, El Imperio eres tú, fue galardonada con el <strong>Premio Planeta</strong> 2011. ****</p>
+<p><strong>Javier Moro</strong> has collaborated from a very young age, in national and foreign media. He has worked as a researcher on several books by Dominique Lapierre and Larry Collins. Co-producer and screenwriter of the films Valentina y <em>1919. Crónica del alba,</em> both based on the work of Ramón J. Sender, spent six years developing film and television projects in the United States, where he collaborated with directors such as Ridley Scott. Her novel Pasión india (Indian Passion) (2005), the story of the Spanish dancer who married the Maharaja of Kapurthala and which has been one of the great critical and bestsellers of recent years in Spain and in several European countries, and has been translated into seventeen languages. And his work, El Imperio eres tú (The Empire Is You), was awarded with the 2011 Planeta Prize. </p></div>
+                                    </div>
+                                
+                            </div>
+                        </article>
+                    
+                        <article id="book-16" class="book col-auto" title="La Vida Secreta De Las Plantas" data-added-timestamp="1729440254000" data-authors="Christopher Bird, Peter Tompkins" data-title="La Vida Secreta De Las Plantas" data-index="12">
+                            <header>
+                                <img src="covers/eBooksMaripazLaVidaSecretaDeLasPlantas16.jpg" alt="La Vida Secreta De Las Plantas" class="d-block mx-auto shadow"/>
+                            </header>
+                            <div class="book__body">
+                                <h1 class="h3 text-center my-3">La Vida Secreta De Las Plantas</h1>
+                                <ul class="book__meta list-group">
+                                    <li class="list-group-item">
+                                        <label>Authors:</label>
+                                        <span class="fs-6">Christopher Bird,Peter Tompkins</span>
+                                    </li>
+                                    
+                                        <li class="list-group-item">
+                                            <label>ISBN:</label>
+                                            <a href="https://www.goodreads.com/search?q=9788494673764" target="_blank">9788494673764</a>
+                                        </li>
+                                    
+                                    <li class="list-group-item">
+                                        <label>Added On:</label>
+                                        2024-10-20
+                                    </li>
+                                </ul>
+                                <div class="text-center m-3">
+
+                                    
+                                        <div>
+                                            <a href="https://drive.google.com/uc?export=download&id=1h2abFM2KogKxuOcoMczhlDUxaU052Vby" class="btn btn-primary mb-3" target="_blank">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewbox="0 0 16 16">
+                                                    <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+                                                    <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
+                                                </svg>
+                                                Download EPUB</a>
+                                        </div>
+                                    
+
+                                    <div>
+                                        <small>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-dots" viewbox="0 0 16 16">
+                                                <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                                                <path d="M5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                                            </svg>
+                                            <a href="https://www.goodreads.com/search?q=La+Vida+Secreta+De+Las+Plantas%2C+Christopher+Bird%2C+Peter+Tompkins&search_type=books" target="_blank">Search on Goodreads</a>
+                                        </small>
+                                    </div>
+                                </div>
+                                
+                                    <div class="book_description border-top pt-3 ">
+                                        <h2 class="h4 d-none">Summary:</h2>
+                                        <div>
+<p>Las plantas son seres vivos maravillosos. Son las únicas criaturas que, en medio del silencio, producen su propio alimento y, sin duda, constituyen la mayor fuente de riqueza de nuestro planeta: incluso el carbón y el petróleo fueron vida vegetal en el pasado. Los estudios y experimentos sobre la comunicación de las plantas indican que todos los seres vivos —el hombre, las plantas, la Tierra, los planetas y las estrellas— se relacionan íntimamente entre sí: lo que le ocurre a uno de ellos afecta a los demás. </p>
+<p>La vida secreta de las plantas recopila una serie de logros y hallazgos relacionados con el mundo vegetal realizados por diversos investigadores, exponiendo las diferentes relaciones físicas, emocionales y espirituales que se dan entre las plantas y el hombre. A través de sus páginas descubrimos que las plantas pueden ser fiables detectores de mentiras y eficaces centinelas ecológicos, que tienen la capacidad de adaptarse a los deseos humanos e incluso de comunicarse con el hombre, que responden a la música o que tienen importantes poderes curativos. Peter Tompkins y Christopher Bird sugieren que la revolución más trascendental, aquella que podría salvar o destruir el planeta, puede venir desde nuestro jardín.</p></div>
+                                    </div>
+                                
+                            </div>
+                        </article>
+                    
+                        <article id="book-17" class="book col-auto" title="El Retrato De Casada" data-added-timestamp="1735229999000" data-authors="Maggie O&#39;Farrell" data-title="El Retrato De Casada" data-index="13">
+                            <header>
+                                <img src="covers/eBooksMaripazElRetratoDeCasada17.jpg" alt="El Retrato De Casada" class="d-block mx-auto shadow"/>
+                            </header>
+                            <div class="book__body">
+                                <h1 class="h3 text-center my-3">El Retrato De Casada</h1>
+                                <ul class="book__meta list-group">
+                                    <li class="list-group-item">
+                                        <label>Authors:</label>
+                                        <span class="fs-6">Maggie O'Farrell</span>
+                                    </li>
+                                    
+                                        <li class="list-group-item">
+                                            <label>ISBN:</label>
+                                            <a href="https://www.goodreads.com/search?q=9788419089540" target="_blank">9788419089540</a>
+                                        </li>
+                                    
+                                    <li class="list-group-item">
+                                        <label>Added On:</label>
+                                        2024-12-26
+                                    </li>
+                                </ul>
+                                <div class="text-center m-3">
+
+                                    
+                                        <div>
+                                            <a href="https://drive.google.com/uc?export=download&id=1JLP8Fb_HLi2F-qdgmVu562Tf1TUDO60K" class="btn btn-primary mb-3" target="_blank">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewbox="0 0 16 16">
+                                                    <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+                                                    <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
+                                                </svg>
+                                                Download EPUB</a>
+                                        </div>
+                                    
+
+                                    <div>
+                                        <small>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-dots" viewbox="0 0 16 16">
+                                                <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                                                <path d="M5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                                            </svg>
+                                            <a href="https://www.goodreads.com/search?q=El+Retrato+De+Casada%2C+Maggie+O&#39;Farrell&search_type=books" target="_blank">Search on Goodreads</a>
+                                        </small>
+                                    </div>
+                                </div>
+                                
+                                    <div class="book_description border-top pt-3 ">
+                                        <h2 class="h4 d-none">Summary:</h2>
+                                        <div>
+<p>El matrimonio era su destino. Ahora tendrá que sobrevivir a él. La esperadísima nueva novela de Maggie O’Farrell tras el gran éxito internacional de Hamnet. Florencia, mediados del siglo XVI. Lucrezia, tercera hija del gran duque Cosimo de’ Medici, es una niña callada y perspicaz, con un singular talento para el dibujo, que disfruta de su discreto y tranquilo lugar en el palazzo. Pero cuando muere su hermana Maria, justo antes de casarse con Alfonso d’Este, primogénito del duque de Ferrara, Lucrezia se convierte inesperadamente en el centro de atención: el duque se apresura a pedir su mano, y su padre a aceptarla. Poco después, con solo quince años, se traslada a la corte de Ferrara, donde es recibida con recelo. Su marido, doce años mayor, es un enigma: ¿es en realidad el hombre sensible y comprensivo que le pareció al principio o un déspota implacable al que todos temen? Lo único que está claro es lo que se espera de ella: que proporcione cuanto antes un heredero que asegure la continuidad del título. Con la misma belleza y emoción con las que nos cautivó en Hamnet, Maggie O’Farrell vuelve a demostrar su inigualable talento para adentrarse en los recovecos del pasado en El retrato de casada, una novela que reinterpreta desde la ficción un capítulo de la Italia renacentista y narra la lucha contra el destino de una joven asombrosa. «O’Farrell es simplemente excepcional (...) Delicadamente escrita y llena de imágenes vívidas.» The Guardian «Ingeniosa, imaginativa, humana, irónica, verdadera... todavía mejor que su última novela.» Scotsman «Esta cautivadora historia sobre el poder, la política y la lucha de una mujer por su supervivencia es otra obra maestra de la autora.» The Globe and Mail«Lo que hace tan interesantes sus novelas es su apuesta por cambiar siempre de ángulo o decidirse por el más inesperado, su estilo lírico y delicado aunque directo y estremecedor, su atención al detalle producto de una investigación profunda que, sin embargo, llega con gran naturalidad a la página.» Mariana Enriquez «Lo más notable de Maggie O’Farrell no es el amenazante, claustrofóbico, estético fondo histórico que sirve de base a 'El retrato de casada', sino lo que Marguerite Yourcenar llama el tono de una ficción histórica.» Lourdes Ventura (El Cultural) «Si para algo tiene destreza Maggie O'Farrell es para trazar personajes femeninos, para dotarlos de vida.» Lara Hermoso (Efecto Doppler - RNE) «Es la calidad narrativa de O'Farrell, su brillante capacidad para la introspección psicológica y su plástica recreación del pasado, la que engancha al lector.» Andrés Seoane (El Mundo) «O’Farrell lleva a la superficie lo que permanece invisible y escondido.» Karina Sainz Borgo (ABC) «O’Farrell recrea con maestría la explosión del Renacimiento (...). Retrata con empatía la soledad y desesperación de una adolescente culta y brillante, enviada lejos de casa como moneda de cambio, aterrorizada en su noche de bodas (...) y asfixiada por las intrigas de una salvaje encrucijada político-doméstica. Lo que hoy llamaríamos un gaslighting de manual.» Leticia Blanco (El Periódico) «Como ya hiciera en la aclamadísima 'Hamnet', O’Farrell despliega en 'El retrato de casada' un lienzo descriptivo de colores impensados.» María Paredes (The Objective) «No hay página en la que O'Farrell no te deje deslumbrado. Una literatura tan eficaz, tan visual y tan poética. Jesús Marchamalo» (Culturas 2 - TVE) «Maggie O’Farrell se sumerge en la vida de Lucrecia de Médici en El retrato de casada, novela sobre la indefensión de una niña, con la misma solvencia que usó en Hamnet.» Berna G. Harbour (Babelia / El País)</p></div>
+                                    </div>
+                                
+                            </div>
+                        </article>
+                    
+                        <article id="book-18" class="book col-auto" title="Las Tres Bodas De Manolita" data-added-timestamp="1738613973000" data-authors="Almudena Grandes" data-title="Las Tres Bodas De Manolita" data-index="14">
+                            <header>
+                                <img src="covers/eBooksMaripazLasTresBodasDeManolita18.jpg" alt="Las Tres Bodas De Manolita" class="d-block mx-auto shadow"/>
+                            </header>
+                            <div class="book__body">
+                                <h1 class="h3 text-center my-3">Las Tres Bodas De Manolita</h1>
+                                <ul class="book__meta list-group">
+                                    <li class="list-group-item">
+                                        <label>Authors:</label>
+                                        <span class="fs-6">Almudena Grandes</span>
+                                    </li>
+                                    
+                                        <li class="list-group-item">
+                                            <label>ISBN:</label>
+                                            <a href="https://www.goodreads.com/search?q=9788490660249" target="_blank">9788490660249</a>
+                                        </li>
+                                    
+                                    <li class="list-group-item">
+                                        <label>Added On:</label>
+                                        2025-02-03
+                                    </li>
+                                </ul>
+                                <div class="text-center m-3">
+
+                                    
+                                        <div>
+                                            <a href="https://drive.google.com/uc?export=download&id=1NNjdcbXeyZuNPIQUtytWjSnK305QXxvV" class="btn btn-primary mb-3" target="_blank">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewbox="0 0 16 16">
+                                                    <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+                                                    <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
+                                                </svg>
+                                                Download EPUB</a>
+                                        </div>
+                                    
+
+                                    <div>
+                                        <small>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-dots" viewbox="0 0 16 16">
+                                                <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                                                <path d="M5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                                            </svg>
+                                            <a href="https://www.goodreads.com/search?q=Las+Tres+Bodas+De+Manolita%2C+Almudena+Grandes&search_type=books" target="_blank">Search on Goodreads</a>
+                                        </small>
+                                    </div>
+                                </div>
+                                
+                                    <div class="book_description border-top pt-3 ">
+                                        <h2 class="h4 d-none">Summary:</h2>
+                                        <div>
+<p>En los buenos tiempos, las chicas se casan por amor. En los malos, no siempre pueden elegir. En el Madrid recién salido de la guerra civil, sobrevivir es un duro oficio cotidiano. Especialmente para Manolita, una joven de dieciocho años que, con su padre y su madrastra encarcelados, y su hermano Antonio escondido en un tablao flamenco, tiene que hacerse cargo de su hermana Isabel y de otros tres más pequeños. A Antonio se le ocurrirá una manera desesperada de prolongar la resistencia en los años más terribles de la represión: utilizar unas multicopistas que nadie sabe poner en marcha para imprimir propaganda clandestina. Y querrá que sea su hermana Manolita, la señorita "Conmigo No Contéis", quien visite a un preso que puede darles la clave de su funcionamiento. Manolita no sabe que ese muchacho tímido y sin aparente atractivo va a ser en realidad un hombre determinante en su vida, y querrá visitarlo de nuevo, después de varios periplos, en el destacamento penitenciario de El Valle de los Caídos. Pero antes deberá descubrir quién es el delator que merodea por el barrio. Las tres bodas de Manolita, de Almudena Grandes, es una emotiva historia coral sobre los años de pobreza y desolación en la inmediata posguerra, y un tapiz inolvidable de vidas y destinos, de personajes reales e imaginados. Una novela memorable sobre la red de solidaridad que tejen muchas personas, desde los artistas de un tablao flamenco hasta las mujeres que hacen cola en la cárcel para visitar a los presos, o los antiguos amigos del colegio de su hermano, para proteger a una joven con coraje. Con Inés y la alegría Almudena Grandes inauguró la serie Episodios de una Guerra Interminable, a la que pertenecen El lector de Julio Verne y ahora Las tres bodas de Manolita. (Fuente: La Casa del Libro).</p></div>
+                                    </div>
+                                
+                            </div>
+                        </article>
+                    
+                        <article id="book-19" class="book col-auto" title="La Cazadora (the Huntress - Spanish Edition)" data-added-timestamp="1738613973000" data-authors="Kate Quinn" data-title="La Cazadora (the Huntress - Spanish Edition)" data-index="15">
+                            <header>
+                                <img src="covers/eBooksMaripazLaCazadoratheHuntressSpanishEdition19.jpg" alt="La Cazadora (the Huntress - Spanish Edition)" class="d-block mx-auto shadow"/>
+                            </header>
+                            <div class="book__body">
+                                <h1 class="h3 text-center my-3">La Cazadora (the Huntress - Spanish Edition)</h1>
+                                <ul class="book__meta list-group">
+                                    <li class="list-group-item">
+                                        <label>Authors:</label>
+                                        <span class="fs-6">Kate Quinn</span>
+                                    </li>
+                                    
+                                        <li class="list-group-item">
+                                            <label>ISBN:</label>
+                                            <a href="https://www.goodreads.com/search?q=9788491397717" target="_blank">9788491397717</a>
+                                        </li>
+                                    
+                                    <li class="list-group-item">
+                                        <label>Added On:</label>
+                                        2025-02-03
+                                    </li>
+                                </ul>
+                                <div class="text-center m-3">
+
+                                    
+                                        <div>
+                                            <a href="https://drive.google.com/uc?export=download&id=1wRgBm6gf8xrwy2wCD7u7YWb6_u34SyCi" class="btn btn-primary mb-3" target="_blank">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewbox="0 0 16 16">
+                                                    <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+                                                    <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
+                                                </svg>
+                                                Download EPUB</a>
+                                        </div>
+                                    
+
+                                    <div>
+                                        <small>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-dots" viewbox="0 0 16 16">
+                                                <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                                                <path d="M5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                                            </svg>
+                                            <a href="https://www.goodreads.com/search?q=La+Cazadora+(the+Huntress+-+Spanish+Edition)%2C+Kate+Quinn&search_type=books" target="_blank">Search on Goodreads</a>
+                                        </small>
+                                    </div>
+                                </div>
+                                
+                                    <div class="book_description border-top pt-3 ">
+                                        <h2 class="h4 d-none">Summary:</h2>
+                                        <div>
+<p>La Cazadora es una novela épica y arrolladora acerca de la Segunda Guerra Mundial que arroja luz sobre un oscuro rincón de la historia, de la mano de la autora de los best sellers de The New York Times La red de Alicey El código Rosa. En los gélidos confines de la Rusia soviética, la audaz y temeraria Nina Markova se une a las célebres Brujas de la Noche, un regimiento de bombardeo nocturno formado exclusivamente por mujeres. Al verse obligada a aterrizar tras las líneas enemigas, Nina habrá de recurrir a todo su ingenio para sobrevivir a su encuentro con una implacable asesina nazi conocida como la Cazadora. El corresponsal de guerra británico Ian Graham ha abandonado el periodismo para dedicarse a perseguir a criminales de guerra nazis, pero hay un objetivo que se le resiste: la Cazadora. Y Nina Markova es la única testigo que ha logrado escapar de ella con vida. En el Boston de posguerra, Jordan McBride, de diecisiete años, desconfía cada vez más de la educada viuda alemana que se convierte en su madrastra. Al indagar en su pasado, Jordan irá dándose cuenta poco a poco de que quizá sea una asesina nazi.</p></div>
+                                    </div>
+                                
+                            </div>
+                        </article>
+                    
+                        <article id="book-20" class="book col-auto" title="Señora De Rojo Sobre Fondo Gris" data-added-timestamp="1738613973000" data-authors="Miguel Delibes" data-title="Señora De Rojo Sobre Fondo Gris" data-index="16">
+                            <header>
+                                <img src="covers/eBooksMaripazSenoraDeRojoSobreFondoGris20.jpg" alt="Señora De Rojo Sobre Fondo Gris" class="d-block mx-auto shadow"/>
+                            </header>
+                            <div class="book__body">
+                                <h1 class="h3 text-center my-3">Señora De Rojo Sobre Fondo Gris</h1>
+                                <ul class="book__meta list-group">
+                                    <li class="list-group-item">
+                                        <label>Authors:</label>
+                                        <span class="fs-6">Miguel Delibes</span>
+                                    </li>
+                                    
+                                        <li class="list-group-item">
+                                            <label>ISBN:</label>
+                                            <a href="https://www.goodreads.com/search?q=9788423328505" target="_blank">9788423328505</a>
+                                        </li>
+                                    
+                                    <li class="list-group-item">
+                                        <label>Added On:</label>
+                                        2025-02-03
+                                    </li>
+                                </ul>
+                                <div class="text-center m-3">
+
+                                    
+                                        <div>
+                                            <a href="https://drive.google.com/uc?export=download&id=1A6-D99csTIUcKV0HIRD4qRBXMPKm_uAz" class="btn btn-primary mb-3" target="_blank">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewbox="0 0 16 16">
+                                                    <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+                                                    <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
+                                                </svg>
+                                                Download EPUB</a>
+                                        </div>
+                                    
+
+                                    <div>
+                                        <small>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-dots" viewbox="0 0 16 16">
+                                                <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                                                <path d="M5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                                            </svg>
+                                            <a href="https://www.goodreads.com/search?q=Se%C3%B1ora+De+Rojo+Sobre+Fondo+Gris%2C+Miguel+Delibes&search_type=books" target="_blank">Search on Goodreads</a>
+                                        </small>
+                                    </div>
+                                </div>
+                                
+                                    <div class="book_description border-top pt-3 ">
+                                        <h2 class="h4 d-none">Summary:</h2>
+                                        <div>
+<p style="font-weight: bold">Una de las novelas más bellas y conmovedoras de Miguel Delibes. Un canto al amor maduro, sereno, de toda una vida. </p>
+<p>Un prestigioso pintor, sumido en una grave crisis creativa, va hilando ante su hija sus recuerdos más íntimos en un monólogo que es a la vez homenaje y exorcismo. Su relato se centra en dos acontecimientos: la detención de dos de sus hijos por motivos políticos y, fundamentalmente, la enfermedad y muerte de su mujer, Ana, a los cuarenta y ocho años. Ana contagiaba una sensación de belleza y plenitud que cobró su verdadero alcance sobre el fondo gris de lo cotidiano y los sinsabores de la enfermedad. Historia de un amor en carrera desenfrenada hacia la muerte y sobrecogedora semblanza de un personaje femenino, <em>Señora de rojo sobre fondo gris &gt;/i&gt; es una profunda lección de humanismo y madurez artística que sólo Miguel Delibes podía ofrecernos.</em></p></div>
+                                    </div>
+                                
+                            </div>
+                        </article>
+                    
+                </section>
+            </main>
+
+            <aside id="book-preview" class="col-auto g-0 show bg-light shadow">
+
+                <h2 class="h4 py-2 px-3">Book preview
+                    <button type="button" class="btn-close fs-6 float-end mt-1" aria-label="Close" data-bs-toggle="collapse" data-bs-target="#book-preview"></button>
+                </h1>
+                <div class="book-preview__content px-3"></div>
+
+            </aside>
+
+        </div>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script>
+            const books = document.querySelectorAll( '.book' );
+            const bookPreview = document.querySelector( '#book-preview' );
+            const bookPreviewConten = document.querySelector( '#book-preview .book-preview__content ' );
+
+            books.forEach( book => {
+                book.addEventListener( 'click', () => {
+                    bookPreview.classList.add( 'show' );
+                    const bookClone = book.cloneNode( true );
+                    bookPreviewConten.innerHTML = '';
+                    bookPreviewConten.appendChild( bookClone );
+                } );
+            } );
+
+
+// Sort books by article data attribute title, authors, timestampwithsupport for ASC or DESC sorting
+            function sortBooks( sortBy = 'title', order = 'asc' ) {
+                const booksList = document.querySelector( '#books-list' );
+                const books = Array.from( booksList.children );
+
+                books.sort( ( a, b ) => {
+                    const aData = a.getAttribute( `data-${ sortBy }` );
+                    const bData = b.getAttribute( `data-${ sortBy }` );
+
+// For number based comparison
+                    if ( sortBy === 'added-timestamp' ) {
+                        return order === 'asc' ? aData - bData : bData - aData;
+                    }
+
+// For text based comparison
+                    return order === 'asc' ? aData.localeCompare( bData ) : bData.localeCompare( aData );
+                } );
+
+                books.forEach( book => booksList.appendChild( book ) );
+            }
+
+
+            const btn_sort_title = document.querySelector( '#sort-title' );
+            btn_sort_title.addEventListener( 'click', ( e ) => {
+                btn_sort_title.classList.toggle( 'desc' );
+                sortBooks( 'title', btn_sort_title.classList.contains( 'desc' ) ? 'desc' : 'asc' );
+            } );
+
+            const btn_sort_author = document.querySelector( '#sort-author' );
+            btn_sort_author.addEventListener( 'click', ( e ) => {
+                btn_sort_author.classList.toggle( 'desc' );
+                sortBooks( 'authors', btn_sort_author.classList.contains( 'desc' ) ? 'desc' : 'asc' );
+            } );
+
+            const btn_sort_date = document.querySelector( '#sort-date' );
+            btn_sort_date.addEventListener( 'click', ( e ) => {
+                btn_sort_date.classList.toggle( 'desc' );
+                sortBooks( 'added-timestamp', btn_sort_date.classList.contains( 'desc' ) ? 'desc' : 'asc' );
+            } );
+
+            const btn_reset = document.querySelector( '#sort-reset' );
+// Remove all the sorting setting and classes
+            btn_reset.addEventListener( 'click', ( e ) => {
+                btn_sort_title.classList.remove( 'desc' );
+                btn_sort_author.classList.remove( 'desc' );
+                btn_sort_date.classList.remove( 'desc' );
+
+// Clear the serch box too
+                document.querySelector( '#search-box input' ).value = '';
+// And restore the inline-block to all books
+                books.forEach( book => book.style.display = 'inline-block' );
+
+
+                btn_sort_date.classList.add( 'desc' );
+                sortBooks( 'added-timestamp', 'desc' );
+
+                document.querySelector( '.book' ).click();
+
+            } );
+
+
+// Use the search box to filter books by title or author
+            const searchBox = document.querySelector( '#search-box input' );
+            searchBox.addEventListener( 'input', ( e ) => {
+                const searchValue = e.target.value.trim().toLowerCase();
+                books.forEach( book => {
+                    const title = book.getAttribute( 'data-title' ).toLowerCase();
+                    const authors = book.getAttribute( 'data-authors' ).toLowerCase();
+                    if ( title.includes( searchValue ) || authors.includes( searchValue ) ) {
+                        book.style.display = 'inline-block';
+                    } else {
+                        book.style.display = 'none';
+                    }
+                } );
+            } );
+
+// On grid and list buttons add the corresponding class to the book list div
+            const btn_viewGrid = document.querySelector( '#viewGrid' );
+            btn_viewGrid.addEventListener( 'click', ( e ) => {
+                document.querySelector( '#books-list' ).classList.remove( '-view-list' );
+            } );
+
+            const btn_viewList = document.querySelector( '#viewList' );
+            btn_viewList.addEventListener( 'click', ( e ) => {
+                document.querySelector( '#books-list' ).classList.add( '-view-list' );
+            } );
+
+
+// Initialize the page view
+
+            btn_sort_date.click(); // Sort by date by default
+
+            document.querySelector( '.book' ).click(); // Open the first book in the preview pannel by default
+        </script>
+    </body>
+</html></body></html>

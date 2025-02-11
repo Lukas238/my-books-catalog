@@ -26,49 +26,94 @@
                 button {
                     padding: 0 0.2em !important;
                 }
-            }
-
-            #sort-box {
-                .btn-sort {
-                    padding: 0 0.2em !important;
-                }
-                .btn-sort:after {
-                    vertical-align: middle;
-                    display: inline-block;
-                    height: 17px;
-                    width: 10px;
-                    content: url('data:image/svg+xml, <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-short" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4"/></svg>');
-                }
-                .btn-sort.desc:after {
-                    content: url('data:image/svg+xml, <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-short" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5"/></svg>');
-                }
-
-            }
 
 
-            #books-list {
-                &.-view-list .book .book__body {
-                    display: block;
-                }
-
-                .book {
-                    display: inline-block;
-
-                    header {
-                        cursor: pointer;
+                #sort-box {
+                    .btn-sort {
+                        padding: 0 0.2em !important;
+                    }
+                    .btn-sort:after {
+                        vertical-align: middle;
+                        display: inline-block;
+                        height: 17px;
+                        width: 10px;
+                        content: url('data:image/svg+xml, <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-short" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4"/></svg>');
+                    }
+                    .btn-sort.desc:after {
+                        content: url('data:image/svg+xml, <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-short" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5"/></svg>');
                     }
 
+                }
+            }
+
+            #books-list {
+                &.-view-list {
+
+                    #table-header {
+                        display: block !important;
+                        width: 100%;
+                    }
+
+
+                    #table-header,
+                    .book {
+                        display: block;
+                        width: 100%;
+
+                        td {
+                            vertical-align: middle;
+                        }
+
+                        .col-cover {
+                            min-width: 48px;
+                            width: 48px;
+                            img {
+                                object-fit: cover;
+                            }
+                        }
+                        .col-title {
+                            min-width: 320px;
+                        }
+                        .col-authors {
+                            width: 320px;
+                            min-width: 320px;
+                        }
+                        .col-added-on {
+                            width: 120px;
+                        }
+                    }
+
+                    .book {
+                        margin: 0 !important;
+                        header {
+                            display: none;
+                        }
+                        .book__table {
+                            display: block !important;
+                            margin-top: -1px;
+                        }
+                    }
+                }
+            }
+
+            .book {
+                display: inline-block;
+
+                header {
+                    cursor: pointer;
                     img {
                         min-width: 200px;
                         max-width: 200px;
                         min-height: 300px;
                         max-height: 300px;
                     }
-                    .book__body {
-                        display: none;
-                    }
+                }
+
+                .book__body {
+                    display: none;
                 }
             }
+
             .book__body .book__meta {
                 font-size: 0.8em;
                 label {
@@ -86,6 +131,7 @@
 
                 overflow-y: auto;
                 height: 100vh;
+
                 .book-preview__content {
                     .book {
                         header {
@@ -97,6 +143,9 @@
                                 max-height: 400px;
                             }
                         }
+                        .book__body {
+                            display: block;
+                        }
                     }
                 }
             }
@@ -104,10 +153,10 @@
     </head>
     <body class="container-fluid">
         <div class="row g-0">
-            <main class="col">
+            <main class="col pe-3">
                 <h1>Maripaz&#39;s eBooks Library</h1>
 
-                <div id="search-box" class="me-3 py-1">
+                <div id="search-box" class="py-1">
                     <input class="form-control border" placeholder="Search by title or author">
                 </div>
                 <div id="controls-area" class="d-flex me-3 py-1">
@@ -134,6 +183,18 @@
                         </button>
                     </div>
 
+                    <div class="view-qr ms-2 border-start ps-2 ">
+                        <button type="button" class="btn btn-sm" data-bs-toggle="modal" data-bs-target="#qr-modal" title="View catalog QR code">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-qr-code" viewbox="0 0 16 16">
+                                <path d="M2 2h2v2H2z"/>
+                                <path d="M6 0v6H0V0zM5 1H1v4h4zM4 12H2v2h2z"/>
+                                <path d="M6 10v6H0v-6zm-5 1v4h4v-4zm11-9h2v2h-2z"/>
+                                <path d="M10 0v6h6V0zm5 1v4h-4V1zM8 1V0h1v2H8v2H7V1zm0 5V4h1v2zM6 8V7h1V6h1v2h1V7h5v1h-4v1H7V8zm0 0v1H2V8H1v1H0V7h3v1zm10 1h-1V7h1zm-1 0h-1v2h2v-1h-1zm-4 0h2v1h-1v1h-1zm2 3v-1h-1v1h-1v1H9v1h3v-2zm0 0h3v1h-2v1h-1zm-4-1v1h1v-2H7v1z"/>
+                                <path d="M7 12h1v3h4v1H7zm9 2v2h-3v-1h2v-1z"/>
+                            </svg>
+                        </button>
+                    </div>
+
                     <div id="views-box" class="d-inline-block ms-2 border-start ps-2 ">
                         <label>
                             <strong class="d-none">View:</strong>
@@ -151,8 +212,19 @@
                     </div>
                 </div>
 
-
                 <section id="books-list" class="row g-2 m-0">
+
+                    <table id="table-header" class="table table-sm d-none m-0">
+                        <thead class="d-block">
+                            <tr class="d-flex">
+                                <th class="col-cover"></th>
+                                <th class="col-title flex-grow-1">Title</th>
+                                <th class="col-authors">Authors</th>
+                                <th class="col-added-on">Added on</th>
+                            </tr>
+                        </thead>
+                    </table>
+
                     
                         <article id="book-1" class="book col-auto" title="La Liebre Con Ojos De Ámbar" data-added-timestamp="1709824733000" data-authors="Edmund de Waal,  Marcelo Cohen" data-title="La Liebre Con Ojos De Ámbar" data-index="1">
                             <header>
@@ -208,6 +280,18 @@
 <p>Edmund de Waal (Nottingham, 1964) es ceramista y sus obras se han expuesto en diferentes museos y colecciones, entre ellos el Victoria &amp; Albert Museum y la Tate Britain. Es profesor de cerámica en la Universidad de Westminster y vive en Londres.</p></div>
                                     </div>
                                 
+                            </div>
+                            <div class="book__table d-none">
+                                <table class="table table-bordered table-sm m-0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="col-cover"><img src="covers/eBooksMaripazLaLiebreConOjosDeAmbar1.jpg" alt="La Liebre Con Ojos De Ámbar" class="d-block mx-auto shadow" height="48"/></td>
+                                            <td class="col-title">La Liebre Con Ojos De Ámbar</td>
+                                            <td class="col-authors">Edmund de Waal, Marcelo Cohen</td>
+                                            <td class="col-added-on">2024-03-07</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </article>
                     
@@ -283,6 +367,18 @@
                                     </div>
                                 
                             </div>
+                            <div class="book__table d-none">
+                                <table class="table table-bordered table-sm m-0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="col-cover"><img src="covers/eBooksMaripazLacocinerairlandesa2.jpg" alt="La cocinera irlandesa" class="d-block mx-auto shadow" height="48"/></td>
+                                            <td class="col-title">La cocinera irlandesa</td>
+                                            <td class="col-authors">Mary Beth Keane</td>
+                                            <td class="col-added-on">2024-03-11</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </article>
                     
                         <article id="book-3" class="book col-auto" title="Las hijas de la criada: Premio Planeta 2023" data-added-timestamp="1710185025000" data-authors="Sonsoles Ónega" data-title="Las hijas de la criada: Premio Planeta 2023" data-index="3">
@@ -338,6 +434,18 @@
 <p>Esta es la historia de uno de ellos. Una noche de febrero de 1900, recién estrenado el siglo XX, en el pazo de Espíritu Santo llegan al mundo dos niñas, Clara y Catalina, cuyos destinos ya estaban escritos. Sin embargo, una venganza inesperada sacudirá para siempre sus vidas y las de todos los Valdés. Doña Inés, matriarca de la saga y fiel esposa de don Gustavo, deberá sobrevivir al desamor, al dolor del abandono y a las luchas de poder hasta convertir a su verdadera hija en heredera de todo un imperio, en una época en la que a las mujeres no se les permitía ser dueñas de sus vidas. Las hijas de la criada es una historia mágica y realista al mismo tiempo, en una Galicia extraordinaria, sobre hombres y mujeres que se rebelan contra su propio destino en busca de la verdad.</p></div>
                                     </div>
                                 
+                            </div>
+                            <div class="book__table d-none">
+                                <table class="table table-bordered table-sm m-0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="col-cover"><img src="covers/eBooksMaripazLashijasdelacriadaPremioPlaneta20233.jpg" alt="Las hijas de la criada: Premio Planeta 2023" class="d-block mx-auto shadow" height="48"/></td>
+                                            <td class="col-title">Las hijas de la criada: Premio Planeta 2023</td>
+                                            <td class="col-authors">Sonsoles Ónega</td>
+                                            <td class="col-added-on">2024-03-11</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </article>
                     
@@ -395,6 +503,18 @@
 <p>Weina Dai Randel es la aclamada autora de cuatro novelas históricas, todas de enorme éxito. Ha ganado el premio Romantic Writers of America, fue candidata al premio Nacional del Libro Judío y al a la Selección de Goodread a la mejor Ficción Histórica. Sus novelas han sido traducidas a más de doce idiomas. Su tercera novela, La última rosa de Shanghái, saltó a los primeros puestos en las listas de más vendidos en las mayores plataformas de venta de libros en el mundo.</p></div>
                                     </div>
                                 
+                            </div>
+                            <div class="book__table d-none">
+                                <table class="table table-bordered table-sm m-0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="col-cover"><img src="covers/eBooksMaripazLaUltimaRosaDeShanghai4.jpg" alt="La Última Rosa De Shanghái" class="d-block mx-auto shadow" height="48"/></td>
+                                            <td class="col-title">La Última Rosa De Shanghái</td>
+                                            <td class="col-authors">Weina Dai Randel</td>
+                                            <td class="col-added-on">2024-03-11</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </article>
                     
@@ -465,6 +585,18 @@
                                     </div>
                                 
                             </div>
+                            <div class="book__table d-none">
+                                <table class="table table-bordered table-sm m-0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="col-cover"><img src="covers/eBooksMaripazElItaliano8.jpg" alt="El Italiano" class="d-block mx-auto shadow" height="48"/></td>
+                                            <td class="col-title">El Italiano</td>
+                                            <td class="col-authors">Arturo Pérez-Reverte</td>
+                                            <td class="col-added-on">2024-03-21</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </article>
                     
                         <article id="book-10" class="book col-auto" title="Las Señoritas" data-added-timestamp="1711018765000" data-authors="Laura Ramos" data-title="Las Señoritas" data-index="6">
@@ -520,6 +652,18 @@
                                     </div>
                                 
                             </div>
+                            <div class="book__table d-none">
+                                <table class="table table-bordered table-sm m-0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="col-cover"><img src="covers/eBooksMaripazLasSenoritas10.jpg" alt="Las Señoritas" class="d-block mx-auto shadow" height="48"/></td>
+                                            <td class="col-title">Las Señoritas</td>
+                                            <td class="col-authors">Laura Ramos</td>
+                                            <td class="col-added-on">2024-03-21</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </article>
                     
                         <article id="book-11" class="book col-auto" title="La Sangre De Los Inocentes" data-added-timestamp="1711224452000" data-authors="Julia Navarro" data-title="La Sangre De Los Inocentes" data-index="7">
@@ -574,6 +718,18 @@
 <p>Soy espia y tengo miedo...Asi empieza la cronica que escribe en el siglo XIII fray Julian sobre el cruel asedio a Montsegur y la lucha entre cataros y catolicos. Siglos despues, en 1939, un medievalista agnostico emprende un peligroso viaje por el Berlin nazi en busca de su esposa de origen judio. En la actualidad, un grupo de musulmanes radicales se inmola en Frankfurt dejando tras de si un mensaje criptico que pone en estado de alerta al Centro Antiterrorista de la Union Europea, cuyos agentes, con la ayuda de los servicios secretos del Vaticano, intentaran desvelar un enigma que une la intolerancia de la Inquisicion, la sinrazon fascista y el integrismo islamico en una Algun dia alguien vengara la sangre de los inocentes. Un musulman captado por una celula terrorista, un jesuita experto en herejias, un conde frances obsesionado por una dramatica herencia familiar, un hombre misterioso -El Facilitador- que desde la sombra maneja los hilos del poder junto a una intrepida joven de los servicios antiterroristas protagonizan este apasionante libro sobre la venganza y la traicion, con el violento conflicto entre Oriente y Occidente como telon de fondo. En su novela mas madura y ambiciosa, Julia Navarro sorprende con una vertiginosa aventura que nos transporta a lugares como Jerusalen, Granada, Roma o Estambul, y que indaga en las causas del fanatismo religioso y la intolerancia a lo largo de los siglos.</p></div>
                                     </div>
                                 
+                            </div>
+                            <div class="book__table d-none">
+                                <table class="table table-bordered table-sm m-0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="col-cover"><img src="covers/eBooksMaripazLaSangreDeLosInocentes11.jpg" alt="La Sangre De Los Inocentes" class="d-block mx-auto shadow" height="48"/></td>
+                                            <td class="col-title">La Sangre De Los Inocentes</td>
+                                            <td class="col-authors">Julia Navarro</td>
+                                            <td class="col-added-on">2024-03-23</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </article>
                     
@@ -644,6 +800,18 @@
                                     </div>
                                 
                             </div>
+                            <div class="book__table d-none">
+                                <table class="table table-bordered table-sm m-0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="col-cover"><img src="covers/eBooksMaripazLasGratitudes12.jpg" alt="Las Gratitudes" class="d-block mx-auto shadow" height="48"/></td>
+                                            <td class="col-title">Las Gratitudes</td>
+                                            <td class="col-authors">Delphine de Vigan</td>
+                                            <td class="col-added-on">2024-03-23</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </article>
                     
                         <article id="book-13" class="book col-auto" title="La Herencia De Eszter" data-added-timestamp="1722785901000" data-authors="Sándor Márai" data-title="La Herencia De Eszter" data-index="9">
@@ -708,6 +876,18 @@
                                     </div>
                                 
                             </div>
+                            <div class="book__table d-none">
+                                <table class="table table-bordered table-sm m-0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="col-cover"><img src="covers/eBooksMaripazLaHerenciaDeEszter13.jpg" alt="La Herencia De Eszter" class="d-block mx-auto shadow" height="48"/></td>
+                                            <td class="col-title">La Herencia De Eszter</td>
+                                            <td class="col-authors">Sándor Márai</td>
+                                            <td class="col-added-on">2024-08-04</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </article>
                     
                         <article id="book-14" class="book col-auto" title="Mi pecado" data-added-timestamp="1722785901000" data-authors="Javier Moro" data-title="Mi pecado" data-index="10">
@@ -762,6 +942,18 @@
 <p>Javier Moro es uno de los autores más querido por los lectores y valorado por la crítica del panorama literario en español. Periodista y escritor, también ha trabajado en el mundo del cine como guionista y productor. Entre sus libros, destacan Senderos de libertad (1992), El pie de Jaipur (1995), Las montañas de Buda (1998), Era medianoche en Bhopal (2001), en colaboración con Dominique Lapierre, Pasión india (2005), El sari rojo (2008), El imperio eres tú (Premio Planeta 2011), A flor de piel (2015), Mi pecado (Premio Primavera 2017) y A prueba de fuego (2020).</p></div>
                                     </div>
                                 
+                            </div>
+                            <div class="book__table d-none">
+                                <table class="table table-bordered table-sm m-0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="col-cover"><img src="covers/eBooksMaripazMipecado14.jpg" alt="Mi pecado" class="d-block mx-auto shadow" height="48"/></td>
+                                            <td class="col-title">Mi pecado</td>
+                                            <td class="col-authors">Javier Moro</td>
+                                            <td class="col-added-on">2024-08-04</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </article>
                     
@@ -827,6 +1019,18 @@
                                     </div>
                                 
                             </div>
+                            <div class="book__table d-none">
+                                <table class="table table-bordered table-sm m-0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="col-cover"><img src="covers/eBooksMaripazAPruebaDeFuego15.jpg" alt="A Prueba De Fuego" class="d-block mx-auto shadow" height="48"/></td>
+                                            <td class="col-title">A Prueba De Fuego</td>
+                                            <td class="col-authors">Javier Moro</td>
+                                            <td class="col-added-on">2024-08-04</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </article>
                     
                         <article id="book-16" class="book col-auto" title="La Vida Secreta De Las Plantas" data-added-timestamp="1729440254000" data-authors="Christopher Bird, Peter Tompkins" data-title="La Vida Secreta De Las Plantas" data-index="12">
@@ -883,6 +1087,18 @@
                                     </div>
                                 
                             </div>
+                            <div class="book__table d-none">
+                                <table class="table table-bordered table-sm m-0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="col-cover"><img src="covers/eBooksMaripazLaVidaSecretaDeLasPlantas16.jpg" alt="La Vida Secreta De Las Plantas" class="d-block mx-auto shadow" height="48"/></td>
+                                            <td class="col-title">La Vida Secreta De Las Plantas</td>
+                                            <td class="col-authors">Christopher Bird,Peter Tompkins</td>
+                                            <td class="col-added-on">2024-10-20</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </article>
                     
                         <article id="book-17" class="book col-auto" title="El Retrato De Casada" data-added-timestamp="1735229999000" data-authors="Maggie O&#39;Farrell" data-title="El Retrato De Casada" data-index="13">
@@ -937,6 +1153,18 @@
 <p>El matrimonio era su destino. Ahora tendrá que sobrevivir a él. La esperadísima nueva novela de Maggie O’Farrell tras el gran éxito internacional de Hamnet. Florencia, mediados del siglo XVI. Lucrezia, tercera hija del gran duque Cosimo de’ Medici, es una niña callada y perspicaz, con un singular talento para el dibujo, que disfruta de su discreto y tranquilo lugar en el palazzo. Pero cuando muere su hermana Maria, justo antes de casarse con Alfonso d’Este, primogénito del duque de Ferrara, Lucrezia se convierte inesperadamente en el centro de atención: el duque se apresura a pedir su mano, y su padre a aceptarla. Poco después, con solo quince años, se traslada a la corte de Ferrara, donde es recibida con recelo. Su marido, doce años mayor, es un enigma: ¿es en realidad el hombre sensible y comprensivo que le pareció al principio o un déspota implacable al que todos temen? Lo único que está claro es lo que se espera de ella: que proporcione cuanto antes un heredero que asegure la continuidad del título. Con la misma belleza y emoción con las que nos cautivó en Hamnet, Maggie O’Farrell vuelve a demostrar su inigualable talento para adentrarse en los recovecos del pasado en El retrato de casada, una novela que reinterpreta desde la ficción un capítulo de la Italia renacentista y narra la lucha contra el destino de una joven asombrosa. «O’Farrell es simplemente excepcional (...) Delicadamente escrita y llena de imágenes vívidas.» The Guardian «Ingeniosa, imaginativa, humana, irónica, verdadera... todavía mejor que su última novela.» Scotsman «Esta cautivadora historia sobre el poder, la política y la lucha de una mujer por su supervivencia es otra obra maestra de la autora.» The Globe and Mail«Lo que hace tan interesantes sus novelas es su apuesta por cambiar siempre de ángulo o decidirse por el más inesperado, su estilo lírico y delicado aunque directo y estremecedor, su atención al detalle producto de una investigación profunda que, sin embargo, llega con gran naturalidad a la página.» Mariana Enriquez «Lo más notable de Maggie O’Farrell no es el amenazante, claustrofóbico, estético fondo histórico que sirve de base a 'El retrato de casada', sino lo que Marguerite Yourcenar llama el tono de una ficción histórica.» Lourdes Ventura (El Cultural) «Si para algo tiene destreza Maggie O'Farrell es para trazar personajes femeninos, para dotarlos de vida.» Lara Hermoso (Efecto Doppler - RNE) «Es la calidad narrativa de O'Farrell, su brillante capacidad para la introspección psicológica y su plástica recreación del pasado, la que engancha al lector.» Andrés Seoane (El Mundo) «O’Farrell lleva a la superficie lo que permanece invisible y escondido.» Karina Sainz Borgo (ABC) «O’Farrell recrea con maestría la explosión del Renacimiento (...). Retrata con empatía la soledad y desesperación de una adolescente culta y brillante, enviada lejos de casa como moneda de cambio, aterrorizada en su noche de bodas (...) y asfixiada por las intrigas de una salvaje encrucijada político-doméstica. Lo que hoy llamaríamos un gaslighting de manual.» Leticia Blanco (El Periódico) «Como ya hiciera en la aclamadísima 'Hamnet', O’Farrell despliega en 'El retrato de casada' un lienzo descriptivo de colores impensados.» María Paredes (The Objective) «No hay página en la que O'Farrell no te deje deslumbrado. Una literatura tan eficaz, tan visual y tan poética. Jesús Marchamalo» (Culturas 2 - TVE) «Maggie O’Farrell se sumerge en la vida de Lucrecia de Médici en El retrato de casada, novela sobre la indefensión de una niña, con la misma solvencia que usó en Hamnet.» Berna G. Harbour (Babelia / El País)</p></div>
                                     </div>
                                 
+                            </div>
+                            <div class="book__table d-none">
+                                <table class="table table-bordered table-sm m-0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="col-cover"><img src="covers/eBooksMaripazElRetratoDeCasada17.jpg" alt="El Retrato De Casada" class="d-block mx-auto shadow" height="48"/></td>
+                                            <td class="col-title">El Retrato De Casada</td>
+                                            <td class="col-authors">Maggie O'Farrell</td>
+                                            <td class="col-added-on">2024-12-26</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </article>
                     
@@ -993,6 +1221,18 @@
                                     </div>
                                 
                             </div>
+                            <div class="book__table d-none">
+                                <table class="table table-bordered table-sm m-0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="col-cover"><img src="covers/eBooksMaripazLasTresBodasDeManolita18.jpg" alt="Las Tres Bodas De Manolita" class="d-block mx-auto shadow" height="48"/></td>
+                                            <td class="col-title">Las Tres Bodas De Manolita</td>
+                                            <td class="col-authors">Almudena Grandes</td>
+                                            <td class="col-added-on">2025-02-03</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </article>
                     
                         <article id="book-19" class="book col-auto" title="La Cazadora (the Huntress - Spanish Edition)" data-added-timestamp="1738613973000" data-authors="Kate Quinn" data-title="La Cazadora (the Huntress - Spanish Edition)" data-index="15">
@@ -1047,6 +1287,18 @@
 <p>La Cazadora es una novela épica y arrolladora acerca de la Segunda Guerra Mundial que arroja luz sobre un oscuro rincón de la historia, de la mano de la autora de los best sellers de The New York Times La red de Alicey El código Rosa. En los gélidos confines de la Rusia soviética, la audaz y temeraria Nina Markova se une a las célebres Brujas de la Noche, un regimiento de bombardeo nocturno formado exclusivamente por mujeres. Al verse obligada a aterrizar tras las líneas enemigas, Nina habrá de recurrir a todo su ingenio para sobrevivir a su encuentro con una implacable asesina nazi conocida como la Cazadora. El corresponsal de guerra británico Ian Graham ha abandonado el periodismo para dedicarse a perseguir a criminales de guerra nazis, pero hay un objetivo que se le resiste: la Cazadora. Y Nina Markova es la única testigo que ha logrado escapar de ella con vida. En el Boston de posguerra, Jordan McBride, de diecisiete años, desconfía cada vez más de la educada viuda alemana que se convierte en su madrastra. Al indagar en su pasado, Jordan irá dándose cuenta poco a poco de que quizá sea una asesina nazi.</p></div>
                                     </div>
                                 
+                            </div>
+                            <div class="book__table d-none">
+                                <table class="table table-bordered table-sm m-0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="col-cover"><img src="covers/eBooksMaripazLaCazadoratheHuntressSpanishEdition19.jpg" alt="La Cazadora (the Huntress - Spanish Edition)" class="d-block mx-auto shadow" height="48"/></td>
+                                            <td class="col-title">La Cazadora (the Huntress - Spanish Edition)</td>
+                                            <td class="col-authors">Kate Quinn</td>
+                                            <td class="col-added-on">2025-02-03</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </article>
                     
@@ -1104,9 +1356,22 @@
                                     </div>
                                 
                             </div>
+                            <div class="book__table d-none">
+                                <table class="table table-bordered table-sm m-0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="col-cover"><img src="covers/eBooksMaripazSenoraDeRojoSobreFondoGris20.jpg" alt="Señora De Rojo Sobre Fondo Gris" class="d-block mx-auto shadow" height="48"/></td>
+                                            <td class="col-title">Señora De Rojo Sobre Fondo Gris</td>
+                                            <td class="col-authors">Miguel Delibes</td>
+                                            <td class="col-added-on">2025-02-03</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </article>
                     
                 </section>
+
             </main>
 
             <aside id="book-preview" class="col-auto g-0 show bg-light shadow">
@@ -1121,7 +1386,25 @@
         </div>
 
 
+        <div id="qr-modal" class="modal" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="h4">Catalog QR code link</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body text-center">
+                        <div id="qr-code" class="d-inline-block"></div>
+                        <p>Scan this QR code to acess <br/>Maripaz's eBooks Library.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
         <script>
             const books = document.querySelectorAll( '.book' );
             const bookPreview = document.querySelector( '#book-preview' );
@@ -1140,7 +1423,7 @@
 // Sort books by article data attribute title, authors, timestampwithsupport for ASC or DESC sorting
             function sortBooks( sortBy = 'title', order = 'asc' ) {
                 const booksList = document.querySelector( '#books-list' );
-                const books = Array.from( booksList.children );
+                const books = Array.from( booksList.querySelectorAll( '.book' ) );
 
                 books.sort( ( a, b ) => {
                     const aData = a.getAttribute( `data-${ sortBy }` );
@@ -1230,6 +1513,9 @@
             btn_sort_date.click(); // Sort by date by default
 
             document.querySelector( '.book' ).click(); // Open the first book in the preview pannel by default
+
+            // Get the current page URL and generate a QR code for it
+            const qrCode = new QRCode( 'qr-code', window.location.href );
         </script>
     </body>
 </html></body></html>

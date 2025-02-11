@@ -26,49 +26,94 @@
                 button {
                     padding: 0 0.2em !important;
                 }
-            }
-
-            #sort-box {
-                .btn-sort {
-                    padding: 0 0.2em !important;
-                }
-                .btn-sort:after {
-                    vertical-align: middle;
-                    display: inline-block;
-                    height: 17px;
-                    width: 10px;
-                    content: url('data:image/svg+xml, <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-short" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4"/></svg>');
-                }
-                .btn-sort.desc:after {
-                    content: url('data:image/svg+xml, <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-short" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5"/></svg>');
-                }
-
-            }
 
 
-            #books-list {
-                &.-view-list .book .book__body {
-                    display: block;
-                }
-
-                .book {
-                    display: inline-block;
-
-                    header {
-                        cursor: pointer;
+                #sort-box {
+                    .btn-sort {
+                        padding: 0 0.2em !important;
+                    }
+                    .btn-sort:after {
+                        vertical-align: middle;
+                        display: inline-block;
+                        height: 17px;
+                        width: 10px;
+                        content: url('data:image/svg+xml, <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-short" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4"/></svg>');
+                    }
+                    .btn-sort.desc:after {
+                        content: url('data:image/svg+xml, <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-short" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5"/></svg>');
                     }
 
+                }
+            }
+
+            #books-list {
+                &.-view-list {
+
+                    #table-header {
+                        display: block !important;
+                        width: 100%;
+                    }
+
+
+                    #table-header,
+                    .book {
+                        display: block;
+                        width: 100%;
+
+                        td {
+                            vertical-align: middle;
+                        }
+
+                        .col-cover {
+                            min-width: 48px;
+                            width: 48px;
+                            img {
+                                object-fit: cover;
+                            }
+                        }
+                        .col-title {
+                            min-width: 320px;
+                        }
+                        .col-authors {
+                            width: 320px;
+                            min-width: 320px;
+                        }
+                        .col-added-on {
+                            width: 120px;
+                        }
+                    }
+
+                    .book {
+                        margin: 0 !important;
+                        header {
+                            display: none;
+                        }
+                        .book__table {
+                            display: block !important;
+                            margin-top: -1px;
+                        }
+                    }
+                }
+            }
+
+            .book {
+                display: inline-block;
+
+                header {
+                    cursor: pointer;
                     img {
                         min-width: 200px;
                         max-width: 200px;
                         min-height: 300px;
                         max-height: 300px;
                     }
-                    .book__body {
-                        display: none;
-                    }
+                }
+
+                .book__body {
+                    display: none;
                 }
             }
+
             .book__body .book__meta {
                 font-size: 0.8em;
                 label {
@@ -86,6 +131,7 @@
 
                 overflow-y: auto;
                 height: 100vh;
+
                 .book-preview__content {
                     .book {
                         header {
@@ -97,6 +143,9 @@
                                 max-height: 400px;
                             }
                         }
+                        .book__body {
+                            display: block;
+                        }
                     }
                 }
             }
@@ -104,10 +153,10 @@
     </head>
     <body class="container-fluid">
         <div class="row g-0">
-            <main class="col">
+            <main class="col pe-3">
                 <h1>Cata&#39;s eBooks Library</h1>
 
-                <div id="search-box" class="me-3 py-1">
+                <div id="search-box" class="py-1">
                     <input class="form-control border" placeholder="Search by title or author">
                 </div>
                 <div id="controls-area" class="d-flex me-3 py-1">
@@ -134,6 +183,18 @@
                         </button>
                     </div>
 
+                    <div class="view-qr ms-2 border-start ps-2 ">
+                        <button type="button" class="btn btn-sm" data-bs-toggle="modal" data-bs-target="#qr-modal" title="View catalog QR code">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-qr-code" viewbox="0 0 16 16">
+                                <path d="M2 2h2v2H2z"/>
+                                <path d="M6 0v6H0V0zM5 1H1v4h4zM4 12H2v2h2z"/>
+                                <path d="M6 10v6H0v-6zm-5 1v4h4v-4zm11-9h2v2h-2z"/>
+                                <path d="M10 0v6h6V0zm5 1v4h-4V1zM8 1V0h1v2H8v2H7V1zm0 5V4h1v2zM6 8V7h1V6h1v2h1V7h5v1h-4v1H7V8zm0 0v1H2V8H1v1H0V7h3v1zm10 1h-1V7h1zm-1 0h-1v2h2v-1h-1zm-4 0h2v1h-1v1h-1zm2 3v-1h-1v1h-1v1H9v1h3v-2zm0 0h3v1h-2v1h-1zm-4-1v1h1v-2H7v1z"/>
+                                <path d="M7 12h1v3h4v1H7zm9 2v2h-3v-1h2v-1z"/>
+                            </svg>
+                        </button>
+                    </div>
+
                     <div id="views-box" class="d-inline-block ms-2 border-start ps-2 ">
                         <label>
                             <strong class="d-none">View:</strong>
@@ -151,8 +212,19 @@
                     </div>
                 </div>
 
-
                 <section id="books-list" class="row g-2 m-0">
+
+                    <table id="table-header" class="table table-sm d-none m-0">
+                        <thead class="d-block">
+                            <tr class="d-flex">
+                                <th class="col-cover"></th>
+                                <th class="col-title flex-grow-1">Title</th>
+                                <th class="col-authors">Authors</th>
+                                <th class="col-added-on">Added on</th>
+                            </tr>
+                        </thead>
+                    </table>
+
                     
                         <article id="book-1" class="book col-auto" title="Encuentra tu persona vitamina" data-added-timestamp="1708630738000" data-authors="Marian Rojas Estapé" data-title="Encuentra tu persona vitamina" data-index="1">
                             <header>
@@ -203,6 +275,18 @@
 <p>La doctora <strong>Marian Rojas Estapé </strong>te acerca al apego, a la infancia y al amor desde un punto de vista científico, psicológico y humano, y te habla de una hormona fundamental, la oxitocina. Un libro que te impulsa a encontrar personas vitamina, aquellas que sacan lo mejor de ti, te inspiran, te apoyan y con ello mejoran tu sistema inmune. </p></div>
                                     </div>
                                 
+                            </div>
+                            <div class="book__table d-none">
+                                <table class="table table-bordered table-sm m-0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="col-cover"><img src="covers/eBooksCataEncuentratupersonavitamina1.jpg" alt="Encuentra tu persona vitamina" class="d-block mx-auto shadow" height="48"/></td>
+                                            <td class="col-title">Encuentra tu persona vitamina</td>
+                                            <td class="col-authors">Marian Rojas Estapé</td>
+                                            <td class="col-added-on">2024-02-22</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </article>
                     
@@ -264,6 +348,18 @@
                                     </div>
                                 
                             </div>
+                            <div class="book__table d-none">
+                                <table class="table table-bordered table-sm m-0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="col-cover"><img src="covers/eBooksCataViveMasReduceTuEdadBiologicaYAumentaTuVitalidad2.jpg" alt="Vive Más: Reduce Tu Edad Biológica Y Aumenta Tu Vitalidad" class="d-block mx-auto shadow" height="48"/></td>
+                                            <td class="col-title">Vive Más: Reduce Tu Edad Biológica Y Aumenta Tu Vitalidad</td>
+                                            <td class="col-authors">Marcos Vázquez García</td>
+                                            <td class="col-added-on">2024-02-22</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </article>
                     
                         <article id="book-3" class="book col-auto" title="Verdades que Adelgazan: 10 Principios Básicos para un Entrenamiento Efectivo (Spanish Edition)" data-added-timestamp="1708630738000" data-authors="Marcos Vazquez" data-title="Verdades que Adelgazan: 10 Principios Básicos para un Entrenamiento Efectivo (Spanish Edition)" data-index="3">
@@ -307,6 +403,18 @@
                                     </div>
                                 </div>
                                 
+                            </div>
+                            <div class="book__table d-none">
+                                <table class="table table-bordered table-sm m-0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="col-cover"><img src="covers/eBooksCataVerdadesqueAdelgazan10PrincipiosBasicosparaunEntrenamientoEfectivoSpanishEdition3.jpg" alt="Verdades que Adelgazan: 10 Principios Básicos para un Entrenamiento Efectivo (Spanish Edition)" class="d-block mx-auto shadow" height="48"/></td>
+                                            <td class="col-title">Verdades que Adelgazan: 10 Principios Básicos para un Entrenamiento Efectivo (Spanish Edition)</td>
+                                            <td class="col-authors">Marcos Vazquez</td>
+                                            <td class="col-added-on">2024-02-22</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </article>
                     
@@ -363,6 +471,18 @@
                                     </div>
                                 
                             </div>
+                            <div class="book__table d-none">
+                                <table class="table table-bordered table-sm m-0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="col-cover"><img src="covers/eBooksCataSaludableMenteHabitosParaOptimizarTuCerebroYMejorarTuSaludaCualquierEdad4.jpg" alt="Saludable Mente: Hábitos Para Optimizar Tu Cerebro Y Mejorar Tu Salud a Cualquier Edad" class="d-block mx-auto shadow" height="48"/></td>
+                                            <td class="col-title">Saludable Mente: Hábitos Para Optimizar Tu Cerebro Y Mejorar Tu Salud a Cualquier Edad</td>
+                                            <td class="col-authors">Marcos Vázquez García</td>
+                                            <td class="col-added-on">2024-02-22</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </article>
                     
                         <article id="book-5" class="book col-auto" title="El infinito en un junco" data-added-timestamp="1708630738000" data-authors="Iréne Vallejo" data-title="El infinito en un junco" data-index="5">
@@ -416,6 +536,18 @@
                                         <div><p class="description">De humo, de piedra, de arcilla, de seda, de piel, de árboles, de plástico y de luz…</p><p class="description"></p><p class="description">Un recorrido por la vida del libro y de quienes lo han salvaguardado durante casi treinta siglos.</p><p class="description">«Una admirable indagación sobre los orígenes del mayor instrumento de libertad que se ha dado el ser humano: el libro».</p><p class="description">RAFAEL ARGULLOL</p><p class="description">«Los libros de Irene Vallejo, claros e inteligentes, se leen muy bien e invitan a pensar. En la mejor línea humanista».</p><p class="description">CARLOS GARCÍA GUAL</p><p class="description">«Es un deleite leer la prosa de Irene Vallejo, creadora, brillante, plena de sensibilidad».</p><p class="description">LUIS LANDERO</p><p class="description">Este es un libro sobre la historia de los libros. Un recorrido por la vida de ese fascinante artefacto que inventamos para que las palabras pudieran viajar en el espacio y en el tiempo. La historia de su fabricación, de todos los tipos que hemos ensayado a lo largo de casi treinta siglos: libros de humo, de piedra, de arcilla, de juncos, de seda, de piel, de árboles y, los últimos llegados, de plástico y luz.</p><p class="description">Es, además, un libro de viajes. Una ruta con escalas en los campos de batalla de Alejandro y en la Villa de los Papiros bajo la erupción del Vesubio, en los palacios de Cleopatra y en el escenario del crimen de Hipatia, en las primeras librerías conocidas y en los talleres de copia manuscrita, en las hogueras donde ardieron códices prohibidos, en el gulag, en la biblioteca de Sarajevo y en el laberinto subterráneo de Oxford en el año 2000. Un hilo que une a los clásicos con el vertiginoso mundo contemporáneo, conectándolos con debates actuales: Aristófanes y los procesos judiciales contra humoristas, Safo y la voz literaria de las mujeres, Tito Livio y el fenómeno fan, Séneca y la posverdad;</p><p class="description">Pero, sobre todo, esta es una fabulosa aventura colectiva protagonizada por miles de personas que, a lo largo del tiempo, han hecho posibles y han protegido los libros: narradoras orales, escribas, iluminadores, traductores, vendedores ambulantes, maestras, sabios, espías, rebeldes, monjas, esclavos, aventureras; Lectores en paisajes de montaña y junto al mar que ruge, en las capitales donde la energía se concentra y en los enclaves más apartados donde el saber se refugia en tiempos de caos. Gente común cuyos nombres en muchos casos no registra la historia, esos salvadores de libros que son los auténticos protagonistas de este ensayo.</p></div>
                                     </div>
                                 
+                            </div>
+                            <div class="book__table d-none">
+                                <table class="table table-bordered table-sm m-0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="col-cover"><img src="covers/eBooksCataElinfinitoenunjunco5.jpg" alt="El infinito en un junco" class="d-block mx-auto shadow" height="48"/></td>
+                                            <td class="col-title">El infinito en un junco</td>
+                                            <td class="col-authors">Iréne Vallejo</td>
+                                            <td class="col-added-on">2024-02-22</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </article>
                     
@@ -480,6 +612,18 @@
                                     </div>
                                 
                             </div>
+                            <div class="book__table d-none">
+                                <table class="table table-bordered table-sm m-0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="col-cover"><img src="covers/eBooksCataFitnessrevolucionarioLeccionesancestralesparaunasaludsalvaje6.jpg" alt="Fitness revolucionario. Lecciones ancestrales para una salud salvaje" class="d-block mx-auto shadow" height="48"/></td>
+                                            <td class="col-title">Fitness revolucionario. Lecciones ancestrales para una salud salvaje</td>
+                                            <td class="col-authors">Marcos Vázquez</td>
+                                            <td class="col-added-on">2024-02-22</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </article>
                     
                         <article id="book-7" class="book col-auto" title="La Historia De Maia" data-added-timestamp="1708630738000" data-authors="Lucinda Riley" data-title="La Historia De Maia" data-index="7">
@@ -535,6 +679,18 @@
                                     </div>
                                 
                             </div>
+                            <div class="book__table d-none">
+                                <table class="table table-bordered table-sm m-0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="col-cover"><img src="covers/eBooksCataLaHistoriaDeMaia7.jpg" alt="La Historia De Maia" class="d-block mx-auto shadow" height="48"/></td>
+                                            <td class="col-title">La Historia De Maia</td>
+                                            <td class="col-authors">Lucinda Riley</td>
+                                            <td class="col-added-on">2024-02-22</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </article>
                     
                         <article id="book-8" class="book col-auto" title="La única historia" data-added-timestamp="1708630738000" data-authors="Julian Barnes" data-title="La única historia" data-index="8">
@@ -584,6 +740,18 @@
                                     </div>
                                 
                             </div>
+                            <div class="book__table d-none">
+                                <table class="table table-bordered table-sm m-0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="col-cover"><img src="covers/eBooksCataLaunicahistoria8.jpg" alt="La única historia" class="d-block mx-auto shadow" height="48"/></td>
+                                            <td class="col-title">La única historia</td>
+                                            <td class="col-authors">Julian Barnes</td>
+                                            <td class="col-added-on">2024-02-22</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </article>
                     
                         <article id="book-9" class="book col-auto" title="Hábitos atómicos (Atomic Habits) Spanish Edition" data-added-timestamp="1708630738000" data-authors="James Clear" data-title="Hábitos atómicos (Atomic Habits) Spanish Edition" data-index="9">
@@ -632,6 +800,18 @@
                                         A 3 décadas de que Stephen Covey nos revelara los 7 hábitos de la gente altamente efectiva, James Clear nos enseña la forma más sencilla y práctica de incorporar los mejores hábitos a nuestra vida diaria.HÁBITOS ATÓMICOS parte de una simple pero poderosa pregunta: ¿Cómo podemos vivir mejor? Sabemos que unos buenos hábitos nos permiten mejorar significativamente nuestra vida, pero con frecuencia nos desviamos del camino: dejamos de hacer ejercicio, comemos mal, dormimos poco, despilfarramos. ¿Por qué es tan fácil caer en los malos hábitos y tan complicado seguir los buenos?James Clear nos brinda fantásticas ideas basadas en investigaciones científicas, que le permiten revelarnos cómo podemos transformar pequeños hábitos cotidianos para cambiar nuestra vida y mejorarla. Esta guía pone al descubierto las fuerzas ocultas que moldean nuestro comportamiento—desde nuestra mentalidad, pasando por el ambiente y hasta la genética— y nos demuestra cómo aplicar cada cambio a nuestra vida y...
                                     </div>
                                 
+                            </div>
+                            <div class="book__table d-none">
+                                <table class="table table-bordered table-sm m-0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="col-cover"><img src="covers/eBooksCataHabitosatomicosAtomicHabitsSpanishEdition9.jpg" alt="Hábitos atómicos (Atomic Habits) Spanish Edition" class="d-block mx-auto shadow" height="48"/></td>
+                                            <td class="col-title">Hábitos atómicos (Atomic Habits) Spanish Edition</td>
+                                            <td class="col-authors">James Clear</td>
+                                            <td class="col-added-on">2024-02-22</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </article>
                     
@@ -695,6 +875,18 @@
                                     </div>
                                 
                             </div>
+                            <div class="book__table d-none">
+                                <table class="table table-bordered table-sm m-0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="col-cover"><img src="covers/eBooksCataComohacerquetepasencosasbuenasHowToMakeGoodThingsHappenEntiendetucerebrogest10.jpg" alt="Cómo hacer que te pasen cosas buenas / How To Make Good Things Happen: Entiende tu cerebro, gestiona tus emociones, mejora tu vida" class="d-block mx-auto shadow" height="48"/></td>
+                                            <td class="col-title">Cómo hacer que te pasen cosas buenas / How To Make Good Things Happen: Entiende tu cerebro, gestiona tus emociones, mejora tu vida</td>
+                                            <td class="col-authors">Marian Rojas Estapé</td>
+                                            <td class="col-added-on">2024-02-22</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </article>
                     
                         <article id="book-11" class="book col-auto" title="El Mundo De Los Latentes" data-added-timestamp="1710260167000" data-authors="Kary Pintos" data-title="El Mundo De Los Latentes" data-index="11">
@@ -750,6 +942,18 @@
 <p>¿Estás listo para entrar en su mundo? ¡Tu latente te necesita!</p></div>
                                     </div>
                                 
+                            </div>
+                            <div class="book__table d-none">
+                                <table class="table table-bordered table-sm m-0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="col-cover"><img src="covers/eBooksCataElMundoDeLosLatentes11.jpg" alt="El Mundo De Los Latentes" class="d-block mx-auto shadow" height="48"/></td>
+                                            <td class="col-title">El Mundo De Los Latentes</td>
+                                            <td class="col-authors">Kary Pintos</td>
+                                            <td class="col-added-on">2024-03-12</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </article>
                     
@@ -824,6 +1028,18 @@
                                     </div>
                                 
                             </div>
+                            <div class="book__table d-none">
+                                <table class="table table-bordered table-sm m-0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="col-cover"><img src="covers/eBooksCataLosReyesDeLaCasa14.jpg" alt="Los Reyes De La Casa" class="d-block mx-auto shadow" height="48"/></td>
+                                            <td class="col-title">Los Reyes De La Casa</td>
+                                            <td class="col-authors">Delphine de Vigan</td>
+                                            <td class="col-added-on">2024-03-23</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </article>
                     
                         <article id="book-15" class="book col-auto" title="Cazabacterias en La Cocina: Cómo Cocinar Sin Intoxicar a La Familia" data-added-timestamp="1723642344000" data-authors="Mariana Koppmann" data-title="Cazabacterias en La Cocina: Cómo Cocinar Sin Intoxicar a La Familia" data-index="13">
@@ -872,6 +1088,18 @@
                                         Si se me descongeló el pollo, pero no completamente, ¿puedo volver a congelarlo? ¿Tengo que prestarle atención a la fecha de vencimiento, o es una mentira del capitalismo apátrida? Si es casero no puede hacerme mal, ¿o sí? ¿Cuál es la forma realmente segura de preparar una vianda? ¿Es verdad que el fuego mata todo? ¿Es riesgoso comer sushi? ¿Y un pancho en la calle? ¿Cómo pudo llegar una bacteria a la torta de cumpleaños si quedó fuera de la heladera sólo un par de horas? ¿No es raro que la carne envasada al vacío se vea más oscura? ¿Qué cosas tendría que mirar en un delivery para despejar cualquier duda? Preguntas como estas nos acompañan al supermercado, se quedan en casa –y no sólo en la cocina– y hasta salen a comer con nosotros al restaurante y al picnic. Diariamente, se produce en el mundo una enorme cantidad de casos de enfermedades transmitidas por los alimentos (ETA) a pesar de que sólo quedan registrados entre el 1 y el 10% de ellos. Por eso, es mejor conocer a nuestros posibles enemigos (visibles o invisibles) para saber de dónde provienen, por qué pueden contaminar nuestras más exquisitas preparaciones y cómo eliminarlos (del campo a la mesa). En este libro, las cazabacterias –detectives profesionales de nuestros hábitos en torno a la comida– nos enseñan a ser cuidadosos y precavidos con las compras, el lavado, el almacenamiento, la conservación, la cocción y el consumo de los alimentos, para así evitar desde un simple malestar hasta graves enfermedades completamente prevenibles. Cazabacterias en la cocina nos cuenta cómo se contaminan los alimentos, a qué temperaturas pueden crecer y desarrollarse los microorganismos capaces de enfermarnos y de qué modo suelen adaptarse a distintas condiciones del ambiente. También derriba los mitos y creencias culinarias más arraigados sobre seguridad alimentaria, ofrece un cuadro de los principales peligros biológicos asociados a los incidentes de ETA –las formas de transmisión, su dosis infectiva, sus síntomas y las estrategias para su prevención– y da cuenta de los brotes que revolucionaron el mundo científico. Bienvenidos a este manual de Cazabacteriología, una lupa sobre nuestras costumbres alimentarias y un compendio de soluciones certeras, claras y divertidas, que todos deberíamos conocer (no sólo los profesionales y los obsesivos) para manejarnos con seguridad en nuestra vida cotidiana y no enfermar en el intento. ¡A comer se ha dicho!
                                     </div>
                                 
+                            </div>
+                            <div class="book__table d-none">
+                                <table class="table table-bordered table-sm m-0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="col-cover"><img src="covers/eBooksCataCazabacteriasenLaCocinaComoCocinarSinIntoxicaraLaFamilia15.jpg" alt="Cazabacterias en La Cocina: Cómo Cocinar Sin Intoxicar a La Familia" class="d-block mx-auto shadow" height="48"/></td>
+                                            <td class="col-title">Cazabacterias en La Cocina: Cómo Cocinar Sin Intoxicar a La Familia</td>
+                                            <td class="col-authors">Mariana Koppmann</td>
+                                            <td class="col-added-on">2024-08-14</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </article>
                     
@@ -928,6 +1156,18 @@
                                     </div>
                                 
                             </div>
+                            <div class="book__table d-none">
+                                <table class="table table-bordered table-sm m-0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="col-cover"><img src="covers/eBooksCataLaAsistenta16.jpg" alt="La Asistenta" class="d-block mx-auto shadow" height="48"/></td>
+                                            <td class="col-title">La Asistenta</td>
+                                            <td class="col-authors">Freida McFadden</td>
+                                            <td class="col-added-on">2025-01-09</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </article>
                     
                         <article id="book-17" class="book col-auto" title="Todas Las Veces Que Se Te Acelera El Corazón" data-added-timestamp="1736448408000" data-authors="Carmen Arteaga" data-title="Todas Las Veces Que Se Te Acelera El Corazón" data-index="15">
@@ -981,9 +1221,22 @@
                                     </div>
                                 
                             </div>
+                            <div class="book__table d-none">
+                                <table class="table table-bordered table-sm m-0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="col-cover"><img src="covers/eBooksCataTodasLasVecesQueSeTeAceleraElCorazon17.jpg" alt="Todas Las Veces Que Se Te Acelera El Corazón" class="d-block mx-auto shadow" height="48"/></td>
+                                            <td class="col-title">Todas Las Veces Que Se Te Acelera El Corazón</td>
+                                            <td class="col-authors">Carmen Arteaga</td>
+                                            <td class="col-added-on">2025-01-09</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </article>
                     
                 </section>
+
             </main>
 
             <aside id="book-preview" class="col-auto g-0 show bg-light shadow">
@@ -998,7 +1251,25 @@
         </div>
 
 
+        <div id="qr-modal" class="modal" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="h4">Catalog QR code link</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body text-center">
+                        <div id="qr-code" class="d-inline-block"></div>
+                        <p>Scan this QR code to acess <br/>Cata's eBooks Library.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
         <script>
             const books = document.querySelectorAll( '.book' );
             const bookPreview = document.querySelector( '#book-preview' );
@@ -1017,7 +1288,7 @@
 // Sort books by article data attribute title, authors, timestampwithsupport for ASC or DESC sorting
             function sortBooks( sortBy = 'title', order = 'asc' ) {
                 const booksList = document.querySelector( '#books-list' );
-                const books = Array.from( booksList.children );
+                const books = Array.from( booksList.querySelectorAll( '.book' ) );
 
                 books.sort( ( a, b ) => {
                     const aData = a.getAttribute( `data-${ sortBy }` );
@@ -1107,6 +1378,9 @@
             btn_sort_date.click(); // Sort by date by default
 
             document.querySelector( '.book' ).click(); // Open the first book in the preview pannel by default
+
+            // Get the current page URL and generate a QR code for it
+            const qrCode = new QRCode( 'qr-code', window.location.href );
         </script>
     </body>
 </html></body></html>

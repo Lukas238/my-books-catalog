@@ -26,49 +26,91 @@
                 button {
                     padding: 0 0.2em !important;
                 }
-            }
-
-            #sort-box {
-                .btn-sort {
-                    padding: 0 0.2em !important;
-                }
-                .btn-sort:after {
-                    vertical-align: middle;
-                    display: inline-block;
-                    height: 17px;
-                    width: 10px;
-                    content: url('data:image/svg+xml, <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-short" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4"/></svg>');
-                }
-                .btn-sort.desc:after {
-                    content: url('data:image/svg+xml, <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-short" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5"/></svg>');
-                }
-
-            }
 
 
-            #books-list {
-                &.-view-list .book .book__body {
-                    display: block;
-                }
-
-                .book {
-                    display: inline-block;
-
-                    header {
-                        cursor: pointer;
+                #sort-box {
+                    .btn-sort {
+                        padding: 0 0.2em !important;
+                    }
+                    .btn-sort:after {
+                        vertical-align: middle;
+                        display: inline-block;
+                        height: 17px;
+                        width: 10px;
+                        content: url('data:image/svg+xml, <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-short" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4"/></svg>');
+                    }
+                    .btn-sort.desc:after {
+                        content: url('data:image/svg+xml, <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-short" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5"/></svg>');
                     }
 
+                }
+            }
+
+            #books-list {
+                &.-view-list {
+
+                    #table-header {
+                        display: block !important;
+                    }
+
+
+                    #table-header,
+                    .book {
+                        display: block;
+                        width: 100%;
+
+
+                    }
+                    
+                    .col-cover {
+                        min-width: 48px;
+                        width: 48px;
+                        img {
+                            object-fit: cover;
+                        }
+                    }
+                    .col-title {
+                        min-width: 320px;
+                    }
+                    .col-authors {
+                        width: 320px;
+                        min-width: 320px;
+                    }
+                    .col-added-on {
+                        width: 120px;
+                    }
+
+                    .book {
+                        margin: 0 !important;
+                        header {
+                            display: none;
+                        }
+                        .book__table {
+                            display: block !important;
+                            margin-top: -1px;
+                        }
+                    }
+                }
+            }
+
+            .book {
+                display: inline-block;
+
+                header {
+                    cursor: pointer;
                     img {
                         min-width: 200px;
                         max-width: 200px;
                         min-height: 300px;
                         max-height: 300px;
                     }
-                    .book__body {
-                        display: none;
-                    }
+                }
+
+                .book__body {
+                    display: none;
                 }
             }
+
             .book__body .book__meta {
                 font-size: 0.8em;
                 label {
@@ -86,6 +128,7 @@
 
                 overflow-y: auto;
                 height: 100vh;
+
                 .book-preview__content {
                     .book {
                         header {
@@ -96,6 +139,9 @@
                                 max-width: 300px;
                                 max-height: 400px;
                             }
+                        }
+                        .book__body {
+                            display: block;
                         }
                     }
                 }
@@ -153,6 +199,18 @@
 
 
                 <section id="books-list" class="row g-2 m-0">
+
+                    <table id="table-header" class="table table-bordered table-sm d-none m-0">
+                        <thead>
+                            <tr>
+                                <th class="col-cover">Cover</th>
+                                <th class="col-title">Title</th>
+                                <th class="col-authors">Authors</th>
+                                <th class="col-added-on">Added on</th>
+                            </tr>
+                        </thead>
+                    </table>
+
                     
                         <article id="book-1" class="book col-auto" title="El Pie De Jaipur" data-added-timestamp="1711224452000" data-authors="Javier Moro" data-title="El Pie De Jaipur" data-index="1">
                             <header>
@@ -206,6 +264,18 @@
 <p>En 1984, un joven estudiante víctima de un grave accidente coincide en una clínica del sur de Francia con un camboyano, superviviente de la época de los Jemeres Rojos. Decididos a desafiar los pronósticos más pesimistas y dar lo mejor de sí mismos, se ayudan mutuamente, luchan y vencen en un combate lleno de valor, y también de compasión, que nos lleva de Montpellier a Nueva York, de Phom Penh a Jaipur y más tarde a Barcelona; un combate que es una lección de esperanza que nos arroja luz sobre la sorprendente capacidad de los seres humanos para sobrevivir y hacer frente a la adversidad extrema.</p></div>
                                     </div>
                                 
+                            </div>
+                            <div class="book__table d-none">
+                                <table class="table table-bordered table-sm m-0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="col-cover"><img src="covers/eBooksMartinElPieDeJaipur1.jpg" alt="El Pie De Jaipur" class="d-block mx-auto shadow" height="48"/></td>
+                                            <td class="col-title">El Pie De Jaipur</td>
+                                            <td class="col-authors">Javier Moro</td>
+                                            <td class="col-added-on">2024-03-23</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </article>
                     
@@ -281,6 +351,18 @@
                                     </div>
                                 
                             </div>
+                            <div class="book__table d-none">
+                                <table class="table table-bordered table-sm m-0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="col-cover"><img src="covers/eBooksMartinUnaColumnaDeFuego2.jpg" alt="Una Columna De Fuego" class="d-block mx-auto shadow" height="48"/></td>
+                                            <td class="col-title">Una Columna De Fuego</td>
+                                            <td class="col-authors">Ken Follett</td>
+                                            <td class="col-added-on">2024-03-23</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </article>
                     
                         <article id="book-3" class="book col-auto" title="Un Mundo Sin Fin" data-added-timestamp="1711224452000" data-authors="Ken Follett" data-title="Un Mundo Sin Fin" data-index="3">
@@ -335,6 +417,18 @@
 <p>Veinte años después de la publicación de Los pilares de la Tierra, Ken Follett volvía al fascinante mundo de Kingsbridge para presentar a sus lectores un retrato admirable del mundo medieval y una magnífica saga épica que aporta una nueva dimensión a la ficción histórica. Esta nueva edición incluye un prefacio del autor con motivo del 10o aniversario de la publicación. La publicación de Los pilares de la Tierra supuso un acontecimiento editorial sin precedentes que cautivó a millones de lectores. En Un mundo sin fin Ken Follett vuelve al fascinante mundo de Kingsbridge dos siglos después de la construcción de su majestuoso templo gótico. La catedral y el priorato ocupan de nuevo el centro de una encrucijada de amor y de odio, orgullo y codicia. En un mundo en que defensores a ultranza de las viejas costumbres luchan con encono con las mentes más progresistas, la intriga y la tensión llegan rápidamente a límites insoportables con el devastador telón de fondo de la Peste Negra, que aniquiló a la mitad de la población europea. Intriga, asesinatos, hambruna, plagas y guerras. Un retrato admirable del mundo medieval y una novela extraordinaria que aporta una nueva dimensión a la ficción histórica. Reseña: «No hay rincón sin sorpresa, ni página tediosa.» Qué leer Reseña: «No hay rincón sin sorpresa, ni página tediosa.» Qué leer</p></div>
                                     </div>
                                 
+                            </div>
+                            <div class="book__table d-none">
+                                <table class="table table-bordered table-sm m-0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="col-cover"><img src="covers/eBooksMartinUnMundoSinFin3.jpg" alt="Un Mundo Sin Fin" class="d-block mx-auto shadow" height="48"/></td>
+                                            <td class="col-title">Un Mundo Sin Fin</td>
+                                            <td class="col-authors">Ken Follett</td>
+                                            <td class="col-added-on">2024-03-23</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </article>
                     
@@ -394,6 +488,18 @@
                                     </div>
                                 
                             </div>
+                            <div class="book__table d-none">
+                                <table class="table table-bordered table-sm m-0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="col-cover"><img src="covers/eBooksMartinLasTinieblasyElAlba4.jpg" alt="Las Tinieblas y El Alba" class="d-block mx-auto shadow" height="48"/></td>
+                                            <td class="col-title">Las Tinieblas y El Alba</td>
+                                            <td class="col-authors">Ken Follett</td>
+                                            <td class="col-added-on">2024-03-23</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </article>
                     
                         <article id="book-5" class="book col-auto" title="Los Pilares Se La Tierra (edición ilustrada)" data-added-timestamp="1711224452000" data-authors="Ken Follett" data-title="Los Pilares Se La Tierra (edición ilustrada)" data-index="5">
@@ -448,6 +554,18 @@
 <p>La obra maestra de Ken Follett en una lujosa edición especial 30 aniversario con más de un centenar de ilustraciones. Hace treinta años, Ken Follett publicó en español su novela más popular, Los pilares de la Tierra, que ha vendido más de veintisiete millones de ejemplares en todo el mundo. Ahora, por primera vez en una edición ilustrada, el gran maestro de la narrativa de acción y suspense nos transporta de nuevo a la Edad Media, a un fascinante mundo de reyes, damas, caballeros, pugnas feudales, castillos y ciudades amuralladas. El amor y la muerte se entrecruzan vibrantemente en este magistral tapiz cuyo centro es la construcción de una catedral gótica. Esta edición contiene un prólogo del autor y más de cien ilustraciones del artista Markus Weber. Sobre Los pilares de la Tierra han dicho: «Fantástico desde todos los puntos de vista.» El Mundo « Los pilares de la Tierra fue un hito en España, donde todavía sigue siendo el libro más leído de la historia según la Federación del Gremio de Editores.» ABC «Alta política y bajas pasiones (y viceversa) conforman un folletín de grandes dimensiones que confirman a Follett como relojero mayor del reino del bestseller.» Qué leer «Maravilloso... Te atrapará, fascinará y envolverá.» Chicago Tribune « Los pilares de la Tierra hizo de Ken Follet uno de los autores más queridos de nuestro país.» ABC Sevilla «Ken Follett sabe cómo tejer una historia fascinante, con personajes complejos, que todo actor sueña con interpretar.» Donald Sutherland «Me encanta Los pilares de la Tierra, lo recuerdo con mucho cariño [...] es uno de aquellos títulos que se quedan grabados...» Ildefonso Falcones «En Los pilares de la Tierra, Ken Follett nos presenta a unos personajes que consiguen que la historia cobre vida.» Ridley Scott</p></div>
                                     </div>
                                 
+                            </div>
+                            <div class="book__table d-none">
+                                <table class="table table-bordered table-sm m-0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="col-cover"><img src="covers/eBooksMartinLosPilaresSeLaTierraedicionilustrada5.jpg" alt="Los Pilares Se La Tierra (edición ilustrada)" class="d-block mx-auto shadow" height="48"/></td>
+                                            <td class="col-title">Los Pilares Se La Tierra (edición ilustrada)</td>
+                                            <td class="col-authors">Ken Follett</td>
+                                            <td class="col-added-on">2024-03-23</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </article>
                     
@@ -504,6 +622,18 @@
                                     </div>
                                 
                             </div>
+                            <div class="book__table d-none">
+                                <table class="table table-bordered table-sm m-0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="col-cover"><img src="covers/eBooksMartinLasMontanasDeBuda6.jpg" alt="Las Montañas De Buda" class="d-block mx-auto shadow" height="48"/></td>
+                                            <td class="col-title">Las Montañas De Buda</td>
+                                            <td class="col-authors">Javier Moro</td>
+                                            <td class="col-added-on">2024-03-23</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </article>
                     
                         <article id="book-7" class="book col-auto" title="La Sangre De Los Inocentes" data-added-timestamp="1711224452000" data-authors="Julia Navarro" data-title="La Sangre De Los Inocentes" data-index="7">
@@ -558,6 +688,18 @@
 <p>Soy espia y tengo miedo...Asi empieza la cronica que escribe en el siglo XIII fray Julian sobre el cruel asedio a Montsegur y la lucha entre cataros y catolicos. Siglos despues, en 1939, un medievalista agnostico emprende un peligroso viaje por el Berlin nazi en busca de su esposa de origen judio. En la actualidad, un grupo de musulmanes radicales se inmola en Frankfurt dejando tras de si un mensaje criptico que pone en estado de alerta al Centro Antiterrorista de la Union Europea, cuyos agentes, con la ayuda de los servicios secretos del Vaticano, intentaran desvelar un enigma que une la intolerancia de la Inquisicion, la sinrazon fascista y el integrismo islamico en una Algun dia alguien vengara la sangre de los inocentes. Un musulman captado por una celula terrorista, un jesuita experto en herejias, un conde frances obsesionado por una dramatica herencia familiar, un hombre misterioso -El Facilitador- que desde la sombra maneja los hilos del poder junto a una intrepida joven de los servicios antiterroristas protagonizan este apasionante libro sobre la venganza y la traicion, con el violento conflicto entre Oriente y Occidente como telon de fondo. En su novela mas madura y ambiciosa, Julia Navarro sorprende con una vertiginosa aventura que nos transporta a lugares como Jerusalen, Granada, Roma o Estambul, y que indaga en las causas del fanatismo religioso y la intolerancia a lo largo de los siglos.</p></div>
                                     </div>
                                 
+                            </div>
+                            <div class="book__table d-none">
+                                <table class="table table-bordered table-sm m-0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="col-cover"><img src="covers/eBooksMartinLaSangreDeLosInocentes7.jpg" alt="La Sangre De Los Inocentes" class="d-block mx-auto shadow" height="48"/></td>
+                                            <td class="col-title">La Sangre De Los Inocentes</td>
+                                            <td class="col-authors">Julia Navarro</td>
+                                            <td class="col-added-on">2024-03-23</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </article>
                     
@@ -632,6 +774,18 @@
                                     </div>
                                 
                             </div>
+                            <div class="book__table d-none">
+                                <table class="table table-bordered table-sm m-0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="col-cover"><img src="covers/eBooksMartinLaArmaduraDeLaLuz8.jpg" alt="La Armadura De La Luz" class="d-block mx-auto shadow" height="48"/></td>
+                                            <td class="col-title">La Armadura De La Luz</td>
+                                            <td class="col-authors">Ken Follett</td>
+                                            <td class="col-added-on">2024-03-23</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </article>
                     
                         <article id="book-9" class="book col-auto" title="Era Medianoche en Bhopal" data-added-timestamp="1711229325000" data-authors="Dominique Lapierre, Javier Moro" data-title="Era Medianoche en Bhopal" data-index="9">
@@ -687,6 +841,18 @@
 <p>Cientos de personajes, situaciones y aventuras se entremezclan en este fresco desbordante de amor, heroísmo, fe y esperanza. Una historia verídica. Una tragedia en el corazón de nuestro tiempo que advierte a todos los aprendices de brujo que amenazan la supervivencia de nuestro planeta.</p></div>
                                     </div>
                                 
+                            </div>
+                            <div class="book__table d-none">
+                                <table class="table table-bordered table-sm m-0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="col-cover"><img src="covers/eBooksMartinEraMedianocheenBhopal9.jpg" alt="Era Medianoche en Bhopal" class="d-block mx-auto shadow" height="48"/></td>
+                                            <td class="col-title">Era Medianoche en Bhopal</td>
+                                            <td class="col-authors">Dominique Lapierre,Javier Moro</td>
+                                            <td class="col-added-on">2024-03-23</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </article>
                     
@@ -749,6 +915,18 @@
 <p>Javier Moro es uno de los autores más querido por los lectores y valorado por la crítica del panorama literario en español. Periodista y escritor, también ha trabajado en el mundo del cine como guionista y productor. Entre sus libros, destacan Senderos de libertad (1992), El pie de Jaipur (1995), Las montañas de Buda (1998), Era medianoche en Bhopal (2001), en colaboración con Dominique Lapierre, Pasión india (2005), El sari rojo (2008), El imperio eres tú (Premio Planeta 2011), A flor de piel (2015), Mi pecado (Premio Primavera 2017) y A prueba de fuego (2020). --Este texto se refiere a una edición agotada o no disponible de este título.</p></div>
                                     </div>
                                 
+                            </div>
+                            <div class="book__table d-none">
+                                <table class="table table-bordered table-sm m-0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="col-cover"><img src="covers/eBooksMartinNosquierenmuertos10.jpg" alt="Nos quieren muertos" class="d-block mx-auto shadow" height="48"/></td>
+                                            <td class="col-title">Nos quieren muertos</td>
+                                            <td class="col-authors">Javier Moro</td>
+                                            <td class="col-added-on">2024-03-23</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </article>
                     
@@ -817,6 +995,18 @@
                                     </div>
                                 
                             </div>
+                            <div class="book__table d-none">
+                                <table class="table table-bordered table-sm m-0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="col-cover"><img src="covers/eBooksMartinPlantacionexitosadevinedos12.jpg" alt="Plantación exitosa de viñedos" class="d-block mx-auto shadow" height="48"/></td>
+                                            <td class="col-title">Plantación exitosa de viñedos</td>
+                                            <td class="col-authors">Marcelo Canatella</td>
+                                            <td class="col-added-on">2024-09-05</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </article>
                     
                 </section>
@@ -853,7 +1043,7 @@
 // Sort books by article data attribute title, authors, timestampwithsupport for ASC or DESC sorting
             function sortBooks( sortBy = 'title', order = 'asc' ) {
                 const booksList = document.querySelector( '#books-list' );
-                const books = Array.from( booksList.children );
+                const books = Array.from( booksList.querySelectorAll( '.book' ) );
 
                 books.sort( ( a, b ) => {
                     const aData = a.getAttribute( `data-${ sortBy }` );

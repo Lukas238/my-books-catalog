@@ -50,3 +50,12 @@ calibredb catalog --library-path ~/eBooksLibraries/eBooksMartin ./tmp/eBooksMart
 catalog2web --catalog-path ./tmp/eBooksMartin.xml --web-path ./martin --gdriveids-path ./tmp/eBooksMartin.json
 ```
 
+
+## Regenerate all web pages
+```bash
+catalog2web --catalog-path ./tmp/eBooks238.xml --web-path ./lukas238 --gdriveids-path ./tmp/eBooks238.json &&
+catalog2web --catalog-path ./tmp/eBooksCata.xml --web-path ./cata --gdriveids-path ./tmp/eBooksCata.json &&
+catalog2web --catalog-path ./tmp/eBooksIgnacio.xml --web-path ./ignacio --gdriveids-path ./tmp/eBooksIgnacio.json &&
+catalog2web --catalog-path ./tmp/eBooksMaripaz.xml --web-path ./maripaz --gdriveids-path ./tmp/eBooksMaripaz.json &&
+catalog2web --catalog-path ./tmp/eBooksMartin.xml --web-path ./martin --gdriveids-path ./tmp/eBooksMartin.json
+```

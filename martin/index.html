@@ -2,6 +2,12 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+        <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+        <link rel="manifest" href="favicons/site.webmanifest">
+
         <title>Martin&#39;s eBooks Library
             | Catalog</title>
 
@@ -44,9 +50,15 @@
                     }
 
                 }
+
+                .form-switch input {
+                    cursor: pointer;
+                }
             }
 
             #books-list {
+                gap: 0.8em;
+
                 &.-view-list {
 
                     #table-header {
@@ -122,21 +134,23 @@
                 }
             }
             #book-preview {
-                width: 430px;
+                width: 428px;
                 display: none;
 
                 &.show {
                     display: block;
                 }
 
-                overflow-y: auto;
                 height: 100vh;
 
                 .book-preview__content {
+                    height: calc(100% - 52px);
+                    overflow-y: auto;
                     .book {
                         header {
                             text-align: center;
                             margin: 0 auto;
+                            cursor: default;
 
                             img {
                                 max-width: 300px;
@@ -151,17 +165,17 @@
             }
         </style>
     </head>
-    <body class="container-fluid">
+    <body class="container-fixed">
         <div class="row g-0">
-            <main class="col pe-3">
+            <main class="col p-3">
                 <h1>Martin&#39;s eBooks Library</h1>
 
                 <div id="search-box" class="py-1">
                     <input class="form-control border" placeholder="Search by title or author">
                 </div>
                 <div id="controls-area" class="d-flex me-3 py-1">
-                    <div id="sort-box" class="d-inline-block" title="Sort by">
-                        <label>
+                    <div id="sort-box" class="d-inline-block">
+                        <label title="Sort by:">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-filter" viewbox="0 0 16 16">
                                 <path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5"/>
                             </svg>
@@ -169,13 +183,13 @@
                         </label>
 
 
-                        <button id="sort-title" type="button" class="p-1 btn btn-sm btn-sort">Title</button>,
-                        <button id="sort-author" type="button" class="p-1 btn btn-sm btn-sort">Author</button>,
-                        <button id="sort-date" type="button" class="p-1 btn btn-sm btn-sort">Date</button>
+                        <button id="sort-title" type="button" class="p-1 btn btn-sm btn-sort" title="Sort by Title">Title</button>,
+                        <button id="sort-author" type="button" class="p-1 btn btn-sm btn-sort" title="Sort by Author">Author</button>,
+                        <button id="sort-date" type="button" class="p-1 btn btn-sm btn-sort" title="Sort by Date">Date</button>
                     </div>
 
                     <div class="border-start ms-2 ps-2 flex-grow-1">
-                        <button id="sort-reset" type="button" class="text-end btn btn-sm btn-reset">
+                        <button id="sort-reset" type="button" class="text-end btn btn-sm btn-reset" title="Clean all filter">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewbox="0 0 16 16">
                                 <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
                             </svg>
@@ -199,20 +213,34 @@
                         <label>
                             <strong class="d-none">View:</strong>
                         </label>
-                        <button id="viewGrid" type="button" class="btn btn-sm">
+                        <button id="viewGrid" type="button" class="btn btn-sm" title="View as Grid">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-grid" viewbox="0 0 16 16">
                                 <path d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5z"/>
                             </svg>
                         </button>
-                        <button id="viewList" type="button" class="btn btn-sm">
+                        <button id="viewList" type="button" class="btn btn-sm" title="View as List">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewbox="0 0 16 16">
                                 <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
                             </svg>
                         </button>
                     </div>
+
+                    <div class="ms-2 border-start ps-2 nav-item align-items-center d-flex">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-brightness-high" viewbox="0 0 16 16">
+                            <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6m0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708"/>
+                        </svg>
+                        <!-- Default switch -->
+                        <div class="ms-2 form-switch">
+                            <input class="form-check-input" type="checkbox" role="switch" id="themingSwitcher" title="Theme switcher"/>
+                        </div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-moon" viewbox="0 0 16 16">
+                            <path d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278M4.858 1.311A7.27 7.27 0 0 0 1.025 7.71c0 4.02 3.279 7.276 7.319 7.276a7.32 7.32 0 0 0 5.205-2.162q-.506.063-1.029.063c-4.61 0-8.343-3.714-8.343-8.29 0-1.167.242-2.278.681-3.286"/>
+                        </svg>
+                    </div>
+
                 </div>
 
-                <section id="books-list" class="row g-2 m-0">
+                <section id="books-list" class=" g-2 m-0 d-flex flex-wrap">
 
                     <table id="table-header" class="table table-sm d-none m-0">
                         <thead class="d-block">
@@ -226,7 +254,248 @@
                     </table>
 
                     
-                        <article id="book-1" class="book col-auto" title="El Pie De Jaipur" data-added-timestamp="1711224452000" data-authors="Javier Moro" data-title="El Pie De Jaipur" data-index="1">
+                        <article id="book-12" class="book " title="Plantación exitosa de viñedos" data-added-timestamp="1725559254000" data-authors="Marcelo Canatella" data-title="Plantación exitosa de viñedos" data-index="1">
+                            <header title="Plantación exitosa de viñedos">
+                                <img src="covers/eBooksMartinPlantacionexitosadevinedos12.jpg" loading="lazy" alt="Plantación exitosa de viñedos" class="d-block mx-auto shadow" width="250" height="auto"/>
+                            </header>
+                            <div class="book__body">
+                                <h1 class="h3 text-center my-3">Plantación exitosa de viñedos</h1>
+                                <ul class="book__meta list-group">
+                                    <li class="list-group-item">
+                                        <label>Authors:</label>
+                                        <span class="fs-6">Marcelo Canatella</span>
+                                    </li>
+                                    
+                                        <li class="list-group-item">
+                                            <label>ISBN:</label>
+                                            <a href="https://www.goodreads.com/search?q=9786310042633" target="_blank">9786310042633</a>
+                                        </li>
+                                    
+                                    <li class="list-group-item">
+                                        <label>Added On:</label>
+                                        2024-09-05
+                                    </li>
+                                </ul>
+                                <div class="text-center m-3">
+
+                                    
+                                        <div class="row justify-content-center mb-2">
+                                            
+                                                <a class="btn btn-primary text-nowrap col-auto m-1" href="https://drive.google.com/uc?export=download&id=1gIJZeOug9_O2FhwMwrpva3m2tOOc91Op" target="_blank">
+                                                    EPUB
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewbox="0 0 16 16">
+                                                        <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+                                                        <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
+                                                    </svg>
+                                                </a>
+                                            
+                                                <a class="btn btn-primary text-nowrap col-auto m-1" href="https://drive.google.com/uc?export=download&id=1v4w6zW2jIOpDxhuzXGtgBQpPuY4WHIo-" target="_blank">
+                                                    PDF
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewbox="0 0 16 16">
+                                                        <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+                                                        <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
+                                                    </svg>
+                                                </a>
+                                            
+                                        </div>
+                                    
+
+                                    <div>
+                                        <small>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-dots" viewbox="0 0 16 16">
+                                                <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                                                <path d="M5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                                            </svg>
+                                            <a href="https://www.goodreads.com/search?q=Plantaci%C3%B3n+exitosa+de+vi%C3%B1edos%2C+Marcelo+Canatella&search_type=books" target="_blank">Search on Goodreads</a>
+                                        </small>
+                                    </div>
+
+                                </div>
+                                
+                                    <div class="book_description border-top pt-3 ">
+                                        <h2 class="h4 d-none">Summary:</h2>
+                                        <div>
+<p style="font-weight: bold; font-family: 'InconsolataGo Nerd Font Complete','Menlo','Monaco','Courier New','monospace','Menlo','Monaco','Courier New','monospace'; font-size: 12px"><span style="color: #d4d4d4; background-color: #1e1e1e">Sinopsis</span></p>
+<p style="font-family: 'InconsolataGo Nerd Font Complete','Menlo','Monaco','Courier New','monospace','Menlo','Monaco','Courier New','monospace'; font-size: 12px"><span style="color: #d4d4d4; background-color: #1e1e1e">Este libro te permitirá adquirir las herramientas necesarias para plantar de manera exitosa un viñedo. También te brindará las pautas generales a tener en cuenta al momento de tomar decisiones y realizar las diferentes tareas en cada etapa del proceso de plantación.</span></p>
+<p style="font-family: 'InconsolataGo Nerd Font Complete','Menlo','Monaco','Courier New','monospace','Menlo','Monaco','Courier New','monospace'; font-size: 12px"><span style="color: #d4d4d4; background-color: #1e1e1e">Las recomendaciones que encontrarás aquí son aplicables tanto en cultivos a secano, como en aquellos proyectos pensados para áreas de regadío, es decir, donde se utiliza un sistema de riego presurizado o gravitacional, como complemento de las precipitaciones en los requerimientos hídricos anuales de la planta.</span></p>
+<p style="font-weight: bold; font-family: 'InconsolataGo Nerd Font Complete','Menlo','Monaco','Courier New','monospace','Menlo','Monaco','Courier New','monospace'; font-size: 12px"><span style="color: #d4d4d4; background-color: #1e1e1e">¿Qué vas a encontrar en este libro?</span></p>
+<p style="font-family: 'InconsolataGo Nerd Font Complete','Menlo','Monaco','Courier New','monospace','Menlo','Monaco','Courier New','monospace'; font-size: 12px"><span style="color: #d4d4d4; background-color: #1e1e1e">Un recorrido que incluye desde los análisis previos a realizar al inicio del trabajo de plantación, hasta el manejo agronómico del viñedo durante su primer año de vida.</span></p>
+<p style="font-family: 'InconsolataGo Nerd Font Complete','Menlo','Monaco','Courier New','monospace','Menlo','Monaco','Courier New','monospace'; font-size: 12px"><span style="color: #d4d4d4; background-color: #1e1e1e">Los conceptos y recomendaciones que detallo en este libro están basados en una trayectoria profesional de más de 25 años, y más de 7.000 hectáreas cultivadas a lo largo y a lo ancho de toda Argentina, y también en algunos otros países de Latinoamérica.<br></span></p>
+<p style="font-weight: bold; font-family: 'InconsolataGo Nerd Font Complete','Menlo','Monaco','Courier New','monospace','Menlo','Monaco','Courier New','monospace'; font-size: 12px"><span style="color: #d4d4d4; background-color: #1e1e1e">Sobre el autor</span></p>
+<p style="font-family: 'InconsolataGo Nerd Font Complete','Menlo','Monaco','Courier New','monospace','Menlo','Monaco','Courier New','monospace'; font-size: 12px"><span style="color: #d4d4d4; background-color: #1e1e1e">Marcelo Pablo Canatella es ingeniero agrónomo y cuenta con una destacada trayectoria en el ámbito vitivinícola.</span></p>
+<p style="font-family: 'InconsolataGo Nerd Font Complete','Menlo','Monaco','Courier New','monospace','Menlo','Monaco','Courier New','monospace'; font-size: 12px"><span style="color: #d4d4d4; background-color: #1e1e1e">Nacido en Mendoza, egresó del Liceo Agrícola y Enológico “Domingo Faustino Sarmiento” y obtuvo su título universitario en la Facultad de Ciencias Agrarias de la Universidad Nacional de Cuyo.</span></p>
+<p style="font-family: 'InconsolataGo Nerd Font Complete','Menlo','Monaco','Courier New','monospace','Menlo','Monaco','Courier New','monospace'; font-size: 12px"><span style="color: #d4d4d4; background-color: #1e1e1e">Desde 1998, trabaja en viticultura de alta gama y se ha especializado en el manejo orgánico y sostenible de viñedos.</span></p>
+<p style="font-family: 'InconsolataGo Nerd Font Complete','Menlo','Monaco','Courier New','monospace','Menlo','Monaco','Courier New','monospace'; font-size: 12px"><span style="color: #d4d4d4; background-color: #1e1e1e">Es cofundador de la plataforma Vanguarvid, un portal de contenidos vitícolas y enológicos creado para quienes quieren aprender y disfrutar de la vid y el vino.</span></p>
+<p style="font-family: 'InconsolataGo Nerd Font Complete','Menlo','Monaco','Courier New','monospace','Menlo','Monaco','Courier New','monospace'; font-size: 12px"><span style="color: #d4d4d4; background-color: #1e1e1e">Es una figura clave en la promoción de prácticas sostenibles y en el desarrollo de nuevas técnicas para la producción de uvas de calidad, consolidando así su reputación como un líder en el campo de la vitivinicultura de alta gama.</span></p>
+<p style="font-family: 'InconsolataGo Nerd Font Complete','Menlo','Monaco','Courier New','monospace','Menlo','Monaco','Courier New','monospace'; font-size: 12px; color: #d4d4d4"> </p></div>
+                                    </div>
+                                
+                            </div>
+                            <div class="book__table d-none">
+                                <table class="table table-bordered table-sm m-0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="col-cover"><img src="covers/eBooksMartinPlantacionexitosadevinedos12.jpg" alt="Plantación exitosa de viñedos" class="d-block mx-auto shadow" height="48"/></td>
+                                            <td class="col-title">Plantación exitosa de viñedos</td>
+                                            <td class="col-authors">Marcelo Canatella</td>
+                                            <td class="col-added-on">2024-09-05</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </article>
+                    
+                        <article id="book-10" class="book " title="Nos quieren muertos" data-added-timestamp="1711229326000" data-authors="Javier Moro" data-title="Nos quieren muertos" data-index="2">
+                            <header title="Nos quieren muertos">
+                                <img src="covers/eBooksMartinNosquierenmuertos10.jpg" loading="lazy" alt="Nos quieren muertos" class="d-block mx-auto shadow" width="250" height="auto"/>
+                            </header>
+                            <div class="book__body">
+                                <h1 class="h3 text-center my-3">Nos quieren muertos</h1>
+                                <ul class="book__meta list-group">
+                                    <li class="list-group-item">
+                                        <label>Authors:</label>
+                                        <span class="fs-6">Javier Moro</span>
+                                    </li>
+                                    
+                                        <li class="list-group-item">
+                                            <label>ISBN:</label>
+                                            <a href="https://www.goodreads.com/search?q=9788467069778" target="_blank">9788467069778</a>
+                                        </li>
+                                    
+                                    <li class="list-group-item">
+                                        <label>Added On:</label>
+                                        2024-03-23
+                                    </li>
+                                </ul>
+                                <div class="text-center m-3">
+
+                                    
+                                        <div class="row justify-content-center mb-2">
+                                            
+                                                <a class="btn btn-primary text-nowrap col-auto m-1" href="https://drive.google.com/uc?export=download&id=1d3AdzYAhx6-nDjt9Ff4rSuOTn_3B30ek" target="_blank">
+                                                    EPUB
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewbox="0 0 16 16">
+                                                        <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+                                                        <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
+                                                    </svg>
+                                                </a>
+                                            
+                                        </div>
+                                    
+
+                                    <div>
+                                        <small>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-dots" viewbox="0 0 16 16">
+                                                <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                                                <path d="M5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                                            </svg>
+                                            <a href="https://www.goodreads.com/search?q=Nos+quieren+muertos%2C+Javier+Moro&search_type=books" target="_blank">Search on Goodreads</a>
+                                        </small>
+                                    </div>
+
+                                </div>
+                                
+                                    <div class="book_description border-top pt-3 ">
+                                        <h2 class="h4 d-none">Summary:</h2>
+                                        <div>
+<p style="font-weight: bold">El sacrificio de un hombre, la lucha de una familia, la conciencia de un país.</p>
+<p>En 2014, tras liderar las mayores manifestaciones de protesta en la historia de Venezuela contra el régimen de Nicolas Maduro, el joven político Leopoldo López se vio enfrentado a la decisión más difícil de su vida: o abandonaba su país y seguía la lucha desde el extranjero, o permanecía en Caracas hasta que lo detuvieran. Debía elegir entre la libertad, o la cárcel. Decidió sacrificar su vida familiar y confortable —y entregarse. Al hacer lo que nadie esperaba, se convirtió en héroe.</p>
+<p>Escrita con vigoroso pulso narrativo, Javier Moro nos cuenta la historia de un padre de familia que de la noche a la mañana se encuentra en una celda por un crimen que no cometió, de una madre que se ve obligada a maquillar la realidad ante sus hijos al tiempo que clama en la ONU y en la Casa Blanca por la liberación de su marido, de unos padres que no se resignan a que su hijo pierda la vida entre rejas. Y de cómo, poco a poco, el mundo fue conociendo la verdad sobre lo que realmente sucede en Venezuela.</p>
+<p>Por el autor de <em>Pasión india, El imperio eres tú</em> o <em>A flor de piel,</em> entre otros.</p>
+<h3>Book Description</h3>
+<p>El sacrificio de un hombre, la lucha de una familia, la conciencia de un país. --Este texto se refiere a una edición agotada o no disponible de este título.</p>
+<h3>About the Author</h3>
+<p>Javier Moro es uno de los autores más querido por los lectores y valorado por la crítica del panorama literario en español. Periodista y escritor, también ha trabajado en el mundo del cine como guionista y productor. Entre sus libros, destacan Senderos de libertad (1992), El pie de Jaipur (1995), Las montañas de Buda (1998), Era medianoche en Bhopal (2001), en colaboración con Dominique Lapierre, Pasión india (2005), El sari rojo (2008), El imperio eres tú (Premio Planeta 2011), A flor de piel (2015), Mi pecado (Premio Primavera 2017) y A prueba de fuego (2020). --Este texto se refiere a una edición agotada o no disponible de este título.</p></div>
+                                    </div>
+                                
+                            </div>
+                            <div class="book__table d-none">
+                                <table class="table table-bordered table-sm m-0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="col-cover"><img src="covers/eBooksMartinNosquierenmuertos10.jpg" alt="Nos quieren muertos" class="d-block mx-auto shadow" height="48"/></td>
+                                            <td class="col-title">Nos quieren muertos</td>
+                                            <td class="col-authors">Javier Moro</td>
+                                            <td class="col-added-on">2024-03-23</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </article>
+                    
+                        <article id="book-9" class="book " title="Era Medianoche en Bhopal" data-added-timestamp="1711229325000" data-authors="Dominique Lapierre, Javier Moro" data-title="Era Medianoche en Bhopal" data-index="3">
+                            <header title="Era Medianoche en Bhopal">
+                                <img src="covers/eBooksMartinEraMedianocheenBhopal9.jpg" loading="lazy" alt="Era Medianoche en Bhopal" class="d-block mx-auto shadow" width="250" height="auto"/>
+                            </header>
+                            <div class="book__body">
+                                <h1 class="h3 text-center my-3">Era Medianoche en Bhopal</h1>
+                                <ul class="book__meta list-group">
+                                    <li class="list-group-item">
+                                        <label>Authors:</label>
+                                        <span class="fs-6">Dominique Lapierre,Javier Moro</span>
+                                    </li>
+                                    
+                                        <li class="list-group-item">
+                                            <label>ISBN:</label>
+                                            <a href="https://www.goodreads.com/search?q=9788408083931" target="_blank">9788408083931</a>
+                                        </li>
+                                    
+                                    <li class="list-group-item">
+                                        <label>Added On:</label>
+                                        2024-03-23
+                                    </li>
+                                </ul>
+                                <div class="text-center m-3">
+
+                                    
+                                        <div class="row justify-content-center mb-2">
+                                            
+                                                <a class="btn btn-primary text-nowrap col-auto m-1" href="https://drive.google.com/uc?export=download&id=1Iqy1Z6HZCKS0oFsvZKgZc6cDBcI9HKFa" target="_blank">
+                                                    EPUB
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewbox="0 0 16 16">
+                                                        <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+                                                        <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
+                                                    </svg>
+                                                </a>
+                                            
+                                        </div>
+                                    
+
+                                    <div>
+                                        <small>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-dots" viewbox="0 0 16 16">
+                                                <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                                                <path d="M5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                                            </svg>
+                                            <a href="https://www.goodreads.com/search?q=Era+Medianoche+en+Bhopal%2C+Dominique+Lapierre%2C+Javier+Moro&search_type=books" target="_blank">Search on Goodreads</a>
+                                        </small>
+                                    </div>
+
+                                </div>
+                                
+                                    <div class="book_description border-top pt-3 ">
+                                        <h2 class="h4 d-none">Summary:</h2>
+                                        <div>
+<p>Doce y cinco de la noche del 2 al 3 de diciembre de 1984. Una fulgurante nube de gas tóxico se escapa de una fábrica norteamericana de pesticidas construida en el corazón de la antigua ciudad india de Bhopal. Causa treinta mil muertos y quinientos mil heridos. Es la catástrofe industrial más mortífera de la historia. Este libro narra la emocionante aventura humana y tecnológica que desembocó en esta tragedia. </p>
+<p>Cientos de personajes, situaciones y aventuras se entremezclan en este fresco desbordante de amor, heroísmo, fe y esperanza. Una historia verídica. Una tragedia en el corazón de nuestro tiempo que advierte a todos los aprendices de brujo que amenazan la supervivencia de nuestro planeta.</p></div>
+                                    </div>
+                                
+                            </div>
+                            <div class="book__table d-none">
+                                <table class="table table-bordered table-sm m-0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="col-cover"><img src="covers/eBooksMartinEraMedianocheenBhopal9.jpg" alt="Era Medianoche en Bhopal" class="d-block mx-auto shadow" height="48"/></td>
+                                            <td class="col-title">Era Medianoche en Bhopal</td>
+                                            <td class="col-authors">Dominique Lapierre,Javier Moro</td>
+                                            <td class="col-added-on">2024-03-23</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </article>
+                    
+                        <article id="book-1" class="book " title="El Pie De Jaipur" data-added-timestamp="1711224452000" data-authors="Javier Moro" data-title="El Pie De Jaipur" data-index="4">
                             <header title="El Pie De Jaipur">
                                 <img src="covers/eBooksMartinElPieDeJaipur1.jpg" loading="lazy" alt="El Pie De Jaipur" class="d-block mx-auto shadow" width="250" height="auto"/>
                             </header>
@@ -251,13 +520,16 @@
                                 <div class="text-center m-3">
 
                                     
-                                        <div>
-                                            <a href="https://drive.google.com/uc?export=download&id=1dBxIfGDL-L2Fk4ThxYA4jlH_dGFl1Rxh" class="btn btn-primary mb-3" target="_blank">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewbox="0 0 16 16">
-                                                    <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
-                                                    <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
-                                                </svg>
-                                                Download EPUB</a>
+                                        <div class="row justify-content-center mb-2">
+                                            
+                                                <a class="btn btn-primary text-nowrap col-auto m-1" href="https://drive.google.com/uc?export=download&id=1dBxIfGDL-L2Fk4ThxYA4jlH_dGFl1Rxh" target="_blank">
+                                                    EPUB
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewbox="0 0 16 16">
+                                                        <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+                                                        <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
+                                                    </svg>
+                                                </a>
+                                            
                                         </div>
                                     
 
@@ -270,6 +542,7 @@
                                             <a href="https://www.goodreads.com/search?q=El+Pie+De+Jaipur%2C+Javier+Moro&search_type=books" target="_blank">Search on Goodreads</a>
                                         </small>
                                     </div>
+
                                 </div>
                                 
                                     <div class="book_description border-top pt-3 ">
@@ -293,7 +566,7 @@
                             </div>
                         </article>
                     
-                        <article id="book-2" class="book col-auto" title="Una Columna De Fuego" data-added-timestamp="1711224452000" data-authors="Ken Follett" data-title="Una Columna De Fuego" data-index="2">
+                        <article id="book-2" class="book " title="Una Columna De Fuego" data-added-timestamp="1711224452000" data-authors="Ken Follett" data-title="Una Columna De Fuego" data-index="5">
                             <header title="Una Columna De Fuego">
                                 <img src="covers/eBooksMartinUnaColumnaDeFuego2.jpg" loading="lazy" alt="Una Columna De Fuego" class="d-block mx-auto shadow" width="250" height="auto"/>
                             </header>
@@ -318,13 +591,16 @@
                                 <div class="text-center m-3">
 
                                     
-                                        <div>
-                                            <a href="https://drive.google.com/uc?export=download&id=1fACHm1fUgKQsHYBlpBzLyV8AL5BufYXv" class="btn btn-primary mb-3" target="_blank">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewbox="0 0 16 16">
-                                                    <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
-                                                    <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
-                                                </svg>
-                                                Download EPUB</a>
+                                        <div class="row justify-content-center mb-2">
+                                            
+                                                <a class="btn btn-primary text-nowrap col-auto m-1" href="https://drive.google.com/uc?export=download&id=1fACHm1fUgKQsHYBlpBzLyV8AL5BufYXv" target="_blank">
+                                                    EPUB
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewbox="0 0 16 16">
+                                                        <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+                                                        <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
+                                                    </svg>
+                                                </a>
+                                            
                                         </div>
                                     
 
@@ -337,6 +613,7 @@
                                             <a href="https://www.goodreads.com/search?q=Una+Columna+De+Fuego%2C+Ken+Follett&search_type=books" target="_blank">Search on Goodreads</a>
                                         </small>
                                     </div>
+
                                 </div>
                                 
                                     <div class="book_description border-top pt-3 ">
@@ -379,7 +656,7 @@
                             </div>
                         </article>
                     
-                        <article id="book-3" class="book col-auto" title="Un Mundo Sin Fin" data-added-timestamp="1711224452000" data-authors="Ken Follett" data-title="Un Mundo Sin Fin" data-index="3">
+                        <article id="book-3" class="book " title="Un Mundo Sin Fin" data-added-timestamp="1711224452000" data-authors="Ken Follett" data-title="Un Mundo Sin Fin" data-index="6">
                             <header title="Un Mundo Sin Fin">
                                 <img src="covers/eBooksMartinUnMundoSinFin3.jpg" loading="lazy" alt="Un Mundo Sin Fin" class="d-block mx-auto shadow" width="250" height="auto"/>
                             </header>
@@ -404,13 +681,16 @@
                                 <div class="text-center m-3">
 
                                     
-                                        <div>
-                                            <a href="https://drive.google.com/uc?export=download&id=1snaG-G_MNdmdHfLFFddyoWC5blKd_bJ6" class="btn btn-primary mb-3" target="_blank">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewbox="0 0 16 16">
-                                                    <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
-                                                    <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
-                                                </svg>
-                                                Download EPUB</a>
+                                        <div class="row justify-content-center mb-2">
+                                            
+                                                <a class="btn btn-primary text-nowrap col-auto m-1" href="https://drive.google.com/uc?export=download&id=1snaG-G_MNdmdHfLFFddyoWC5blKd_bJ6" target="_blank">
+                                                    EPUB
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewbox="0 0 16 16">
+                                                        <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+                                                        <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
+                                                    </svg>
+                                                </a>
+                                            
                                         </div>
                                     
 
@@ -423,6 +703,7 @@
                                             <a href="https://www.goodreads.com/search?q=Un+Mundo+Sin+Fin%2C+Ken+Follett&search_type=books" target="_blank">Search on Goodreads</a>
                                         </small>
                                     </div>
+
                                 </div>
                                 
                                     <div class="book_description border-top pt-3 ">
@@ -446,7 +727,7 @@
                             </div>
                         </article>
                     
-                        <article id="book-4" class="book col-auto" title="Las Tinieblas y El Alba" data-added-timestamp="1711224452000" data-authors="Ken Follett" data-title="Las Tinieblas y El Alba" data-index="4">
+                        <article id="book-4" class="book " title="Las Tinieblas y El Alba" data-added-timestamp="1711224452000" data-authors="Ken Follett" data-title="Las Tinieblas y El Alba" data-index="7">
                             <header title="Las Tinieblas y El Alba">
                                 <img src="covers/eBooksMartinLasTinieblasyElAlba4.jpg" loading="lazy" alt="Las Tinieblas y El Alba" class="d-block mx-auto shadow" width="250" height="auto"/>
                             </header>
@@ -471,13 +752,16 @@
                                 <div class="text-center m-3">
 
                                     
-                                        <div>
-                                            <a href="https://drive.google.com/uc?export=download&id=12e7a61g8SxbesMhy7pETpVkPbBxHRQ4-" class="btn btn-primary mb-3" target="_blank">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewbox="0 0 16 16">
-                                                    <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
-                                                    <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
-                                                </svg>
-                                                Download EPUB</a>
+                                        <div class="row justify-content-center mb-2">
+                                            
+                                                <a class="btn btn-primary text-nowrap col-auto m-1" href="https://drive.google.com/uc?export=download&id=12e7a61g8SxbesMhy7pETpVkPbBxHRQ4-" target="_blank">
+                                                    EPUB
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewbox="0 0 16 16">
+                                                        <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+                                                        <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
+                                                    </svg>
+                                                </a>
+                                            
                                         </div>
                                     
 
@@ -490,6 +774,7 @@
                                             <a href="https://www.goodreads.com/search?q=Las+Tinieblas+y+El+Alba%2C+Ken+Follett&search_type=books" target="_blank">Search on Goodreads</a>
                                         </small>
                                     </div>
+
                                 </div>
                                 
                                     <div class="book_description border-top pt-3 ">
@@ -516,7 +801,7 @@
                             </div>
                         </article>
                     
-                        <article id="book-5" class="book col-auto" title="Los Pilares Se La Tierra (edición ilustrada)" data-added-timestamp="1711224452000" data-authors="Ken Follett" data-title="Los Pilares Se La Tierra (edición ilustrada)" data-index="5">
+                        <article id="book-5" class="book " title="Los Pilares Se La Tierra (edición ilustrada)" data-added-timestamp="1711224452000" data-authors="Ken Follett" data-title="Los Pilares Se La Tierra (edición ilustrada)" data-index="8">
                             <header title="Los Pilares Se La Tierra (edición ilustrada)">
                                 <img src="covers/eBooksMartinLosPilaresSeLaTierraedicionilustrada5.jpg" loading="lazy" alt="Los Pilares Se La Tierra (edición ilustrada)" class="d-block mx-auto shadow" width="250" height="auto"/>
                             </header>
@@ -541,13 +826,16 @@
                                 <div class="text-center m-3">
 
                                     
-                                        <div>
-                                            <a href="https://drive.google.com/uc?export=download&id=1wa9F3iaYAxxLffc_ZAlCB6DYM45hloUf" class="btn btn-primary mb-3" target="_blank">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewbox="0 0 16 16">
-                                                    <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
-                                                    <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
-                                                </svg>
-                                                Download EPUB</a>
+                                        <div class="row justify-content-center mb-2">
+                                            
+                                                <a class="btn btn-primary text-nowrap col-auto m-1" href="https://drive.google.com/uc?export=download&id=1wa9F3iaYAxxLffc_ZAlCB6DYM45hloUf" target="_blank">
+                                                    EPUB
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewbox="0 0 16 16">
+                                                        <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+                                                        <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
+                                                    </svg>
+                                                </a>
+                                            
                                         </div>
                                     
 
@@ -560,6 +848,7 @@
                                             <a href="https://www.goodreads.com/search?q=Los+Pilares+Se+La+Tierra+(edici%C3%B3n+ilustrada)%2C+Ken+Follett&search_type=books" target="_blank">Search on Goodreads</a>
                                         </small>
                                     </div>
+
                                 </div>
                                 
                                     <div class="book_description border-top pt-3 ">
@@ -583,7 +872,7 @@
                             </div>
                         </article>
                     
-                        <article id="book-6" class="book col-auto" title="Las Montañas De Buda" data-added-timestamp="1711224452000" data-authors="Javier Moro" data-title="Las Montañas De Buda" data-index="6">
+                        <article id="book-6" class="book " title="Las Montañas De Buda" data-added-timestamp="1711224452000" data-authors="Javier Moro" data-title="Las Montañas De Buda" data-index="9">
                             <header title="Las Montañas De Buda">
                                 <img src="covers/eBooksMartinLasMontanasDeBuda6.jpg" loading="lazy" alt="Las Montañas De Buda" class="d-block mx-auto shadow" width="250" height="auto"/>
                             </header>
@@ -608,13 +897,16 @@
                                 <div class="text-center m-3">
 
                                     
-                                        <div>
-                                            <a href="https://drive.google.com/uc?export=download&id=11DaCU_OK9qjXpfx9cPnWoIc4e8waFRNo" class="btn btn-primary mb-3" target="_blank">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewbox="0 0 16 16">
-                                                    <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
-                                                    <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
-                                                </svg>
-                                                Download EPUB</a>
+                                        <div class="row justify-content-center mb-2">
+                                            
+                                                <a class="btn btn-primary text-nowrap col-auto m-1" href="https://drive.google.com/uc?export=download&id=11DaCU_OK9qjXpfx9cPnWoIc4e8waFRNo" target="_blank">
+                                                    EPUB
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewbox="0 0 16 16">
+                                                        <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+                                                        <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
+                                                    </svg>
+                                                </a>
+                                            
                                         </div>
                                     
 
@@ -627,6 +919,7 @@
                                             <a href="https://www.goodreads.com/search?q=Las+Monta%C3%B1as+De+Buda%2C+Javier+Moro&search_type=books" target="_blank">Search on Goodreads</a>
                                         </small>
                                     </div>
+
                                 </div>
                                 
                                     <div class="book_description border-top pt-3 ">
@@ -650,7 +943,7 @@
                             </div>
                         </article>
                     
-                        <article id="book-7" class="book col-auto" title="La Sangre De Los Inocentes" data-added-timestamp="1711224452000" data-authors="Julia Navarro" data-title="La Sangre De Los Inocentes" data-index="7">
+                        <article id="book-7" class="book " title="La Sangre De Los Inocentes" data-added-timestamp="1711224452000" data-authors="Julia Navarro" data-title="La Sangre De Los Inocentes" data-index="10">
                             <header title="La Sangre De Los Inocentes">
                                 <img src="covers/eBooksMartinLaSangreDeLosInocentes7.jpg" loading="lazy" alt="La Sangre De Los Inocentes" class="d-block mx-auto shadow" width="250" height="auto"/>
                             </header>
@@ -675,13 +968,16 @@
                                 <div class="text-center m-3">
 
                                     
-                                        <div>
-                                            <a href="https://drive.google.com/uc?export=download&id=1ztMNOH5wNpCyVbb6J-8Wx7TjnGyteXYC" class="btn btn-primary mb-3" target="_blank">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewbox="0 0 16 16">
-                                                    <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
-                                                    <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
-                                                </svg>
-                                                Download EPUB</a>
+                                        <div class="row justify-content-center mb-2">
+                                            
+                                                <a class="btn btn-primary text-nowrap col-auto m-1" href="https://drive.google.com/uc?export=download&id=1ztMNOH5wNpCyVbb6J-8Wx7TjnGyteXYC" target="_blank">
+                                                    EPUB
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewbox="0 0 16 16">
+                                                        <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+                                                        <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
+                                                    </svg>
+                                                </a>
+                                            
                                         </div>
                                     
 
@@ -694,6 +990,7 @@
                                             <a href="https://www.goodreads.com/search?q=La+Sangre+De+Los+Inocentes%2C+Julia+Navarro&search_type=books" target="_blank">Search on Goodreads</a>
                                         </small>
                                     </div>
+
                                 </div>
                                 
                                     <div class="book_description border-top pt-3 ">
@@ -717,7 +1014,7 @@
                             </div>
                         </article>
                     
-                        <article id="book-8" class="book col-auto" title="La Armadura De La Luz" data-added-timestamp="1711224452000" data-authors="Ken Follett" data-title="La Armadura De La Luz" data-index="8">
+                        <article id="book-8" class="book " title="La Armadura De La Luz" data-added-timestamp="1711224452000" data-authors="Ken Follett" data-title="La Armadura De La Luz" data-index="11">
                             <header title="La Armadura De La Luz">
                                 <img src="covers/eBooksMartinLaArmaduraDeLaLuz8.jpg" loading="lazy" alt="La Armadura De La Luz" class="d-block mx-auto shadow" width="250" height="auto"/>
                             </header>
@@ -742,13 +1039,16 @@
                                 <div class="text-center m-3">
 
                                     
-                                        <div>
-                                            <a href="https://drive.google.com/uc?export=download&id=14Mgwc_N-pKa-po10QixXI6uCEV6P8btz" class="btn btn-primary mb-3" target="_blank">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewbox="0 0 16 16">
-                                                    <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
-                                                    <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
-                                                </svg>
-                                                Download EPUB</a>
+                                        <div class="row justify-content-center mb-2">
+                                            
+                                                <a class="btn btn-primary text-nowrap col-auto m-1" href="https://drive.google.com/uc?export=download&id=14Mgwc_N-pKa-po10QixXI6uCEV6P8btz" target="_blank">
+                                                    EPUB
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewbox="0 0 16 16">
+                                                        <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+                                                        <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
+                                                    </svg>
+                                                </a>
+                                            
                                         </div>
                                     
 
@@ -761,6 +1061,7 @@
                                             <a href="https://www.goodreads.com/search?q=La+Armadura+De+La+Luz%2C+Ken+Follett&search_type=books" target="_blank">Search on Goodreads</a>
                                         </small>
                                     </div>
+
                                 </div>
                                 
                                     <div class="book_description border-top pt-3 ">
@@ -802,232 +1103,11 @@
                             </div>
                         </article>
                     
-                        <article id="book-9" class="book col-auto" title="Era Medianoche en Bhopal" data-added-timestamp="1711229325000" data-authors="Dominique Lapierre, Javier Moro" data-title="Era Medianoche en Bhopal" data-index="9">
-                            <header title="Era Medianoche en Bhopal">
-                                <img src="covers/eBooksMartinEraMedianocheenBhopal9.jpg" loading="lazy" alt="Era Medianoche en Bhopal" class="d-block mx-auto shadow" width="250" height="auto"/>
-                            </header>
-                            <div class="book__body">
-                                <h1 class="h3 text-center my-3">Era Medianoche en Bhopal</h1>
-                                <ul class="book__meta list-group">
-                                    <li class="list-group-item">
-                                        <label>Authors:</label>
-                                        <span class="fs-6">Dominique Lapierre,Javier Moro</span>
-                                    </li>
-                                    
-                                        <li class="list-group-item">
-                                            <label>ISBN:</label>
-                                            <a href="https://www.goodreads.com/search?q=9788408083931" target="_blank">9788408083931</a>
-                                        </li>
-                                    
-                                    <li class="list-group-item">
-                                        <label>Added On:</label>
-                                        2024-03-23
-                                    </li>
-                                </ul>
-                                <div class="text-center m-3">
-
-                                    
-                                        <div>
-                                            <a href="https://drive.google.com/uc?export=download&id=1Iqy1Z6HZCKS0oFsvZKgZc6cDBcI9HKFa" class="btn btn-primary mb-3" target="_blank">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewbox="0 0 16 16">
-                                                    <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
-                                                    <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
-                                                </svg>
-                                                Download EPUB</a>
-                                        </div>
-                                    
-
-                                    <div>
-                                        <small>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-dots" viewbox="0 0 16 16">
-                                                <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
-                                                <path d="M5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
-                                            </svg>
-                                            <a href="https://www.goodreads.com/search?q=Era+Medianoche+en+Bhopal%2C+Dominique+Lapierre%2C+Javier+Moro&search_type=books" target="_blank">Search on Goodreads</a>
-                                        </small>
-                                    </div>
-                                </div>
-                                
-                                    <div class="book_description border-top pt-3 ">
-                                        <h2 class="h4 d-none">Summary:</h2>
-                                        <div>
-<p>Doce y cinco de la noche del 2 al 3 de diciembre de 1984. Una fulgurante nube de gas tóxico se escapa de una fábrica norteamericana de pesticidas construida en el corazón de la antigua ciudad india de Bhopal. Causa treinta mil muertos y quinientos mil heridos. Es la catástrofe industrial más mortífera de la historia. Este libro narra la emocionante aventura humana y tecnológica que desembocó en esta tragedia. </p>
-<p>Cientos de personajes, situaciones y aventuras se entremezclan en este fresco desbordante de amor, heroísmo, fe y esperanza. Una historia verídica. Una tragedia en el corazón de nuestro tiempo que advierte a todos los aprendices de brujo que amenazan la supervivencia de nuestro planeta.</p></div>
-                                    </div>
-                                
-                            </div>
-                            <div class="book__table d-none">
-                                <table class="table table-bordered table-sm m-0">
-                                    <tbody>
-                                        <tr>
-                                            <td class="col-cover"><img src="covers/eBooksMartinEraMedianocheenBhopal9.jpg" alt="Era Medianoche en Bhopal" class="d-block mx-auto shadow" height="48"/></td>
-                                            <td class="col-title">Era Medianoche en Bhopal</td>
-                                            <td class="col-authors">Dominique Lapierre,Javier Moro</td>
-                                            <td class="col-added-on">2024-03-23</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </article>
-                    
-                        <article id="book-10" class="book col-auto" title="Nos quieren muertos" data-added-timestamp="1711229326000" data-authors="Javier Moro" data-title="Nos quieren muertos" data-index="10">
-                            <header title="Nos quieren muertos">
-                                <img src="covers/eBooksMartinNosquierenmuertos10.jpg" loading="lazy" alt="Nos quieren muertos" class="d-block mx-auto shadow" width="250" height="auto"/>
-                            </header>
-                            <div class="book__body">
-                                <h1 class="h3 text-center my-3">Nos quieren muertos</h1>
-                                <ul class="book__meta list-group">
-                                    <li class="list-group-item">
-                                        <label>Authors:</label>
-                                        <span class="fs-6">Javier Moro</span>
-                                    </li>
-                                    
-                                        <li class="list-group-item">
-                                            <label>ISBN:</label>
-                                            <a href="https://www.goodreads.com/search?q=9788467069778" target="_blank">9788467069778</a>
-                                        </li>
-                                    
-                                    <li class="list-group-item">
-                                        <label>Added On:</label>
-                                        2024-03-23
-                                    </li>
-                                </ul>
-                                <div class="text-center m-3">
-
-                                    
-                                        <div>
-                                            <a href="https://drive.google.com/uc?export=download&id=1d3AdzYAhx6-nDjt9Ff4rSuOTn_3B30ek" class="btn btn-primary mb-3" target="_blank">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewbox="0 0 16 16">
-                                                    <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
-                                                    <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
-                                                </svg>
-                                                Download EPUB</a>
-                                        </div>
-                                    
-
-                                    <div>
-                                        <small>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-dots" viewbox="0 0 16 16">
-                                                <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
-                                                <path d="M5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
-                                            </svg>
-                                            <a href="https://www.goodreads.com/search?q=Nos+quieren+muertos%2C+Javier+Moro&search_type=books" target="_blank">Search on Goodreads</a>
-                                        </small>
-                                    </div>
-                                </div>
-                                
-                                    <div class="book_description border-top pt-3 ">
-                                        <h2 class="h4 d-none">Summary:</h2>
-                                        <div>
-<p style="font-weight: bold">El sacrificio de un hombre, la lucha de una familia, la conciencia de un país.</p>
-<p>En 2014, tras liderar las mayores manifestaciones de protesta en la historia de Venezuela contra el régimen de Nicolas Maduro, el joven político Leopoldo López se vio enfrentado a la decisión más difícil de su vida: o abandonaba su país y seguía la lucha desde el extranjero, o permanecía en Caracas hasta que lo detuvieran. Debía elegir entre la libertad, o la cárcel. Decidió sacrificar su vida familiar y confortable —y entregarse. Al hacer lo que nadie esperaba, se convirtió en héroe.</p>
-<p>Escrita con vigoroso pulso narrativo, Javier Moro nos cuenta la historia de un padre de familia que de la noche a la mañana se encuentra en una celda por un crimen que no cometió, de una madre que se ve obligada a maquillar la realidad ante sus hijos al tiempo que clama en la ONU y en la Casa Blanca por la liberación de su marido, de unos padres que no se resignan a que su hijo pierda la vida entre rejas. Y de cómo, poco a poco, el mundo fue conociendo la verdad sobre lo que realmente sucede en Venezuela.</p>
-<p>Por el autor de <em>Pasión india, El imperio eres tú</em> o <em>A flor de piel,</em> entre otros.</p>
-<h3>Book Description</h3>
-<p>El sacrificio de un hombre, la lucha de una familia, la conciencia de un país. --Este texto se refiere a una edición agotada o no disponible de este título.</p>
-<h3>About the Author</h3>
-<p>Javier Moro es uno de los autores más querido por los lectores y valorado por la crítica del panorama literario en español. Periodista y escritor, también ha trabajado en el mundo del cine como guionista y productor. Entre sus libros, destacan Senderos de libertad (1992), El pie de Jaipur (1995), Las montañas de Buda (1998), Era medianoche en Bhopal (2001), en colaboración con Dominique Lapierre, Pasión india (2005), El sari rojo (2008), El imperio eres tú (Premio Planeta 2011), A flor de piel (2015), Mi pecado (Premio Primavera 2017) y A prueba de fuego (2020). --Este texto se refiere a una edición agotada o no disponible de este título.</p></div>
-                                    </div>
-                                
-                            </div>
-                            <div class="book__table d-none">
-                                <table class="table table-bordered table-sm m-0">
-                                    <tbody>
-                                        <tr>
-                                            <td class="col-cover"><img src="covers/eBooksMartinNosquierenmuertos10.jpg" alt="Nos quieren muertos" class="d-block mx-auto shadow" height="48"/></td>
-                                            <td class="col-title">Nos quieren muertos</td>
-                                            <td class="col-authors">Javier Moro</td>
-                                            <td class="col-added-on">2024-03-23</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </article>
-                    
-                        <article id="book-12" class="book col-auto" title="Plantación exitosa de viñedos" data-added-timestamp="1725559254000" data-authors="Marcelo Canatella" data-title="Plantación exitosa de viñedos" data-index="11">
-                            <header title="Plantación exitosa de viñedos">
-                                <img src="covers/eBooksMartinPlantacionexitosadevinedos12.jpg" loading="lazy" alt="Plantación exitosa de viñedos" class="d-block mx-auto shadow" width="250" height="auto"/>
-                            </header>
-                            <div class="book__body">
-                                <h1 class="h3 text-center my-3">Plantación exitosa de viñedos</h1>
-                                <ul class="book__meta list-group">
-                                    <li class="list-group-item">
-                                        <label>Authors:</label>
-                                        <span class="fs-6">Marcelo Canatella</span>
-                                    </li>
-                                    
-                                        <li class="list-group-item">
-                                            <label>ISBN:</label>
-                                            <a href="https://www.goodreads.com/search?q=9786310042633" target="_blank">9786310042633</a>
-                                        </li>
-                                    
-                                    <li class="list-group-item">
-                                        <label>Added On:</label>
-                                        2024-09-05
-                                    </li>
-                                </ul>
-                                <div class="text-center m-3">
-
-                                    
-                                        <div>
-                                            <a href="https://drive.google.com/uc?export=download&id=1gIJZeOug9_O2FhwMwrpva3m2tOOc91Op" class="btn btn-primary mb-3" target="_blank">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewbox="0 0 16 16">
-                                                    <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
-                                                    <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
-                                                </svg>
-                                                Download EPUB</a>
-                                        </div>
-                                    
-
-                                    <div>
-                                        <small>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-dots" viewbox="0 0 16 16">
-                                                <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
-                                                <path d="M5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
-                                            </svg>
-                                            <a href="https://www.goodreads.com/search?q=Plantaci%C3%B3n+exitosa+de+vi%C3%B1edos%2C+Marcelo+Canatella&search_type=books" target="_blank">Search on Goodreads</a>
-                                        </small>
-                                    </div>
-                                </div>
-                                
-                                    <div class="book_description border-top pt-3 ">
-                                        <h2 class="h4 d-none">Summary:</h2>
-                                        <div>
-<p style="font-weight: bold; font-family: 'InconsolataGo Nerd Font Complete','Menlo','Monaco','Courier New','monospace','Menlo','Monaco','Courier New','monospace'; font-size: 12px"><span style="color: #d4d4d4; background-color: #1e1e1e">Sinopsis</span></p>
-<p style="font-family: 'InconsolataGo Nerd Font Complete','Menlo','Monaco','Courier New','monospace','Menlo','Monaco','Courier New','monospace'; font-size: 12px"><span style="color: #d4d4d4; background-color: #1e1e1e">Este libro te permitirá adquirir las herramientas necesarias para plantar de manera exitosa un viñedo. También te brindará las pautas generales a tener en cuenta al momento de tomar decisiones y realizar las diferentes tareas en cada etapa del proceso de plantación.</span></p>
-<p style="font-family: 'InconsolataGo Nerd Font Complete','Menlo','Monaco','Courier New','monospace','Menlo','Monaco','Courier New','monospace'; font-size: 12px"><span style="color: #d4d4d4; background-color: #1e1e1e">Las recomendaciones que encontrarás aquí son aplicables tanto en cultivos a secano, como en aquellos proyectos pensados para áreas de regadío, es decir, donde se utiliza un sistema de riego presurizado o gravitacional, como complemento de las precipitaciones en los requerimientos hídricos anuales de la planta.</span></p>
-<p style="font-weight: bold; font-family: 'InconsolataGo Nerd Font Complete','Menlo','Monaco','Courier New','monospace','Menlo','Monaco','Courier New','monospace'; font-size: 12px"><span style="color: #d4d4d4; background-color: #1e1e1e">¿Qué vas a encontrar en este libro?</span></p>
-<p style="font-family: 'InconsolataGo Nerd Font Complete','Menlo','Monaco','Courier New','monospace','Menlo','Monaco','Courier New','monospace'; font-size: 12px"><span style="color: #d4d4d4; background-color: #1e1e1e">Un recorrido que incluye desde los análisis previos a realizar al inicio del trabajo de plantación, hasta el manejo agronómico del viñedo durante su primer año de vida.</span></p>
-<p style="font-family: 'InconsolataGo Nerd Font Complete','Menlo','Monaco','Courier New','monospace','Menlo','Monaco','Courier New','monospace'; font-size: 12px"><span style="color: #d4d4d4; background-color: #1e1e1e">Los conceptos y recomendaciones que detallo en este libro están basados en una trayectoria profesional de más de 25 años, y más de 7.000 hectáreas cultivadas a lo largo y a lo ancho de toda Argentina, y también en algunos otros países de Latinoamérica.<br></span></p>
-<p style="font-weight: bold; font-family: 'InconsolataGo Nerd Font Complete','Menlo','Monaco','Courier New','monospace','Menlo','Monaco','Courier New','monospace'; font-size: 12px"><span style="color: #d4d4d4; background-color: #1e1e1e">Sobre el autor</span></p>
-<p style="font-family: 'InconsolataGo Nerd Font Complete','Menlo','Monaco','Courier New','monospace','Menlo','Monaco','Courier New','monospace'; font-size: 12px"><span style="color: #d4d4d4; background-color: #1e1e1e">Marcelo Pablo Canatella es ingeniero agrónomo y cuenta con una destacada trayectoria en el ámbito vitivinícola.</span></p>
-<p style="font-family: 'InconsolataGo Nerd Font Complete','Menlo','Monaco','Courier New','monospace','Menlo','Monaco','Courier New','monospace'; font-size: 12px"><span style="color: #d4d4d4; background-color: #1e1e1e">Nacido en Mendoza, egresó del Liceo Agrícola y Enológico “Domingo Faustino Sarmiento” y obtuvo su título universitario en la Facultad de Ciencias Agrarias de la Universidad Nacional de Cuyo.</span></p>
-<p style="font-family: 'InconsolataGo Nerd Font Complete','Menlo','Monaco','Courier New','monospace','Menlo','Monaco','Courier New','monospace'; font-size: 12px"><span style="color: #d4d4d4; background-color: #1e1e1e">Desde 1998, trabaja en viticultura de alta gama y se ha especializado en el manejo orgánico y sostenible de viñedos.</span></p>
-<p style="font-family: 'InconsolataGo Nerd Font Complete','Menlo','Monaco','Courier New','monospace','Menlo','Monaco','Courier New','monospace'; font-size: 12px"><span style="color: #d4d4d4; background-color: #1e1e1e">Es cofundador de la plataforma Vanguarvid, un portal de contenidos vitícolas y enológicos creado para quienes quieren aprender y disfrutar de la vid y el vino.</span></p>
-<p style="font-family: 'InconsolataGo Nerd Font Complete','Menlo','Monaco','Courier New','monospace','Menlo','Monaco','Courier New','monospace'; font-size: 12px"><span style="color: #d4d4d4; background-color: #1e1e1e">Es una figura clave en la promoción de prácticas sostenibles y en el desarrollo de nuevas técnicas para la producción de uvas de calidad, consolidando así su reputación como un líder en el campo de la vitivinicultura de alta gama.</span></p>
-<p style="font-family: 'InconsolataGo Nerd Font Complete','Menlo','Monaco','Courier New','monospace','Menlo','Monaco','Courier New','monospace'; font-size: 12px; color: #d4d4d4"> </p></div>
-                                    </div>
-                                
-                            </div>
-                            <div class="book__table d-none">
-                                <table class="table table-bordered table-sm m-0">
-                                    <tbody>
-                                        <tr>
-                                            <td class="col-cover"><img src="covers/eBooksMartinPlantacionexitosadevinedos12.jpg" alt="Plantación exitosa de viñedos" class="d-block mx-auto shadow" height="48"/></td>
-                                            <td class="col-title">Plantación exitosa de viñedos</td>
-                                            <td class="col-authors">Marcelo Canatella</td>
-                                            <td class="col-added-on">2024-09-05</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </article>
-                    
                 </section>
 
             </main>
 
-            <aside id="book-preview" class="col-auto g-0 show bg-light shadow">
+            <aside id="book-preview" class="col-auto g-0 bg-light-subtle shadow">
 
                 <h2 class="h4 py-2 px-3">Book preview
                     <button type="button" class="btn-close fs-6 float-end mt-1" aria-label="Close" data-bs-toggle="collapse" data-bs-target="#book-preview"></button>
@@ -1040,15 +1120,20 @@
 
 
         <div id="qr-modal" class="modal" tabindex="-1">
-            <div class="modal-dialog">
+            <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h1 class="h4">Catalog QR code link</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body text-center">
-                        <div id="qr-code" class="d-inline-block"></div>
-                        <p>Scan this QR code to acess <br/>Martin's eBooks Library.</p>
+                        <div id="qr-code" class="p-3 bg-white d-inline-block"></div>
+                        <p>Share this QR code to acess
+                            <br/><strong>Martin's eBooks Library</strong>
+                            at:
+                            <br/>
+                            <a id="qr-catalog-url" href="" target="_blank"></a>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -1073,7 +1158,7 @@
             } );
 
 
-// Sort books by article data attribute title, authors, timestampwithsupport for ASC or DESC sorting
+// Sort books by article data attributes, asc or desc
             function sortBooks( sortBy = 'title', order = 'asc' ) {
                 const booksList = document.querySelector( '#books-list' );
                 const books = Array.from( booksList.querySelectorAll( '.book' ) );
@@ -1094,47 +1179,52 @@
                 books.forEach( book => booksList.appendChild( book ) );
             }
 
-
+/**
+             *  Sort Controls
+             * ****************************
+             */
+// Sort by title
             const btn_sort_title = document.querySelector( '#sort-title' );
             btn_sort_title.addEventListener( 'click', ( e ) => {
                 btn_sort_title.classList.toggle( 'desc' );
                 sortBooks( 'title', btn_sort_title.classList.contains( 'desc' ) ? 'desc' : 'asc' );
             } );
 
+// Sort by Autors
             const btn_sort_author = document.querySelector( '#sort-author' );
             btn_sort_author.addEventListener( 'click', ( e ) => {
                 btn_sort_author.classList.toggle( 'desc' );
                 sortBooks( 'authors', btn_sort_author.classList.contains( 'desc' ) ? 'desc' : 'asc' );
             } );
 
+// Sort by date
             const btn_sort_date = document.querySelector( '#sort-date' );
             btn_sort_date.addEventListener( 'click', ( e ) => {
                 btn_sort_date.classList.toggle( 'desc' );
                 sortBooks( 'added-timestamp', btn_sort_date.classList.contains( 'desc' ) ? 'desc' : 'asc' );
             } );
 
-            const btn_reset = document.querySelector( '#sort-reset' );
-// Remove all the sorting setting and classes
-            btn_reset.addEventListener( 'click', ( e ) => {
+// Reset search and sort settings
+            document.querySelector( '#sort-reset' ).addEventListener( 'click', ( e ) => {
                 btn_sort_title.classList.remove( 'desc' );
                 btn_sort_author.classList.remove( 'desc' );
                 btn_sort_date.classList.remove( 'desc' );
 
 // Clear the serch box too
                 document.querySelector( '#search-box input' ).value = '';
+
 // And restore the inline-block to all books
                 books.forEach( book => book.style.display = 'inline-block' );
 
-
                 btn_sort_date.classList.add( 'desc' );
-                sortBooks( 'added-timestamp', 'desc' );
-
-                document.querySelector( '.book' ).click();
-
+                sortBooks( 'added-timestamp', 'desc' ); // Sort by date by default
             } );
 
 
-// Use the search box to filter books by title or author
+/**
+             *  Search box
+             * ****************************
+             */
             const searchBox = document.querySelector( '#search-box input' );
             searchBox.addEventListener( 'input', ( e ) => {
                 const searchValue = e.target.value.trim().toLowerCase();
@@ -1149,26 +1239,54 @@
                 } );
             } );
 
-// On grid and list buttons add the corresponding class to the book list div
+/**
+             *  Views Controls
+             * ****************************
+             */
+// Set grid view
             const btn_viewGrid = document.querySelector( '#viewGrid' );
             btn_viewGrid.addEventListener( 'click', ( e ) => {
                 document.querySelector( '#books-list' ).classList.remove( '-view-list' );
             } );
-
+// Set list view
             const btn_viewList = document.querySelector( '#viewList' );
             btn_viewList.addEventListener( 'click', ( e ) => {
                 document.querySelector( '#books-list' ).classList.add( '-view-list' );
             } );
 
+/**
+             *  Theme selector Control
+             * ****************************
+             */
+            function updateTheme() {
+                document.body.setAttribute( 'data-bs-theme', document.querySelector( '#themingSwitcher' ).checked ? 'dark' : 'light' );
+            }
+            document.querySelector( '#themingSwitcher' ).addEventListener( 'click', () => {
+                updateTheme();
+            } );
 
-            // Initialize the page view
+            function updateQRLink() { // Get the current page URL and generate a QR code for it
+                var catalog_url = window.location.href;
+                catalog_url = catalog_url.replace( /\/[^\/]+$/, '' );
 
-            btn_sort_date.click(); // Sort by date by default
+// Update the text link
+                document.querySelector( '#qr-catalog-url' ).textContent = catalog_url;
+                document.querySelector( '#qr-catalog-url' ).href = catalog_url;
 
-            document.querySelector( '.book' ).click(); // Open the first book in the preview pannel by default
+//Update the QR code image
+                const qrCode = new QRCode( 'qr-code', catalog_url );
+            }
 
-            // Get the current page URL and generate a QR code for it
-            const qrCode = new QRCode( 'qr-code', window.location.href );
+
+// Initialize the page view
+            function init() {
+                updateTheme(); // Set selected theme
+
+                updateQRLink();
+
+            }
+
+            init();
         </script>
     </body>
 </html></body></html>

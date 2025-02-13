@@ -37,22 +37,46 @@
                 #sort-box {
                     .btn-sort {
                         padding: 0 0.2em !important;
-                    }
-                    .btn-sort:after {
-                        vertical-align: middle;
-                        display: inline-block;
-                        height: 17px;
-                        width: 10px;
-                        content: url('data:image/svg+xml, <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-short" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4"/></svg>');
-                    }
-                    .btn-sort.desc:after {
-                        content: url('data:image/svg+xml, <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-short" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5"/></svg>');
+                        opacity: .5;
+
+                        &:after{
+                            content: '';
+                            vertical-align: middle;
+                            display: inline-block;
+                            height: 17px;
+                            width: 10px;
+                        }
+
+                        &:after {
+                            content: url('data:image/svg+xml, <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-short" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4"/></svg>');
+                        }
+
+                        &.desc:after {
+                            content: url('data:image/svg+xml, <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-short" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5"/></svg>');
+                        }
+                        &.asc,
+                        &.desc {
+                            opacity: 1;
+                            &:after {
+                                display: inline-block;
+                            }
+                        }
                     }
 
                 }
 
                 .form-switch input {
                     cursor: pointer;
+                }
+            }
+
+            body[data-bs-theme="dark"] {
+                #controls-area {
+                    #sort-box {
+                        .btn-sort:after {
+                            filter: invert(1);
+                        }
+                    }
                 }
             }
 
@@ -185,7 +209,7 @@
 
                         <button id="sort-title" type="button" class="p-1 btn btn-sm btn-sort" title="Sort by Title">Title</button>,
                         <button id="sort-author" type="button" class="p-1 btn btn-sm btn-sort" title="Sort by Author">Author</button>,
-                        <button id="sort-date" type="button" class="p-1 btn btn-sm btn-sort" title="Sort by Date">Date</button>
+                        <button id="sort-id" type="button" class="desc p-1 btn btn-sm btn-sort" title="Sort by Date">Date</button>
                     </div>
 
                     <div class="border-start ms-2 ps-2 flex-grow-1">
@@ -254,7 +278,7 @@
                     </table>
 
                     
-                        <article id="book-12" class="book " title="Plantación exitosa de viñedos" data-added-timestamp="1725559254000" data-authors="Marcelo Canatella" data-title="Plantación exitosa de viñedos" data-index="1">
+                        <article id="book-12" class="book " title="Plantación exitosa de viñedos" data-id="12" data-authors="Marcelo Canatella" data-title="Plantación exitosa de viñedos" data-index="1">
                             <header title="Plantación exitosa de viñedos">
                                 <img src="covers/eBooksMartinPlantacionexitosadevinedos12.jpg" loading="lazy" alt="Plantación exitosa de viñedos" class="d-block mx-auto shadow" width="250" height="auto"/>
                             </header>
@@ -345,7 +369,7 @@
                             </div>
                         </article>
                     
-                        <article id="book-10" class="book " title="Nos quieren muertos" data-added-timestamp="1711229326000" data-authors="Javier Moro" data-title="Nos quieren muertos" data-index="2">
+                        <article id="book-10" class="book " title="Nos quieren muertos" data-id="10" data-authors="Javier Moro" data-title="Nos quieren muertos" data-index="2">
                             <header title="Nos quieren muertos">
                                 <img src="covers/eBooksMartinNosquierenmuertos10.jpg" loading="lazy" alt="Nos quieren muertos" class="d-block mx-auto shadow" width="250" height="auto"/>
                             </header>
@@ -423,7 +447,7 @@
                             </div>
                         </article>
                     
-                        <article id="book-9" class="book " title="Era Medianoche en Bhopal" data-added-timestamp="1711229325000" data-authors="Dominique Lapierre, Javier Moro" data-title="Era Medianoche en Bhopal" data-index="3">
+                        <article id="book-9" class="book " title="Era Medianoche en Bhopal" data-id="9" data-authors="Dominique Lapierre, Javier Moro" data-title="Era Medianoche en Bhopal" data-index="3">
                             <header title="Era Medianoche en Bhopal">
                                 <img src="covers/eBooksMartinEraMedianocheenBhopal9.jpg" loading="lazy" alt="Era Medianoche en Bhopal" class="d-block mx-auto shadow" width="250" height="auto"/>
                             </header>
@@ -495,7 +519,7 @@
                             </div>
                         </article>
                     
-                        <article id="book-1" class="book " title="El Pie De Jaipur" data-added-timestamp="1711224452000" data-authors="Javier Moro" data-title="El Pie De Jaipur" data-index="4">
+                        <article id="book-1" class="book " title="El Pie De Jaipur" data-id="1" data-authors="Javier Moro" data-title="El Pie De Jaipur" data-index="4">
                             <header title="El Pie De Jaipur">
                                 <img src="covers/eBooksMartinElPieDeJaipur1.jpg" loading="lazy" alt="El Pie De Jaipur" class="d-block mx-auto shadow" width="250" height="auto"/>
                             </header>
@@ -566,7 +590,7 @@
                             </div>
                         </article>
                     
-                        <article id="book-2" class="book " title="Una Columna De Fuego" data-added-timestamp="1711224452000" data-authors="Ken Follett" data-title="Una Columna De Fuego" data-index="5">
+                        <article id="book-2" class="book " title="Una Columna De Fuego" data-id="2" data-authors="Ken Follett" data-title="Una Columna De Fuego" data-index="5">
                             <header title="Una Columna De Fuego">
                                 <img src="covers/eBooksMartinUnaColumnaDeFuego2.jpg" loading="lazy" alt="Una Columna De Fuego" class="d-block mx-auto shadow" width="250" height="auto"/>
                             </header>
@@ -656,7 +680,7 @@
                             </div>
                         </article>
                     
-                        <article id="book-3" class="book " title="Un Mundo Sin Fin" data-added-timestamp="1711224452000" data-authors="Ken Follett" data-title="Un Mundo Sin Fin" data-index="6">
+                        <article id="book-3" class="book " title="Un Mundo Sin Fin" data-id="3" data-authors="Ken Follett" data-title="Un Mundo Sin Fin" data-index="6">
                             <header title="Un Mundo Sin Fin">
                                 <img src="covers/eBooksMartinUnMundoSinFin3.jpg" loading="lazy" alt="Un Mundo Sin Fin" class="d-block mx-auto shadow" width="250" height="auto"/>
                             </header>
@@ -727,7 +751,7 @@
                             </div>
                         </article>
                     
-                        <article id="book-4" class="book " title="Las Tinieblas y El Alba" data-added-timestamp="1711224452000" data-authors="Ken Follett" data-title="Las Tinieblas y El Alba" data-index="7">
+                        <article id="book-4" class="book " title="Las Tinieblas y El Alba" data-id="4" data-authors="Ken Follett" data-title="Las Tinieblas y El Alba" data-index="7">
                             <header title="Las Tinieblas y El Alba">
                                 <img src="covers/eBooksMartinLasTinieblasyElAlba4.jpg" loading="lazy" alt="Las Tinieblas y El Alba" class="d-block mx-auto shadow" width="250" height="auto"/>
                             </header>
@@ -801,7 +825,7 @@
                             </div>
                         </article>
                     
-                        <article id="book-5" class="book " title="Los Pilares Se La Tierra (edición ilustrada)" data-added-timestamp="1711224452000" data-authors="Ken Follett" data-title="Los Pilares Se La Tierra (edición ilustrada)" data-index="8">
+                        <article id="book-5" class="book " title="Los Pilares Se La Tierra (edición ilustrada)" data-id="5" data-authors="Ken Follett" data-title="Los Pilares Se La Tierra (edición ilustrada)" data-index="8">
                             <header title="Los Pilares Se La Tierra (edición ilustrada)">
                                 <img src="covers/eBooksMartinLosPilaresSeLaTierraedicionilustrada5.jpg" loading="lazy" alt="Los Pilares Se La Tierra (edición ilustrada)" class="d-block mx-auto shadow" width="250" height="auto"/>
                             </header>
@@ -872,7 +896,7 @@
                             </div>
                         </article>
                     
-                        <article id="book-6" class="book " title="Las Montañas De Buda" data-added-timestamp="1711224452000" data-authors="Javier Moro" data-title="Las Montañas De Buda" data-index="9">
+                        <article id="book-6" class="book " title="Las Montañas De Buda" data-id="6" data-authors="Javier Moro" data-title="Las Montañas De Buda" data-index="9">
                             <header title="Las Montañas De Buda">
                                 <img src="covers/eBooksMartinLasMontanasDeBuda6.jpg" loading="lazy" alt="Las Montañas De Buda" class="d-block mx-auto shadow" width="250" height="auto"/>
                             </header>
@@ -943,7 +967,7 @@
                             </div>
                         </article>
                     
-                        <article id="book-7" class="book " title="La Sangre De Los Inocentes" data-added-timestamp="1711224452000" data-authors="Julia Navarro" data-title="La Sangre De Los Inocentes" data-index="10">
+                        <article id="book-7" class="book " title="La Sangre De Los Inocentes" data-id="7" data-authors="Julia Navarro" data-title="La Sangre De Los Inocentes" data-index="10">
                             <header title="La Sangre De Los Inocentes">
                                 <img src="covers/eBooksMartinLaSangreDeLosInocentes7.jpg" loading="lazy" alt="La Sangre De Los Inocentes" class="d-block mx-auto shadow" width="250" height="auto"/>
                             </header>
@@ -1014,7 +1038,7 @@
                             </div>
                         </article>
                     
-                        <article id="book-8" class="book " title="La Armadura De La Luz" data-added-timestamp="1711224452000" data-authors="Ken Follett" data-title="La Armadura De La Luz" data-index="11">
+                        <article id="book-8" class="book " title="La Armadura De La Luz" data-id="8" data-authors="Ken Follett" data-title="La Armadura De La Luz" data-index="11">
                             <header title="La Armadura De La Luz">
                                 <img src="covers/eBooksMartinLaArmaduraDeLaLuz8.jpg" loading="lazy" alt="La Armadura De La Luz" class="d-block mx-auto shadow" width="250" height="auto"/>
                             </header>
@@ -1159,7 +1183,7 @@
 
 
 // Sort books by article data attributes, asc or desc
-            function sortBooks( sortBy = 'title', order = 'asc' ) {
+            function sortBooks( sortBy = 'title', order = 'desc' ) {
                 const booksList = document.querySelector( '#books-list' );
                 const books = Array.from( booksList.querySelectorAll( '.book' ) );
 
@@ -1168,7 +1192,7 @@
                     const bData = b.getAttribute( `data-${ sortBy }` );
 
 // For number based comparison
-                    if ( sortBy === 'added-timestamp' ) {
+                    if ( sortBy === 'id' ) {
                         return order === 'asc' ? aData - bData : bData - aData;
                     }
 
@@ -1186,38 +1210,62 @@
 // Sort by title
             const btn_sort_title = document.querySelector( '#sort-title' );
             btn_sort_title.addEventListener( 'click', ( e ) => {
-                btn_sort_title.classList.toggle( 'desc' );
+                // Remove other sort buttons from the class
+                btn_sort_author.classList.remove( 'desc', 'asc' );
+                btn_sort_id.classList.remove( 'desc', 'asc' );
+
+                if( !btn_sort_title.classList.contains( 'desc' ) && !btn_sort_title.classList.contains( 'asc' ) ){
+                    btn_sort_title.classList.add( 'asc' ); // Default
+                }else{
+                    btn_sort_title.classList.toggle( 'desc' );
+                    btn_sort_title.classList.toggle( 'asc' );
+                }
+
                 sortBooks( 'title', btn_sort_title.classList.contains( 'desc' ) ? 'desc' : 'asc' );
             } );
 
 // Sort by Autors
             const btn_sort_author = document.querySelector( '#sort-author' );
             btn_sort_author.addEventListener( 'click', ( e ) => {
-                btn_sort_author.classList.toggle( 'desc' );
+                // Remove other sort buttons from the class
+                btn_sort_title.classList.remove( 'desc', 'asc' );
+                btn_sort_id.classList.remove( 'desc', 'asc' );
+                if ( !btn_sort_author.classList.contains( 'desc' ) && !btn_sort_author.classList.contains( 'asc' ) ) {
+                    btn_sort_author.classList.add( 'asc' ); // Default
+                }else{
+                    btn_sort_author.classList.toggle( 'desc' );
+                    btn_sort_author.classList.toggle( 'asc' );
+                }
                 sortBooks( 'authors', btn_sort_author.classList.contains( 'desc' ) ? 'desc' : 'asc' );
             } );
 
 // Sort by date
-            const btn_sort_date = document.querySelector( '#sort-date' );
-            btn_sort_date.addEventListener( 'click', ( e ) => {
-                btn_sort_date.classList.toggle( 'desc' );
-                sortBooks( 'added-timestamp', btn_sort_date.classList.contains( 'desc' ) ? 'desc' : 'asc' );
+            const btn_sort_id = document.querySelector( '#sort-id' );
+            btn_sort_id.addEventListener( 'click', ( e ) => {
+                // Remove other sort buttons from the class
+                btn_sort_title.classList.remove( 'desc', 'asc' );
+                btn_sort_author.classList.remove( 'desc', 'asc' );
+
+                if ( !btn_sort_id.classList.contains( 'desc' ) && !btn_sort_id.classList.contains( 'asc' ) ) {
+                    btn_sort_id.classList.add( 'desc' ); // Add desc by default
+                }else{
+                    btn_sort_id.classList.toggle( 'desc' );
+                    btn_sort_id.classList.toggle( 'asc' );
+                }
+                sortBooks( 'id', btn_sort_id.classList.contains( 'desc' ) ? 'desc' : 'asc' );
             } );
 
-// Reset search and sort settings
+            // Reset search and sort settings
             document.querySelector( '#sort-reset' ).addEventListener( 'click', ( e ) => {
-                btn_sort_title.classList.remove( 'desc' );
-                btn_sort_author.classList.remove( 'desc' );
-                btn_sort_date.classList.remove( 'desc' );
-
-// Clear the serch box too
+                // Clear the serch box too
                 document.querySelector( '#search-box input' ).value = '';
 
-// And restore the inline-block to all books
+                // And restore the inline-block to all books
                 books.forEach( book => book.style.display = 'inline-block' );
 
-                btn_sort_date.classList.add( 'desc' );
-                sortBooks( 'added-timestamp', 'desc' ); // Sort by date by default
+                // Reset the sort to default
+                btn_sort_id.classList.remove( 'desc', 'asc' );
+                btn_sort_id.click();
             } );
 
 
@@ -1260,11 +1308,28 @@
              */
             function updateTheme() {
                 document.body.setAttribute( 'data-bs-theme', document.querySelector( '#themingSwitcher' ).checked ? 'dark' : 'light' );
+// Save the theme preference in a browser cookie that never exipres
+                document.cookie = `theme=${
+                    document.querySelector( '#themingSwitcher' ).checked ? 'dark' : 'light'
+                }; path=/; max-age=31536000`; // 1 year
             }
             document.querySelector( '#themingSwitcher' ).addEventListener( 'click', () => {
                 updateTheme();
             } );
 
+            function loadThemeFromCookie() {
+                const themeCookie = document.cookie.split( '; ' ).find( row => row.startsWith( 'theme=' ) );
+                if ( themeCookie ) {
+                    document.querySelector( '#themingSwitcher' ).checked = themeCookie.split( '=' )[ 1 ] === 'dark';
+                    updateTheme();
+                }
+            }
+
+
+/**
+             *  QR code generator
+             * ****************************
+             */
             function updateQRLink() { // Get the current page URL and generate a QR code for it
                 var catalog_url = window.location.href;
                 catalog_url = catalog_url.replace( /\/[^\/]+$/, '' );
@@ -1280,7 +1345,7 @@
 
 // Initialize the page view
             function init() {
-                updateTheme(); // Set selected theme
+                loadThemeFromCookie();
 
                 updateQRLink();
 

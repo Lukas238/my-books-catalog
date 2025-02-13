@@ -37,22 +37,46 @@
                 #sort-box {
                     .btn-sort {
                         padding: 0 0.2em !important;
-                    }
-                    .btn-sort:after {
-                        vertical-align: middle;
-                        display: inline-block;
-                        height: 17px;
-                        width: 10px;
-                        content: url('data:image/svg+xml, <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-short" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4"/></svg>');
-                    }
-                    .btn-sort.desc:after {
-                        content: url('data:image/svg+xml, <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-short" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5"/></svg>');
+                        opacity: .5;
+
+                        &:after{
+                            content: '';
+                            vertical-align: middle;
+                            display: inline-block;
+                            height: 17px;
+                            width: 10px;
+                        }
+
+                        &:after {
+                            content: url('data:image/svg+xml, <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-short" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4"/></svg>');
+                        }
+
+                        &.desc:after {
+                            content: url('data:image/svg+xml, <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-short" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5"/></svg>');
+                        }
+                        &.asc,
+                        &.desc {
+                            opacity: 1;
+                            &:after {
+                                display: inline-block;
+                            }
+                        }
                     }
 
                 }
 
                 .form-switch input {
                     cursor: pointer;
+                }
+            }
+
+            body[data-bs-theme="dark"] {
+                #controls-area {
+                    #sort-box {
+                        .btn-sort:after {
+                            filter: invert(1);
+                        }
+                    }
                 }
             }
 
@@ -185,7 +209,7 @@
 
                         <button id="sort-title" type="button" class="p-1 btn btn-sm btn-sort" title="Sort by Title">Title</button>,
                         <button id="sort-author" type="button" class="p-1 btn btn-sm btn-sort" title="Sort by Author">Author</button>,
-                        <button id="sort-date" type="button" class="p-1 btn btn-sm btn-sort" title="Sort by Date">Date</button>
+                        <button id="sort-id" type="button" class="desc p-1 btn btn-sm btn-sort" title="Sort by Date">Date</button>
                     </div>
 
                     <div class="border-start ms-2 ps-2 flex-grow-1">
@@ -254,7 +278,7 @@
                     </table>
 
                     
-                        <article id="book-18" class="book " title="Las Tres Bodas De Manolita" data-added-timestamp="1738613973000" data-authors="Almudena Grandes" data-title="Las Tres Bodas De Manolita" data-index="1">
+                        <article id="book-18" class="book " title="Las Tres Bodas De Manolita" data-id="18" data-authors="Almudena Grandes" data-title="Las Tres Bodas De Manolita" data-index="1">
                             <header title="Las Tres Bodas De Manolita">
                                 <img src="covers/eBooksMaripazLasTresBodasDeManolita18.jpg" loading="lazy" alt="Las Tres Bodas De Manolita" class="d-block mx-auto shadow" width="250" height="auto"/>
                             </header>
@@ -325,7 +349,7 @@
                             </div>
                         </article>
                     
-                        <article id="book-19" class="book " title="La Cazadora (the Huntress - Spanish Edition)" data-added-timestamp="1738613973000" data-authors="Kate Quinn" data-title="La Cazadora (the Huntress - Spanish Edition)" data-index="2">
+                        <article id="book-19" class="book " title="La Cazadora (the Huntress - Spanish Edition)" data-id="19" data-authors="Kate Quinn" data-title="La Cazadora (the Huntress - Spanish Edition)" data-index="2">
                             <header title="La Cazadora (the Huntress - Spanish Edition)">
                                 <img src="covers/eBooksMaripazLaCazadoratheHuntressSpanishEdition19.jpg" loading="lazy" alt="La Cazadora (the Huntress - Spanish Edition)" class="d-block mx-auto shadow" width="250" height="auto"/>
                             </header>
@@ -396,7 +420,7 @@
                             </div>
                         </article>
                     
-                        <article id="book-20" class="book " title="Señora De Rojo Sobre Fondo Gris" data-added-timestamp="1738613973000" data-authors="Miguel Delibes" data-title="Señora De Rojo Sobre Fondo Gris" data-index="3">
+                        <article id="book-20" class="book " title="Señora De Rojo Sobre Fondo Gris" data-id="20" data-authors="Miguel Delibes" data-title="Señora De Rojo Sobre Fondo Gris" data-index="3">
                             <header title="Señora De Rojo Sobre Fondo Gris">
                                 <img src="covers/eBooksMaripazSenoraDeRojoSobreFondoGris20.jpg" loading="lazy" alt="Señora De Rojo Sobre Fondo Gris" class="d-block mx-auto shadow" width="250" height="auto"/>
                             </header>
@@ -468,7 +492,7 @@
                             </div>
                         </article>
                     
-                        <article id="book-17" class="book " title="El Retrato De Casada" data-added-timestamp="1735229999000" data-authors="Maggie O&#39;Farrell" data-title="El Retrato De Casada" data-index="4">
+                        <article id="book-17" class="book " title="El Retrato De Casada" data-id="17" data-authors="Maggie O&#39;Farrell" data-title="El Retrato De Casada" data-index="4">
                             <header title="El Retrato De Casada">
                                 <img src="covers/eBooksMaripazElRetratoDeCasada17.jpg" loading="lazy" alt="El Retrato De Casada" class="d-block mx-auto shadow" width="250" height="auto"/>
                             </header>
@@ -539,7 +563,7 @@
                             </div>
                         </article>
                     
-                        <article id="book-16" class="book " title="La Vida Secreta De Las Plantas" data-added-timestamp="1729440254000" data-authors="Christopher Bird, Peter Tompkins" data-title="La Vida Secreta De Las Plantas" data-index="5">
+                        <article id="book-16" class="book " title="La Vida Secreta De Las Plantas" data-id="16" data-authors="Christopher Bird, Peter Tompkins" data-title="La Vida Secreta De Las Plantas" data-index="5">
                             <header title="La Vida Secreta De Las Plantas">
                                 <img src="covers/eBooksMaripazLaVidaSecretaDeLasPlantas16.jpg" loading="lazy" alt="La Vida Secreta De Las Plantas" class="d-block mx-auto shadow" width="250" height="auto"/>
                             </header>
@@ -611,7 +635,7 @@
                             </div>
                         </article>
                     
-                        <article id="book-15" class="book " title="A Prueba De Fuego" data-added-timestamp="1722786002000" data-authors="Javier Moro" data-title="A Prueba De Fuego" data-index="6">
+                        <article id="book-15" class="book " title="A Prueba De Fuego" data-id="15" data-authors="Javier Moro" data-title="A Prueba De Fuego" data-index="6">
                             <header title="A Prueba De Fuego">
                                 <img src="covers/eBooksMaripazAPruebaDeFuego15.jpg" loading="lazy" alt="A Prueba De Fuego" class="d-block mx-auto shadow" width="250" height="auto"/>
                             </header>
@@ -691,7 +715,7 @@
                             </div>
                         </article>
                     
-                        <article id="book-13" class="book " title="La Herencia De Eszter" data-added-timestamp="1722785901000" data-authors="Sándor Márai" data-title="La Herencia De Eszter" data-index="7">
+                        <article id="book-13" class="book " title="La Herencia De Eszter" data-id="13" data-authors="Sándor Márai" data-title="La Herencia De Eszter" data-index="7">
                             <header title="La Herencia De Eszter">
                                 <img src="covers/eBooksMaripazLaHerenciaDeEszter13.jpg" loading="lazy" alt="La Herencia De Eszter" class="d-block mx-auto shadow" width="250" height="auto"/>
                             </header>
@@ -771,7 +795,7 @@
                             </div>
                         </article>
                     
-                        <article id="book-14" class="book " title="Mi pecado" data-added-timestamp="1722785901000" data-authors="Javier Moro" data-title="Mi pecado" data-index="8">
+                        <article id="book-14" class="book " title="Mi pecado" data-id="14" data-authors="Javier Moro" data-title="Mi pecado" data-index="8">
                             <header title="Mi pecado">
                                 <img src="covers/eBooksMaripazMipecado14.jpg" loading="lazy" alt="Mi pecado" class="d-block mx-auto shadow" width="250" height="auto"/>
                             </header>
@@ -842,7 +866,7 @@
                             </div>
                         </article>
                     
-                        <article id="book-12" class="book " title="Las Gratitudes" data-added-timestamp="1711230131000" data-authors="Delphine de Vigan" data-title="Las Gratitudes" data-index="9">
+                        <article id="book-12" class="book " title="Las Gratitudes" data-id="12" data-authors="Delphine de Vigan" data-title="Las Gratitudes" data-index="9">
                             <header title="Las Gratitudes">
                                 <img src="covers/eBooksMaripazLasGratitudes12.jpg" loading="lazy" alt="Las Gratitudes" class="d-block mx-auto shadow" width="250" height="auto"/>
                             </header>
@@ -927,7 +951,7 @@
                             </div>
                         </article>
                     
-                        <article id="book-11" class="book " title="La Sangre De Los Inocentes" data-added-timestamp="1711224452000" data-authors="Julia Navarro" data-title="La Sangre De Los Inocentes" data-index="10">
+                        <article id="book-11" class="book " title="La Sangre De Los Inocentes" data-id="11" data-authors="Julia Navarro" data-title="La Sangre De Los Inocentes" data-index="10">
                             <header title="La Sangre De Los Inocentes">
                                 <img src="covers/eBooksMaripazLaSangreDeLosInocentes11.jpg" loading="lazy" alt="La Sangre De Los Inocentes" class="d-block mx-auto shadow" width="250" height="auto"/>
                             </header>
@@ -998,7 +1022,7 @@
                             </div>
                         </article>
                     
-                        <article id="book-8" class="book " title="El Italiano" data-added-timestamp="1711018765000" data-authors="Arturo Pérez-Reverte" data-title="El Italiano" data-index="11">
+                        <article id="book-8" class="book " title="El Italiano" data-id="8" data-authors="Arturo Pérez-Reverte" data-title="El Italiano" data-index="11">
                             <header title="El Italiano">
                                 <img src="covers/eBooksMaripazElItaliano8.jpg" loading="lazy" alt="El Italiano" class="d-block mx-auto shadow" width="250" height="auto"/>
                             </header>
@@ -1083,7 +1107,7 @@
                             </div>
                         </article>
                     
-                        <article id="book-10" class="book " title="Las Señoritas" data-added-timestamp="1711018765000" data-authors="Laura Ramos" data-title="Las Señoritas" data-index="12">
+                        <article id="book-10" class="book " title="Las Señoritas" data-id="10" data-authors="Laura Ramos" data-title="Las Señoritas" data-index="12">
                             <header title="Las Señoritas">
                                 <img src="covers/eBooksMaripazLasSenoritas10.jpg" loading="lazy" alt="Las Señoritas" class="d-block mx-auto shadow" width="250" height="auto"/>
                             </header>
@@ -1154,7 +1178,7 @@
                             </div>
                         </article>
                     
-                        <article id="book-2" class="book " title="La cocinera irlandesa" data-added-timestamp="1710185025000" data-authors="Mary Beth Keane" data-title="La cocinera irlandesa" data-index="13">
+                        <article id="book-2" class="book " title="La cocinera irlandesa" data-id="2" data-authors="Mary Beth Keane" data-title="La cocinera irlandesa" data-index="13">
                             <header title="La cocinera irlandesa">
                                 <img src="covers/eBooksMaripazLacocinerairlandesa2.jpg" loading="lazy" alt="La cocinera irlandesa" class="d-block mx-auto shadow" width="250" height="auto"/>
                             </header>
@@ -1244,7 +1268,7 @@
                             </div>
                         </article>
                     
-                        <article id="book-3" class="book " title="Las hijas de la criada: Premio Planeta 2023" data-added-timestamp="1710185025000" data-authors="Sonsoles Ónega" data-title="Las hijas de la criada: Premio Planeta 2023" data-index="14">
+                        <article id="book-3" class="book " title="Las hijas de la criada: Premio Planeta 2023" data-id="3" data-authors="Sonsoles Ónega" data-title="Las hijas de la criada: Premio Planeta 2023" data-index="14">
                             <header title="Las hijas de la criada: Premio Planeta 2023">
                                 <img src="covers/eBooksMaripazLashijasdelacriadaPremioPlaneta20233.jpg" loading="lazy" alt="Las hijas de la criada: Premio Planeta 2023" class="d-block mx-auto shadow" width="250" height="auto"/>
                             </header>
@@ -1316,7 +1340,7 @@
                             </div>
                         </article>
                     
-                        <article id="book-4" class="book " title="La Última Rosa De Shanghái" data-added-timestamp="1710185025000" data-authors="Weina Dai Randel" data-title="La Última Rosa De Shanghái" data-index="15">
+                        <article id="book-4" class="book " title="La Última Rosa De Shanghái" data-id="4" data-authors="Weina Dai Randel" data-title="La Última Rosa De Shanghái" data-index="15">
                             <header title="La Última Rosa De Shanghái">
                                 <img src="covers/eBooksMaripazLaUltimaRosaDeShanghai4.jpg" loading="lazy" alt="La Última Rosa De Shanghái" class="d-block mx-auto shadow" width="250" height="auto"/>
                             </header>
@@ -1389,7 +1413,7 @@
                             </div>
                         </article>
                     
-                        <article id="book-1" class="book " title="La Liebre Con Ojos De Ámbar" data-added-timestamp="1709824733000" data-authors="Edmund de Waal,  Marcelo Cohen" data-title="La Liebre Con Ojos De Ámbar" data-index="16">
+                        <article id="book-1" class="book " title="La Liebre Con Ojos De Ámbar" data-id="1" data-authors="Edmund de Waal,  Marcelo Cohen" data-title="La Liebre Con Ojos De Ámbar" data-index="16">
                             <header title="La Liebre Con Ojos De Ámbar">
                                 <img src="covers/eBooksMaripazLaLiebreConOjosDeAmbar1.jpg" loading="lazy" alt="La Liebre Con Ojos De Ámbar" class="d-block mx-auto shadow" width="250" height="auto"/>
                             </header>
@@ -1518,7 +1542,7 @@
 
 
 // Sort books by article data attributes, asc or desc
-            function sortBooks( sortBy = 'title', order = 'asc' ) {
+            function sortBooks( sortBy = 'title', order = 'desc' ) {
                 const booksList = document.querySelector( '#books-list' );
                 const books = Array.from( booksList.querySelectorAll( '.book' ) );
 
@@ -1527,7 +1551,7 @@
                     const bData = b.getAttribute( `data-${ sortBy }` );
 
 // For number based comparison
-                    if ( sortBy === 'added-timestamp' ) {
+                    if ( sortBy === 'id' ) {
                         return order === 'asc' ? aData - bData : bData - aData;
                     }
 
@@ -1545,38 +1569,62 @@
 // Sort by title
             const btn_sort_title = document.querySelector( '#sort-title' );
             btn_sort_title.addEventListener( 'click', ( e ) => {
-                btn_sort_title.classList.toggle( 'desc' );
+                // Remove other sort buttons from the class
+                btn_sort_author.classList.remove( 'desc', 'asc' );
+                btn_sort_id.classList.remove( 'desc', 'asc' );
+
+                if( !btn_sort_title.classList.contains( 'desc' ) && !btn_sort_title.classList.contains( 'asc' ) ){
+                    btn_sort_title.classList.add( 'asc' ); // Default
+                }else{
+                    btn_sort_title.classList.toggle( 'desc' );
+                    btn_sort_title.classList.toggle( 'asc' );
+                }
+
                 sortBooks( 'title', btn_sort_title.classList.contains( 'desc' ) ? 'desc' : 'asc' );
             } );
 
 // Sort by Autors
             const btn_sort_author = document.querySelector( '#sort-author' );
             btn_sort_author.addEventListener( 'click', ( e ) => {
-                btn_sort_author.classList.toggle( 'desc' );
+                // Remove other sort buttons from the class
+                btn_sort_title.classList.remove( 'desc', 'asc' );
+                btn_sort_id.classList.remove( 'desc', 'asc' );
+                if ( !btn_sort_author.classList.contains( 'desc' ) && !btn_sort_author.classList.contains( 'asc' ) ) {
+                    btn_sort_author.classList.add( 'asc' ); // Default
+                }else{
+                    btn_sort_author.classList.toggle( 'desc' );
+                    btn_sort_author.classList.toggle( 'asc' );
+                }
                 sortBooks( 'authors', btn_sort_author.classList.contains( 'desc' ) ? 'desc' : 'asc' );
             } );
 
 // Sort by date
-            const btn_sort_date = document.querySelector( '#sort-date' );
-            btn_sort_date.addEventListener( 'click', ( e ) => {
-                btn_sort_date.classList.toggle( 'desc' );
-                sortBooks( 'added-timestamp', btn_sort_date.classList.contains( 'desc' ) ? 'desc' : 'asc' );
+            const btn_sort_id = document.querySelector( '#sort-id' );
+            btn_sort_id.addEventListener( 'click', ( e ) => {
+                // Remove other sort buttons from the class
+                btn_sort_title.classList.remove( 'desc', 'asc' );
+                btn_sort_author.classList.remove( 'desc', 'asc' );
+
+                if ( !btn_sort_id.classList.contains( 'desc' ) && !btn_sort_id.classList.contains( 'asc' ) ) {
+                    btn_sort_id.classList.add( 'desc' ); // Add desc by default
+                }else{
+                    btn_sort_id.classList.toggle( 'desc' );
+                    btn_sort_id.classList.toggle( 'asc' );
+                }
+                sortBooks( 'id', btn_sort_id.classList.contains( 'desc' ) ? 'desc' : 'asc' );
             } );
 
-// Reset search and sort settings
+            // Reset search and sort settings
             document.querySelector( '#sort-reset' ).addEventListener( 'click', ( e ) => {
-                btn_sort_title.classList.remove( 'desc' );
-                btn_sort_author.classList.remove( 'desc' );
-                btn_sort_date.classList.remove( 'desc' );
-
-// Clear the serch box too
+                // Clear the serch box too
                 document.querySelector( '#search-box input' ).value = '';
 
-// And restore the inline-block to all books
+                // And restore the inline-block to all books
                 books.forEach( book => book.style.display = 'inline-block' );
 
-                btn_sort_date.classList.add( 'desc' );
-                sortBooks( 'added-timestamp', 'desc' ); // Sort by date by default
+                // Reset the sort to default
+                btn_sort_id.classList.remove( 'desc', 'asc' );
+                btn_sort_id.click();
             } );
 
 
@@ -1619,11 +1667,28 @@
              */
             function updateTheme() {
                 document.body.setAttribute( 'data-bs-theme', document.querySelector( '#themingSwitcher' ).checked ? 'dark' : 'light' );
+// Save the theme preference in a browser cookie that never exipres
+                document.cookie = `theme=${
+                    document.querySelector( '#themingSwitcher' ).checked ? 'dark' : 'light'
+                }; path=/; max-age=31536000`; // 1 year
             }
             document.querySelector( '#themingSwitcher' ).addEventListener( 'click', () => {
                 updateTheme();
             } );
 
+            function loadThemeFromCookie() {
+                const themeCookie = document.cookie.split( '; ' ).find( row => row.startsWith( 'theme=' ) );
+                if ( themeCookie ) {
+                    document.querySelector( '#themingSwitcher' ).checked = themeCookie.split( '=' )[ 1 ] === 'dark';
+                    updateTheme();
+                }
+            }
+
+
+/**
+             *  QR code generator
+             * ****************************
+             */
             function updateQRLink() { // Get the current page URL and generate a QR code for it
                 var catalog_url = window.location.href;
                 catalog_url = catalog_url.replace( /\/[^\/]+$/, '' );
@@ -1639,7 +1704,7 @@
 
 // Initialize the page view
             function init() {
-                updateTheme(); // Set selected theme
+                loadThemeFromCookie();
 
                 updateQRLink();
 

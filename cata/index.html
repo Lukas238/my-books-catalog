@@ -37,22 +37,46 @@
                 #sort-box {
                     .btn-sort {
                         padding: 0 0.2em !important;
-                    }
-                    .btn-sort:after {
-                        vertical-align: middle;
-                        display: inline-block;
-                        height: 17px;
-                        width: 10px;
-                        content: url('data:image/svg+xml, <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-short" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4"/></svg>');
-                    }
-                    .btn-sort.desc:after {
-                        content: url('data:image/svg+xml, <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-short" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5"/></svg>');
+                        opacity: .5;
+
+                        &:after{
+                            content: '';
+                            vertical-align: middle;
+                            display: inline-block;
+                            height: 17px;
+                            width: 10px;
+                        }
+
+                        &:after {
+                            content: url('data:image/svg+xml, <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-short" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4"/></svg>');
+                        }
+
+                        &.desc:after {
+                            content: url('data:image/svg+xml, <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-short" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5"/></svg>');
+                        }
+                        &.asc,
+                        &.desc {
+                            opacity: 1;
+                            &:after {
+                                display: inline-block;
+                            }
+                        }
                     }
 
                 }
 
                 .form-switch input {
                     cursor: pointer;
+                }
+            }
+
+            body[data-bs-theme="dark"] {
+                #controls-area {
+                    #sort-box {
+                        .btn-sort:after {
+                            filter: invert(1);
+                        }
+                    }
                 }
             }
 
@@ -185,7 +209,7 @@
 
                         <button id="sort-title" type="button" class="p-1 btn btn-sm btn-sort" title="Sort by Title">Title</button>,
                         <button id="sort-author" type="button" class="p-1 btn btn-sm btn-sort" title="Sort by Author">Author</button>,
-                        <button id="sort-date" type="button" class="p-1 btn btn-sm btn-sort" title="Sort by Date">Date</button>
+                        <button id="sort-id" type="button" class="desc p-1 btn btn-sm btn-sort" title="Sort by Date">Date</button>
                     </div>
 
                     <div class="border-start ms-2 ps-2 flex-grow-1">
@@ -254,7 +278,7 @@
                     </table>
 
                     
-                        <article id="book-16" class="book " title="La Asistenta" data-added-timestamp="1736448408000" data-authors="Freida McFadden" data-title="La Asistenta" data-index="1">
+                        <article id="book-16" class="book " title="La Asistenta" data-id="16" data-authors="Freida McFadden" data-title="La Asistenta" data-index="1">
                             <header title="La Asistenta">
                                 <img src="covers/eBooksCataLaAsistenta16.jpg" loading="lazy" alt="La Asistenta" class="d-block mx-auto shadow" width="250" height="auto"/>
                             </header>
@@ -325,7 +349,7 @@
                             </div>
                         </article>
                     
-                        <article id="book-17" class="book " title="Todas Las Veces Que Se Te Acelera El Corazón" data-added-timestamp="1736448408000" data-authors="Carmen Arteaga" data-title="Todas Las Veces Que Se Te Acelera El Corazón" data-index="2">
+                        <article id="book-17" class="book " title="Todas Las Veces Que Se Te Acelera El Corazón" data-id="17" data-authors="Carmen Arteaga" data-title="Todas Las Veces Que Se Te Acelera El Corazón" data-index="2">
                             <header title="Todas Las Veces Que Se Te Acelera El Corazón">
                                 <img src="covers/eBooksCataTodasLasVecesQueSeTeAceleraElCorazon17.jpg" loading="lazy" alt="Todas Las Veces Que Se Te Acelera El Corazón" class="d-block mx-auto shadow" width="250" height="auto"/>
                             </header>
@@ -394,7 +418,7 @@
                             </div>
                         </article>
                     
-                        <article id="book-15" class="book " title="Cazabacterias en La Cocina: Cómo Cocinar Sin Intoxicar a La Familia" data-added-timestamp="1723642344000" data-authors="Mariana Koppmann" data-title="Cazabacterias en La Cocina: Cómo Cocinar Sin Intoxicar a La Familia" data-index="3">
+                        <article id="book-15" class="book " title="Cazabacterias en La Cocina: Cómo Cocinar Sin Intoxicar a La Familia" data-id="15" data-authors="Mariana Koppmann" data-title="Cazabacterias en La Cocina: Cómo Cocinar Sin Intoxicar a La Familia" data-index="3">
                             <header title="Cazabacterias en La Cocina: Cómo Cocinar Sin Intoxicar a La Familia">
                                 <img src="covers/eBooksCataCazabacteriasenLaCocinaComoCocinarSinIntoxicaraLaFamilia15.jpg" loading="lazy" alt="Cazabacterias en La Cocina: Cómo Cocinar Sin Intoxicar a La Familia" class="d-block mx-auto shadow" width="250" height="auto"/>
                             </header>
@@ -459,7 +483,7 @@
                             </div>
                         </article>
                     
-                        <article id="book-14" class="book " title="Los Reyes De La Casa" data-added-timestamp="1711245050000" data-authors="Delphine de Vigan" data-title="Los Reyes De La Casa" data-index="4">
+                        <article id="book-14" class="book " title="Los Reyes De La Casa" data-id="14" data-authors="Delphine de Vigan" data-title="Los Reyes De La Casa" data-index="4">
                             <header title="Los Reyes De La Casa">
                                 <img src="covers/eBooksCataLosReyesDeLaCasa14.jpg" loading="lazy" alt="Los Reyes De La Casa" class="d-block mx-auto shadow" width="250" height="auto"/>
                             </header>
@@ -548,7 +572,7 @@
                             </div>
                         </article>
                     
-                        <article id="book-11" class="book " title="El Mundo De Los Latentes" data-added-timestamp="1710260167000" data-authors="Kary Pintos" data-title="El Mundo De Los Latentes" data-index="5">
+                        <article id="book-11" class="book " title="El Mundo De Los Latentes" data-id="11" data-authors="Kary Pintos" data-title="El Mundo De Los Latentes" data-index="5">
                             <header title="El Mundo De Los Latentes">
                                 <img src="covers/eBooksCataElMundoDeLosLatentes11.jpg" loading="lazy" alt="El Mundo De Los Latentes" class="d-block mx-auto shadow" width="250" height="auto"/>
                             </header>
@@ -620,7 +644,7 @@
                             </div>
                         </article>
                     
-                        <article id="book-10" class="book " title="Cómo hacer que te pasen cosas buenas / How To Make Good Things Happen: Entiende tu cerebro, gestiona tus emociones, mejora tu vida" data-added-timestamp="1708630745000" data-authors="Marian Rojas Estapé" data-title="Cómo hacer que te pasen cosas buenas / How To Make Good Things Happen: Entiende tu cerebro, gestiona tus emociones, mejora tu vida" data-index="6">
+                        <article id="book-10" class="book " title="Cómo hacer que te pasen cosas buenas / How To Make Good Things Happen: Entiende tu cerebro, gestiona tus emociones, mejora tu vida" data-id="10" data-authors="Marian Rojas Estapé" data-title="Cómo hacer que te pasen cosas buenas / How To Make Good Things Happen: Entiende tu cerebro, gestiona tus emociones, mejora tu vida" data-index="6">
                             <header title="Cómo hacer que te pasen cosas buenas / How To Make Good Things Happen: Entiende tu cerebro, gestiona tus emociones, mejora tu vida">
                                 <img src="covers/eBooksCataComohacerquetepasencosasbuenasHowToMakeGoodThingsHappenEntiendetucerebrogest10.jpg" loading="lazy" alt="Cómo hacer que te pasen cosas buenas / How To Make Good Things Happen: Entiende tu cerebro, gestiona tus emociones, mejora tu vida" class="d-block mx-auto shadow" width="250" height="auto"/>
                             </header>
@@ -698,7 +722,7 @@
                             </div>
                         </article>
                     
-                        <article id="book-1" class="book " title="Encuentra tu persona vitamina" data-added-timestamp="1708630738000" data-authors="Marian Rojas Estapé" data-title="Encuentra tu persona vitamina" data-index="7">
+                        <article id="book-1" class="book " title="Encuentra tu persona vitamina" data-id="1" data-authors="Marian Rojas Estapé" data-title="Encuentra tu persona vitamina" data-index="7">
                             <header title="Encuentra tu persona vitamina">
                                 <img src="covers/eBooksCataEncuentratupersonavitamina1.jpg" loading="lazy" alt="Encuentra tu persona vitamina" class="d-block mx-auto shadow" width="250" height="auto"/>
                             </header>
@@ -766,7 +790,7 @@
                             </div>
                         </article>
                     
-                        <article id="book-2" class="book " title="Vive Más: Reduce Tu Edad Biológica Y Aumenta Tu Vitalidad" data-added-timestamp="1708630738000" data-authors="Marcos Vázquez García" data-title="Vive Más: Reduce Tu Edad Biológica Y Aumenta Tu Vitalidad" data-index="8">
+                        <article id="book-2" class="book " title="Vive Más: Reduce Tu Edad Biológica Y Aumenta Tu Vitalidad" data-id="2" data-authors="Marcos Vázquez García" data-title="Vive Más: Reduce Tu Edad Biológica Y Aumenta Tu Vitalidad" data-index="8">
                             <header title="Vive Más: Reduce Tu Edad Biológica Y Aumenta Tu Vitalidad">
                                 <img src="covers/eBooksCataViveMasReduceTuEdadBiologicaYAumentaTuVitalidad2.jpg" loading="lazy" alt="Vive Más: Reduce Tu Edad Biológica Y Aumenta Tu Vitalidad" class="d-block mx-auto shadow" width="250" height="auto"/>
                             </header>
@@ -842,7 +866,7 @@
                             </div>
                         </article>
                     
-                        <article id="book-3" class="book " title="Verdades que Adelgazan: 10 Principios Básicos para un Entrenamiento Efectivo (Spanish Edition)" data-added-timestamp="1708630738000" data-authors="Marcos Vazquez" data-title="Verdades que Adelgazan: 10 Principios Básicos para un Entrenamiento Efectivo (Spanish Edition)" data-index="9">
+                        <article id="book-3" class="book " title="Verdades que Adelgazan: 10 Principios Básicos para un Entrenamiento Efectivo (Spanish Edition)" data-id="3" data-authors="Marcos Vazquez" data-title="Verdades que Adelgazan: 10 Principios Básicos para un Entrenamiento Efectivo (Spanish Edition)" data-index="9">
                             <header title="Verdades que Adelgazan: 10 Principios Básicos para un Entrenamiento Efectivo (Spanish Edition)">
                                 <img src="covers/eBooksCataVerdadesqueAdelgazan10PrincipiosBasicosparaunEntrenamientoEfectivoSpanishEdition3.jpg" loading="lazy" alt="Verdades que Adelgazan: 10 Principios Básicos para un Entrenamiento Efectivo (Spanish Edition)" class="d-block mx-auto shadow" width="250" height="auto"/>
                             </header>
@@ -902,7 +926,7 @@
                             </div>
                         </article>
                     
-                        <article id="book-4" class="book " title="Saludable Mente: Hábitos Para Optimizar Tu Cerebro Y Mejorar Tu Salud a Cualquier Edad" data-added-timestamp="1708630738000" data-authors="Marcos Vázquez García" data-title="Saludable Mente: Hábitos Para Optimizar Tu Cerebro Y Mejorar Tu Salud a Cualquier Edad" data-index="10">
+                        <article id="book-4" class="book " title="Saludable Mente: Hábitos Para Optimizar Tu Cerebro Y Mejorar Tu Salud a Cualquier Edad" data-id="4" data-authors="Marcos Vázquez García" data-title="Saludable Mente: Hábitos Para Optimizar Tu Cerebro Y Mejorar Tu Salud a Cualquier Edad" data-index="10">
                             <header title="Saludable Mente: Hábitos Para Optimizar Tu Cerebro Y Mejorar Tu Salud a Cualquier Edad">
                                 <img src="covers/eBooksCataSaludableMenteHabitosParaOptimizarTuCerebroYMejorarTuSaludaCualquierEdad4.jpg" loading="lazy" alt="Saludable Mente: Hábitos Para Optimizar Tu Cerebro Y Mejorar Tu Salud a Cualquier Edad" class="d-block mx-auto shadow" width="250" height="auto"/>
                             </header>
@@ -973,7 +997,7 @@
                             </div>
                         </article>
                     
-                        <article id="book-5" class="book " title="El infinito en un junco" data-added-timestamp="1708630738000" data-authors="Iréne Vallejo" data-title="El infinito en un junco" data-index="11">
+                        <article id="book-5" class="book " title="El infinito en un junco" data-id="5" data-authors="Iréne Vallejo" data-title="El infinito en un junco" data-index="11">
                             <header title="El infinito en un junco">
                                 <img src="covers/eBooksCataElinfinitoenunjunco5.jpg" loading="lazy" alt="El infinito en un junco" class="d-block mx-auto shadow" width="250" height="auto"/>
                             </header>
@@ -1043,7 +1067,7 @@
                             </div>
                         </article>
                     
-                        <article id="book-6" class="book " title="Fitness revolucionario. Lecciones ancestrales para una salud salvaje" data-added-timestamp="1708630738000" data-authors="Marcos Vázquez" data-title="Fitness revolucionario. Lecciones ancestrales para una salud salvaje" data-index="12">
+                        <article id="book-6" class="book " title="Fitness revolucionario. Lecciones ancestrales para una salud salvaje" data-id="6" data-authors="Marcos Vázquez" data-title="Fitness revolucionario. Lecciones ancestrales para una salud salvaje" data-index="12">
                             <header title="Fitness revolucionario. Lecciones ancestrales para una salud salvaje">
                                 <img src="covers/eBooksCataFitnessrevolucionarioLeccionesancestralesparaunasaludsalvaje6.jpg" loading="lazy" alt="Fitness revolucionario. Lecciones ancestrales para una salud salvaje" class="d-block mx-auto shadow" width="250" height="auto"/>
                             </header>
@@ -1122,7 +1146,7 @@
                             </div>
                         </article>
                     
-                        <article id="book-7" class="book " title="La Historia De Maia" data-added-timestamp="1708630738000" data-authors="Lucinda Riley" data-title="La Historia De Maia" data-index="13">
+                        <article id="book-7" class="book " title="La Historia De Maia" data-id="7" data-authors="Lucinda Riley" data-title="La Historia De Maia" data-index="13">
                             <header title="La Historia De Maia">
                                 <img src="covers/eBooksCataLaHistoriaDeMaia7.jpg" loading="lazy" alt="La Historia De Maia" class="d-block mx-auto shadow" width="250" height="auto"/>
                             </header>
@@ -1193,7 +1217,7 @@
                             </div>
                         </article>
                     
-                        <article id="book-8" class="book " title="La única historia" data-added-timestamp="1708630738000" data-authors="Julian Barnes" data-title="La única historia" data-index="14">
+                        <article id="book-8" class="book " title="La única historia" data-id="8" data-authors="Julian Barnes" data-title="La única historia" data-index="14">
                             <header title="La única historia">
                                 <img src="covers/eBooksCataLaunicahistoria8.jpg" loading="lazy" alt="La única historia" class="d-block mx-auto shadow" width="250" height="auto"/>
                             </header>
@@ -1258,7 +1282,7 @@
                             </div>
                         </article>
                     
-                        <article id="book-9" class="book " title="Hábitos atómicos (Atomic Habits) Spanish Edition" data-added-timestamp="1708630738000" data-authors="James Clear" data-title="Hábitos atómicos (Atomic Habits) Spanish Edition" data-index="15">
+                        <article id="book-9" class="book " title="Hábitos atómicos (Atomic Habits) Spanish Edition" data-id="9" data-authors="James Clear" data-title="Hábitos atómicos (Atomic Habits) Spanish Edition" data-index="15">
                             <header title="Hábitos atómicos (Atomic Habits) Spanish Edition">
                                 <img src="covers/eBooksCataHabitosatomicosAtomicHabitsSpanishEdition9.jpg" loading="lazy" alt="Hábitos atómicos (Atomic Habits) Spanish Edition" class="d-block mx-auto shadow" width="250" height="auto"/>
                             </header>
@@ -1379,7 +1403,7 @@
 
 
 // Sort books by article data attributes, asc or desc
-            function sortBooks( sortBy = 'title', order = 'asc' ) {
+            function sortBooks( sortBy = 'title', order = 'desc' ) {
                 const booksList = document.querySelector( '#books-list' );
                 const books = Array.from( booksList.querySelectorAll( '.book' ) );
 
@@ -1388,7 +1412,7 @@
                     const bData = b.getAttribute( `data-${ sortBy }` );
 
 // For number based comparison
-                    if ( sortBy === 'added-timestamp' ) {
+                    if ( sortBy === 'id' ) {
                         return order === 'asc' ? aData - bData : bData - aData;
                     }
 
@@ -1406,38 +1430,62 @@
 // Sort by title
             const btn_sort_title = document.querySelector( '#sort-title' );
             btn_sort_title.addEventListener( 'click', ( e ) => {
-                btn_sort_title.classList.toggle( 'desc' );
+                // Remove other sort buttons from the class
+                btn_sort_author.classList.remove( 'desc', 'asc' );
+                btn_sort_id.classList.remove( 'desc', 'asc' );
+
+                if( !btn_sort_title.classList.contains( 'desc' ) && !btn_sort_title.classList.contains( 'asc' ) ){
+                    btn_sort_title.classList.add( 'asc' ); // Default
+                }else{
+                    btn_sort_title.classList.toggle( 'desc' );
+                    btn_sort_title.classList.toggle( 'asc' );
+                }
+
                 sortBooks( 'title', btn_sort_title.classList.contains( 'desc' ) ? 'desc' : 'asc' );
             } );
 
 // Sort by Autors
             const btn_sort_author = document.querySelector( '#sort-author' );
             btn_sort_author.addEventListener( 'click', ( e ) => {
-                btn_sort_author.classList.toggle( 'desc' );
+                // Remove other sort buttons from the class
+                btn_sort_title.classList.remove( 'desc', 'asc' );
+                btn_sort_id.classList.remove( 'desc', 'asc' );
+                if ( !btn_sort_author.classList.contains( 'desc' ) && !btn_sort_author.classList.contains( 'asc' ) ) {
+                    btn_sort_author.classList.add( 'asc' ); // Default
+                }else{
+                    btn_sort_author.classList.toggle( 'desc' );
+                    btn_sort_author.classList.toggle( 'asc' );
+                }
                 sortBooks( 'authors', btn_sort_author.classList.contains( 'desc' ) ? 'desc' : 'asc' );
             } );
 
 // Sort by date
-            const btn_sort_date = document.querySelector( '#sort-date' );
-            btn_sort_date.addEventListener( 'click', ( e ) => {
-                btn_sort_date.classList.toggle( 'desc' );
-                sortBooks( 'added-timestamp', btn_sort_date.classList.contains( 'desc' ) ? 'desc' : 'asc' );
+            const btn_sort_id = document.querySelector( '#sort-id' );
+            btn_sort_id.addEventListener( 'click', ( e ) => {
+                // Remove other sort buttons from the class
+                btn_sort_title.classList.remove( 'desc', 'asc' );
+                btn_sort_author.classList.remove( 'desc', 'asc' );
+
+                if ( !btn_sort_id.classList.contains( 'desc' ) && !btn_sort_id.classList.contains( 'asc' ) ) {
+                    btn_sort_id.classList.add( 'desc' ); // Add desc by default
+                }else{
+                    btn_sort_id.classList.toggle( 'desc' );
+                    btn_sort_id.classList.toggle( 'asc' );
+                }
+                sortBooks( 'id', btn_sort_id.classList.contains( 'desc' ) ? 'desc' : 'asc' );
             } );
 
-// Reset search and sort settings
+            // Reset search and sort settings
             document.querySelector( '#sort-reset' ).addEventListener( 'click', ( e ) => {
-                btn_sort_title.classList.remove( 'desc' );
-                btn_sort_author.classList.remove( 'desc' );
-                btn_sort_date.classList.remove( 'desc' );
-
-// Clear the serch box too
+                // Clear the serch box too
                 document.querySelector( '#search-box input' ).value = '';
 
-// And restore the inline-block to all books
+                // And restore the inline-block to all books
                 books.forEach( book => book.style.display = 'inline-block' );
 
-                btn_sort_date.classList.add( 'desc' );
-                sortBooks( 'added-timestamp', 'desc' ); // Sort by date by default
+                // Reset the sort to default
+                btn_sort_id.classList.remove( 'desc', 'asc' );
+                btn_sort_id.click();
             } );
 
 
@@ -1480,11 +1528,28 @@
              */
             function updateTheme() {
                 document.body.setAttribute( 'data-bs-theme', document.querySelector( '#themingSwitcher' ).checked ? 'dark' : 'light' );
+// Save the theme preference in a browser cookie that never exipres
+                document.cookie = `theme=${
+                    document.querySelector( '#themingSwitcher' ).checked ? 'dark' : 'light'
+                }; path=/; max-age=31536000`; // 1 year
             }
             document.querySelector( '#themingSwitcher' ).addEventListener( 'click', () => {
                 updateTheme();
             } );
 
+            function loadThemeFromCookie() {
+                const themeCookie = document.cookie.split( '; ' ).find( row => row.startsWith( 'theme=' ) );
+                if ( themeCookie ) {
+                    document.querySelector( '#themingSwitcher' ).checked = themeCookie.split( '=' )[ 1 ] === 'dark';
+                    updateTheme();
+                }
+            }
+
+
+/**
+             *  QR code generator
+             * ****************************
+             */
             function updateQRLink() { // Get the current page URL and generate a QR code for it
                 var catalog_url = window.location.href;
                 catalog_url = catalog_url.replace( /\/[^\/]+$/, '' );
@@ -1500,7 +1565,7 @@
 
 // Initialize the page view
             function init() {
-                updateTheme(); // Set selected theme
+                loadThemeFromCookie();
 
                 updateQRLink();
 

@@ -28970,7 +28970,7 @@ Armed at last with the powerful dragonlances, the Companions of the Lance lead t
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/konami-code-js@0.8.3/src/konami-code.min.js"></script>  
+        <script src="https://cdn.jsdelivr.net/npm/konami-code-js@0.8.3/src/konami-code.min.js"></script>
 
         <script>
             const books = document.querySelectorAll('.book');
@@ -29164,6 +29164,13 @@ Armed at last with the powerful dragonlances, the Companions of the Lance lead t
                     document.querySelector('body').classList.add('-show-books-formats');
                   }
                 });
+
+                // If the URL include a query paramter ?download=1 or true, then add the class to show the formats
+                const urlParams = new URLSearchParams(window.location.search);
+                if (urlParams.get('download') === '1' || urlParams.get('download') === 'true') {
+                    document.querySelector('body').classList.add('-show-books-formats');
+                }
+
 
             }
 

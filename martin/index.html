@@ -14,12 +14,15 @@
         <title>Martin&#39;s eBooks Library
             | Catalog</title>
 
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
         <style>
             html,
             body {
                 margin: 0;
                 padding: 0;
+                font-weight: lighter;
             }
 
             body {
@@ -52,14 +55,17 @@
                             display: inline-block;
                             height: 17px;
                             width: 10px;
+                            line-height: 1em;
                         }
 
                         &:after {
-                            content: url('data:image/svg+xml, <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-short" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4"/></svg>');
+                            content: "\F124";
+                            font-family: "bootstrap-icons";
                         }
 
                         &.desc:after {
-                            content: url('data:image/svg+xml, <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-short" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5"/></svg>');
+                            content: "\F145";
+                            font-family: "bootstrap-icons";
                         }
 
                         &.asc,
@@ -93,7 +99,6 @@
                 /* gap: 0.8em; */
 
                 &.-view-list {
-                    gap: 0;
 
                     #table-header {
                         display: block !important;
@@ -104,18 +109,20 @@
                     #table-header,
                     .book {
                         display: block;
-                        width: 100%;
+                        width: 100% !important;
+                        padding: 0 !important;
 
                         td {
                             vertical-align: middle;
                         }
 
                         .col-cover {
-                            min-width: 48px;
-                            width: 48px;
-
+                            cursor: pointer;
+                            width: 80px;;
                             img {
                                 object-fit: cover;
+                                height: 120px;
+                                max-width: 80px;
                             }
                         }
 
@@ -137,7 +144,7 @@
                         margin: 0 !important;
 
                         width: 33%;
-                        padding: 1em !important;
+                        /* padding: 1em !important; */
 
                         header {
                             display: none;
@@ -183,16 +190,17 @@
             }
 
             #book-preview {
+                display: flex;
                 width: 100%;
-                display: none;
+                height: 100svh;
                 position: absolute;
+                top: 0;
                 right: 0;
 
-                &.show {
-                    display: block;
+                &:not(.show) {
+                    display: none !important;
                 }
 
-                height: 100vh;
 
                 .book-preview__content {
                     height: calc(100% - 52px);
@@ -224,9 +232,13 @@
                 }
 
                 #book-preview {
-                    width: 450px;
-                    .book {
-                        width: 100%;
+                    --book-preview-width: 450px;
+                    width: var(--book-preview-width);
+                    right: 0;
+                    transition: right .5s ease;
+
+                    &:not(.show){
+                        right: calc(var(--book-preview-width) * -1);
                     }
                 }
 
@@ -239,9 +251,9 @@
         </style>
     </head>
 
-    <body class="container-fixed">
-        <div class="row g-0">
-            <main class="col p-3">
+    <body class="container-xxl py-3">
+
+            <main class="">
                 <h1>Martin&#39;s eBooks Library</h1>
 
                 <div id="search-box" class="py-1">
@@ -264,53 +276,38 @@
 
                     <div class="border-start ms-2 ps-2 flex-grow-1">
                         <button id="sort-reset" type="button" class="text-end btn btn-sm btn-reset" title="Clean all filter">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
-  <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
-  <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
-</svg>
-                            <span class="d-none d-sm-inline">Clear</span>
+                            <i class="bi bi-x"></i>
+                            <span class="d-none d-sm-inline">Reset Filters</span>
                         </button>
                     </div>
 
                     <div class="view-qr ms-2 border-start ps-2 ">
                         <button type="button" class="btn btn-sm" data-bs-toggle="modal" data-bs-target="#qr-modal" title="View catalog QR code">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-qr-code" viewbox="0 0 16 16">
-                                <path d="M2 2h2v2H2z"/>
-                                <path d="M6 0v6H0V0zM5 1H1v4h4zM4 12H2v2h2z"/>
-                                <path d="M6 10v6H0v-6zm-5 1v4h4v-4zm11-9h2v2h-2z"/>
-                                <path d="M10 0v6h6V0zm5 1v4h-4V1zM8 1V0h1v2H8v2H7V1zm0 5V4h1v2zM6 8V7h1V6h1v2h1V7h5v1h-4v1H7V8zm0 0v1H2V8H1v1H0V7h3v1zm10 1h-1V7h1zm-1 0h-1v2h2v-1h-1zm-4 0h2v1h-1v1h-1zm2 3v-1h-1v1h-1v1H9v1h3v-2zm0 0h3v1h-2v1h-1zm-4-1v1h1v-2H7v1z"/>
-                                <path d="M7 12h1v3h4v1H7zm9 2v2h-3v-1h2v-1z"/>
-                            </svg>
+                            <i class="bi bi-qr-code"></i>
                         </button>
                     </div>
 
-                    <div id="views-box" class="d-inline-block ms-2 border-start ps-2 ">
+                    <div id="views-box" class="ms-2 border-start ps-2 nav-item align-items-center d-flex">
                         <label>
                             <strong class="d-none">View:</strong>
                         </label>
-                        <button id="viewGrid" type="button" class="btn btn-sm" title="View as Grid">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-grid" viewbox="0 0 16 16">
-                                <path d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5z"/>
-                            </svg>
-                        </button>
-                        <button id="viewList" type="button" class="btn btn-sm" title="View as List">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewbox="0 0 16 16">
-                                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
-                            </svg>
-                        </button>
+                        <i class="bi bi-grid"></i>
+                        <div class="ms-2 form-switch">
+                            <input class="form-check-input" type="checkbox" role="switch" id="layoutSwitcher" title="Layout switcher"/>
+                        </div>
+                        <i class="bi bi-list"></i>
                     </div>
 
                     <div class="ms-2 border-start ps-2 nav-item align-items-center d-flex">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-brightness-high" viewbox="0 0 16 16">
-                            <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6m0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708"/>
-                        </svg>
+                        <label>
+                            <strong class="d-none">Theme:</strong>
+                        </label>
+                        <i class="bi bi-brightness-high"></i>
                         <!-- Default switch -->
                         <div class="ms-2 form-switch">
                             <input class="form-check-input" type="checkbox" role="switch" id="themingSwitcher" title="Theme switcher"/>
                         </div>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-moon" viewbox="0 0 16 16">
-                            <path d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278M4.858 1.311A7.27 7.27 0 0 0 1.025 7.71c0 4.02 3.279 7.276 7.319 7.276a7.32 7.32 0 0 0 5.205-2.162q-.506.063-1.029.063c-4.61 0-8.343-3.714-8.343-8.29 0-1.167.242-2.278.681-3.286"/>
-                        </svg>
+                        <i class="bi bi-moon"></i>
                     </div>
 
                 </div>
@@ -334,7 +331,7 @@
                                 <img src="covers/eBooksMartinElsecretodeMarcial16.jpg" loading="lazy" alt="El secreto de Marcial" class="d-block mx-auto shadow" width="250" height="auto"/>
                             </header>
                             <div class="book__body">
-                                <h1 class="h3 text-center my-3">El secreto de Marcial</h1>
+                                <h1 class="h3 text-center my-3 fw-lighter">El secreto de Marcial</h1>
                                 <ul class="book__meta list-group">
                                     <li class="list-group-item">
                                         <label>Authors:</label>
@@ -384,11 +381,11 @@
                                     </div>
                                 
                             </div>
-                            <div class="book__table d-none">
-                                <table class="table table-bordered table-sm m-0">
+                            <div class="book__table d-none border-bottom">
+                                <table class="table table-sm m-0">
                                     <tbody>
                                         <tr>
-                                            <td class="col-cover"><img src="covers/eBooksMartinElsecretodeMarcial16.jpg" alt="El secreto de Marcial" class="d-block mx-auto shadow" height="48"/></td>
+                                            <td class="col-cover"><img src="covers/eBooksMartinElsecretodeMarcial16.jpg" alt="El secreto de Marcial" class="d-block mx-auto shadow"/></td>
                                             <td class="col-title">El secreto de Marcial</td>
                                             <td class="col-authors">Jorge Fernández Díaz</td>
                                             <td class="col-added-on">2025-09-28</td>
@@ -403,7 +400,7 @@
                                 <img src="covers/eBooksMartinElproblemafinal17.jpg" loading="lazy" alt="El problema final" class="d-block mx-auto shadow" width="250" height="auto"/>
                             </header>
                             <div class="book__body">
-                                <h1 class="h3 text-center my-3">El problema final</h1>
+                                <h1 class="h3 text-center my-3 fw-lighter">El problema final</h1>
                                 <ul class="book__meta list-group">
                                     <li class="list-group-item">
                                         <label>Authors:</label>
@@ -444,11 +441,11 @@
                                 </div>
                                 
                             </div>
-                            <div class="book__table d-none">
-                                <table class="table table-bordered table-sm m-0">
+                            <div class="book__table d-none border-bottom">
+                                <table class="table table-sm m-0">
                                     <tbody>
                                         <tr>
-                                            <td class="col-cover"><img src="covers/eBooksMartinElproblemafinal17.jpg" alt="El problema final" class="d-block mx-auto shadow" height="48"/></td>
+                                            <td class="col-cover"><img src="covers/eBooksMartinElproblemafinal17.jpg" alt="El problema final" class="d-block mx-auto shadow"/></td>
                                             <td class="col-title">El problema final</td>
                                             <td class="col-authors">Arturo Pérez‑Reverte</td>
                                             <td class="col-added-on">2025-09-28</td>
@@ -463,7 +460,7 @@
                                 <img src="covers/eBooksMartinElintercambio18.jpg" loading="lazy" alt="El intercambio" class="d-block mx-auto shadow" width="250" height="auto"/>
                             </header>
                             <div class="book__body">
-                                <h1 class="h3 text-center my-3">El intercambio</h1>
+                                <h1 class="h3 text-center my-3 fw-lighter">El intercambio</h1>
                                 <ul class="book__meta list-group">
                                     <li class="list-group-item">
                                         <label>Authors:</label>
@@ -530,11 +527,11 @@ Independent
                                     </div>
                                 
                             </div>
-                            <div class="book__table d-none">
-                                <table class="table table-bordered table-sm m-0">
+                            <div class="book__table d-none border-bottom">
+                                <table class="table table-sm m-0">
                                     <tbody>
                                         <tr>
-                                            <td class="col-cover"><img src="covers/eBooksMartinElintercambio18.jpg" alt="El intercambio" class="d-block mx-auto shadow" height="48"/></td>
+                                            <td class="col-cover"><img src="covers/eBooksMartinElintercambio18.jpg" alt="El intercambio" class="d-block mx-auto shadow"/></td>
                                             <td class="col-title">El intercambio</td>
                                             <td class="col-authors">John Grisham</td>
                                             <td class="col-added-on">2025-09-28</td>
@@ -549,7 +546,7 @@ Independent
                                 <img src="covers/eBooksMartinElitaliano19.jpg" loading="lazy" alt="El italiano" class="d-block mx-auto shadow" width="250" height="auto"/>
                             </header>
                             <div class="book__body">
-                                <h1 class="h3 text-center my-3">El italiano</h1>
+                                <h1 class="h3 text-center my-3 fw-lighter">El italiano</h1>
                                 <ul class="book__meta list-group">
                                     <li class="list-group-item">
                                         <label>Authors:</label>
@@ -610,11 +607,11 @@ aventura.</p></div>
                                     </div>
                                 
                             </div>
-                            <div class="book__table d-none">
-                                <table class="table table-bordered table-sm m-0">
+                            <div class="book__table d-none border-bottom">
+                                <table class="table table-sm m-0">
                                     <tbody>
                                         <tr>
-                                            <td class="col-cover"><img src="covers/eBooksMartinElitaliano19.jpg" alt="El italiano" class="d-block mx-auto shadow" height="48"/></td>
+                                            <td class="col-cover"><img src="covers/eBooksMartinElitaliano19.jpg" alt="El italiano" class="d-block mx-auto shadow"/></td>
                                             <td class="col-title">El italiano</td>
                                             <td class="col-authors">Arturo Pérez-Reverte</td>
                                             <td class="col-added-on">2025-09-28</td>
@@ -629,7 +626,7 @@ aventura.</p></div>
                                 <img src="covers/eBooksMartinMaresDeFuria13.jpg" loading="lazy" alt="Mares De Furia" class="d-block mx-auto shadow" width="250" height="auto"/>
                             </header>
                             <div class="book__body">
-                                <h1 class="h3 text-center my-3">Mares De Furia</h1>
+                                <h1 class="h3 text-center my-3 fw-lighter">Mares De Furia</h1>
                                 <ul class="book__meta list-group">
                                     <li class="list-group-item">
                                         <label>Authors:</label>
@@ -681,11 +678,11 @@ aventura.</p></div>
                                     </div>
                                 
                             </div>
-                            <div class="book__table d-none">
-                                <table class="table table-bordered table-sm m-0">
+                            <div class="book__table d-none border-bottom">
+                                <table class="table table-sm m-0">
                                     <tbody>
                                         <tr>
-                                            <td class="col-cover"><img src="covers/eBooksMartinMaresDeFuria13.jpg" alt="Mares De Furia" class="d-block mx-auto shadow" height="48"/></td>
+                                            <td class="col-cover"><img src="covers/eBooksMartinMaresDeFuria13.jpg" alt="Mares De Furia" class="d-block mx-auto shadow"/></td>
                                             <td class="col-title">Mares De Furia</td>
                                             <td class="col-authors">Federico Andahazi</td>
                                             <td class="col-added-on">2025-07-09</td>
@@ -700,7 +697,7 @@ aventura.</p></div>
                                 <img src="covers/eBooksMartinCora14.jpg" loading="lazy" alt="Cora" class="d-block mx-auto shadow" width="250" height="auto"/>
                             </header>
                             <div class="book__body">
-                                <h1 class="h3 text-center my-3">Cora</h1>
+                                <h1 class="h3 text-center my-3 fw-lighter">Cora</h1>
                                 <ul class="book__meta list-group">
                                     <li class="list-group-item">
                                         <label>Authors:</label>
@@ -756,11 +753,11 @@ aventura.</p></div>
                                     </div>
                                 
                             </div>
-                            <div class="book__table d-none">
-                                <table class="table table-bordered table-sm m-0">
+                            <div class="book__table d-none border-bottom">
+                                <table class="table table-sm m-0">
                                     <tbody>
                                         <tr>
-                                            <td class="col-cover"><img src="covers/eBooksMartinCora14.jpg" alt="Cora" class="d-block mx-auto shadow" height="48"/></td>
+                                            <td class="col-cover"><img src="covers/eBooksMartinCora14.jpg" alt="Cora" class="d-block mx-auto shadow"/></td>
                                             <td class="col-title">Cora</td>
                                             <td class="col-authors">Jorge Fernández Díaz</td>
                                             <td class="col-added-on">2025-07-09</td>
@@ -775,7 +772,7 @@ aventura.</p></div>
                                 <img src="covers/eBooksMartinPlantacionexitosadevinedos12.jpg" loading="lazy" alt="Plantación exitosa de viñedos" class="d-block mx-auto shadow" width="250" height="auto"/>
                             </header>
                             <div class="book__body">
-                                <h1 class="h3 text-center my-3">Plantación exitosa de viñedos</h1>
+                                <h1 class="h3 text-center my-3 fw-lighter">Plantación exitosa de viñedos</h1>
                                 <ul class="book__meta list-group">
                                     <li class="list-group-item">
                                         <label>Authors:</label>
@@ -847,11 +844,11 @@ aventura.</p></div>
                                     </div>
                                 
                             </div>
-                            <div class="book__table d-none">
-                                <table class="table table-bordered table-sm m-0">
+                            <div class="book__table d-none border-bottom">
+                                <table class="table table-sm m-0">
                                     <tbody>
                                         <tr>
-                                            <td class="col-cover"><img src="covers/eBooksMartinPlantacionexitosadevinedos12.jpg" alt="Plantación exitosa de viñedos" class="d-block mx-auto shadow" height="48"/></td>
+                                            <td class="col-cover"><img src="covers/eBooksMartinPlantacionexitosadevinedos12.jpg" alt="Plantación exitosa de viñedos" class="d-block mx-auto shadow"/></td>
                                             <td class="col-title">Plantación exitosa de viñedos</td>
                                             <td class="col-authors">Marcelo Canatella</td>
                                             <td class="col-added-on">2024-09-05</td>
@@ -866,7 +863,7 @@ aventura.</p></div>
                                 <img src="covers/eBooksMartinNosquierenmuertos10.jpg" loading="lazy" alt="Nos quieren muertos" class="d-block mx-auto shadow" width="250" height="auto"/>
                             </header>
                             <div class="book__body">
-                                <h1 class="h3 text-center my-3">Nos quieren muertos</h1>
+                                <h1 class="h3 text-center my-3 fw-lighter">Nos quieren muertos</h1>
                                 <ul class="book__meta list-group">
                                     <li class="list-group-item">
                                         <label>Authors:</label>
@@ -925,11 +922,11 @@ aventura.</p></div>
                                     </div>
                                 
                             </div>
-                            <div class="book__table d-none">
-                                <table class="table table-bordered table-sm m-0">
+                            <div class="book__table d-none border-bottom">
+                                <table class="table table-sm m-0">
                                     <tbody>
                                         <tr>
-                                            <td class="col-cover"><img src="covers/eBooksMartinNosquierenmuertos10.jpg" alt="Nos quieren muertos" class="d-block mx-auto shadow" height="48"/></td>
+                                            <td class="col-cover"><img src="covers/eBooksMartinNosquierenmuertos10.jpg" alt="Nos quieren muertos" class="d-block mx-auto shadow"/></td>
                                             <td class="col-title">Nos quieren muertos</td>
                                             <td class="col-authors">Javier Moro</td>
                                             <td class="col-added-on">2024-03-23</td>
@@ -944,7 +941,7 @@ aventura.</p></div>
                                 <img src="covers/eBooksMartinEraMedianocheenBhopal9.jpg" loading="lazy" alt="Era Medianoche en Bhopal" class="d-block mx-auto shadow" width="250" height="auto"/>
                             </header>
                             <div class="book__body">
-                                <h1 class="h3 text-center my-3">Era Medianoche en Bhopal</h1>
+                                <h1 class="h3 text-center my-3 fw-lighter">Era Medianoche en Bhopal</h1>
                                 <ul class="book__meta list-group">
                                     <li class="list-group-item">
                                         <label>Authors:</label>
@@ -997,11 +994,11 @@ aventura.</p></div>
                                     </div>
                                 
                             </div>
-                            <div class="book__table d-none">
-                                <table class="table table-bordered table-sm m-0">
+                            <div class="book__table d-none border-bottom">
+                                <table class="table table-sm m-0">
                                     <tbody>
                                         <tr>
-                                            <td class="col-cover"><img src="covers/eBooksMartinEraMedianocheenBhopal9.jpg" alt="Era Medianoche en Bhopal" class="d-block mx-auto shadow" height="48"/></td>
+                                            <td class="col-cover"><img src="covers/eBooksMartinEraMedianocheenBhopal9.jpg" alt="Era Medianoche en Bhopal" class="d-block mx-auto shadow"/></td>
                                             <td class="col-title">Era Medianoche en Bhopal</td>
                                             <td class="col-authors">Dominique Lapierre,Javier Moro</td>
                                             <td class="col-added-on">2024-03-23</td>
@@ -1016,7 +1013,7 @@ aventura.</p></div>
                                 <img src="covers/eBooksMartinElPieDeJaipur1.jpg" loading="lazy" alt="El Pie De Jaipur" class="d-block mx-auto shadow" width="250" height="auto"/>
                             </header>
                             <div class="book__body">
-                                <h1 class="h3 text-center my-3">El Pie De Jaipur</h1>
+                                <h1 class="h3 text-center my-3 fw-lighter">El Pie De Jaipur</h1>
                                 <ul class="book__meta list-group">
                                     <li class="list-group-item">
                                         <label>Authors:</label>
@@ -1068,11 +1065,11 @@ aventura.</p></div>
                                     </div>
                                 
                             </div>
-                            <div class="book__table d-none">
-                                <table class="table table-bordered table-sm m-0">
+                            <div class="book__table d-none border-bottom">
+                                <table class="table table-sm m-0">
                                     <tbody>
                                         <tr>
-                                            <td class="col-cover"><img src="covers/eBooksMartinElPieDeJaipur1.jpg" alt="El Pie De Jaipur" class="d-block mx-auto shadow" height="48"/></td>
+                                            <td class="col-cover"><img src="covers/eBooksMartinElPieDeJaipur1.jpg" alt="El Pie De Jaipur" class="d-block mx-auto shadow"/></td>
                                             <td class="col-title">El Pie De Jaipur</td>
                                             <td class="col-authors">Javier Moro</td>
                                             <td class="col-added-on">2024-03-23</td>
@@ -1087,7 +1084,7 @@ aventura.</p></div>
                                 <img src="covers/eBooksMartinUnaColumnaDeFuego2.jpg" loading="lazy" alt="Una Columna De Fuego" class="d-block mx-auto shadow" width="250" height="auto"/>
                             </header>
                             <div class="book__body">
-                                <h1 class="h3 text-center my-3">Una Columna De Fuego</h1>
+                                <h1 class="h3 text-center my-3 fw-lighter">Una Columna De Fuego</h1>
                                 <ul class="book__meta list-group">
                                     <li class="list-group-item">
                                         <label>Authors:</label>
@@ -1158,11 +1155,11 @@ aventura.</p></div>
                                     </div>
                                 
                             </div>
-                            <div class="book__table d-none">
-                                <table class="table table-bordered table-sm m-0">
+                            <div class="book__table d-none border-bottom">
+                                <table class="table table-sm m-0">
                                     <tbody>
                                         <tr>
-                                            <td class="col-cover"><img src="covers/eBooksMartinUnaColumnaDeFuego2.jpg" alt="Una Columna De Fuego" class="d-block mx-auto shadow" height="48"/></td>
+                                            <td class="col-cover"><img src="covers/eBooksMartinUnaColumnaDeFuego2.jpg" alt="Una Columna De Fuego" class="d-block mx-auto shadow"/></td>
                                             <td class="col-title">Una Columna De Fuego</td>
                                             <td class="col-authors">Ken Follett</td>
                                             <td class="col-added-on">2024-03-23</td>
@@ -1177,7 +1174,7 @@ aventura.</p></div>
                                 <img src="covers/eBooksMartinUnMundoSinFin3.jpg" loading="lazy" alt="Un Mundo Sin Fin" class="d-block mx-auto shadow" width="250" height="auto"/>
                             </header>
                             <div class="book__body">
-                                <h1 class="h3 text-center my-3">Un Mundo Sin Fin</h1>
+                                <h1 class="h3 text-center my-3 fw-lighter">Un Mundo Sin Fin</h1>
                                 <ul class="book__meta list-group">
                                     <li class="list-group-item">
                                         <label>Authors:</label>
@@ -1229,11 +1226,11 @@ aventura.</p></div>
                                     </div>
                                 
                             </div>
-                            <div class="book__table d-none">
-                                <table class="table table-bordered table-sm m-0">
+                            <div class="book__table d-none border-bottom">
+                                <table class="table table-sm m-0">
                                     <tbody>
                                         <tr>
-                                            <td class="col-cover"><img src="covers/eBooksMartinUnMundoSinFin3.jpg" alt="Un Mundo Sin Fin" class="d-block mx-auto shadow" height="48"/></td>
+                                            <td class="col-cover"><img src="covers/eBooksMartinUnMundoSinFin3.jpg" alt="Un Mundo Sin Fin" class="d-block mx-auto shadow"/></td>
                                             <td class="col-title">Un Mundo Sin Fin</td>
                                             <td class="col-authors">Ken Follett</td>
                                             <td class="col-added-on">2024-03-23</td>
@@ -1248,7 +1245,7 @@ aventura.</p></div>
                                 <img src="covers/eBooksMartinLasTinieblasyElAlba4.jpg" loading="lazy" alt="Las Tinieblas y El Alba" class="d-block mx-auto shadow" width="250" height="auto"/>
                             </header>
                             <div class="book__body">
-                                <h1 class="h3 text-center my-3">Las Tinieblas y El Alba</h1>
+                                <h1 class="h3 text-center my-3 fw-lighter">Las Tinieblas y El Alba</h1>
                                 <ul class="book__meta list-group">
                                     <li class="list-group-item">
                                         <label>Authors:</label>
@@ -1303,11 +1300,11 @@ aventura.</p></div>
                                     </div>
                                 
                             </div>
-                            <div class="book__table d-none">
-                                <table class="table table-bordered table-sm m-0">
+                            <div class="book__table d-none border-bottom">
+                                <table class="table table-sm m-0">
                                     <tbody>
                                         <tr>
-                                            <td class="col-cover"><img src="covers/eBooksMartinLasTinieblasyElAlba4.jpg" alt="Las Tinieblas y El Alba" class="d-block mx-auto shadow" height="48"/></td>
+                                            <td class="col-cover"><img src="covers/eBooksMartinLasTinieblasyElAlba4.jpg" alt="Las Tinieblas y El Alba" class="d-block mx-auto shadow"/></td>
                                             <td class="col-title">Las Tinieblas y El Alba</td>
                                             <td class="col-authors">Ken Follett</td>
                                             <td class="col-added-on">2024-03-23</td>
@@ -1322,7 +1319,7 @@ aventura.</p></div>
                                 <img src="covers/eBooksMartinLosPilaresSeLaTierraedicionilustrada5.jpg" loading="lazy" alt="Los Pilares Se La Tierra (edición ilustrada)" class="d-block mx-auto shadow" width="250" height="auto"/>
                             </header>
                             <div class="book__body">
-                                <h1 class="h3 text-center my-3">Los Pilares Se La Tierra (edición ilustrada)</h1>
+                                <h1 class="h3 text-center my-3 fw-lighter">Los Pilares Se La Tierra (edición ilustrada)</h1>
                                 <ul class="book__meta list-group">
                                     <li class="list-group-item">
                                         <label>Authors:</label>
@@ -1374,11 +1371,11 @@ aventura.</p></div>
                                     </div>
                                 
                             </div>
-                            <div class="book__table d-none">
-                                <table class="table table-bordered table-sm m-0">
+                            <div class="book__table d-none border-bottom">
+                                <table class="table table-sm m-0">
                                     <tbody>
                                         <tr>
-                                            <td class="col-cover"><img src="covers/eBooksMartinLosPilaresSeLaTierraedicionilustrada5.jpg" alt="Los Pilares Se La Tierra (edición ilustrada)" class="d-block mx-auto shadow" height="48"/></td>
+                                            <td class="col-cover"><img src="covers/eBooksMartinLosPilaresSeLaTierraedicionilustrada5.jpg" alt="Los Pilares Se La Tierra (edición ilustrada)" class="d-block mx-auto shadow"/></td>
                                             <td class="col-title">Los Pilares Se La Tierra (edición ilustrada)</td>
                                             <td class="col-authors">Ken Follett</td>
                                             <td class="col-added-on">2024-03-23</td>
@@ -1393,7 +1390,7 @@ aventura.</p></div>
                                 <img src="covers/eBooksMartinLasMontanasDeBuda6.jpg" loading="lazy" alt="Las Montañas De Buda" class="d-block mx-auto shadow" width="250" height="auto"/>
                             </header>
                             <div class="book__body">
-                                <h1 class="h3 text-center my-3">Las Montañas De Buda</h1>
+                                <h1 class="h3 text-center my-3 fw-lighter">Las Montañas De Buda</h1>
                                 <ul class="book__meta list-group">
                                     <li class="list-group-item">
                                         <label>Authors:</label>
@@ -1445,11 +1442,11 @@ aventura.</p></div>
                                     </div>
                                 
                             </div>
-                            <div class="book__table d-none">
-                                <table class="table table-bordered table-sm m-0">
+                            <div class="book__table d-none border-bottom">
+                                <table class="table table-sm m-0">
                                     <tbody>
                                         <tr>
-                                            <td class="col-cover"><img src="covers/eBooksMartinLasMontanasDeBuda6.jpg" alt="Las Montañas De Buda" class="d-block mx-auto shadow" height="48"/></td>
+                                            <td class="col-cover"><img src="covers/eBooksMartinLasMontanasDeBuda6.jpg" alt="Las Montañas De Buda" class="d-block mx-auto shadow"/></td>
                                             <td class="col-title">Las Montañas De Buda</td>
                                             <td class="col-authors">Javier Moro</td>
                                             <td class="col-added-on">2024-03-23</td>
@@ -1464,7 +1461,7 @@ aventura.</p></div>
                                 <img src="covers/eBooksMartinLaSangreDeLosInocentes7.jpg" loading="lazy" alt="La Sangre De Los Inocentes" class="d-block mx-auto shadow" width="250" height="auto"/>
                             </header>
                             <div class="book__body">
-                                <h1 class="h3 text-center my-3">La Sangre De Los Inocentes</h1>
+                                <h1 class="h3 text-center my-3 fw-lighter">La Sangre De Los Inocentes</h1>
                                 <ul class="book__meta list-group">
                                     <li class="list-group-item">
                                         <label>Authors:</label>
@@ -1516,11 +1513,11 @@ aventura.</p></div>
                                     </div>
                                 
                             </div>
-                            <div class="book__table d-none">
-                                <table class="table table-bordered table-sm m-0">
+                            <div class="book__table d-none border-bottom">
+                                <table class="table table-sm m-0">
                                     <tbody>
                                         <tr>
-                                            <td class="col-cover"><img src="covers/eBooksMartinLaSangreDeLosInocentes7.jpg" alt="La Sangre De Los Inocentes" class="d-block mx-auto shadow" height="48"/></td>
+                                            <td class="col-cover"><img src="covers/eBooksMartinLaSangreDeLosInocentes7.jpg" alt="La Sangre De Los Inocentes" class="d-block mx-auto shadow"/></td>
                                             <td class="col-title">La Sangre De Los Inocentes</td>
                                             <td class="col-authors">Julia Navarro</td>
                                             <td class="col-added-on">2024-03-23</td>
@@ -1535,7 +1532,7 @@ aventura.</p></div>
                                 <img src="covers/eBooksMartinLaArmaduraDeLaLuz8.jpg" loading="lazy" alt="La Armadura De La Luz" class="d-block mx-auto shadow" width="250" height="auto"/>
                             </header>
                             <div class="book__body">
-                                <h1 class="h3 text-center my-3">La Armadura De La Luz</h1>
+                                <h1 class="h3 text-center my-3 fw-lighter">La Armadura De La Luz</h1>
                                 <ul class="book__meta list-group">
                                     <li class="list-group-item">
                                         <label>Authors:</label>
@@ -1605,11 +1602,11 @@ aventura.</p></div>
                                     </div>
                                 
                             </div>
-                            <div class="book__table d-none">
-                                <table class="table table-bordered table-sm m-0">
+                            <div class="book__table d-none border-bottom">
+                                <table class="table table-sm m-0">
                                     <tbody>
                                         <tr>
-                                            <td class="col-cover"><img src="covers/eBooksMartinLaArmaduraDeLaLuz8.jpg" alt="La Armadura De La Luz" class="d-block mx-auto shadow" height="48"/></td>
+                                            <td class="col-cover"><img src="covers/eBooksMartinLaArmaduraDeLaLuz8.jpg" alt="La Armadura De La Luz" class="d-block mx-auto shadow"/></td>
                                             <td class="col-title">La Armadura De La Luz</td>
                                             <td class="col-authors">Ken Follett</td>
                                             <td class="col-added-on">2024-03-23</td>
@@ -1623,16 +1620,21 @@ aventura.</p></div>
 
             </main>
 
-            <aside id="book-preview" class="col-auto g-0 bg-light-subtle shadow">
+            <aside id="book-preview" class="container-xxl bg-light-subtle shadow-lg d-flex flex-column">
+                <header class="visually-hidden">
+                    <h2 class="h4 py-2">Book preview</h2>
+                </header>
+                <div class="book-preview__content"></div>
+                <footer class="py-2 border-top mt-3 d-flex justify-content-between">
+                    <button id="loadPrevBook" class="btn btn-light"><i class="bi bi-chevron-left"></i><span class="visually-hidden">Previous book</span></button>
 
-                <h2 class="h4 py-2 px-3">Book preview
-                    <button type="button" class="btn-close fs-6 float-end mt-1" aria-label="Close" data-bs-toggle="collapse" data-bs-target="#book-preview"></button>
-                </h1>
-                <div class="book-preview__content px-3"></div>
+                    <button type="button" class="btn btn-secondary"  data-bs-toggle="collapse" data-bs-target="#book-preview">Close Preview</button>
 
+                    <button id="loadNextBook" class="btn btn-light"><i class="bi bi-chevron-right"></i><span class="visually-hidden">Next book</span></button>
+                </footer>
             </aside>
 
-        </div>
+
 
 
         <div id="qr-modal" class="modal" tabindex="-1">
@@ -1669,10 +1671,30 @@ aventura.</p></div>
                 book.addEventListener( 'click', () => {
                     bookPreview.classList.add( 'show' );
                     const bookClone = book.cloneNode( true );
+
                     bookPreviewConten.innerHTML = '';
                     bookPreviewConten.appendChild( bookClone );
+
+                    // Also scroll to the top of the preview content after the book is loaded
+                    bookPreviewConten.scrollTo( { top: 0, behavior: 'smooth' } );
+
                 } );
             } );
+
+            // Add prev and next book navigation buttons to the preview pane
+            document.querySelector( '#loadPrevBook' ).addEventListener( 'click', () => {
+                const currentBookId = bookPreviewConten.querySelector( '.book' ).getAttribute( 'data-id' );
+                const currentBookIndex = Array.from( books ).findIndex( book => book.getAttribute( 'data-id' ) === currentBookId );
+                const prevBookIndex = ( currentBookIndex - 1 + books.length ) % books.length;
+                books[ prevBookIndex ].click();
+            } );
+            document.querySelector( '#loadNextBook' ).addEventListener( 'click', () => {
+                const currentBookId = bookPreviewConten.querySelector( '.book' ).getAttribute( 'data-id' );
+                const currentBookIndex = Array.from( books ).findIndex( book => book.getAttribute( 'data-id' ) === currentBookId );
+                const nextBookIndex = ( currentBookIndex + 1 ) % books.length;
+                books[ nextBookIndex ].click();
+            } );
+
 
 
 // Sort books by article data attributes, asc or desc
@@ -1776,16 +1798,23 @@ aventura.</p></div>
                          *  Views Controls
                          * ****************************
                          */
-// Set grid view
-            const btn_viewGrid = document.querySelector( '#viewGrid' );
-            btn_viewGrid.addEventListener( 'click', ( e ) => {
-                document.querySelector( '#books-list' ).classList.remove( '-view-list' );
+            function updateLayout() {
+                document.querySelector( '#books-list' ).classList.toggle( '-view-list', document.querySelector( '#layoutSwitcher' ).checked );
+
+                // Save the layout preference in a browser cookie that never expires
+                document.cookie = `layout=${document.querySelector( '#layoutSwitcher' ).checked ? 'list' : 'grid'}; path=/; max-age=31536000`; // 1 year
+            }
+            document.querySelector( '#layoutSwitcher' ).addEventListener( 'click', () => {
+                updateLayout();
             } );
-// Set list view
-            const btn_viewList = document.querySelector( '#viewList' );
-            btn_viewList.addEventListener( 'click', ( e ) => {
-                document.querySelector( '#books-list' ).classList.add( '-view-list' );
-            } );
+
+            function loadLayoutFromCookie() {
+                const layoutCookie = document.cookie.split( '; ' ).find( row => row.startsWith( 'layout=' ) );
+                if ( layoutCookie ) {
+                    document.querySelector( '#layoutSwitcher' ).checked = layoutCookie.split( '=' )[ 1 ] === 'list';
+                    updateLayout();
+                }
+            }
 
 /**
                          *  Theme selector Control
@@ -1793,7 +1822,7 @@ aventura.</p></div>
                          */
             function updateTheme() {
                 document.body.setAttribute( 'data-bs-theme', document.querySelector( '#themingSwitcher' ).checked ? 'dark' : 'light' );
-// Save the theme preference in a browser cookie that never exipres
+                // Save the theme preference in a browser cookie that never expires
                 document.cookie = `theme=${document.querySelector( '#themingSwitcher' ).checked ? 'dark' : 'light'}; path=/; max-age=31536000`; // 1 year
             }
             document.querySelector( '#themingSwitcher' ).addEventListener( 'click', () => {
@@ -1833,6 +1862,7 @@ aventura.</p></div>
 // Initialize the page view
             function init() {
                 loadThemeFromCookie();
+                loadLayoutFromCookie();
 
                 updateQRLink();
 
@@ -1848,7 +1878,6 @@ aventura.</p></div>
                 if ( urlParams.get( 'download' ) === '1' || urlParams.get( 'download' ) === 'true' ) {
                     document.querySelector( 'body' ).classList.add( '-show-books-formats' );
                 }
-
 
             }
 

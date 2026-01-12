@@ -1,0 +1,14 @@
+{
+  "name": "my-books-catalog",
+  "version": "2.0.0",
+  "description": "Jekyll-based books catalog from Calibre",
+  "scripts": {
+    "xml2data": "node scripts/xml2data.js"
+  },
+  "dependencies": {
+    "xml2js": "^0.6.0"
+  },
+  "devDependencies": {},
+  "author": "Lucas Dasso",
+  "license": "MIT"
+}

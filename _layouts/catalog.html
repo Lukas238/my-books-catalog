@@ -1,0 +1,201 @@
+---
+layout: default
+---
+
+{% comment %}Auto-detect catalog name from page URL if not specified{% endcomment %}
+{% assign catalog_name = page.catalog_name | default: page.url | remove_first: '/' | remove_first: '/' | split: '/' | first %}
+{% assign catalog_data = site.data[catalog_name] %}
+
+<main class="container-xxl">
+
+    <div class="sticky-top bg-white py-3">
+        <div id="search-box" class="py-1">
+            <input class="form-control border" placeholder="Search by title or author">
+        </div>
+
+        <div id="controls-area" class="d-flex me-3 py-1">
+            <div id="sort-box" class="d-inline-block">
+                <label title="Sort by:">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-filter" viewbox="0 0 16 16">
+                        <path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5"/>
+                    </svg>
+                    <strong class="d-none">Sort by:</strong>
+                </label>
+
+                <button id="sort-title" type="button" class="p-1 btn btn-sm btn-sort" title="Sort by Title"><span class="d-none d-sm-inline">Title</span></button>,
+                <button id="sort-author" type="button" class="p-1 btn btn-sm btn-sort" title="Sort by Author"><span class="d-none d-sm-inline">Author</span></button>,
+                <button id="sort-id" type="button" class="desc p-1 btn btn-sm btn-sort" title="Sort by Date"><span class="d-none d-sm-inline">Date</span></button>
+            </div>
+
+            <div class="border-start ms-2 ps-2 flex-grow-1">
+                <button id="sort-reset" type="button" class="text-end btn btn-sm btn-reset" title="Clean all filter">
+                    <i class="bi bi-x"></i>
+                    <span class="d-none d-sm-inline">Reset Filters</span>
+                </button>
+            </div>
+
+            <div class="view-qr ms-2 border-start ps-2 ">
+                <button type="button" class="btn btn-sm" data-bs-toggle="modal" data-bs-target="#qr-modal" title="View catalog QR code">
+                    <i class="bi bi-qr-code"></i>
+                </button>
+            </div>
+
+            <div id="views-box" class="ms-2 border-start ps-2 nav-item align-items-center d-flex">
+                <label>
+                    <strong class="d-none">View:</strong>
+                </label>
+                <i class="bi bi-grid"></i>
+                <div class="ms-2 form-switch">
+                    <input class="form-check-input" type="checkbox" role="switch" id="layoutSwitcher" title="Layout switcher"/>
+                </div>
+                <i class="bi bi-list"></i>
+            </div>
+
+            <div class="ms-2 border-start ps-2 nav-item align-items-center d-flex">
+                <label>
+                    <strong class="d-none">Theme:</strong>
+                </label>
+                <i class="bi bi-brightness-high"></i>
+                <div class="ms-2 form-switch">
+                    <input class="form-check-input" type="checkbox" role="switch" id="themingSwitcher" title="Theme switcher"/>
+                </div>
+                <i class="bi bi-moon"></i>
+            </div>
+        </div>
+    </div>
+
+    <section id="books-list" class="d-flex align-content-end flex-wrap m-0 pt-2">
+        <table id="table-header" class="table table-sm d-none m-0">
+            <thead class="d-block">
+                <tr class="d-flex">
+                    <th class="col-cover"></th>
+                    <th class="col-title flex-grow-1">Title</th>
+                    <th class="col-authors">Authors</th>
+                    <th class="col-added-on">Added on</th>
+                </tr>
+            </thead>
+        </table>
+
+        {% for book in catalog_data.books %}
+        {% assign authors_string = book.authors | join: ', ' %}
+        <article id="book-{{ book.id }}" class="book" title="{{ book.title }}" data-id="{{ book.id }}" data-authors="{{ authors_string }}" data-title="{{ book.title }}" data-index="{{ forloop.index }}">
+            <header title="{{ book.title }}">
+                <img src="/assets/covers/{{ catalog_name }}/{{ book.cover }}" loading="lazy" alt="{{ book.title }}" class="d-block mx-auto shadow" width="250" height="auto"/>
+            </header>
+            <div class="book__body">
+                <h1 class="h3 text-center my-4 py-3 fw-lighter">{{ book.title }}</h1>
+                <ul class="book__meta list-group">
+                    <li class="list-group-item">
+                        <label>Authors:</label>
+                        <span class="fs-6">{{ authors_string }}</span>
+                    </li>
+
+                    {% if book.isbn %}
+                    <li class="list-group-item">
+                        <label>ISBN:</label>
+                        <a href="https://www.goodreads.com/search?q={{ book.isbn }}" target="_blank">{{ book.isbn }}</a>
+                    </li>
+                    {% endif %}
+
+                    {% if book.series %}
+                    <li class="list-group-item">
+                        <label>Series:</label>
+                        <span class="fs-6">{{ book.series }}</span> -
+                        <span class="text-muted">Book #{{ book.series_index | default: '?' }}</span>
+                    </li>
+                    {% endif %}
+
+                    {% if book.rating %}
+                    <li class="list-group-item">
+                        <label>Rating:</label>
+                        <span class="fs-6 rating -rating-{{ book.rating }} text-warning" title="{{ book.rating }}"><span class="visually-hidden">{{ book.rating }}</span></span>
+                    </li>
+                    {% endif %}
+
+                    <li class="list-group-item">
+                        <label>Added On:</label>
+                        {{ book.timestamp | date: "%Y-%m-%d" }}
+                    </li>
+                </ul>
+
+                <div class="text-center m-3">
+                    {% if book.formats.size > 0 %}
+                    <div class="book-formats row justify-content-center mb-2 d-none">
+                        {% for format in book.formats %}
+                        <a class="btn btn-primary text-nowrap col-auto m-1" href="{{ format.url }}" target="_blank">
+                            {{ format.type }}
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewbox="0 0 16 16">
+                                <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+                                <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"/>
+                            </svg>
+                        </a>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+
+                    <div>
+                        <small>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-dots" viewbox="0 0 16 16">
+                                <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                                <path d="M5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                            </svg>
+                            <a href="https://www.goodreads.com/search?q={{ book.title | url_encode }}+{{ authors_string | url_encode }}&search_type=books" target="_blank">Search on Goodreads</a>
+                        </small>
+                    </div>
+                </div>
+
+                {% if book.comments %}
+                <div class="book_description border-top pt-3">
+                    <h2 class="h4 d-none">Summary:</h2>
+                    <div>{{ book.comments }}</div>
+                </div>
+                {% endif %}
+            </div>
+            <div class="book__table d-none border-bottom">
+                <table class="table table-sm m-0">
+                    <tbody>
+                        <tr>
+                            <td class="col-cover"><img src="/assets/covers/{{ catalog_name }}/{{ book.cover }}" alt="{{ book.title }}" class="d-block mx-auto shadow"/></td>
+                            <td class="col-title">{{ book.title }}</td>
+                            <td class="col-authors">{{ authors_string }}</td>
+                            <td class="col-added-on">{{ book.timestamp | date: "%Y-%m-%d" }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </article>
+        {% endfor %}
+    </section>
+</main>
+
+<aside id="book-preview" class="container-xxl bg-light-subtle shadow-lg d-flex flex-column">
+    <header class="visually-hidden">
+        <h2 class="h4 py-2">Book preview</h2>
+    </header>
+    <div class="book-preview__content"></div>
+    <footer class="py-2 border-top mt-3 d-flex justify-content-between">
+        <button id="loadPrevBook" class="btn btn-light"><i class="bi bi-chevron-left"></i><span class="visually-hidden">Previous book</span></button>
+        <button type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#book-preview">Close Preview</button>
+        <button id="loadNextBook" class="btn btn-light"><i class="bi bi-chevron-right"></i><span class="visually-hidden">Next book</span></button>
+    </footer>
+</aside>
+
+<div id="qr-modal" class="modal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="h4">Catalog QR code link</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+                <div id="qr-code" class="p-3 bg-white d-inline-block"></div>
+                <p>Share this QR code to acess
+                    <br/><strong>{{ catalog_data.catalog_title }}</strong>
+                    at:
+                    <br/>
+                    <a id="qr-catalog-url" href="" target="_blank"></a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

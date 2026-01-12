@@ -1,0 +1,581 @@
+{
+  "catalog_title": "Martin's eBooks Library",
+  "catalog_name": "martin",
+  "total_books": 17,
+  "last_updated": "2026-01-12T22:47:35.261Z",
+  "books": [
+    {
+      "id": "1",
+      "uuid": "93dca57e-f89c-4241-993f-cccc8e8740ce",
+      "title": "El Pie De Jaipur",
+      "title_sort": "Pie De Jaipur, El",
+      "authors": [
+        "Javier Moro"
+      ],
+      "authors_sort": "Moro, Javier",
+      "publisher": "Seix Barral",
+      "pubdate": "1995-01-01T00:00:00-03:00",
+      "rating": 4,
+      "isbn": "9788432217340",
+      "tags": [
+        "General",
+        "Literary Criticism",
+        "Juvenile Nonfiction",
+        "Biography & Autobiography"
+      ],
+      "series": null,
+      "series_index": null,
+      "comments": "<div>\n<p>En 1984, un joven estudiante víctima de un grave accidente coincide en una clínica del sur de Francia con un camboyano, superviviente de la época de los Jemeres Rojos. Decididos a desafiar los pronósticos más pesimistas y dar lo mejor de sí mismos, se ayudan mutuamente, luchan y vencen en un combate lleno de valor, y también de compasión, que nos lleva de Montpellier a Nueva York, de Phom Penh a Jaipur y más tarde a Barcelona; un combate que es una lección de esperanza que nos arroja luz sobre la sorprendente capacidad de los seres humanos para sobrevivir y hacer frente a la adversidad extrema.</p></div>",
+      "timestamp": "2024-03-23T17:07:32-03:00",
+      "languages": "spa",
+      "identifiers": "goodreads:7970437,google:2F2gPwAACAAJ,amazon:8432217344,mobi-asin:7eb719a7-906e-4333-815d-156f9e310105,isbn:9788432217340",
+      "cover": "1_ElPieDeJaipur.jpg",
+      "formats": [
+        {
+          "type": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=1dBxIfGDL-L2Fk4ThxYA4jlH_dGFl1Rxh"
+        },
+        {
+          "type": "MOBI",
+          "url": "https://drive.google.com/uc?export=download&id=1ftUlGA1zMvhAugnCpj_jerBiNSzPWZ3l"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "uuid": "f98aa154-9abb-4bbf-8ee4-6ff36fbdec41",
+      "title": "Una Columna De Fuego",
+      "title_sort": "Columna De Fuego, Una",
+      "authors": [
+        "Ken Follett"
+      ],
+      "authors_sort": "Follett, Ken",
+      "publisher": "PLAZA & JANÉS",
+      "pubdate": "2017-05-01T00:00:00-03:00",
+      "rating": 4,
+      "isbn": "9788401018251",
+      "tags": [
+        "Fiction",
+        "Historical",
+        "General",
+        "Novela Histórica"
+      ],
+      "series": {
+        "_": "Los pilares de la Tierra",
+        "$": {
+          "index": "3.0"
+        }
+      },
+      "series_index": null,
+      "comments": "<div>\n<p><strong>La saga de</strong> Los pilares de la Tierra <strong>y</strong> Un mundo sin fin <strong>, que ha cautivado a millones de lectores, prosigue ahora con la magnífica y apasionante nueva novela de Ken Follett.</strong></p>\n<p><strong>Uno de los mejores</strong> thrillers <strong>del año 2017 según Amazon y uno de los mejores libros publicados en 2017 para</strong> The Washington Post <strong>y Barnes &amp; Noble.</strong></p>\n<p><em>Una columna de fuego</em> arranca cuando el joven Ned Willard regresa asu hogar en Kingsbridge por Navidad. Corre el año 1558, un año que trastocará la vida de Ned y que cambiará Europa para siempre.</p>\n<p>Las antiguas piedras de la catedral de Kingsbridge contemplan una ciudad dividida por el odio religioso. Los principios elevados chocan con la amistad, la lealtad y el amor, y provocan derramamientos de sangre. Ned se encuentra de pronto en el bando contrario al de la muchacha con quien anhela casarse, Margery Fitzgerald.</p>\n<p>Cuando Isabel I llega al trono, toda Europa se vuelve en contra de Inglaterra. La joven monarca, astuta y decidida, organiza el primer servicio secreto del país para estar avisada ante cualquier indicio de intrigas homicidas, levantamientos o planes de invasión.</p>\n<p>En París, a la espera, se encuentra la seductora y obstinada María Estuardo, reina de los escoceses, en el seno de una familia francesa con una ambición descomunal. Proclamada legítima soberana de Inglaterra, María cuenta con sus propios partidarios, que conspiran para deshacerse de Isabel.</p>\n<p>Entretanto, Ned Willard busca a Jean Langlais, un personaje escurridizo y enigmático, sin saber que tras ese nombre falso se esconde un compañero de clase de su infancia, alguien que lo conoce demasiado bien.</p>\n<p>A lo largo de medio siglo turbulento, el amor entre Ned y Margery parece condenado al fracaso mientras el extremismo hace estallar la violencia desde Edimburgo hasta Ginebra. Isabel se aferra precariamente a su trono y a sus principios, protegida por un pequeño y entregado grupo de espías hábiles y agentes secretos valerosos.</p>\n<p>Los auténticos enemigos, tanto entonces como ahora, no son las religiones rivales. La verdadera batalla es la que enfrenta a quienes creen en la tolerancia y el acuerdo contra tiranos dispuestos a imponer sus ideas a todo el mundo... y a cualquier precio.</p>\n<p>Descubre la <strong>Saga Los pilares de la tierra</strong> :</p>\n<p style=\"font-style: italic\">Las tinieblas y el alba</p>\n<p style=\"font-style: italic\">Los pilares de la tierra</p>\n<p style=\"font-style: italic\">Un mundo sin fin</p>\n<p style=\"font-style: italic\">Una columna de fuego</p>\n<p><strong>Reseñas...</strong><br>«Lo he leído en un fin de semana largo, me lo he pasado como un enano y sigo envidiando como el primer día la capacidad de Follett para entretener. Sus tramas funcionan siempre y te mantiene pegado a cada página.»<br>Juan Gómez Jurado, <em>ABC</em></p>\n<p>« <em>Una columna de fuego</em> , muy en resumen, coge la melodía de <em>Guerra y paz</em> y la lleva a las guerras de religión del siglo XVI. A veces tiende a novela de espías y otras se convierte en una novela romántica. Y todo eso, en 935 páginas.»<br><em>El Mundo</em></p>\n<p>«Ken Follett arrasa con cada libro. Lo hará de nuevo con <em>Una columna de fuego</em> , novelón de casi mil páginas que prosigue la saga que comenzó con <em>Los pilares de la Tierra</em> , el libro más leído en España.»<br><em>La Verdad</em></p>\n<p>«Amor, violencia, pasión y una dosis justa de sexo - marca de la casa - hacen de estapropuesta un pasatiempo perfecto para las tardes-noches del otoño. <em>Una columna de fuego</em> es la enésima confirmación de que el universo Follett parece no tener límites.»<br><em>El Correo Web</em></p>\n<h3>Biografía del autor</h3>\n<p>Ken Follett es uno de los autores más queridos y admirados por los lectores de todo el mundo, y las ventas de sus treinta y seis libros superan los ciento ochenta y ocho millones de ejemplares. Su primer best seller fue <em>La isla de las tormentas (El ojo de la aguja),</em> un thriller de espionaje ambientado en la Segunda Guerra Mundial. En 1989 publicó <em>Los pilares de la Tierra,</em> que alcanzó el número uno en las listas de más vendidos en un gran número de países y que se ha convertido en su novela más popular. Sus secuelas, <em>Un mundo sin fin</em> y <em>Una columna de fuego,</em> y la precuela, <em>Las tinieblas y el alba,</em> fueron también grandes éxitos y la saga en su conjunto ha superado los cincuenta millones de ejemplares vendidos en todo el mundo. Follett vive en Hertfordshire con su esposa, Barbara. Entre los dos tienen cinco hijos, seis nietos y tres perros labradores.</p></div>",
+      "timestamp": "2024-03-23T17:07:32-03:00",
+      "languages": "spa",
+      "identifiers": "google:uJogDgAAQBAJ,isbn:9788401018251,amazon:8401018250,mobi-asin:B06WLLVCKN,goodreads:36510875",
+      "cover": "2_UnaColumnaDeFuego.jpg",
+      "formats": [
+        {
+          "type": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=1fACHm1fUgKQsHYBlpBzLyV8AL5BufYXv"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "uuid": "62de750e-d130-4560-9de3-1d56e7f16cde",
+      "title": "Un Mundo Sin Fin",
+      "title_sort": "Mundo Sin Fin, Un",
+      "authors": [
+        "Ken Follett"
+      ],
+      "authors_sort": "Follett, Ken",
+      "publisher": "PLAZA & JANÉS",
+      "pubdate": "2007-10-04T00:00:00-03:00",
+      "rating": 4,
+      "isbn": "9788401338328",
+      "tags": [
+        "Fiction",
+        "Historical",
+        "General"
+      ],
+      "series": {
+        "_": "Los pilares de la Tierra",
+        "$": {
+          "index": "2.0"
+        }
+      },
+      "series_index": null,
+      "comments": "<div>\n<p>Veinte años después de la publicación de Los pilares de la Tierra, Ken Follett volvía al fascinante mundo de Kingsbridge para presentar a sus lectores un retrato admirable del mundo medieval y una magnífica saga épica que aporta una nueva dimensión a la ficción histórica. Esta nueva edición incluye un prefacio del autor con motivo del 10o aniversario de la publicación. La publicación de Los pilares de la Tierra supuso un acontecimiento editorial sin precedentes que cautivó a millones de lectores. En Un mundo sin fin Ken Follett vuelve al fascinante mundo de Kingsbridge dos siglos después de la construcción de su majestuoso templo gótico. La catedral y el priorato ocupan de nuevo el centro de una encrucijada de amor y de odio, orgullo y codicia. En un mundo en que defensores a ultranza de las viejas costumbres luchan con encono con las mentes más progresistas, la intriga y la tensión llegan rápidamente a límites insoportables con el devastador telón de fondo de la Peste Negra, que aniquiló a la mitad de la población europea. Intriga, asesinatos, hambruna, plagas y guerras. Un retrato admirable del mundo medieval y una novela extraordinaria que aporta una nueva dimensión a la ficción histórica. Reseña: «No hay rincón sin sorpresa, ni página tediosa.» Qué leer Reseña: «No hay rincón sin sorpresa, ni página tediosa.» Qué leer</p></div>",
+      "timestamp": "2024-03-23T17:07:32-03:00",
+      "languages": "spa",
+      "identifiers": "goodreads:9777879,isbn:9788401338328,google:LdxH80NuzgAC,amazon:8401338328",
+      "cover": "3_UnMundoSinFin.jpg",
+      "formats": [
+        {
+          "type": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=1snaG-G_MNdmdHfLFFddyoWC5blKd_bJ6"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "uuid": "713aefe2-0ee3-4989-b537-a89b747bf310",
+      "title": "Las Tinieblas y El Alba",
+      "title_sort": "Tinieblas y El Alba, Las",
+      "authors": [
+        "Ken Follett"
+      ],
+      "authors_sort": "Follett, Ken",
+      "publisher": "Plaza & Janes",
+      "pubdate": "2020-09-15T00:00:00-03:00",
+      "rating": 5,
+      "isbn": "9786073196987",
+      "tags": [
+        "Historical",
+        "Fantasy",
+        "Romance",
+        "Adventure",
+        "Adult"
+      ],
+      "series": {
+        "_": "Los pilares de la Tierra",
+        "$": {
+          "index": "6.0"
+        }
+      },
+      "series_index": null,
+      "comments": "<div>\n<p>En Las tinieblas y el alba, Ken Follett embarca al lector en un épico viaje que termina donde Los pilares de la Tierra comienza. </p>\n<p>Año 997, finales de la Edad Oscura. Inglaterra se enfrenta a los ataques de los galeses por el oeste y de los vikingos por el este. La vida es difícil y aquellos que ostentan algo de poder lo ejercen con puño de hierro y, a menudo, en conflicto con el propio rey. </p>\n<p>En estos tiempos turbulentos, tres vidas se entrecruzan: el joven constructor de barcos Edgar, a punto de fugarse con la mujer a la que ama, comprende que su futuro será muy diferente a lo que había imaginado cuando su hogar es arrasado por los vikingos; Ragna, la rebelde hija de un noble normando, acompaña a su marido a una nueva tierra al otro lado del mar solo para descubrir que las costumbres allí son peligrosamente distintas; y Aldred, un monje idealista, sueña con transformar su humilde abadía en un centro de saber admirado en toda Europa. Los tres se verán abocados a un enfrentamiento con el despiadado obispo Wynstan, decidido a aumentar su poder a cualquier precio. </p>\n<p>El gran maestro de la narrativa de acción y suspense nos transporta al ocaso de una época violenta y brutal y al comienzo de un nuevo tiempo en un monumental y emocionante relato de ambición y rivalidad, nacimiento y muerte, amor y odio.</p></div>",
+      "timestamp": "2024-03-23T17:07:32-03:00",
+      "languages": "spa",
+      "identifiers": "goodreads:53972981,isbn:9786073196987,amazon:B08B3P35BL",
+      "cover": "4_LasTinieblasyElAlba.jpg",
+      "formats": [
+        {
+          "type": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=12e7a61g8SxbesMhy7pETpVkPbBxHRQ4-"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "uuid": "29d7ce77-87f4-4104-961a-d515c0cb7824",
+      "title": "Los Pilares Se La Tierra (edición ilustrada)",
+      "title_sort": "Pilares Se La Tierra (edición ilustrada), Los",
+      "authors": [
+        "Ken Follett"
+      ],
+      "authors_sort": "Follett, Ken",
+      "publisher": "PLAZA & JANÉS",
+      "pubdate": "2020-07-16T00:00:00-03:00",
+      "rating": null,
+      "isbn": "9788401024283",
+      "tags": [
+        "Fiction",
+        "Historical",
+        "Medieval",
+        "Novela",
+        "Histórico"
+      ],
+      "series": {
+        "_": "Los pilares de la Tierra",
+        "$": {
+          "index": "1.0"
+        }
+      },
+      "series_index": null,
+      "comments": "<div>\n<p>La obra maestra de Ken Follett en una lujosa edición especial 30 aniversario con más de un centenar de ilustraciones. Hace treinta años, Ken Follett publicó en español su novela más popular, Los pilares de la Tierra, que ha vendido más de veintisiete millones de ejemplares en todo el mundo. Ahora, por primera vez en una edición ilustrada, el gran maestro de la narrativa de acción y suspense nos transporta de nuevo a la Edad Media, a un fascinante mundo de reyes, damas, caballeros, pugnas feudales, castillos y ciudades amuralladas. El amor y la muerte se entrecruzan vibrantemente en este magistral tapiz cuyo centro es la construcción de una catedral gótica. Esta edición contiene un prólogo del autor y más de cien ilustraciones del artista Markus Weber. Sobre Los pilares de la Tierra han dicho: «Fantástico desde todos los puntos de vista.» El Mundo « Los pilares de la Tierra fue un hito en España, donde todavía sigue siendo el libro más leído de la historia según la Federación del Gremio de Editores.» ABC «Alta política y bajas pasiones (y viceversa) conforman un folletín de grandes dimensiones que confirman a Follett como relojero mayor del reino del bestseller.» Qué leer «Maravilloso... Te atrapará, fascinará y envolverá.» Chicago Tribune « Los pilares de la Tierra hizo de Ken Follet uno de los autores más queridos de nuestro país.» ABC Sevilla «Ken Follett sabe cómo tejer una historia fascinante, con personajes complejos, que todo actor sueña con interpretar.» Donald Sutherland «Me encanta Los pilares de la Tierra, lo recuerdo con mucho cariño [...] es uno de aquellos títulos que se quedan grabados...» Ildefonso Falcones «En Los pilares de la Tierra, Ken Follett nos presenta a unos personajes que consiguen que la historia cobre vida.» Ridley Scott</p></div>",
+      "timestamp": "2024-03-23T17:07:32-03:00",
+      "languages": "spa",
+      "identifiers": "isbn:9788401024283,epl:60360,revision:1.0,google:h3zpDwAAQBAJ",
+      "cover": "5_LosPilaresSeLaTierra.jpg",
+      "formats": [
+        {
+          "type": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=1wa9F3iaYAxxLffc_ZAlCB6DYM45hloUf"
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "uuid": "2a51142c-805f-4615-81c5-e03dec8d7b2a",
+      "title": "Las Montañas De Buda",
+      "title_sort": "Montañas De Buda, Las",
+      "authors": [
+        "Javier Moro"
+      ],
+      "authors_sort": "Moro, Javier",
+      "publisher": "Seix Barral",
+      "pubdate": "1997-12-01T00:00:00-03:00",
+      "rating": 4,
+      "isbn": "9788432235191",
+      "tags": [
+        "Historical",
+        "Ensayo",
+        "Memorias"
+      ],
+      "series": null,
+      "series_index": null,
+      "comments": "<div>\n<p>Monjas budistas de quince años se atreven a desafiar a los invasores chinos, niños que son reencarnaciones de dioses, adolescentes heroicos y ancianos de leyenda, torturadores y sabios ermitaños, policías corruptos y guerreros nómadas… <em>Las montañas de Buda</em> cuenta lo que se niega a desaparecer al otro lado del Himalaya: el espíritu de la resistencia, la fe, el alma del Tíbet. Es la historia verídica de dos mujeres jóvenes que se unen a un grupo de refugiados para cruzar, de noche y a pie, las cumbres más altas del mundo. Es la historia del Dalai Lama, que dedica su vida a mantener viva la llama de la esperanza. Es la historia reciente del Tíbet. Y es, ante todo, la prueba de que la fuerza bruta no puede destruir el espíritu humano.</p></div>",
+      "timestamp": "2024-03-23T17:07:32-03:00",
+      "languages": "spa",
+      "identifiers": "google:MguSDwAAQBAJ,goodreads:45710846,amazon:B07QQDQMKV,isbn:9788432235191",
+      "cover": "6_LasMontanasDeBuda.jpg",
+      "formats": [
+        {
+          "type": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=11DaCU_OK9qjXpfx9cPnWoIc4e8waFRNo"
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "uuid": "f8a51666-3ee8-40b3-9c37-a3d9881d81d5",
+      "title": "La Sangre De Los Inocentes",
+      "title_sort": "Sangre De Los Inocentes, La",
+      "authors": [
+        "Julia Navarro"
+      ],
+      "authors_sort": "Navarro, Julia",
+      "publisher": "Plaza & Janes",
+      "pubdate": "2007-01-01T00:00:00-03:00",
+      "rating": 4,
+      "isbn": "9789506441067",
+      "tags": [
+        "Historical",
+        "Fiction",
+        "General"
+      ],
+      "series": null,
+      "series_index": null,
+      "comments": "<div>\n<p>Soy espia y tengo miedo...Asi empieza la cronica que escribe en el siglo XIII fray Julian sobre el cruel asedio a Montsegur y la lucha entre cataros y catolicos. Siglos despues, en 1939, un medievalista agnostico emprende un peligroso viaje por el Berlin nazi en busca de su esposa de origen judio. En la actualidad, un grupo de musulmanes radicales se inmola en Frankfurt dejando tras de si un mensaje criptico que pone en estado de alerta al Centro Antiterrorista de la Union Europea, cuyos agentes, con la ayuda de los servicios secretos del Vaticano, intentaran desvelar un enigma que une la intolerancia de la Inquisicion, la sinrazon fascista y el integrismo islamico en una Algun dia alguien vengara la sangre de los inocentes. Un musulman captado por una celula terrorista, un jesuita experto en herejias, un conde frances obsesionado por una dramatica herencia familiar, un hombre misterioso -El Facilitador- que desde la sombra maneja los hilos del poder junto a una intrepida joven de los servicios antiterroristas protagonizan este apasionante libro sobre la venganza y la traicion, con el violento conflicto entre Oriente y Occidente como telon de fondo. En su novela mas madura y ambiciosa, Julia Navarro sorprende con una vertiginosa aventura que nos transporta a lugares como Jerusalen, Granada, Roma o Estambul, y que indaga en las causas del fanatismo religioso y la intolerancia a lo largo de los siglos.</p></div>",
+      "timestamp": "2024-03-23T17:07:32-03:00",
+      "languages": "spa",
+      "identifiers": "amazon:9506441065,google:mA9bPgAACAAJ,mobi-asin:4b794495-3ab8-4576-bef9-b65481c3405d,goodreads:1089596,isbn:9789506441067",
+      "cover": "7_LaSangreDeLosInocentes.jpg",
+      "formats": [
+        {
+          "type": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=1ztMNOH5wNpCyVbb6J-8Wx7TjnGyteXYC"
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "uuid": "30f17ed1-898c-4557-b150-a3458aab691d",
+      "title": "La Armadura De La Luz",
+      "title_sort": "Armadura De La Luz, La",
+      "authors": [
+        "Ken Follett"
+      ],
+      "authors_sort": "Follett, Ken",
+      "publisher": "PLAZA & JANÉS",
+      "pubdate": "2023-09-26T00:00:00-03:00",
+      "rating": 4,
+      "isbn": "9788401032554",
+      "tags": [
+        "Historical",
+        "War",
+        "Fantasy",
+        "Adult"
+      ],
+      "series": {
+        "_": "Los pilares de la Tierra",
+        "$": {
+          "index": "4.0"
+        }
+      },
+      "series_index": null,
+      "comments": "<div>\n<p style=\"font-weight: bold\">Vuelve el mejor Follett con la emocionante quinta entrega de la saga «Los pilares de la Tierra».</p>\n<p style=\"font-weight: bold\">El choque de progreso y tradición y una guerra que amenaza con engullir toda Europa en la más ambiciosa y épica novela del maestro de la ficción histórica.</p>\n<p style=\"font-weight: bold\">La revolución está en el aire </p>\n<p>1792. Un gobierno despótico está decidido a convertir Inglaterra en un poderoso imperio comercial. Y, desde el otro lado del mar, suenan tambores de guerra mientras Napoleón Bonaparte comienza su ascenso al poder y prepara un violento plan para convertirse en emperador del mundo.</p>\n<p style=\"font-weight: bold\">Kingsbridge se asoma al abismo </p>\n<p>Los nuevos avances industriales se imponen de manera implacable, sacudiendo las vidas de los trabajadores de las prósperas fábricas textiles de Kingsbridge. Las máquinas abren un mundo de oportunidades ligado, sin embargo, a la crueldad más despiadada.</p>\n<p style=\"font-weight: bold\">Una nueva tiranía surge en el horizonte </p>\n<p>Y a medida que el estallido de un conflicto parece cada vez más cerca, la historia de un pequeño grupo de personas -la decidida hilandera Sal Clitheroe, el idealista David Shoveller y Kit, el brillante hijo de Sal- se convertirá en el símbolo de la lucha de toda una generación que desea progresar y pelea por un futuro sin opresión...</p>\n<p style=\"font-weight: bold\">Sobra la saga «Los pilares de la Tierra» han dicho: </p>\n<p>«Sigo envidiando como el primer día la capacidad de Follett para entretener. Sus tramas funcionan siempre y te mantiene pegado a cada página». </p>\n<p>Juan Gómez Jurado, <em>ABC</em></p>\n<p>«Fantástico desde todos los puntos de vista».<br><em>El Mundo</em></p>\n<p>«Follett es un maestro».<br><em>The Washington Post</em></p>\n<p>«Una obra que destaca como un triunfo del esfuerzo y la profesionalidad».<br><em>The Guardian</em></p>\n<p>«No hay rincón sin sorpresa ni página tediosa».<br><em>Qué leer</em></p>\n<p>«Sus libros crean adicción. No se leen. Se devoran».<br><em>La Voz de Asturias</em></p>\n<h3>About the Author</h3>\n<p><strong>Ken Follett</strong> nació en Cardiff (Gales) y a los diez años su familia se trasladó a la capital británica. Realizó sus estudios en distintas escuelas públicas antes de licenciarse con honores en Filosofía en el University College de Londres. Comenzó su carrera como periodista en el periódico de su ciudad natal, el <em>South Wales Echo,</em> y luego trabajó en el <em>London Evening News.</em> Posteriormente se incorporó a una pequeña editorial, Everest Books, de la que terminó siendo director adjunto. Su primer gran éxito literario llegó en 1978 con la publicación de <em>El ojo de la aguja</em> , un thriller de espionaje ambientado en la Segunda Guerra Mundial. <em>.<br></em><br>Ken Follett es uno de los autores más queridos y admirados por los lectores de todo el mundo, y las ventas de sus libros superan los ciento setenta y ocho millones de ejemplares. En 1989 publicó <em>Los pilares de la Tierra,</em> el épico relato de la construcción de una catedral medieval del que se han vendido veintisiete millones de ejemplares y que se ha convertido en su novela más popular. Su continuación, <em>Un mundo sin fin</em> , se publicó en 2007, y en 2017 vio la luz <em>Una columna de fuego,</em> que transcurre en la Inglaterra del siglo XVI, durante el reinado de Isabel I. En 2020 llegó a las librerías la aclamada precuela de la saga, <em>Las tinieblas y el alba,</em> que se remonta al año 1000, cuando Kingsbridge era un asentamiento anglosajón bajo la amenaza de los invasores vikingos. </p>\n<p>Follett, que ama la música casi tanto como los libros, es un gran aficionado a tocar el bajo. Vive en Stevenage, Hertfordshire, con su esposa Barbara, exparlamentaria laborista por su circunscripción. Entre los dos tienen cinco hijos, seis nietos y dos perros labradores. --Este texto se refiere a la edición paperback.</p></div>",
+      "timestamp": "2024-03-23T17:07:32-03:00",
+      "languages": "spa",
+      "identifiers": "mobi-asin:937ad21e-fdd5-4669-bb6d-50bba0219dcc,goodreads:157620810,isbn:9788401032554,amazon:B0C5S7LKF1,google:tae_EAAAQBAJ",
+      "cover": "8_LaArmaduraDeLaLuz.jpg",
+      "formats": [
+        {
+          "type": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=14Mgwc_N-pKa-po10QixXI6uCEV6P8btz"
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "uuid": "66c5c147-68a2-445a-8c4c-96f3708144fd",
+      "title": "Era Medianoche en Bhopal",
+      "title_sort": "Era Medianoche en Bhopal",
+      "authors": [
+        "Dominique Lapierre",
+        "Javier Moro"
+      ],
+      "authors_sort": "Lapierre, Dominique & Moro, Javier",
+      "publisher": "Planeta",
+      "pubdate": "2001-01-01T00:00:00-03:00",
+      "rating": 4,
+      "isbn": "9788408083931",
+      "tags": [
+        "History",
+        "Science",
+        "Politics",
+        "Historia"
+      ],
+      "series": null,
+      "series_index": null,
+      "comments": "<div>\n<p>Doce y cinco de la noche del 2 al 3 de diciembre de 1984. Una fulgurante nube de gas tóxico se escapa de una fábrica norteamericana de pesticidas construida en el corazón de la antigua ciudad india de Bhopal. Causa treinta mil muertos y quinientos mil heridos. Es la catástrofe industrial más mortífera de la historia. Este libro narra la emocionante aventura humana y tecnológica que desembocó en esta tragedia. </p>\n<p>Cientos de personajes, situaciones y aventuras se entremezclan en este fresco desbordante de amor, heroísmo, fe y esperanza. Una historia verídica. Una tragedia en el corazón de nuestro tiempo que advierte a todos los aprendices de brujo que amenazan la supervivencia de nuestro planeta.</p></div>",
+      "timestamp": "2024-03-23T18:28:45-03:00",
+      "languages": "spa",
+      "identifiers": "mobi-asin:80799b5e-d484-4e90-84a6-7d25d33645ca,amazon:8408083937,google:fWVuPwAACAAJ,isbn:9788408083931,goodreads:16040701",
+      "cover": "9_EraMedianocheenBhopal.jpg",
+      "formats": [
+        {
+          "type": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=1Iqy1Z6HZCKS0oFsvZKgZc6cDBcI9HKFa"
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "uuid": "7470b815-de57-4b79-8d21-51ce8a878bb1",
+      "title": "Nos quieren muertos",
+      "title_sort": "Nos quieren muertos",
+      "authors": [
+        "Javier Moro"
+      ],
+      "authors_sort": "Moro, Javier",
+      "publisher": "Espasa",
+      "pubdate": "2023-09-19T19:00:00-03:00",
+      "rating": null,
+      "isbn": "9788467069778",
+      "tags": [
+        "Fiction",
+        "General"
+      ],
+      "series": null,
+      "series_index": null,
+      "comments": "<div>\n<p style=\"font-weight: bold\">El sacrificio de un hombre, la lucha de una familia, la conciencia de un país.</p>\n<p>En 2014, tras liderar las mayores manifestaciones de protesta en la historia de Venezuela contra el régimen de Nicolas Maduro, el joven político Leopoldo López se vio enfrentado a la decisión más difícil de su vida: o abandonaba su país y seguía la lucha desde el extranjero, o permanecía en Caracas hasta que lo detuvieran. Debía elegir entre la libertad, o la cárcel. Decidió sacrificar su vida familiar y confortable —y entregarse. Al hacer lo que nadie esperaba, se convirtió en héroe.</p>\n<p>Escrita con vigoroso pulso narrativo, Javier Moro nos cuenta la historia de un padre de familia que de la noche a la mañana se encuentra en una celda por un crimen que no cometió, de una madre que se ve obligada a maquillar la realidad ante sus hijos al tiempo que clama en la ONU y en la Casa Blanca por la liberación de su marido, de unos padres que no se resignan a que su hijo pierda la vida entre rejas. Y de cómo, poco a poco, el mundo fue conociendo la verdad sobre lo que realmente sucede en Venezuela.</p>\n<p>Por el autor de <em>Pasión india, El imperio eres tú</em> o <em>A flor de piel,</em> entre otros.</p>\n<h3>Book Description</h3>\n<p>El sacrificio de un hombre, la lucha de una familia, la conciencia de un país. --Este texto se refiere a una edición agotada o no disponible de este título.</p>\n<h3>About the Author</h3>\n<p>Javier Moro es uno de los autores más querido por los lectores y valorado por la crítica del panorama literario en español. Periodista y escritor, también ha trabajado en el mundo del cine como guionista y productor. Entre sus libros, destacan Senderos de libertad (1992), El pie de Jaipur (1995), Las montañas de Buda (1998), Era medianoche en Bhopal (2001), en colaboración con Dominique Lapierre, Pasión india (2005), El sari rojo (2008), El imperio eres tú (Premio Planeta 2011), A flor de piel (2015), Mi pecado (Premio Primavera 2017) y A prueba de fuego (2020). --Este texto se refiere a una edición agotada o no disponible de este título.</p></div>",
+      "timestamp": "2024-03-23T18:28:46-03:00",
+      "languages": "spa",
+      "identifiers": "isbn:9788467069778,mobi-asin:7191a90e-eacd-49b8-a689-48aa27c14d26",
+      "cover": "10_Nosquierenmuertos.jpg",
+      "formats": [
+        {
+          "type": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=1d3AdzYAhx6-nDjt9Ff4rSuOTn_3B30ek"
+        }
+      ]
+    },
+    {
+      "id": "12",
+      "uuid": "70d5590c-33ed-429c-9fe1-1c3f9fd577f3",
+      "title": "Plantación exitosa de viñedos",
+      "title_sort": "Plantación exitosa de viñedos",
+      "authors": [
+        "Marcelo Canatella"
+      ],
+      "authors_sort": "Canatella, Marcelo",
+      "publisher": "Self-published",
+      "pubdate": "2024-03-05T00:00:00-03:00",
+      "rating": null,
+      "isbn": "9786310042633",
+      "tags": [
+        "Agronomía",
+        "Viticultura"
+      ],
+      "series": null,
+      "series_index": null,
+      "comments": "<div>\n<p style=\"font-weight: bold; font-family: 'InconsolataGo Nerd Font Complete','Menlo','Monaco','Courier New','monospace','Menlo','Monaco','Courier New','monospace'; font-size: 12px\"><span style=\"color: #d4d4d4; background-color: #1e1e1e\">Sinopsis</span></p>\n<p style=\"font-family: 'InconsolataGo Nerd Font Complete','Menlo','Monaco','Courier New','monospace','Menlo','Monaco','Courier New','monospace'; font-size: 12px\"><span style=\"color: #d4d4d4; background-color: #1e1e1e\">Este libro te permitirá adquirir las herramientas necesarias para plantar de manera exitosa un viñedo. También te brindará las pautas generales a tener en cuenta al momento de tomar decisiones y realizar las diferentes tareas en cada etapa del proceso de plantación.</span></p>\n<p style=\"font-family: 'InconsolataGo Nerd Font Complete','Menlo','Monaco','Courier New','monospace','Menlo','Monaco','Courier New','monospace'; font-size: 12px\"><span style=\"color: #d4d4d4; background-color: #1e1e1e\">Las recomendaciones que encontrarás aquí son aplicables tanto en cultivos a secano, como en aquellos proyectos pensados para áreas de regadío, es decir, donde se utiliza un sistema de riego presurizado o gravitacional, como complemento de las precipitaciones en los requerimientos hídricos anuales de la planta.</span></p>\n<p style=\"font-weight: bold; font-family: 'InconsolataGo Nerd Font Complete','Menlo','Monaco','Courier New','monospace','Menlo','Monaco','Courier New','monospace'; font-size: 12px\"><span style=\"color: #d4d4d4; background-color: #1e1e1e\">¿Qué vas a encontrar en este libro?</span></p>\n<p style=\"font-family: 'InconsolataGo Nerd Font Complete','Menlo','Monaco','Courier New','monospace','Menlo','Monaco','Courier New','monospace'; font-size: 12px\"><span style=\"color: #d4d4d4; background-color: #1e1e1e\">Un recorrido que incluye desde los análisis previos a realizar al inicio del trabajo de plantación, hasta el manejo agronómico del viñedo durante su primer año de vida.</span></p>\n<p style=\"font-family: 'InconsolataGo Nerd Font Complete','Menlo','Monaco','Courier New','monospace','Menlo','Monaco','Courier New','monospace'; font-size: 12px\"><span style=\"color: #d4d4d4; background-color: #1e1e1e\">Los conceptos y recomendaciones que detallo en este libro están basados en una trayectoria profesional de más de 25 años, y más de 7.000 hectáreas cultivadas a lo largo y a lo ancho de toda Argentina, y también en algunos otros países de Latinoamérica.<br></span></p>\n<p style=\"font-weight: bold; font-family: 'InconsolataGo Nerd Font Complete','Menlo','Monaco','Courier New','monospace','Menlo','Monaco','Courier New','monospace'; font-size: 12px\"><span style=\"color: #d4d4d4; background-color: #1e1e1e\">Sobre el autor</span></p>\n<p style=\"font-family: 'InconsolataGo Nerd Font Complete','Menlo','Monaco','Courier New','monospace','Menlo','Monaco','Courier New','monospace'; font-size: 12px\"><span style=\"color: #d4d4d4; background-color: #1e1e1e\">Marcelo Pablo Canatella es ingeniero agrónomo y cuenta con una destacada trayectoria en el ámbito vitivinícola.</span></p>\n<p style=\"font-family: 'InconsolataGo Nerd Font Complete','Menlo','Monaco','Courier New','monospace','Menlo','Monaco','Courier New','monospace'; font-size: 12px\"><span style=\"color: #d4d4d4; background-color: #1e1e1e\">Nacido en Mendoza, egresó del Liceo Agrícola y Enológico “Domingo Faustino Sarmiento” y obtuvo su título universitario en la Facultad de Ciencias Agrarias de la Universidad Nacional de Cuyo.</span></p>\n<p style=\"font-family: 'InconsolataGo Nerd Font Complete','Menlo','Monaco','Courier New','monospace','Menlo','Monaco','Courier New','monospace'; font-size: 12px\"><span style=\"color: #d4d4d4; background-color: #1e1e1e\">Desde 1998, trabaja en viticultura de alta gama y se ha especializado en el manejo orgánico y sostenible de viñedos.</span></p>\n<p style=\"font-family: 'InconsolataGo Nerd Font Complete','Menlo','Monaco','Courier New','monospace','Menlo','Monaco','Courier New','monospace'; font-size: 12px\"><span style=\"color: #d4d4d4; background-color: #1e1e1e\">Es cofundador de la plataforma Vanguarvid, un portal de contenidos vitícolas y enológicos creado para quienes quieren aprender y disfrutar de la vid y el vino.</span></p>\n<p style=\"font-family: 'InconsolataGo Nerd Font Complete','Menlo','Monaco','Courier New','monospace','Menlo','Monaco','Courier New','monospace'; font-size: 12px\"><span style=\"color: #d4d4d4; background-color: #1e1e1e\">Es una figura clave en la promoción de prácticas sostenibles y en el desarrollo de nuevas técnicas para la producción de uvas de calidad, consolidando así su reputación como un líder en el campo de la vitivinicultura de alta gama.</span></p>\n<p style=\"font-family: 'InconsolataGo Nerd Font Complete','Menlo','Monaco','Courier New','monospace','Menlo','Monaco','Courier New','monospace'; font-size: 12px; color: #d4d4d4\"> </p></div>",
+      "timestamp": "2024-09-05T15:00:54-03:00",
+      "languages": "spa",
+      "identifiers": "isbn:9786310042633",
+      "cover": "12_Plantacionexitosadevinedos.jpg",
+      "formats": [
+        {
+          "type": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=1gIJZeOug9_O2FhwMwrpva3m2tOOc91Op"
+        },
+        {
+          "type": "PDF",
+          "url": "https://drive.google.com/uc?export=download&id=1v4w6zW2jIOpDxhuzXGtgBQpPuY4WHIo-"
+        }
+      ]
+    },
+    {
+      "id": "13",
+      "uuid": "cb4f2a11-0daf-4fb8-952f-b88f5553f9a7",
+      "title": "Mares De Furia",
+      "title_sort": "Mares De Furia",
+      "authors": [
+        "Federico Andahazi"
+      ],
+      "authors_sort": "Andahazi, Federico",
+      "publisher": "Grijalbo",
+      "pubdate": "2025-04-01T00:00:00-03:00",
+      "rating": 4,
+      "isbn": "9789502817811",
+      "tags": [
+        "Fiction",
+        "Historical",
+        "General",
+        "Thrillers"
+      ],
+      "series": null,
+      "series_index": null,
+      "comments": "<div>\n<p>Una novela trepidante sobre las travesías de Hipólito Bouchard, marino francés, corsario audaz y, por momentos, temible titán de los mares, conocido por sus combates en las guerras por la independencia de Argentina, como el asedio a California, hacia 1816. A bordo de La Argentina Hipólito Bouchard cruza los mares provocando terror. Marino francés, corsario audaz y, por momentos, temible titán es conocido por sus combates en las guerras por la independencia de Argentina, como el asedio a California, hacia 1816. Con un estilo que evoca las novelas de aventuras y piratas, Federico Andahazi nos ofrece una trama que incluye tesoros ocultos, intriga política, batallas navales y camaradería corsaria. Además de Bouchard, desfilan por estas páginas grandes figuras como el Almirante Brown, el marino Tomás Espora y Lord Byron. Mares de Furia retrata los últimos estertores de la España colonial en América y brinda un panorama de lo variopinta, solidaria y férrea que fue la empresa independentista en el continente. Con un estilo cautivador y trepidante que nos invita a meternos de lleno en la época, Andahazi consigue el retrato de un grupo de hombres que batalló, con honorabilidad, valentía y una inagotable sed de justicia, en pos de la libertad de toda América. La crítica dijo: «No sorprende la habilidad de Andahazi como constructor de mecanismos narrativos y su destreza para mantener en vilo al lector hasta el final». La Nación «Andahazi sabe conducir a sus personajes hacia situaciones límite». Andrés de Luna, Hoja por Hoja (México) «Federico Andahazi nos sorprende con una narrativa entre mitológica y descarnadamente actual». Juan Felipe Echeverry Jaramillo, Agenda Cultural (Colombia) «Se percibe en Andahazi un autor lleno de ideas, consciente de rescatar la tensión del relato de terror y de misterio para la literatura, y valorar —en tiempos en que ha hegemonizado el discurso el criterio de 'la autonomía del lenguaje'— las maravillosas posibilidades de los contenidos. Temas, símbolos, tramas, historias, inspiración, musas: aquello que ha sido tan desechado por algunas vertientes contemporáneas de la literatura es traído al tapete por Andahazi, admirador evidente de viejos hábitos culturales y literarios». Andrea Blanqué, \"El País Cultural\" (Uruguay)</p></div>",
+      "timestamp": "2025-07-09T14:25:52-03:00",
+      "languages": "spa",
+      "identifiers": "google:YNpSEQAAQBAJ,goodreads:230594088,isbn:9789502817811",
+      "cover": "13_MaresDeFuria.jpg",
+      "formats": [
+        {
+          "type": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=1pIBG26Sfw9Fvj5hRlE92pwtEmxRr9imR"
+        }
+      ]
+    },
+    {
+      "id": "14",
+      "uuid": "2a6a8e3e-713e-417e-9126-2e05d58cee39",
+      "title": "Cora",
+      "title_sort": "Cora",
+      "authors": [
+        "Jorge Fernández Díaz"
+      ],
+      "authors_sort": "Díaz, Jorge Fernández",
+      "publisher": "Planeta Argentina",
+      "pubdate": "2024-03-01T00:00:00-03:00",
+      "rating": 3,
+      "isbn": "9789504986102",
+      "tags": [
+        "Fiction",
+        "Literary"
+      ],
+      "series": null,
+      "series_index": null,
+      "comments": "<div>\n<p style=\"font-weight: bold\">Hay secretos de los que uno no debería enterarse nunca. </p>\n<p>Cora Bruno es una detective privada especializada en infidelidades, una teórica del amor y alguien que se involucra personalmente en las dudas y los desgarros de sus clientes. Despectivamente, la llaman \"reina de corazones\" y \"espía de braga y bragueta\". </p>\n<p>Todo cambia cuando una gran agencia de seguridad, dominada por hombres, quiere asociarla para derivarle clientes de alta gama. </p>\n<p>A partir de ese momento, la vida de Cora discurrirá por un laberinto de engaños y de amores ocultos, y dará un vuelco inesperado cuando uno de esos casos la enfrente cara a cara con la muerte. </p>\n<p>Mezcla de thriller y comedia sentimental <em>Cora</em> –la novela– tiene una sorpresa cada dos páginas, y un final asombroso y escalofriante. Jorge Fernández Díaz, el autor de <em>Mamá</em> y creador de la demoledora trilogía de Remil, amalgama una vez más su conocimiento sobre la condición humana con el más puro suspenso. El un mundo de intrigas amorosas lleno de vueltas de tuerca que presenta en socie-dad a un personaje femenino que dará que hablar.</p></div>",
+      "timestamp": "2025-07-09T14:25:52-03:00",
+      "languages": "spa",
+      "identifiers": "goodreads:209234858,isbn:9789504986102,google:_873EAAAQBAJ",
+      "cover": "14_Cora.jpg",
+      "formats": [
+        {
+          "type": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=1D96tfKBmA4bmxyaPE1XHGAxnboJIqMMQ"
+        }
+      ]
+    },
+    {
+      "id": "16",
+      "uuid": "df08ffec-387c-4b70-b02c-c53309ef074e",
+      "title": "El secreto de Marcial",
+      "title_sort": "secreto de Marcial, El",
+      "authors": [
+        "Jorge Fernández Díaz"
+      ],
+      "authors_sort": "Díaz, Jorge Fernández",
+      "publisher": "Ediciones Destino",
+      "pubdate": "2025-02-07T00:00:00-03:00",
+      "rating": null,
+      "isbn": null,
+      "tags": [],
+      "series": null,
+      "series_index": null,
+      "comments": "<div>\n<p align=\"justify\" style=\"font-weight: bold\">PREMIO NADAL 2025 Por el autor de la aclamada novela Mamá </p>\n<p align=\"justify\" style=\"font-weight: bold\">Madre solo hay una. Pero cada padre es un enigma. Y todo hijo necesita resolverlo. </p>\n<p align=\"justify\">Un escritor, miembro de la comunidad española en Buenos Aires, intenta descifrar la verdadera personalidad de su padre años después de su muerte. Marcial Fernández, emigrante asturiano, como tantos hombres de su época siempre tuvo dificultades para comunicarse con su hijo, a quien castigó con años de silencio y disgusto al descubrir su pasión literaria. El único vínculo entre ellos fueron las películas del Hollywood clásico que veían por televisión, una educación sentimental llena de sutilezas y malentendidos que Marcial impartía de manera indirecta. A medida que avanza en la reconstrucción de su historia, el narrador halla indicios de que su padre llevó una vida secreta y se obsesiona con descubrirla. </p>\n<p align=\"justify\">Una novela tremendamente bella y dolorosa, escrita con gran pulso narrativo y hasta con toques de suspense, que no solo homenajea a los sufridos migrantes españoles y a las películas que formaron nuestra personalidad, sino que se adentra en los misterios familiares más recónditos y en la relación muchas veces espinosa entre padres e hijos que se aman.</p></div>",
+      "timestamp": "2025-09-28T15:55:36-03:00",
+      "languages": "spa",
+      "identifiers": null,
+      "cover": "16_ElsecretodeMarcial.jpg",
+      "formats": [
+        {
+          "type": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=1-efABIhwtZzuda6rVH86Q3TZ5Gy9CJ9l"
+        }
+      ]
+    },
+    {
+      "id": "17",
+      "uuid": "97452fdd-b579-41bd-8f3e-36443d780bf1",
+      "title": "El problema final",
+      "title_sort": "problema final, El",
+      "authors": [
+        "Arturo Pérez‑Reverte"
+      ],
+      "authors_sort": "Pérez‑Reverte, Arturo",
+      "publisher": "Alfaguara",
+      "pubdate": "2023-08-21T18:00:31-03:00",
+      "rating": null,
+      "isbn": null,
+      "tags": [],
+      "series": null,
+      "series_index": null,
+      "comments": null,
+      "timestamp": "2025-09-28T15:55:36-03:00",
+      "languages": "spa",
+      "identifiers": null,
+      "cover": "17_Elproblemafinal.jpg",
+      "formats": [
+        {
+          "type": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=1r4pYi55j9EPDPMzmwrEpWpfZkq3WV4u2"
+        }
+      ]
+    },
+    {
+      "id": "18",
+      "uuid": "f8151cba-baf7-4e15-ac4f-ac60bfd77dec",
+      "title": "El intercambio",
+      "title_sort": "intercambio, El",
+      "authors": [
+        "John Grisham"
+      ],
+      "authors_sort": "Grisham, John",
+      "publisher": "2024",
+      "pubdate": "2024-04-10T21:00:00-03:00",
+      "rating": null,
+      "isbn": null,
+      "tags": [],
+      "series": {
+        "_": "La Tapadera",
+        "$": {
+          "index": "2.0"
+        }
+      },
+      "series_index": null,
+      "comments": "Hacequince años burló a la mafia y salió con vida. ¿Qué fue del abogado Mitch McDeere?\nEl protagonista del icónico thrillerLA TAPADERAregresa en una novela aún más trepidante.\n«La secuela más ansiosamente esperada de la última década».\nDaily Express\nDIEZ DÍAS PARA SALVAR UNA VIDA.\nUN SEGUNDO PARA PONERLE FIN.\nHace quince años, Mitch McDeere esquivó a la muerte. Y a la mafia. Tras hacerse con diez millones de dólares y desaparecer, vio cómo sus enemigos acababan en la cárcel o en la tumba. Ahora Mitch y su mujer, Abby, viven en Manhattan, donde él se ha abierto camino hasta convertirse en socio del bufete más importante del mundo.\nPero cuando su mentor en Roma le pide un favor que le llevará a Estambul y Trípoli, Mitch se ve inmerso en el centro de un siniestro complot con ramificaciones por todo el planeta y que una vez más pondrá en peligro a sus colegas, amigos y familia. Mitch se ha convertido en un experto en mantenerse un paso por delante de sus adversarios, pero ahora que el tiempo se está agotando, ¿será capaz de volver a lograrlo? Esta vez, no hay donde esconderse.\nSobre la novela han dicho...\n\n«La secuela más ansiosamente esperada de la última década».\nDaily Express\n«Una actualización vertiginosa... Grisham, en su versión más clásica, intensifica el suspense».\nThe Wall Street Journal\n«Una trama maravillosamente construida... Deja sin aliento al lector».\nDaily Mail\n«En esta novela Grisham nos regala la clase de narración hipnótica que siempre esperamos de él».\nFinancial Times\n«Fascinante».\nIrish Independent\n«Los fans de Grisham lo van a devorar... La trama y el ritmo son frenéticos».\nIndependent",
+      "timestamp": "2025-09-28T15:55:36-03:00",
+      "languages": "spa",
+      "identifiers": null,
+      "cover": "18_Elintercambio.jpg",
+      "formats": [
+        {
+          "type": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=18LGAuUJ1hVhBsZBUuJTC23q7fm2bcJ5x"
+        }
+      ]
+    },
+    {
+      "id": "19",
+      "uuid": "e6002b5a-7217-4d7e-b1c1-b0b82d78bfa9",
+      "title": "El italiano",
+      "title_sort": "italiano, El",
+      "authors": [
+        "Arturo Pérez-Reverte"
+      ],
+      "authors_sort": "Pérez-Reverte, Arturo",
+      "publisher": "Alfaguara",
+      "pubdate": "2021-09-20T19:00:00-03:00",
+      "rating": null,
+      "isbn": null,
+      "tags": [],
+      "series": null,
+      "series_index": null,
+      "comments": "<div><p><b>LA NUEVA NOVELA DE ARTURO PÉREZ-REVERTE</b></p> <p><b>Una historia de amor, mar y guerra</b></p> <p>«Su estilo elegante se combina con un gran manejo de la lengua española. Pérez-Reverte es un maestro.»<br><i><b>La Stampa</b></i></p> <p><i>«Nada\n traiciona, tanto tiempo después, la mujer que desde hace dos  años vive\n sola junto al mar con un perro y unos libros. Qué otra cosa, decide, \nsería el impulso, o el deseo, de permanecer abrazada a ese hombre para \nsiempre. Ignora qué habrá en su cabeza dentro de un par de horas, cuando\n la claridad del día la despeje del todo e ilumine con más crudeza su \nconciencia. Lo cierto es</i>  <i>que</i><i> en este momento, sin duda alguna, desearía morir si él muriera.»</i><br>En\n los años 1942 y 1943, durante la Segunda Guerra Mundial, buzos de  \ncombate italianos hundieron o dañaron catorce barcos aliados en \nGibraltar y la bahía de Algeciras. En esta novela, inspirada en hechos \nreales, sólo algunos personajes y situaciones son</p> <p>imaginarios. \nElena Arbués, una librera de veintisiete años, encuentra  una madrugada \nmientras pasea por la playa a uno de esos buzos, desvanecido entre la \narena y el agua. Al socorrerlo, la joven ignora que esa determinación \ncambiará su vida y que el amor será sólo parte de una peligrosa \naventura.</p></div>",
+      "timestamp": "2025-09-28T15:55:36-03:00",
+      "languages": "spa",
+      "identifiers": "mobi-asin:B0973MQ7NT",
+      "cover": "19_Elitaliano.jpg",
+      "formats": [
+        {
+          "type": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=1rS-wSykf4zWYGUDbNaY36UJ2AkOk5dF2"
+        }
+      ]
+    }
+  ]
+}

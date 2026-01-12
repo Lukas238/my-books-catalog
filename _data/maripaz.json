@@ -1,0 +1,857 @@
+{
+  "catalog_title": "Maripaz's eBooks Library",
+  "catalog_name": "maripaz",
+  "total_books": 25,
+  "last_updated": "2026-01-12T22:47:35.217Z",
+  "books": [
+    {
+      "id": "1",
+      "uuid": "98a1eb40-1248-43e3-a855-08209fde02f1",
+      "title": "La Liebre Con Ojos De Ámbar",
+      "title_sort": "Liebre Con Ojos De Ámbar, La",
+      "authors": [
+        "Edmund de Waal, Marcelo Cohen"
+      ],
+      "authors_sort": "Edmund de Waal, Marcelo Cohen",
+      "publisher": "Acantilado",
+      "pubdate": "2010-08-31T00:00:00-03:00",
+      "rating": 4,
+      "isbn": "9788415277712",
+      "tags": [
+        "Biography & Autobiography",
+        "Artists; Architects; Photographers",
+        "Literary Criticism",
+        "English; Irish; Scottish; Welsh",
+        "European"
+      ],
+      "series": null,
+      "series_index": null,
+      "comments": "<div>\n<p>Más de doscientas figuritas de madera y marfil, ninguna de ellas mayor que una caja de cerillas, son el origen de este fascinante libro en el que Edmund de Waal describe el viaje que han hecho a lo largo de los años. Un viaje lleno de aventuras, de guerra, de amor y de pérdida, que resume, en la historia de una familia, la historia de Europa en los siglos XIX y XX. Un texto evocativo y de gran belleza que comienza con una pequeña liebre de ojos de ámbar que se mezcla en un bolsillo con las monedas, y termina, como todo auténtico viaje, con el descubrimiento de uno mismo. Edmund de Waal (Nottingham, 1964) es ceramista y sus obras se han expuesto en diferentes museos y colecciones, entre ellos el Victoria &amp; Albert Museum y la Tate Britain. Es profesor de cerámica en la Universidad de Westminster y vive en Londres.</p>\n<h3>---</h3>\n<p>Edmund de Waal (Nottingham, 1964) es ceramista y sus obras se han expuesto en diferentes museos y colecciones, entre ellos el Victoria &amp; Albert Museum y la Tate Britain. Es profesor de cerámica en la Universidad de Westminster y vive en Londres.</p></div>",
+      "timestamp": "2024-03-07T12:18:53-03:00",
+      "languages": "spa",
+      "identifiers": "biblioeteca:1663985,isbn:9788415277712,goodreads:15743993,amazon:8415277717,google:n-j7ugAACAAJ",
+      "cover": "1_LaLiebreConOjosDeAmbar.jpg",
+      "formats": [
+        {
+          "type": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=17EY0hgVBiJcD107rNoFdvS8qY07oSVxh"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "uuid": "f4d24567-b11c-4aed-aad6-add42efca17b",
+      "title": "La cocinera irlandesa",
+      "title_sort": "cocinera irlandesa, La",
+      "authors": [
+        "Mary Beth Keane"
+      ],
+      "authors_sort": "Keane, Mary Beth",
+      "publisher": "HarperCollins",
+      "pubdate": "2013-03-12T00:00:00-03:00",
+      "rating": 4,
+      "isbn": "9788491393849",
+      "tags": [
+        "Historical",
+        "Adult",
+        "Novela",
+        "Histórico"
+      ],
+      "series": null,
+      "series_index": null,
+      "comments": "<div>\n<p>A principios del siglo XX, Mary Mallon emigró a Nueva York desde Irlanda con quince años. Valiente, testaruda y con el sueño de ser cocinera, luchó para llegar a serlo desde los puestos más bajos del servicio doméstico. Descubrió que era una gran chef y pronto la aristocracia neoyorquina empezó a pelearse por sus servicios, lo que le dio una rara independencia para la época. Parecía que podría cumplir su sueño. Pero empezó a dejar un reguero de enfermos de tifus a su paso y fue identificada como portadora asintomática por los investigadores, que la pusieron en busca y captura.</p>\n<p>La llamaron Mary la Tifoidea. Decían que transmitía el tifus de sus manos a la comida de aquellos a los que servía. Decían que ella lo sabía. Pero Mary no estaba enferma. Ella no había hecho nada malo.</p>\n<p>No fue arrestada rápidamente. Hubo avisos, requerimientos y, cuando por fin fue detenida, no se dejó llevar tranquilamente. Tachada de asesina y condenada tanto por la prensa como por la opinión pública, Mary siguió luchando por su libertad, sin importarle el coste…</p>\n<p style=\"font-weight: bold\">La cocinera irlandesa arroja luz sobre la que fue descrita como la «mujer más peligrosa de América».</p>\n<p>El relato de Mary Beth Keane es tan poderoso</p>\n<p><strong>«</strong> La cocinera irlandesa <strong>se convertirá en serie de la mano de Elisabeth Moss (Mad Men y El cuento de la criada)».</strong></p>\n<h3>Nota de la solapa</h3>\n<p>A principios del siglo XX, Mary Mallon emigró a Nueva York desde Irlanda con quince años. Valiente, testaruda y con el sueño de ser cocinera, luchó para llegar a serlo desde los puestos más bajos del servicio doméstico. Descubrió que era una gran chef y pronto la aristocracia neoyorquina empezó a pelearse por sus servicios, lo que le dio una rara independencia para la época. Parecía que podría cumplir su sueño. Pero empezó a dejar un reguero de enfermos de tifus a su paso y fue identificada como portadora asintomática por los investigadores, que la pusieron en busca y captura.</p>\n<p>La llamaron Mary la Tifoidea. Decían que transmitía el tifus de sus manos a la comida de aquellos a los que servía. Decían que ella lo sabía. Pero Mary no estaba enferma. Ella no había hecho nada malo.</p>\n<p>No fue arrestada rápidamente. Hubo avisos, requerimientos y, cuando por fin fue detenida, no se dejó llevar tranquilamente. Tachada de asesina y condenada tanto por la prensa como por la opinión pública, Mary siguió luchando por su libertad, sin importarle el coste…</p>\n<p style=\"font-weight: bold\">La cocinera irlandesa arroja luz sobre la que fue descrita como la «mujer más peligrosa de América».</p>\n<p>El relato de Mary Beth Keane es tan poderoso</p>\n<p><strong>«</strong> La cocinera irlandesa <strong>se convertirá en serie de la mano de Elisabeth Moss (Mad Men y El cuento de la criada)».</strong></p>\n<h3>Contraportada</h3>\n<p>A principios del siglo XX, Mary Mallon emigró a Nueva York desde Irlanda con quince años. Valiente, testaruda y con el sueño de ser cocinera, luchó para llegar a serlo desde los puestos más bajos del servicio doméstico. Descubrió que era una gran chef y pronto la aristocracia neoyorquina empezó a pelearse por sus servicios, lo que le dio una rara independencia para la época. Parecía que podría cumplir su sueño. Pero empezó a dejar un reguero de enfermos de tifus a su paso y fue identificada como portadora asintomática por los investigadores, que la pusieron en busca y captura.</p>\n<p>La llamaron Mary la Tifoidea. Decían que transmitía el tifus de sus manos a la comida de aquellos a los que servía. Decían que ella lo sabía. Pero Mary no estaba enferma. Ella no había hecho nada malo.</p>\n<p>No fue arrestada rápidamente. Hubo avisos, requerimientos y, cuando por fin fue detenida, no se dejó llevar tranquilamente. Tachada de asesina y condenada tanto por la prensa como por la opinión pública, Mary siguió luchando por su libertad, sin importarle el coste…</p>\n<p style=\"font-weight: bold\">La cocinera irlandesa arroja luz sobre la que fue descrita como la «mujer más peligrosa de América».</p>\n<p>El relato de Mary Beth Keane es tan poderoso</p>\n<p><strong>«</strong> La cocinera irlandesa <strong>se convertirá en serie de la mano de Elisabeth Moss (Mad Men y El cuento de la criada)».</strong></p></div>",
+      "timestamp": "2024-03-11T16:23:45-03:00",
+      "languages": "spa",
+      "identifiers": "google:PnE0ywEACAAJ,amazon:B07SNWC6XF,epl:51329,revision:1.0,goodreads:46006547,isbn:9788491393849",
+      "cover": "2_Lacocinerairlandesa.jpg",
+      "formats": [
+        {
+          "type": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=1hpP_3FObhYuLtExctfpAzi2dytkDhdDE"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "uuid": "a5119be7-4dc8-499c-8b8d-b5976e815a1b",
+      "title": "Las hijas de la criada: Premio Planeta 2023",
+      "title_sort": "hijas de la criada: Premio Planeta 2023, Las",
+      "authors": [
+        "Sonsoles Ónega"
+      ],
+      "authors_sort": "Ónega, Sonsoles",
+      "publisher": "Planeta México",
+      "pubdate": "2024-01-23T00:00:00-03:00",
+      "rating": 4,
+      "isbn": "9786073910255",
+      "tags": [
+        "Fiction",
+        "General",
+        "Sagas",
+        "Historical",
+        "20th Century",
+        "Romance",
+        "Hispanic & Latino",
+        "Magical Realism"
+      ],
+      "series": null,
+      "series_index": null,
+      "comments": "<div>\n<p>Hay secretos de familia que merecen ser contados. </p>\n<p>Esta es la historia de uno de ellos. Una noche de febrero de 1900, recién estrenado el siglo XX, en el pazo de Espíritu Santo llegan al mundo dos niñas, Clara y Catalina, cuyos destinos ya estaban escritos. Sin embargo, una venganza inesperada sacudirá para siempre sus vidas y las de todos los Valdés. Doña Inés, matriarca de la saga y fiel esposa de don Gustavo, deberá sobrevivir al desamor, al dolor del abandono y a las luchas de poder hasta convertir a su verdadera hija en heredera de todo un imperio, en una época en la que a las mujeres no se les permitía ser dueñas de sus vidas. Las hijas de la criada es una historia mágica y realista al mismo tiempo, en una Galicia extraordinaria, sobre hombres y mujeres que se rebelan contra su propio destino en busca de la verdad.</p></div>",
+      "timestamp": "2024-03-11T16:23:45-03:00",
+      "languages": "spa",
+      "identifiers": "goodreads:203746314,google:UG5V0AEACAAJ,isbn:9786073910255,amazon:6073910258",
+      "cover": "3_LashijasdelacriadaPremioPlaneta2023.jpg",
+      "formats": [
+        {
+          "type": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=1sn-iTgRfkHihFf5u11ZL4TBnF5w-ap1S"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "uuid": "08360bf9-072b-46a0-917f-5c90f9bda8b7",
+      "title": "La Última Rosa De Shanghái",
+      "title_sort": "Última Rosa De Shanghái, La",
+      "authors": [
+        "Weina Dai Randel"
+      ],
+      "authors_sort": "Randel, Weina Dai",
+      "publisher": "Vidis",
+      "pubdate": "2021-12-01T00:00:00-03:00",
+      "rating": 4,
+      "isbn": "9788419767158",
+      "tags": [
+        "War",
+        "Adult",
+        "Fiction",
+        "Romance",
+        "Historical"
+      ],
+      "series": null,
+      "series_index": null,
+      "comments": "<div>\n<p>1940. Aiyi Shao es una joven heredera y propietaria de un club nocturno en el viejo Shanghai, internacional y glamoroso. Ernest Reismann es un pobre refugiado judío expulsado de Alemania. Ha perdido casi toda esperanza hasta que se cruza con Aiyi, quien lo contrata para tocar el piano en su club, en un escandaloso desafío a las costumbres. Ernest logra un éxito inmediato que hace revivir el club de Aiyi. Rápidamente se dan cuenta de que comparten mucho más que una pasión por el jazz, pero sus diferencias son insuperables: Aiyi ya está comprometida y Ernest no le puede prometer ningún futuro. A medida que la guerra se hace más cruel, las vidas de Aiyi y Ernest se ven desgarradas por tener que elegir entre el amor y la supervivencia, y ya no queda más que sucumbir a la desesperación. Mientras todo parece ir en contra de ellos, se pone en marcha una cadena de eventos asombrosos, que cambiará la vida de los dos para siempre. Desde los brillantes clubes de jazz hasta las calles empobrecidas de una ciudad sitiada, La Última Rosa de Shanghái es una arrolladora historia de amor y redención.</p>\n<h3>Biografía del autor</h3>\n<p>Weina Dai Randel es la aclamada autora de cuatro novelas históricas, todas de enorme éxito. Ha ganado el premio Romantic Writers of America, fue candidata al premio Nacional del Libro Judío y al a la Selección de Goodread a la mejor Ficción Histórica. Sus novelas han sido traducidas a más de doce idiomas. Su tercera novela, La última rosa de Shanghái, saltó a los primeros puestos en las listas de más vendidos en las mayores plataformas de venta de libros en el mundo.</p></div>",
+      "timestamp": "2024-03-11T16:23:45-03:00",
+      "languages": "spa",
+      "identifiers": "isbn:9788419767158,amazon:841976714X,google:kmTZEAAAQBAJ,goodreads:123404030",
+      "cover": "4_LaUltimaRosaDeShanghai.jpg",
+      "formats": [
+        {
+          "type": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=1xXWoizZYYE1As-oogUuBt_XpVxCTXtAJ"
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "uuid": "a6e6bffb-ec42-4fd1-bcc3-edab74585a9e",
+      "title": "El Italiano",
+      "title_sort": "Italiano, El",
+      "authors": [
+        "Arturo Pérez-Reverte"
+      ],
+      "authors_sort": "Pérez-Reverte, Arturo",
+      "publisher": "ALFAGUARA",
+      "pubdate": "2021-09-21T00:00:00-03:00",
+      "rating": 4,
+      "isbn": "9788420460499",
+      "tags": [
+        "Romance",
+        "War",
+        "Fiction",
+        "Historical",
+        "World War II",
+        "Action & Adventure",
+        "War & Military",
+        "General"
+      ],
+      "series": null,
+      "series_index": null,
+      "comments": "<div>\n<p style=\"font-weight: bold\">UNA HISTORIA DE AMOR, MAR Y GUERRA.</p>\n<p style=\"font-style: italic\">«Nada traiciona, tanto tiempo después, la mujer que desde hace dos años vive sola junto al mar con un perro y unos libros. Qué otra cosa, decide, sería el impulso, o el deseo, de permanecer abrazada a ese hombre para siempre. Ignora qué habrá en su cabeza dentro de un par de horas, cuando la claridad del día la despeje del todo e ilumine con más crudeza su conciencia. Lo cierto es que en este momento, sin duda alguna, desearía morir si él muriera».</p>\n<p>En los años 1942 y 1943, durante la Segunda Guerra Mundial, buzos de combate italianos hundieron o dañaron catorce barcos aliados en Gibraltar y la bahía de Algeciras. En esta novela, inspirada en hechos reales, sólo algunos personajes y situaciones son</p>\n<p>imaginarios. Elena Arbués, una librera de veintisiete años, encuentra una madrugada mientras pasea por la playa a uno de esos buzos, desvanecido entre la arena y el agua. Al socorrerlo, la joven ignora que esa determinación cambiará su vida y que el amor será sólo parte de una peligrosa aventura.</p>\n<p><strong>La crítica ha dicho:</strong><br>«Pérez-Reverte logra una novela intensa, de emociones sofrenadas y virtudes infrecuentes, incluida la virtud acaso controvertida del reconocimiento del mérito, valor y nobleza de los enemigos».<br>Domingo Ródenas de Moya, <em>Babelia</em></p>\n<p>« <em>El italiano</em> es para mí la mejor novela de Arturo Pérez Reverte hasta el momento. Todos sus capítulos huelen a limpio, al despertar de las mañanas de verano, a croissant, al Floyd de las peluquerías de antes, a los bares a eso de las nueve, recién barridos y fregados, cuando ya se les ha ido el olor de la lejía. A aquellas montañas mágicas de las primeras excursiones colegiales. Su prosa está atravesada por el temblor de la ilusión. [...] Leyéndolo he recordado a Graham Greene, a Simenon y a Conrad, a Vittorio De Sica y a Rossellini».<br>José Luis Garci</p>\n<p>«Un homenaje asombroso al Mediterráneo como patria, y al mármol y bronce de sus dioses y sus héroes».<br>Raúl del Pozo</p>\n<p>«Hay libros capaces de enclavijar al lector a la realidad mientras empujan a adentrarse en lo más insólito del mundo. Porque la vida se concreta mejor en lo pequeño. <em>El italiano</em> es uno de ellos: [...] un secreto guardado por las horas».<br>Antonio Lucas, <em>El Mundo</em></p>\n<p>«Pérez-Reverte en su mejor momento. Sus novelas trazan lazos de unión unas con otras, hasta formar unaurdimbre que es lo que los clásicos llamaban estilo, y los modernos, mundo».<br>José María Pozuelo Yvancos, <em>ABCultural</em></p>\n<p>«La magia consiste en que Arturo Pérez-Reverte es capaz de poner al lector, con toda la profundidad de campo que sea capaz de apreciar, porque le ofrece un tapiz con los datos históricos y las coordenadas mentales del momento. [...] Esto no es fácil, pero roza el virtuosismo cuandoademás la lección de vida y de historia viene vestida de aventura, de esas que no te deja levantar los ojos de la página».<br>Jesús García Calero, <em>Zenda</em></p>\n<p>«Por el mismo precio, una bella historia de amor y una historia de guerra. ¡Y qué historia de guerra!»<br>Jacinto Antón, <em>El País</em></p>\n<p>«Una estupenda aventura de amor, honor y guerra: gran historia real trufada de imaginación. [...] El Dumas español».<br>José María de Loma, <em>La Opinión de Málaga</em></p>\n<p>«Una trama de espionaje que le dará ese retumbar de los grandes thrillers, [...] un héroe mediterráneo [que] tiñe estas páginas de la melancolía que suele derivarse, por lo general, del inevitable paso del tiempo».<br>Javier Ors, <em>La Razón</em></p>\n<h3>About the Author</h3>\n<p><strong>Arturo Pérez-Reverte</strong> nació en Cartagena, España, en 1951. Fue reportero de guerra durante veintiún años y cubrió dieciocho conflictos armados para los diarios y la televisión. Con más de veinte millones de lectores en el mundo, traducido a cuarenta idiomas, muchas de sus obras han sido llevadas al cine y la televisión. Hoy comparte su vida entre la literatura, el mar y la navegación. Es miembro de la Real Academia Española y de la Asociación de Escritores de Marina de Francia.</p></div>",
+      "timestamp": "2024-03-21T07:59:25-03:00",
+      "languages": "spa",
+      "identifiers": "amazon:8420460494,goodreads:58355594,google:HfoyEAAAQBAJ,mobi-asin:c00c9f85-e6d9-41a5-96d0-2b1568a9885b,isbn:9788420460499",
+      "cover": "8_ElItaliano.jpg",
+      "formats": [
+        {
+          "type": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=1qJk0bsvbpb7NbOMxKCJx0MUAjg1e-Jk8"
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "uuid": "97aa7638-f173-4b35-8a1c-0aab5f69c802",
+      "title": "Las Señoritas",
+      "title_sort": "Señoritas, Las",
+      "authors": [
+        "Laura Ramos"
+      ],
+      "authors_sort": "Ramos, Laura",
+      "publisher": "Lumen",
+      "pubdate": "2021-06-01T00:00:00-03:00",
+      "rating": 4,
+      "isbn": "9788426481078",
+      "tags": [
+        "History"
+      ],
+      "series": null,
+      "series_index": null,
+      "comments": "<div>\n<p>La historia más bella y mejor documentada de las sesenta y una jóvenes maestras que Sarmiento \"importó\" de los Estados Unidos a la Argentina en el siglo XIX. Sus amores, tragedias y relaciones prohibidas, y sus batallas pedagógicas y aventuras en las luchas políticas que asolaban la república, en un relato cautivante de la mano de Laura Ramos.<br>En la concreción de su febril sueño civilizador, Sarmiento no escatimó recursos pero tampoco tropelías. Su cruzada en favor de universalizar la lectoescritura en la Argentina se materializó en una sucesión de iniciativas signadas por un fuerte sentido de lo épico y una inocultable admiración por los Estados Unidos de América. Entre ellas, ninguna resulta tan cautivante como la \"importación\" de sesenta y una jóvenes maestras de ese país al nuestro.<br>Si en la batalla de la educación se jugaba la guerra por la construcción de una nación, las señoritas llegadas entre 1869 y 1898 configuraron un capítulo fundamental de esa lucha que contemporáneamente era fácil dar por perdida de antemano.<br>En este libro único por su rigor historiográfico y su delicadeza narrativa, Laura Ramos urde los hilos de sus biografías y borda la filigrana íntima y doméstica de su historia hecha de amores, tragedias, relaciones prohibidas, batallas pedagógicas y aventuras, recortada sobre el fondo de los antagonismos políticos que asolaban la república que dejaba atrás su pasado colonial.</p></div>",
+      "timestamp": "2024-03-21T07:59:25-03:00",
+      "languages": "eng",
+      "identifiers": "goodreads:58248078,mobi-asin:06e4c308-1bff-4ede-a8fe-20e48de3f17a,isbn:9788426481078",
+      "cover": "10_LasSenoritas.jpg",
+      "formats": [
+        {
+          "type": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=1dVUBffbKaD1r7iv0sInPxWHSE9HVDK68"
+        }
+      ]
+    },
+    {
+      "id": "11",
+      "uuid": "c193ad61-06e3-489a-8653-32362901df9f",
+      "title": "La Sangre De Los Inocentes",
+      "title_sort": "Sangre De Los Inocentes, La",
+      "authors": [
+        "Julia Navarro"
+      ],
+      "authors_sort": "Navarro, Julia",
+      "publisher": "Plaza & Janes",
+      "pubdate": "2007-01-01T00:00:00-03:00",
+      "rating": 4,
+      "isbn": "9789506441067",
+      "tags": [
+        "Historical",
+        "Fiction",
+        "General"
+      ],
+      "series": null,
+      "series_index": null,
+      "comments": "<div>\n<p>Soy espia y tengo miedo...Asi empieza la cronica que escribe en el siglo XIII fray Julian sobre el cruel asedio a Montsegur y la lucha entre cataros y catolicos. Siglos despues, en 1939, un medievalista agnostico emprende un peligroso viaje por el Berlin nazi en busca de su esposa de origen judio. En la actualidad, un grupo de musulmanes radicales se inmola en Frankfurt dejando tras de si un mensaje criptico que pone en estado de alerta al Centro Antiterrorista de la Union Europea, cuyos agentes, con la ayuda de los servicios secretos del Vaticano, intentaran desvelar un enigma que une la intolerancia de la Inquisicion, la sinrazon fascista y el integrismo islamico en una Algun dia alguien vengara la sangre de los inocentes. Un musulman captado por una celula terrorista, un jesuita experto en herejias, un conde frances obsesionado por una dramatica herencia familiar, un hombre misterioso -El Facilitador- que desde la sombra maneja los hilos del poder junto a una intrepida joven de los servicios antiterroristas protagonizan este apasionante libro sobre la venganza y la traicion, con el violento conflicto entre Oriente y Occidente como telon de fondo. En su novela mas madura y ambiciosa, Julia Navarro sorprende con una vertiginosa aventura que nos transporta a lugares como Jerusalen, Granada, Roma o Estambul, y que indaga en las causas del fanatismo religioso y la intolerancia a lo largo de los siglos.</p></div>",
+      "timestamp": "2024-03-23T17:07:32-03:00",
+      "languages": "spa",
+      "identifiers": "goodreads:1089596,amazon:9506441065,mobi-asin:4b794495-3ab8-4576-bef9-b65481c3405d,isbn:9789506441067,google:mA9bPgAACAAJ",
+      "cover": "11_LaSangreDeLosInocentes.jpg",
+      "formats": [
+        {
+          "type": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=17Uxz63Bmb53l91CvV577x-jv3b8axk4U"
+        }
+      ]
+    },
+    {
+      "id": "12",
+      "uuid": "4d489411-0b50-4c9b-a693-145ae7f2efec",
+      "title": "Las Gratitudes",
+      "title_sort": "Gratitudes, Las",
+      "authors": [
+        "Delphine de Vigan"
+      ],
+      "authors_sort": "Vigan, Delphine de",
+      "publisher": "Anagrama",
+      "pubdate": "2019-03-06T00:00:00-03:00",
+      "rating": 4,
+      "isbn": "9788433942487",
+      "tags": [
+        "Contemporary"
+      ],
+      "series": null,
+      "series_index": null,
+      "comments": "<div>\n<p style=\"font-weight: bold\">Una bellísima novela sobre la gratitud, sobre lo importante que es poder dar las gracias a aquellos que nos han ayudado en la vida.</p>\n<p>«Hoy ha muerto una anciana a la que yo quería. A menudo pensaba: ”Le debo tanto.“ O: ”Sin ella, probablemente ya no estaría aquí.“ Pensaba: ”Es tan importante para mí.“ Importar, deber. ¿Es así como se mide la gratitud? En realidad, ¿fui suficientemente agradecida? ¿Le mostré mi agradecimiento como se merecía? ¿Estuve a su lado cuando me necesitó, le hice compañía, fui constante?», reflexiona Marie, una de las narradoras de este libro. Su voz se alterna con la de Jérôme, que trabaja en un geriátrico y nos cuenta: «Soy logopeda. Trabajo con las palabras y con el silencio. Con lo que no se dice. Trabajo con la vergüenza, con los secretos, con los remordimientos. Trabajo con la ausencia, con los recuerdos que ya no están y con los que resurgen tras un nombre, una imagen, un perfume. Trabajo con el dolor de ayer y con el de hoy. Con las confidencias. Y con el miedo a morir. Forma parte de mi oficio.»</p>\n<p>A ambos personajes –Marie y Jérôme– los une su relación con Michka Seld, una anciana cuyos últimos meses de vida nos relatan estas dos voces cruzadas. Marie es su vecina: cuando era niña y su madre se ausentaba, Michka cuidaba de ella. Jérôme es el logopeda que intenta que la anciana, que acaba de ser ingresada en un geriátrico, recupere aunque sea parcialmente el habla, que va perdiendo por culpa de una afasia.</p>\n<p>Y ambos personajes se involucrarán en el último deseo de Michka: encontrar al matrimonio que, durante los años de la ocupación alemana, la salvó de morir en un campo de exterminio acogiéndola y ocultándola en su casa. Nunca les dio las gracias y ahora querría mostrarles su gratitud...</p>\n<p>Escrita con un estilo contenido, casi austero, esta narración a dos voces nos habla de la memoria, el pasado, el envejecimiento, las palabras, la bondad y la gratitud hacia aquellos que fueron importantes en nuestras vidas. Son las respectivas gratitudes las que unen a los tres inolvidables personajes cuyas historias se entrelazan en esta conmovedora y deslumbrante novela.</p>\n<h3>Críticas</h3>\n<p>«Delphine de Vigan continúa su valiosa exploración de los sentimientos íntimos que rigen nuestra existencia, iniciada con <em>Las lealtades»</em> (Corinne Renou-Nativel, <em>La Croix).</em></p>\n<p>«Una novela de una fuerza extraordinaria sobre las deudas morales y los lazos invisibles» (Mohammed Aïssaoui, <em>Le Figaro).</em></p>\n<p>«Una novela dulce como un bálsamo que habla del humanismo y de lo que debemos a los demás» (Nathalie Collard, <em>La Presse).</em></p>\n<p>«Conmovedora, realista, es a la vez un ejercicio de estilo y una invitación a decir gracias, con palabras y gestos, antes de que sea demasiado tarde» (Marie-France Bornais, <em>Le Journal de Québec).</em></p>\n<p>«Solar y delicada» (Raphaëlle Leyris, <em>Le Monde).</em></p>\n<h3>Descripción del Libro</h3>\n<p style=\"font-weight: bold\">Una bellísima novela sobre la gratitud, sobre lo importante que es poder dar las gracias a aquellos que nos han ayudado en la vida.</p>\n<h3>Biografía del autor</h3>\n<p><strong>Delphine de Vigan</strong> (Boulogne-Billancourt, 1966) vive en París. En Anagrama ha publicado, desde 2012: Días sin hambre: «Maneja la materia autobiográfica con una contención que remite a Marguerite Duras» (Marta Sanz); No y yo: «Maestría y ternura... Una novela atípica» (Juanjo M. Jambrina, Jot Down); Las horas subterráneas: «Sensible, inquietante y un poco triste. Triste y soberbia» (François Busnel, <em>L’Express)</em> ; Nada se opone a la noche, que la consagró internacionalmente, ha vendido en Francia más de ochocientos mil ejemplares, ha sido publicada por una veintena de editoriales extranjeras y ha recibido el Premio de Novela Fnac, el Premio de Novela de las Televisiones Francesas, el Premio Renaudot de los Institutos de Francia, el Gran Premio de la Heroína Madame Figaro y el Gran Premio de las Lectoras de Elle: «Este magnífico testimonio la confirma como una escritora contemporánea de referencia. Imprescindible» (Sònia Hernández, <em>La Vanguardia);</em> «Con sobriedad y precisión, sin sentimentalismo (pero no sin sentimiento), Delphine de Vigan firma una inteligente, magnífica e implacable novela» (Elvira Navarro); Basada en hechos reales, galardonada con el Premio Renaudot y el Goncourt de los Estudiantes, y llevada al cine por Roman Polanski: «Hace alarde de maestría expresiva para disolver los límites de lo que es verdad y lo que es mentira... Apasiona» (Robert Saladrigas, <em>La Vanguardia);</em> Las lealtades: «Perturbadora» (Javier Aparicio Maydeu, <em>El País)</em> ; «Cuestiona a una sociedad que mira hacia otro lado, ante las violencias soterradas» (Lourdes Ventura, <em>El Mundo);</em> y Las gratitudes: «Pequeño prodigio con el que la autora francesa reflexiona sobre la vejez, la soledad y la importancia de las palabras» (David Morán <em>, ABC).</em></p></div>",
+      "timestamp": "2024-03-23T18:42:11-03:00",
+      "languages": "spa",
+      "identifiers": "amazon:8433980831,google:zb8XEAAAQBAJ,isbn:9788433942487,goodreads:56591408",
+      "cover": "12_LasGratitudes.jpg",
+      "formats": [
+        {
+          "type": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=1sqpBC7T6Vo5R7zhbcqQXB3XMc4Q0Reit"
+        }
+      ]
+    },
+    {
+      "id": "13",
+      "uuid": "d5a65d7e-1d25-4c57-b3d2-3c0ecb31bd70",
+      "title": "La Herencia De Eszter",
+      "title_sort": "La Herencia De Eszter",
+      "authors": [
+        "Sándor Márai"
+      ],
+      "authors_sort": "Márai, Sándor",
+      "publisher": "SALAMANDRA",
+      "pubdate": "1939-01-01T00:00:00-03:00",
+      "rating": 4,
+      "isbn": "9788498386813",
+      "tags": [
+        "Classics",
+        "Romance",
+        "Historical",
+        "Novela",
+        "Drama"
+      ],
+      "series": null,
+      "series_index": null,
+      "comments": "<div>\n<p><strong>Escrita en 1939, tres años antes de</strong> El último encuentro <strong>, con la misma prosa depurada y precisa que ha admirado a miles de lectores, esta novela es una pequeña joya que merece su lugar entre las mejores obras literarias del siglo XX.</strong></p>\n<p>Con la placidez y tranquilidad de quien ha sabido adaptarse a lo que la vida le ha deparado, Eszter habita la casa que heredó de su padre en compañía de una pariente anciana. Hasta que un día, inesperadamente, recibe un telegrama de Lajos, viejo amigo de la familia, anunciando su inminente visita. Canalla, encantador y sin escrúpulos, con unas magníficas dotes de actor que le confieren un poderde seducción irresistible, Lajos no solo traicionó a Eszter, sino que también destruyó a su familia y les quitó todo lo que poseían, salvo la casa en la que viven, cuyo jardín es su único y escaso medio de subsistencia. Ahora, tras una prolongada ausencia, Lajos regresa y Eszter se prepara para recibirlo conmovida por un torbellino de sentimientos contradictorios.</p>\n<p>Conla inevitabilidad del destino como eje central de la narración, <em>La herencia de</em> <em>Eszter</em> se desarrolla de una forma totalmente inesperada y paradójica. El vividor y embustero Lajos es un vendaval de vitalidad, alegría y pasión, un hombre que por el mero hecho de existir pone en entredicho la solidez de las convenciones morales más arraigadas de la época.</p>\n<p><strong>La crítica ha dicho...</strong><br>«Escrita tres años antes que <em>El último encuentro</em> , esta novela anticipa el modelo: un lugar alejado, un regreso imprevisto, la enigmática irradiación del pasado sobre el presente, la vigilante compañía de dos mujeres (allí Nini, aquí Nunu). Se siente que Márai está perfilando, en la suprema nitidez del estilo, la capacidad de transformar una historia en un engranaje de mágica tensión.»<br><em>Corriere</em> <em>della</em> <em>sera</em></p>\n<p>«Esta novela de Márai lo tiene todo para gustar a quienes admiraron <em>El último encuentro</em>.»<br><em>L'Espresso</em></p>\n<p>«Márai conoce el ritmo de la historia, es un verdadero maestro del suspense y lleva a la total combustión la contradicción de los sentimientos, además de tener la capacidad de escribir páginas intensas sobrela dialéctica del bien y el mal, sobre la sutil linea que separa el impulso elementario del dominio de los sentimientos.»<br><em>Tuttolibri</em></p>\n<p>« <em>La herencia de</em> <em>Eszter</em> está a la altura de <em>El último encuentro</em> y consolida a Sándor Márai como el más bello descubrimiento editorial de los últimos tiempos.»<br><em>Il</em> <em>Giorno</em></p>\n<h3>Biografía del autor</h3>\n<p><strong>Sándor Márai</strong> nació en 1900 en Kassa, una pequeña ciudad húngara que hoy pertenece a Eslovaquia. Pasó un periodo de exilio voluntario en Europa durante el régimen de Horthy en los años veinte, hasta que abandonó definitivamente su país en 1948 con la llegada del régimen comunista y emigró a Estados Unidos. La subsiguiente prohibición de su obra en Hungría hizo caer en el olvido a quien en ese momento estaba considerado uno de los escritores más importantes de la literatura centroeuropea. Así, habría que esperar varios decenios, hasta el ocaso del comunismo, para que este extraordinario escritor fuese redescubierto en su país y en el mundo entero.</p>\n<p>Sándor Márai se quitó la vida en 1989 en San Diego, California, pocos meses antes de la caída del muro de Berlín.</p></div>",
+      "timestamp": "2024-08-04T12:38:21-03:00",
+      "languages": "eng",
+      "identifiers": "amazon:8498386810,goodreads:58992,isbn:9788498386813,google:S-y-DwAAQBAJ",
+      "cover": "13_LaHerenciaDeEszter.jpg",
+      "formats": [
+        {
+          "type": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=1Vv03S3iE4f35pHuIti7kfQdUa0Y6tKQy"
+        }
+      ]
+    },
+    {
+      "id": "14",
+      "uuid": "1d2134e3-6f8a-4a00-b216-5364e6b3c9c1",
+      "title": "Mi pecado",
+      "title_sort": "Mi pecado",
+      "authors": [
+        "Javier Moro"
+      ],
+      "authors_sort": "Moro, Javier",
+      "publisher": "Grupo Planeta",
+      "pubdate": "2018-04-04T19:00:00-03:00",
+      "rating": 4,
+      "isbn": null,
+      "tags": [],
+      "series": null,
+      "series_index": null,
+      "comments": "<div>\n<p style=\"font-weight: bold\">La novela de la actriz española que triunfó en Hollywood e influyó en el papel de España durante la 2ª Guerra Mundial.</p>\n<p>Javier Moro recrea en <em>Mi pecado</em> una historia que sucedió realmente. Su protagonista es la actriz española Conchita Montenegro quien, en 1930 con apenas 19 años, desembarcó en Hollywood. </p>\n<p>Gracias a su belleza, inteligencia, personalidad y tesón, la joven promesa se hizo un hueco entre las principales estrellas del momento. Su extraordinaria mirada cautivó a Leslie Howard, uno de los actores más célebres de la época, un hombre casado que le doblaba la edad. Los amantes vivieron su idilio entre fiestas de ensueño y estrenos triunfales, paseos a caballo y vuelos en avioneta por la costa de California, entre la pasión y el engaño. </p>\n<p>Trece años más tarde, su historia de amor tuvo un desenlace inesperado cuando los dos se reencontraron en Madrid y, sin saberlo, influyeron en el curso de la Segunda Guerra Mundial.</p>\n<h3>Biografía del autor</h3>\n<p>Javier Moro es uno de los autores más querido por los lectores y valorado por la crítica del panorama literario en español. Periodista y escritor, también ha trabajado en el mundo del cine como guionista y productor. Entre sus libros, destacan Senderos de libertad (1992), El pie de Jaipur (1995), Las montañas de Buda (1998), Era medianoche en Bhopal (2001), en colaboración con Dominique Lapierre, Pasión india (2005), El sari rojo (2008), El imperio eres tú (Premio Planeta 2011), A flor de piel (2015), Mi pecado (Premio Primavera 2017) y A prueba de fuego (2020).</p></div>",
+      "timestamp": "2024-08-04T12:38:21-03:00",
+      "languages": "spa",
+      "identifiers": "mobi-asin:B07B89TS65,amazon:B07B89TS65",
+      "cover": "14_Mipecado.jpg",
+      "formats": [
+        {
+          "type": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=1NkSpO9s6mCPpNH0-spOUmWvNJyBQUvgZ"
+        }
+      ]
+    },
+    {
+      "id": "15",
+      "uuid": "3d3b1d38-6965-4a0b-9afc-d80d1e60816f",
+      "title": "A Prueba De Fuego",
+      "title_sort": "A Prueba De Fuego",
+      "authors": [
+        "Javier Moro"
+      ],
+      "authors_sort": "Moro, Javier",
+      "publisher": "Espasa",
+      "pubdate": "2020-01-01T00:00:00-03:00",
+      "rating": 5,
+      "isbn": "9789584291837",
+      "tags": [
+        "Fiction",
+        "General",
+        "Novela",
+        "Histórico"
+      ],
+      "series": null,
+      "series_index": null,
+      "comments": "<div>\n<p style=\"font-weight: bold\">La aventura americana de Rafael Guastavino, el arquitecto español de Nueva York.</p>\n<p>Nueva York 1881: en uno de los barrios más populares malviven el pequeño Rafaelito y su padre, Rafael, un reputado maestro de obras valenciano que lucha por demostrar su talento en la gran urbe. Lo acecha la ruina absoluta. Pero gracias a su genio infatigable, ese hombre alcanzará fama y fortuna al construir los edificios emblemáticos que han dado su perfil a Nueva York.</p>\n<p>Javier Moro nos presenta al singularísimo Rafael Guastavino, un auténtico genio de la construcción que deslumbró a los grandes magnates norteamericanos, conquistados por las técnicas que empleaba en sus obras para evitar los incendios, el mayor mal de las megalópolis del siglo XIX. Tuvo una vida jalonada de éxitos: de su estudio salieron construcciones tan «neoyorquinas» como <strong>la Estación Central</strong> , el gran hall de la isla de Ellis, parte del metro, <strong>el Carnegie Hall</strong> o <strong>el Museo Americano de Historia Natural</strong>. </p>\n<p style=\"font-weight: bold\">ENGLISH DESCRIPTION</p>\n<p style=\"font-weight: bold\">The American adventure of Rafael Guastavino, the Spanish architect from New York.</p>\n<p>New York 1881: In one of the most popular neighborhoods, little Rafaelito and his father, Rafael, a renowned Valencian master builder who struggles to prove his talent in the big city, live poorly. Absolute ruin is lurking in his hands. But thanks to his indefatigable genius, that man will achieve fame and fortune by building the emblematic buildings that have given New York its profile.</p>\n<p>Javier Moro introduces us to the very unique Rafael Guastavino, a true construction genius who dazzled the great American magnates, conquered by the techniques he used in his works to prevent fires, the greatest evil of the megalopolises of the nineteenth century. He had a life marked by successes: his studio produced such \"New York\" constructions as <strong>Central Station</strong> , the great hall on Ellis Island, part of the subway, <strong>Carnegie Hall</strong> or <strong>The</strong> <strong>American Museum of Natural History.</strong></p>\n<h3>Biografía del autor</h3>\n<p><strong>Javier Moro</strong> colabora desde muy joven en medios de prensa nacionales y extranjeros. Ha trabajado como investigador en varios libros de Dominique Lapierre y Larry Collins. Coproductor y guionista de las películas <em>Valentina</em> y <em>1919 Crónica del alba,</em> ambas basadas en la obra de Ramón J. Sender, estuvo seis años desarrollando proyectos de cine y televisión en Estados Unidos, donde colaboró con directores como Ridley Scott. Es autor de Senderos de libertad (1992), El pie de Jaipur (1995), Las montañas de Buda (1997), La mundialización de la pobreza (1999) y El sari rojo (2008), todos publicados en Seix Barral; Es coautor, junto con Dominique Lapierre, de Era medianoche en Bhopal (Planeta, 2001). Su novela Pasión india (2005), la historia de la bailarina española que se casó con el maharajá de Kapurthala, ha sido uno de los grandes éxitos de crítica y ventas de los últimos años en España y en varios países europeos, y se ha traducido a diecisiete idiomas. Su obra, El Imperio eres tú, fue galardonada con el <strong>Premio Planeta</strong> 2011. ****</p>\n<p><strong>Javier Moro</strong> has collaborated from a very young age, in national and foreign media. He has worked as a researcher on several books by Dominique Lapierre and Larry Collins. Co-producer and screenwriter of the films Valentina y <em>1919. Crónica del alba,</em> both based on the work of Ramón J. Sender, spent six years developing film and television projects in the United States, where he collaborated with directors such as Ridley Scott. Her novel Pasión india (Indian Passion) (2005), the story of the Spanish dancer who married the Maharaja of Kapurthala and which has been one of the great critical and bestsellers of recent years in Spain and in several European countries, and has been translated into seventeen languages. And his work, El Imperio eres tú (The Empire Is You), was awarded with the 2011 Planeta Prize. </p></div>",
+      "timestamp": "2024-08-04T12:40:02-03:00",
+      "languages": "spa",
+      "identifiers": "isbn:9789584291837,revision:1.1,amazon:9584291831,goodreads:55139926,google:BEX_DwAAQBAJ,epl:57123",
+      "cover": "15_APruebaDeFuego.jpg",
+      "formats": [
+        {
+          "type": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=1f0eyaUoJZ28P-a0Mp32hogbUksUZxGv8"
+        }
+      ]
+    },
+    {
+      "id": "16",
+      "uuid": "24d8a830-5868-4cad-b77a-df5f3b5bc3d1",
+      "title": "La Vida Secreta De Las Plantas",
+      "title_sort": "Vida Secreta De Las Plantas, La",
+      "authors": [
+        "Christopher Bird",
+        "Peter Tompkins"
+      ],
+      "authors_sort": "Bird, Christopher & Tompkins, Peter",
+      "publisher": "Capitán Swing Libros",
+      "pubdate": "2017-05-22T00:00:00-03:00",
+      "rating": 4,
+      "isbn": "9788494673764",
+      "tags": [
+        "Nature",
+        "Essays",
+        "Plants",
+        "Flowers"
+      ],
+      "series": null,
+      "series_index": null,
+      "comments": "<div>\n<p>Las plantas son seres vivos maravillosos. Son las únicas criaturas que, en medio del silencio, producen su propio alimento y, sin duda, constituyen la mayor fuente de riqueza de nuestro planeta: incluso el carbón y el petróleo fueron vida vegetal en el pasado. Los estudios y experimentos sobre la comunicación de las plantas indican que todos los seres vivos —el hombre, las plantas, la Tierra, los planetas y las estrellas— se relacionan íntimamente entre sí: lo que le ocurre a uno de ellos afecta a los demás. </p>\n<p>La vida secreta de las plantas recopila una serie de logros y hallazgos relacionados con el mundo vegetal realizados por diversos investigadores, exponiendo las diferentes relaciones físicas, emocionales y espirituales que se dan entre las plantas y el hombre. A través de sus páginas descubrimos que las plantas pueden ser fiables detectores de mentiras y eficaces centinelas ecológicos, que tienen la capacidad de adaptarse a los deseos humanos e incluso de comunicarse con el hombre, que responden a la música o que tienen importantes poderes curativos. Peter Tompkins y Christopher Bird sugieren que la revolución más trascendental, aquella que podría salvar o destruir el planeta, puede venir desde nuestro jardín.</p></div>",
+      "timestamp": "2024-10-20T13:04:14-03:00",
+      "languages": "spa",
+      "identifiers": "isbn:9788494673764,google:MgeIDwAAQBAJ,goodreads:35106144,amazon:B06XGZY5DN",
+      "cover": "16_LaVidaSecretaDeLasPlantas.jpg",
+      "formats": [
+        {
+          "type": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=1h2abFM2KogKxuOcoMczhlDUxaU052Vby"
+        }
+      ]
+    },
+    {
+      "id": "17",
+      "uuid": "41925655-bc4a-4306-9997-7a70143d7ae4",
+      "title": "El Retrato De Casada",
+      "title_sort": "Retrato De Casada, El",
+      "authors": [
+        "Maggie O'Farrell"
+      ],
+      "authors_sort": "O'Farrell, Maggie",
+      "publisher": "Libros del Asteroide",
+      "pubdate": "2022-08-30T00:00:00-03:00",
+      "rating": 4,
+      "isbn": "9788419089540",
+      "tags": [
+        "Historical",
+        "Adult"
+      ],
+      "series": null,
+      "series_index": null,
+      "comments": "<div>\n<p>El matrimonio era su destino. Ahora tendrá que sobrevivir a él. La esperadísima nueva novela de Maggie O’Farrell tras el gran éxito internacional de Hamnet. Florencia, mediados del siglo XVI. Lucrezia, tercera hija del gran duque Cosimo de’ Medici, es una niña callada y perspicaz, con un singular talento para el dibujo, que disfruta de su discreto y tranquilo lugar en el palazzo. Pero cuando muere su hermana Maria, justo antes de casarse con Alfonso d’Este, primogénito del duque de Ferrara, Lucrezia se convierte inesperadamente en el centro de atención: el duque se apresura a pedir su mano, y su padre a aceptarla. Poco después, con solo quince años, se traslada a la corte de Ferrara, donde es recibida con recelo. Su marido, doce años mayor, es un enigma: ¿es en realidad el hombre sensible y comprensivo que le pareció al principio o un déspota implacable al que todos temen? Lo único que está claro es lo que se espera de ella: que proporcione cuanto antes un heredero que asegure la continuidad del título. Con la misma belleza y emoción con las que nos cautivó en Hamnet, Maggie O’Farrell vuelve a demostrar su inigualable talento para adentrarse en los recovecos del pasado en El retrato de casada, una novela que reinterpreta desde la ficción un capítulo de la Italia renacentista y narra la lucha contra el destino de una joven asombrosa. «O’Farrell es simplemente excepcional (...) Delicadamente escrita y llena de imágenes vívidas.» The Guardian «Ingeniosa, imaginativa, humana, irónica, verdadera... todavía mejor que su última novela.» Scotsman «Esta cautivadora historia sobre el poder, la política y la lucha de una mujer por su supervivencia es otra obra maestra de la autora.» The Globe and Mail«Lo que hace tan interesantes sus novelas es su apuesta por cambiar siempre de ángulo o decidirse por el más inesperado, su estilo lírico y delicado aunque directo y estremecedor, su atención al detalle producto de una investigación profunda que, sin embargo, llega con gran naturalidad a la página.» Mariana Enriquez «Lo más notable de Maggie O’Farrell no es el amenazante, claustrofóbico, estético fondo histórico que sirve de base a 'El retrato de casada', sino lo que Marguerite Yourcenar llama el tono de una ficción histórica.» Lourdes Ventura (El Cultural) «Si para algo tiene destreza Maggie O'Farrell es para trazar personajes femeninos, para dotarlos de vida.» Lara Hermoso (Efecto Doppler - RNE) «Es la calidad narrativa de O'Farrell, su brillante capacidad para la introspección psicológica y su plástica recreación del pasado, la que engancha al lector.» Andrés Seoane (El Mundo) «O’Farrell lleva a la superficie lo que permanece invisible y escondido.» Karina Sainz Borgo (ABC) «O’Farrell recrea con maestría la explosión del Renacimiento (...). Retrata con empatía la soledad y desesperación de una adolescente culta y brillante, enviada lejos de casa como moneda de cambio, aterrorizada en su noche de bodas (...) y asfixiada por las intrigas de una salvaje encrucijada político-doméstica. Lo que hoy llamaríamos un gaslighting de manual.» Leticia Blanco (El Periódico) «Como ya hiciera en la aclamadísima 'Hamnet', O’Farrell despliega en 'El retrato de casada' un lienzo descriptivo de colores impensados.» María Paredes (The Objective) «No hay página en la que O'Farrell no te deje deslumbrado. Una literatura tan eficaz, tan visual y tan poética. Jesús Marchamalo» (Culturas 2 - TVE) «Maggie O’Farrell se sumerge en la vida de Lucrecia de Médici en El retrato de casada, novela sobre la indefensión de una niña, con la misma solvencia que usó en Hamnet.» Berna G. Harbour (Babelia / El País)</p></div>",
+      "timestamp": "2024-12-26T13:19:59-03:00",
+      "languages": "spa",
+      "identifiers": "goodreads:141430294,amazon:8419089540,isbn:9788419089540,google:bHKxEAAAQBAJ",
+      "cover": "17_ElRetratoDeCasada.jpg",
+      "formats": [
+        {
+          "type": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=1JLP8Fb_HLi2F-qdgmVu562Tf1TUDO60K"
+        }
+      ]
+    },
+    {
+      "id": "18",
+      "uuid": "26f0fddb-f8c6-4d2c-988b-ac5fe2cdf5ba",
+      "title": "Las Tres Bodas De Manolita",
+      "title_sort": "Tres Bodas De Manolita, Las",
+      "authors": [
+        "Almudena Grandes"
+      ],
+      "authors_sort": "Grandes, Almudena",
+      "publisher": "Tusquets",
+      "pubdate": "2013-01-01T00:00:00-03:00",
+      "rating": 4,
+      "isbn": "9788490660249",
+      "tags": [
+        "Historical",
+        "Romance",
+        "Novela",
+        "Drama",
+        "Histórico"
+      ],
+      "series": {
+        "_": "Episodios de una guerra interminable",
+        "$": {
+          "index": "3.0"
+        }
+      },
+      "series_index": null,
+      "comments": "<div>\n<p>En los buenos tiempos, las chicas se casan por amor. En los malos, no siempre pueden elegir. En el Madrid recién salido de la guerra civil, sobrevivir es un duro oficio cotidiano. Especialmente para Manolita, una joven de dieciocho años que, con su padre y su madrastra encarcelados, y su hermano Antonio escondido en un tablao flamenco, tiene que hacerse cargo de su hermana Isabel y de otros tres más pequeños. A Antonio se le ocurrirá una manera desesperada de prolongar la resistencia en los años más terribles de la represión: utilizar unas multicopistas que nadie sabe poner en marcha para imprimir propaganda clandestina. Y querrá que sea su hermana Manolita, la señorita \"Conmigo No Contéis\", quien visite a un preso que puede darles la clave de su funcionamiento. Manolita no sabe que ese muchacho tímido y sin aparente atractivo va a ser en realidad un hombre determinante en su vida, y querrá visitarlo de nuevo, después de varios periplos, en el destacamento penitenciario de El Valle de los Caídos. Pero antes deberá descubrir quién es el delator que merodea por el barrio. Las tres bodas de Manolita, de Almudena Grandes, es una emotiva historia coral sobre los años de pobreza y desolación en la inmediata posguerra, y un tapiz inolvidable de vidas y destinos, de personajes reales e imaginados. Una novela memorable sobre la red de solidaridad que tejen muchas personas, desde los artistas de un tablao flamenco hasta las mujeres que hacen cola en la cárcel para visitar a los presos, o los antiguos amigos del colegio de su hermano, para proteger a una joven con coraje. Con Inés y la alegría Almudena Grandes inauguró la serie Episodios de una Guerra Interminable, a la que pertenecen El lector de Julio Verne y ahora Las tres bodas de Manolita. (Fuente: La Casa del Libro).</p></div>",
+      "timestamp": "2025-02-03T17:19:33-03:00",
+      "languages": "spa",
+      "identifiers": "revision:1.4,goodreads:20623749,amazon:8483838451,epl:13571,google:vaHvrQEACAAJ,isbn:9788490660249",
+      "cover": "18_LasTresBodasDeManolita.jpg",
+      "formats": [
+        {
+          "type": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=1NNjdcbXeyZuNPIQUtytWjSnK305QXxvV"
+        }
+      ]
+    },
+    {
+      "id": "19",
+      "uuid": "557b0f69-0c43-4a21-8e79-183b6f558825",
+      "title": "La Cazadora (the Huntress - Spanish Edition)",
+      "title_sort": "Cazadora (the Huntress - Spanish Edition), La",
+      "authors": [
+        "Kate Quinn"
+      ],
+      "authors_sort": "Quinn, Kate",
+      "publisher": "HarperCollins",
+      "pubdate": "2024-06-11T00:00:00-03:00",
+      "rating": null,
+      "isbn": "9788491397717",
+      "tags": [
+        "20th Century",
+        "World War II",
+        "War & Military",
+        "Fiction",
+        "Historical"
+      ],
+      "series": null,
+      "series_index": null,
+      "comments": "<div>\n<p>La Cazadora es una novela épica y arrolladora acerca de la Segunda Guerra Mundial que arroja luz sobre un oscuro rincón de la historia, de la mano de la autora de los best sellers de The New York Times La red de Alicey El código Rosa. En los gélidos confines de la Rusia soviética, la audaz y temeraria Nina Markova se une a las célebres Brujas de la Noche, un regimiento de bombardeo nocturno formado exclusivamente por mujeres. Al verse obligada a aterrizar tras las líneas enemigas, Nina habrá de recurrir a todo su ingenio para sobrevivir a su encuentro con una implacable asesina nazi conocida como la Cazadora. El corresponsal de guerra británico Ian Graham ha abandonado el periodismo para dedicarse a perseguir a criminales de guerra nazis, pero hay un objetivo que se le resiste: la Cazadora. Y Nina Markova es la única testigo que ha logrado escapar de ella con vida. En el Boston de posguerra, Jordan McBride, de diecisiete años, desconfía cada vez más de la educada viuda alemana que se convierte en su madrastra. Al indagar en su pasado, Jordan irá dándose cuenta poco a poco de que quizá sea una asesina nazi.</p></div>",
+      "timestamp": "2025-02-03T17:19:33-03:00",
+      "languages": "spa",
+      "identifiers": "google:9IRkzQEACAAJ,isbn:9788491397717",
+      "cover": "19_LaCazadora.jpg",
+      "formats": [
+        {
+          "type": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=1wRgBm6gf8xrwy2wCD7u7YWb6_u34SyCi"
+        }
+      ]
+    },
+    {
+      "id": "20",
+      "uuid": "86adf2fe-b902-4a03-9182-1ba7f4bd46b2",
+      "title": "Señora De Rojo Sobre Fondo Gris",
+      "title_sort": "Señora De Rojo Sobre Fondo Gris",
+      "authors": [
+        "Miguel Delibes"
+      ],
+      "authors_sort": "Delibes, Miguel",
+      "publisher": "Destino",
+      "pubdate": "1991-01-01T00:00:00-03:00",
+      "rating": 4,
+      "isbn": "9788423328505",
+      "tags": [
+        "Fiction",
+        "General",
+        "Novela",
+        "Drama"
+      ],
+      "series": null,
+      "series_index": null,
+      "comments": "<div>\n<p style=\"font-weight: bold\">Una de las novelas más bellas y conmovedoras de Miguel Delibes. Un canto al amor maduro, sereno, de toda una vida. </p>\n<p>Un prestigioso pintor, sumido en una grave crisis creativa, va hilando ante su hija sus recuerdos más íntimos en un monólogo que es a la vez homenaje y exorcismo. Su relato se centra en dos acontecimientos: la detención de dos de sus hijos por motivos políticos y, fundamentalmente, la enfermedad y muerte de su mujer, Ana, a los cuarenta y ocho años. Ana contagiaba una sensación de belleza y plenitud que cobró su verdadero alcance sobre el fondo gris de lo cotidiano y los sinsabores de la enfermedad. Historia de un amor en carrera desenfrenada hacia la muerte y sobrecogedora semblanza de un personaje femenino, <em>Señora de rojo sobre fondo gris &gt;/i&gt; es una profunda lección de humanismo y madurez artística que sólo Miguel Delibes podía ofrecernos.</em></p></div>",
+      "timestamp": "2025-02-03T17:19:33-03:00",
+      "languages": "spa",
+      "identifiers": "revision:1.3,goodreads:67021,isbn:9788423328505,amazon:842333323X,epl:2440,google:GWFznxRttEEC",
+      "cover": "20_SenoraDeRojoSobreFondoGris.jpg",
+      "formats": [
+        {
+          "type": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=1A6-D99csTIUcKV0HIRD4qRBXMPKm_uAz"
+        }
+      ]
+    },
+    {
+      "id": "21",
+      "uuid": "a2abd11a-f80f-4c8b-b8a0-b2c46aaa1080",
+      "title": "La chica italiana",
+      "title_sort": "La chica italiana",
+      "authors": [
+        "Lucinda Riley"
+      ],
+      "authors_sort": "Lucinda Riley",
+      "publisher": "Plaza & Janés",
+      "pubdate": "2021-11-17T20:00:00-03:00",
+      "rating": null,
+      "isbn": null,
+      "tags": [
+        "narrativa romántica 2021"
+      ],
+      "series": null,
+      "series_index": null,
+      "comments": "<div>\n<p style=\"font-weight: 600\">Una novela llena de glamour, intriga y romance, por la autora de la saga superventas Las Siete Hermanas.</p>\n<p>Rosanna Menici es muy joven cuando conoce a Roberto Rossini, el hombre que le cambiará la vida. </p>\n<p>En los años siguientes, sus destinos se verán entrelazados por sus extraordinarios talentos como cantantes de ópera y también por su incombustible pero obsesivo amor, un amor que acabará afectando las vidas de todos los que los rodean. </p>\n<p>Porque, como Rosanna descubrirá poco a poco, su unión está marcada por terribles secretos del pasado...</p>\n<p>Desde las pintorescas calles de Nápoles hasta los deslumbrantes escenarios de los más prestigiosos teatros del mundo, el viaje de Rosanna es una emocionante historia de pasión, traición y autodescubrimiento.</p>\n<p style=\"font-style: italic; font-weight: 600\">Publicada como \"Aria\" en 1996 con el pseudónimo de Lucinda Edmonds</p>\n<p><span style=\"font-weight: 600; font-style: italic\">Actualizada y corregida por la autora en 2014</span> </p></div>",
+      "timestamp": "2025-03-31T11:04:24-03:00",
+      "languages": "spa",
+      "identifiers": null,
+      "cover": "21_Lachicaitaliana.jpg",
+      "formats": [
+        {
+          "type": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=1hiTvPMT82H6K6MvhFrBf0u7D0B1g6apk"
+        }
+      ]
+    },
+    {
+      "id": "22",
+      "uuid": "870af33b-0e8c-494d-be12-a89fbe61baec",
+      "title": "El Secreto De La Librera De París",
+      "title_sort": "Secreto De La Librera De París, El",
+      "authors": [
+        "Lily Graham"
+      ],
+      "authors_sort": "Graham, Lily",
+      "publisher": "Newton Compton Editores",
+      "pubdate": "2018-01-01T00:00:00-03:00",
+      "rating": 4,
+      "isbn": "9788419620095",
+      "tags": [
+        "Historical",
+        "Romance",
+        "War",
+        "Mystery",
+        "Adult",
+        "Novela",
+        "Histórico",
+        "Romántico"
+      ],
+      "series": null,
+      "series_index": null,
+      "comments": "<div>\n<p>Una autora de bestsellers internacionales, traducida a 12 idiomas «La historia más conmovedora que leerás en mucho tiempo.» Una inolvidable historia sobre el amor y el coraje en tiempos de guerra<br>La última vez que Valerie estuvo en París, tenía tan solo tres años. Desde entonces ha vivido siempre alejada de la capital francesa y nunca ha conocido al abuelo Vincent, el único de sus familiares que sigue con vida y la única persona que conoce la verdad sobre lo que les ocurrió a sus padres y por qué tuvo que abandonar su propio hogar. Sin embargo, Vincent Dupont no es un hombre fá es antipático, exigente y poco flexible. Lo único que realmente parece importarle es su librería. Bajo falsos pretextos y una identidad ficticia, Valerie consigue que su abuelo la contrate como dependienta con el objetivo de acercarse a su propio pasado. Mientras tanto, las calles parisinas se irán llenando, cada vez más, de susurros y sospechas...</p></div>",
+      "timestamp": "2025-04-10T20:27:00-03:00",
+      "languages": "spa",
+      "identifiers": "epl:71501,amazon:8419620092,isbn:9788419620095,google:GoTLzwEACAAJ,revision:1.0,goodreads:123972506",
+      "cover": "22_ElSecretoDeLaLibreraDeParis.jpg",
+      "formats": [
+        {
+          "type": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=1PfvOk7SZkMccYBinSk1bMY0AjB0Q_pKm"
+        }
+      ]
+    },
+    {
+      "id": "24",
+      "uuid": "3ff909b9-8a82-4aa7-8c7a-859ba76b397c",
+      "title": "El Café del Ángel: Un Tiempo Nuevo",
+      "title_sort": "Café del Ángel: Un Tiempo Nuevo, El",
+      "authors": [
+        "Anne Jacobs"
+      ],
+      "authors_sort": "Jacobs, Anne",
+      "publisher": "PLAZA & JANÉS",
+      "pubdate": "2022-10-06T00:00:00-03:00",
+      "rating": 4,
+      "isbn": "9788401022029",
+      "tags": [
+        "Fiction",
+        "General",
+        "Historical",
+        "Romance"
+      ],
+      "series": {
+        "_": "El Café del Ángel",
+        "$": {
+          "index": "4.0"
+        }
+      },
+      "series_index": null,
+      "comments": "<div>\n<p>La autora de «La Villa de las Telas» vuelve con una cautivadora nueva saga familiar en torno a un emblemático café tras la Segunda Guerra Mundial. Un legendario café Una familia valiente Un amor prohibido Wiesbaden, 1945. La joven Hilde apenas puede creer su suerte: la guerra ha terminado y el Café del Ángel se ha salvado milagrosamente. Hilde sueña con volver a convertir el negocio familiar en el glamouroso lugar que reunía a artistas y personalidades de la ciudad. Pero los primeros conflictos no tardan en surgir cuando una bella joven entra en el café y se presenta como su prima Luisa. ¿Quién es esa enigmática mujer que ha luchado por llegar hasta allí desde Prusia Oriental? Entre las dos jóvenes crece una rivalidad que amenaza con envenenar el ambiente del café. Hasta que ambas se dan cuenta de que tienen algo en común: un secreto de la guerra que les ha perseguido hasta el día de hoy...</p></div>",
+      "timestamp": "2025-04-25T18:40:40-03:00",
+      "languages": "spa",
+      "identifiers": "goodreads:61993284,amazon:B0B6XQZ9ZW,google:nCx8EAAAQBAJ,isbn:9788401022029",
+      "cover": "24_ElCafedelAngelUnTiempoNuevo.jpg",
+      "formats": [
+        {
+          "type": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=1icIln0wE89BnA4LK_r2VgYvBYuTRCq-H"
+        }
+      ]
+    },
+    {
+      "id": "25",
+      "uuid": "9e400622-4532-4023-b0f2-fb9779e36dfc",
+      "title": "El Café del Ángel: Aires de libertad",
+      "title_sort": "Café del Ángel: Aires de libertad, El",
+      "authors": [
+        "Anne Jacobs"
+      ],
+      "authors_sort": "Jacobs, Anne",
+      "publisher": "PLAZA & JANÉS",
+      "pubdate": "2024-10-03T00:00:00-03:00",
+      "rating": null,
+      "isbn": "9788401034138",
+      "tags": [
+        "Fiction",
+        "Romance",
+        "General",
+        "Historical"
+      ],
+      "series": {
+        "_": "El Café del Ángel",
+        "$": {
+          "index": "4.0"
+        }
+      },
+      "series_index": null,
+      "comments": "<div>\n<p>La esperada cuarta entrega de la fascinante saga familiar de Anne Jacobs, autora de La Villa de las Telas. Wiesbaden, 1961. Ahora que Hilde Koch ha modernizado el café familiar con mucho cariño y lo regenta con dedicación, de pronto su hermano Wilhelm pretende disputarle la dirección del negocio. Su gran sueño de labrarse una carrera en el cine ha fracasado, mientras que su mujer, Karin, goza de un gran éxito como actriz. Tampoco en el viñedo de Jean-Jacques, el marido de Hilde, van muy bien las cosas. Y quien sale en su ayuda es nada menos que el rebelde Mischa, que entre las viñas no solo encuentra un trabajo, sino también algo que en absoluto esperaba: el amor. Sin embargo, por Wiesbaden empieza a correr un desagradable rumor que hace que todos teman por la supervivencia del café...</p></div>",
+      "timestamp": "2025-04-25T18:40:40-03:00",
+      "languages": "spa",
+      "identifiers": "isbn:9788401034138,google:5EEXEQAAQBAJ",
+      "cover": "25_ElCafedelAngelAiresdelibertad.jpg",
+      "formats": [
+        {
+          "type": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=1UOrKfp1J68OZIdMNsgG9ItItCQri3xQR"
+        }
+      ]
+    },
+    {
+      "id": "26",
+      "uuid": "9b3a170a-0987-41b5-b278-0a042c41310b",
+      "title": "El Café del Ángel: Años Turbulentos",
+      "title_sort": "Café del Ángel: Años Turbulentos, El",
+      "authors": [
+        "Anne Jacobs"
+      ],
+      "authors_sort": "Jacobs, Anne",
+      "publisher": "PLAZA & JANÉS",
+      "pubdate": "2023-10-05T00:00:00-03:00",
+      "rating": 4,
+      "isbn": "9788401025471",
+      "tags": [
+        "Historical",
+        "Romance",
+        "prose_history"
+      ],
+      "series": {
+        "_": "El Café del Ángel",
+        "$": {
+          "index": "2.0"
+        }
+      },
+      "series_index": null,
+      "comments": "<div>\n<p style=\"font-weight: bold\">La autora de «La Villa de las Telas» vuelve con la segunda entrega de una emocionante nueva trilogía en torno a una familia que regenta un evocador café alemán tras la Segunda Guerra Mundial. </p>\n<p><strong>Wiesbaden, 1951.</strong> Al Café del Ángel le ha salido competencia. Junto al tradicional establecimiento de la familia Koch ha abierto otro más el Café del Rey. Mientras Hilde Koch intenta en vano convencer a sus padres para que modernicen el local, su gran amor, por el que tanto ha luchado, parece a punto de resquebrajarse. </p>\n<p>A su hermano August tampoco le van mejor las cosas. Cuando regresa a Alemania, tras haber sido prisionero de guerra de los rusos, comienza a sentirse atraído precisamente por una misteriosa joven rusa, cuya llegada amenaza con dividir a la familia...</p></div>",
+      "timestamp": "2025-04-25T18:40:40-03:00",
+      "languages": "spa",
+      "identifiers": "google:76LXEAAAQBAJ,isbn:9788401025471,amazon:B0CJ99G99X,goodreads:199543221",
+      "cover": "26_ElCafedelAngelAnosTurbulentos.jpg",
+      "formats": [
+        {
+          "type": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=1oh0dVu0F-Hp4C3m4SlsmO6d7_B9XR2Gk"
+        }
+      ]
+    },
+    {
+      "id": "27",
+      "uuid": "d81cdf5b-a477-4b17-aa6d-07d8ce392013",
+      "title": "El Café del Ángel: Hijas De La Esperanza",
+      "title_sort": "Café del Ángel: Hijas De La Esperanza, El",
+      "authors": [
+        "Anne Jacobs"
+      ],
+      "authors_sort": "Jacobs, Anne",
+      "publisher": "PLAZA & JANÉS",
+      "pubdate": "2024-03-07T00:00:00-03:00",
+      "rating": 4,
+      "isbn": "9788401025495",
+      "tags": [
+        "Historical",
+        "Romance"
+      ],
+      "series": {
+        "_": "El Café del Ángel",
+        "$": {
+          "index": "3.0"
+        }
+      },
+      "series_index": null,
+      "comments": "<div>\n<p style=\"font-weight: bold\">La autora de «La Villa de las Telas» vuelve a emocionar con el tercer volumen de su exitosa saga familiar ambientada en un evocador café alemán de la posguerra. </p>\n<p><strong>Wiesbaden, 1959</strong>. Hilde, la hija de la familia, dirige ahora el Café del Ángel y ha llevado un soplo de aire fresco al tradicional establecimiento. Además, el nuevo pastelero resulta ser todo un descubrimiento y sus tentadoras creaciones reposteras atraen cada vez a más clientes. </p>\n<p>Pero Hilde y su prima Luisa tienen motivos para temer por su felicidad Jean-Jacques, el marido de Hilde, pasa mucho tiempo con la guapa francesa que trabaja en sus viñedos, y Fritz, el esposo de Luisa, parece ocultarle algo. De repente, la llegada de una carta abre viejas heridas de los tiempos de la guerra, y todos los miembros de la familia van a ser puestos a prueba. </p>\n<p>El futuro del Café del Ángel está en juego... </p>\n<p style=\"font-weight: bold\">Los lectores han dicho... </p>\n<p>«El estilo ameno y sencillo de la autora, la intensidad de las emociones, la pasión que mueve a sus personajes y el esmerado contexto histórico componen una atractiva lectura, de las que conmueven y cautivan a lo largo de todas sus páginas». </p>\n<p>Blog <em>Me gustan los libros</em></p></div>",
+      "timestamp": "2025-04-25T18:40:40-03:00",
+      "languages": "spa",
+      "identifiers": "isbn:9788401025495,google:yHTnEAAAQBAJ,goodreads:203402970,amazon:B0CPFZFPWX",
+      "cover": "27_ElCafedelAngelHijasDeLaEsperanza.jpg",
+      "formats": [
+        {
+          "type": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=11PLhX5mpLJMZvW3kyHO0HyFA-98XQc03"
+        }
+      ]
+    },
+    {
+      "id": "28",
+      "uuid": "743540b1-9b4f-47ab-a4e2-4264e71080ae",
+      "title": "El Café Del Ángel: Una Época Dorada",
+      "title_sort": "Café Del Ángel: Una Época Dorada, El",
+      "authors": [
+        "Anne Jacobs"
+      ],
+      "authors_sort": "Jacobs, Anne",
+      "publisher": "PLAZA & JANÉS",
+      "pubdate": "2025-03-06T00:00:00-03:00",
+      "rating": 4,
+      "isbn": "9788401036118",
+      "tags": [
+        "Fiction",
+        "Romance",
+        "General",
+        "Historical"
+      ],
+      "series": {
+        "_": "El Café del Ángel",
+        "$": {
+          "index": "5.0"
+        }
+      },
+      "series_index": null,
+      "comments": "<div>\n<p style=\"font-weight: bold\">Nuevos desafíos para la familia Koch y un viaje que despierta anhelos profundamente escondidos en la quinta y emocionante entrega de la nueva saga familiar de Anne Jacobs, autora de <em>La villa de las telas.</em> </p>\n<p><strong>Wiesbaden, 1965.</strong> El Café del Ángel vive años prósperos bajo la dirección de Hilde y necesita con urgencia más personal. Pero cuando Hilde contrata a un nuevo camarero italiano, Giuseppe, a sus padres les resulta difícil aceptar su mentalidad «sureña». También hay turbulencias en el matrimonio de su hermano, Willi, que triunfa en el teatro de Wiesbaden mientras coquetea con una guapa compañera. Cuando la situación en el café llega a un punto insostenible, Hilde decide hacer las maletas. Inspirada por las descripciones de Giuseppe de su tierra natal, parte hacia Italia con su cuñada Svetlana. Ambas anhelan tomarse un respiro, pero ¿realmente van a dejar el café en manos de la familia? El sol del verano y el mar azul pueden hacer olvidar todas las dudas...</p></div>",
+      "timestamp": "2025-04-25T18:45:42-03:00",
+      "languages": "spa",
+      "identifiers": "google:EHU7EQAAQBAJ,goodreads:223137481,amazon:B0DRYYH6CL,isbn:9788401036118",
+      "cover": "28_ElCafeDelAngelUnaEpocaDorada.jpg",
+      "formats": [
+        {
+          "type": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=1gxXOEGGXxy_FlJeT36NLq13tVd667wWu"
+        }
+      ]
+    },
+    {
+      "id": "29",
+      "uuid": "0ee0ce89-e780-4be5-94ea-93a8f0b0176d",
+      "title": "Por Si Un Día Volvemos",
+      "title_sort": "Por Si Un Día Volvemos",
+      "authors": [
+        "María Dueñas"
+      ],
+      "authors_sort": "Dueñas, María",
+      "publisher": "Editorial Planeta",
+      "pubdate": "2025-03-26T00:00:00-03:00",
+      "rating": 4,
+      "isbn": "9788408302308",
+      "tags": [
+        "Romance",
+        "Historical"
+      ],
+      "series": null,
+      "series_index": null,
+      "comments": "<div>\n<p style=\"font-weight: bold\">Hui de un crimen involuntario. Hui de los hombres que no me quisieron. Hui de una guerra. Esta es mi historia, entre España y Orán, junto al Mediterráneo. </p>\n<p><strong>Orán. Años 20, siglo xx.</strong> En esta ciudad africana de origen árabe, pulso español y administración francesa <strong>desembarca una joven</strong> con el falso nombre de Cecilia Belmonte. En apariencia, <strong>ha cruzado el Mediterráneo para escapar de la miseria</strong> , como tantos compatriotas. Su razón, sin embargo, es más turbia. </p>\n<p>La <strong>urgencia por sobrevivir</strong> la obliga a dejarse la piel en plantaciones y lavaderos, como empleada doméstica y operaria de fábrica a destajo. Hasta que una madrugada, en la tabaquera Bastos, participa en un delito por el que paga con su sometimiento a un hombre despreciable. <strong>Su entereza será lo que la libere</strong> y le aporte el coraje para rehacerse y emprender un <strong>camino en ascenso, repleto de quiebros, logros y desafíos</strong> a lo largo de tres décadas vibrantes. </p>\n<p>Esta es la <strong>historia de una mujer que vivió el auge colonial</strong> y el trágico fin de la Argelia francesa. Y, en paralelo, sus páginas rescatan la memoria de los <strong>desconocidos pieds-noirs españoles</strong> que, arrastrados por la emigración y el exilio, formaron parte de aquel mundo.</p></div>",
+      "timestamp": "2025-07-09T13:30:17-03:00",
+      "languages": "spa",
+      "identifiers": "mobi-asin:B0DVGBSDKM,goodreads:224137101,google:tdJCEQAAQBAJ,isbn:9788408302308",
+      "cover": "29_PorSiUnDiaVolvemos.jpg",
+      "formats": [
+        {
+          "type": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=1-uUUViCvuYfgHaBs5XLvcR4RPlNmvszU"
+        }
+      ]
+    },
+    {
+      "id": "30",
+      "uuid": "95f0e20c-c595-4f88-acbe-f21841dcbdf0",
+      "title": "El Niño Que Perdió La Guerra",
+      "title_sort": "Niño Que Perdió La Guerra, El",
+      "authors": [
+        "Julia Navarro"
+      ],
+      "authors_sort": "Navarro, Julia",
+      "publisher": "PLAZA & JANÉS",
+      "pubdate": "2024-09-05T00:00:00-03:00",
+      "rating": 4,
+      "isbn": "9788401027987",
+      "tags": [
+        "Historical",
+        "Romance"
+      ],
+      "series": null,
+      "series_index": null,
+      "comments": "<div>\n<p style=\"font-weight: bold\">Un niño. Dos países. Dos ideologías. </p>\n<p style=\"font-weight: bold\">Una emocionante y ambiciosa novela sobre la identidad y el poder arrollador de la cultura que nos muestra que, incluso en los rincones más oscuros de la Historia, la vida se abre paso. </p>\n<p style=\"font-weight: bold\">Madrid, invierno de 1938 </p>\n<p>Clotilde, una artista gráfica que dibuja caricaturas para los diarios republicanos, asiste en Madrid a los últimos meses de la Guerra Civil. La caída de la República es inminente, por lo que su marido, militante comunista que trabaja para los rusos, decide enviar a Moscú a su hijo Pablo, de tan solo cinco años, en contra de su voluntad. Clotilde se resiste con todas sus fuerzas, pero no logra evitar que el comandante Borís Petrov emprenda ese arriesgado viaje por una España en llamas para cumplir con el deseo de su camarada de llevar a Pablo a la Unión Soviética, donde Stalin está levantando un nuevo país sobre las ruinas del antiguo régimen. </p>\n<p style=\"font-weight: bold\">Moscú, primavera de 1939 </p>\n<p>Allí es recibido por su nueva familia que, conmovida por su trágico exilio, acoge con afecto a un niño exhausto y enfermo. Anya no duda en cuidar de Pablo como si fuese su propio hijo, sin hacer distinciones con Igor, su hermano de adopción. Hija y esposa de dos orgullosos héroes de la Revolución -su padre luchó junto a Lenin, su marido a las órdenes de Stalin-, Anya ama la poesía y la música, aficiones sospechosas y burguesas a los ojos del poder. Mientras sus ilusiones naufragan en el ambiente cada vez más opresivo del terror estalinista, su espíritu se rebela contra la injusticia, la miseria, la ausencia de libertad y el Gulag. </p>\n<p>Pablo crece entre el recuerdo cada vez más tenue de su madre, que no ceja en su empeño por recuperarlo, y el cariño de Anya, quien le transmite su amor por la música, la literatura y sus deseos de libertad. Dos mujeres unidas por el destino de un niño y enfrentadas al mismo el de las ideologías totalitarias a las que sucumbió el siglo xx. </p>\n<p style=\"font-weight: bold\">Se puede perder una guerra, pero se puede ganar la libertad</p></div>",
+      "timestamp": "2025-07-09T13:35:29-03:00",
+      "languages": "spa",
+      "identifiers": "isbn:9788401027987,google:rNIREQAAQBAJ,goodreads:215944761",
+      "cover": "30_ElNinoQuePerdioLaGuerra.jpg",
+      "formats": [
+        {
+          "type": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=1WHKbw-e-6wlWZYM2gAkJxTtb2m-HIp-Q"
+        }
+      ]
+    }
+  ]
+}

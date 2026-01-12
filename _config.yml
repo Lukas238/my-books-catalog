@@ -1,0 +1,44 @@
+# Site settings
+title: Books Catalog
+baseurl: ""
+url: "https://books.c238.com.ar"  # Ajusta según tu URL
+
+# Author
+author:
+  name: Lucas Dasso
+  email: dassolucas@gmail.com
+
+# Build settings
+markdown: kramdown
+
+# Encoding
+encoding: utf-8
+
+# Assets
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Collections
+collections:
+  catalogs:
+    output: true
+    permalink: /:name/
+
+# Plugins
+plugins:
+  - jekyll-sitemap
+
+# Pages
+include:
+  - _pages
+
+# Excludes
+exclude:
+  - vendor
+  - tmp
+  - commands.md
+  - README.md
+  - node_modules
+  - Gemfile
+  - Gemfile.lock

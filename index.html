@@ -1,11 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Refresh" content="0; URL='lukas238'" />
-  </head>
-  <body>
-    <!-- Silence is golden -->
-  </body>
-</html>
+---
+layout: default
+title: Books Catalog
+---
+
+<h1>Books Catalog</h1>
+
+<p>Personal digital library collections.</p>
+
+<ul>
+    {% for catalog in site.catalogs %}
+        {% assign catalog_name = catalog.path | split: "/" | last | split: "." | first %}
+        {% assign catalog_data = site.data[catalog_name] %}
+        {% if catalog_data %}
+        <li>
+            <a href="{{ catalog.url }}">{{ catalog_data.catalog_title }}</a>
+            <small>({{ catalog_data.total_books }} books)</small>
+        </li>
+        {% endif %}
+    {% endfor %}
+</ul>
+
+<hr>
+
+<p><small>Powered by <a href="https://calibre-ebook.com/">Calibre</a></small></p>

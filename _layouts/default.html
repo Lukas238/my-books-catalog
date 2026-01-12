@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%2210 0 100 100%22><text y=%22.90em%22 font-size=%2290%22>📚</text></svg>">
+
+    <title>{{ page.catalog_title | default: site.title }} | Catalog</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+
+    <style>
+        body {
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            font-size: 16px;
+            color: #353535;
+            line-height: 1.5;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            color: #353535;
+            line-height: 1.2;
+        }
+
+        a {
+            color: #353535 !important;
+            text-decoration: underline;
+        }
+
+        a:hover {
+            color: #979797 !important;
+        }
+
+        .nav-title {
+            color: #555;
+            font-size: 2rem;
+            font-weight: 400;
+            margin: 0;
+            padding-right: 0.2rem;
+            transition: opacity .2s ease-out;
+            text-decoration: none !important;
+            display: inline-block;
+        }
+
+        a .nav-title:hover {
+            opacity: .6;
+        }
+
+        a {
+            text-decoration: none !important;
+        }
+
+        a:hover {
+            text-decoration: none !important;
+        }
+
+        .content-wrapper {
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .content-wrapper.narrow {
+            max-width: 800px;
+        }
+
+        .content-wrapper.wide {
+            max-width: 100%;
+            padding: 0;
+        }
+
+        .sticky-top {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            z-index: 1020;
+        }
+
+        .sticky-top::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0%;
+            width: 100%;
+            height: 1px;
+            /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); */
+        }
+
+        #book-preview {
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 100vh;
+            z-index: 1030;
+            overflow-y: auto;
+        }
+
+        #book-preview .book-preview__content .book__body > h1,
+        #book-preview .book-preview__content .book__body > .h3 {
+            position: sticky;
+            top: 0;
+            background-color: #fcfcfd;
+            z-index: 10;
+            margin: 0;
+            padding: 1rem 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header id="header" class="container-xxl border-bottom py-4">
+        <a href="/">
+            <h2 class="nav-title">
+                {% if page.layout == 'catalog' %}
+                    {% assign catalog_name = page.url | remove_first: '/' | split: '/' | first %}
+                    {% assign catalog_data = site.data[catalog_name] %}
+                    {{ catalog_data.catalog_title }} · <span class="fw-lighter">Book Catalog</span>
+                {% else %}
+                    Lucas Dasso · <span class="fw-lighter">Book Catalogs</span>
+                {% endif %}
+            </h2>
+        </a>
+    </header>
+
+    <div class="content-wrapper {% if page.layout == 'catalog' %}wide{% else %}narrow{% endif %}">
+        {{ content }}
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/konami-code-js@0.8.3/src/konami-code.min.js"></script>
+    <script src="{{ '/assets/js/catalog.js' | relative_url }}"></script>
+</body>
+</html>

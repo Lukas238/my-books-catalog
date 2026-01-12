@@ -1,0 +1,165 @@
+{
+  "catalog_title": "Ignacio's eBooks Library",
+  "catalog_name": "ignacio",
+  "total_books": 5,
+  "last_updated": "2026-01-12T22:47:35.177Z",
+  "books": [
+    {
+      "id": "1",
+      "uuid": "b81555b7-7b4d-4ea3-8e99-44a50569fbb8",
+      "title": "Viajes Por Europa, África Y América 1845-1848",
+      "title_sort": "Viajes Por Europa, África Y América 1845-1848",
+      "authors": [
+        "Domingo Faustino Sarmiento"
+      ],
+      "authors_sort": "Sarmiento, Domingo Faustino",
+      "publisher": "Linkgua",
+      "pubdate": "1993-12-31T00:00:00-03:00",
+      "rating": 3,
+      "isbn": null,
+      "tags": [
+        "Travel",
+        "linkgua-digital.com"
+      ],
+      "series": null,
+      "series_index": null,
+      "comments": "<div>\n<p>Sarmiento aprovecha sus múltiples viajes por el mundo para reflexionar sobre los lugares que visita y para buscar modelos de referencia o de rechazo para su actividad en el continente americano.</p></div>",
+      "timestamp": "2025-02-04T16:15:08-03:00",
+      "languages": "eng",
+      "identifiers": "goodreads:55340329,amazon:B07V1VMBSK",
+      "cover": "1_ViajesPorEuropaAfricaYAmerica18451848.jpg",
+      "formats": [
+        {
+          "type": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=1E7N__uGjmaNya-CM_N3peqwaqats9J-J"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "uuid": "60aa169e-f32d-43cd-88ff-2dcd75c27b1f",
+      "title": "Cuentos Maravillosos",
+      "title_sort": "Cuentos Maravillosos",
+      "authors": [
+        "Hermann Hesse"
+      ],
+      "authors_sort": "Hesse, Hermann",
+      "publisher": "Edhasa",
+      "pubdate": "2012-02-01T00:00:00-03:00",
+      "rating": 4,
+      "isbn": "9789876283007",
+      "tags": [
+        "Fantástico"
+      ],
+      "series": null,
+      "series_index": null,
+      "comments": "<div>\n<p><em>Cuentos maravillosos</em> es sin duda la mejor y más importante antología de cuentos publicada en vida de Hermann Hesse, y su compilación está regida tanto por criterios cualitativos como estrictamente formales y temáticos que la dotan de unidad y coherencia. Además de publicar novelas tan inolvidables como <em>Siddhartha</em> o <em>El lobo estepario</em>, Hermann Hesse cultivó durante toda su vida el género del cuento en sus más diversas variantes, y siempre con una agudeza y una sensibilidad a la que es difícil encontrar término de comparación. <em>Cuentos maravillosos</em> reúne una de las mejores obras de Hesse en su narrativa breve, la de unos relatos en los que la magia y lo maravilloso se revelan como formas de amor, cobran un papel decisivo y nos remiten a la infancia. Esta es una selección de 15 cuentos en la que el autor nos habla de varios acontecimientos prodigiosos de la infancia de cada ser humano que luego olvidamos al hacernos adultos. Un mundo de ensueño e imaginación. Claramente, Hermann Hesse invita a los lectores a que no dejemos de ser niños y niñas y a que no perdamos la ternura y candidez de esa etapa maravillosa de la vida que es la infancia.</p></div>",
+      "timestamp": "2025-02-04T19:10:00-03:00",
+      "languages": "spa",
+      "identifiers": "google:pSoJ0QEACAAJ,goodreads:19324648,amazon:8435018431,isbn:9789876283007",
+      "cover": "2_CuentosMaravillosos.jpg",
+      "formats": [
+        {
+          "type": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=1ZoFKyBhjSLz8YIrma-Llrvrk5MldNmen"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "uuid": "1a067c8b-8a73-47ce-9a94-b650ea87235e",
+      "title": "El nervio óptico",
+      "title_sort": "nervio óptico, El",
+      "authors": [
+        "María Gainza"
+      ],
+      "authors_sort": "Gainza, María",
+      "publisher": "ePubLibre",
+      "pubdate": "2014-01-01T00:00:00-03:00",
+      "rating": null,
+      "isbn": null,
+      "tags": [
+        "Novela",
+        "Otros"
+      ],
+      "series": null,
+      "series_index": null,
+      "comments": "Este es un libro hecho de miradas. Miradas sobre cuadros, los artistas que los pintaron y la intimidad de la narradora y su entorno. Este es un libro singular y fascinante, inclasificable, en el que la vida y el arte se entretejen. Consta de once partes: once partes que son once capítulos de una novela que relata una historia personal y familiar, pero que también pueden leerse como once cuentos, u once incursiones furtivas en la historia de la pintura, u once ensayos narrativos que tratan de desentrañar los misteriosos vínculos entre una obra pictórica y quien la contempla.[…]",
+      "timestamp": "2025-03-31T10:31:10-03:00",
+      "languages": "spa",
+      "identifiers": null,
+      "cover": "3_Elnerviooptico.jpg",
+      "formats": [
+        {
+          "type": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=1q8qKP07EgfPJSjwu-Dp7qOjIp_KqmZ1-"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "uuid": "f08b1e72-bdcf-4af0-a31b-c5e73e832c8d",
+      "title": "El arte de tener razón",
+      "title_sort": "arte de tener razón, El",
+      "authors": [
+        "Arthur Schopenhauer"
+      ],
+      "authors_sort": "Schopenhauer, Arthur",
+      "publisher": "ePubLibre",
+      "pubdate": "2002-01-01T00:00:00-03:00",
+      "rating": null,
+      "isbn": null,
+      "tags": [
+        "Ensayo",
+        "Filosofía"
+      ],
+      "series": null,
+      "series_index": null,
+      "comments": "En este ameno y breve tratado que lleva por título «El arte de tener razón» —o, más propiamente, de «salirse uno con la suya» en las discusiones—, Arthur Schopenhauer (1788-1860) se propone explicar cómo podemos hacer que triunfen nuestras tesis al margen de su falsedad o su inconsistencia. Como explica el preparador del texto, Franco Volpi, en el ensayo que clausura el volumen («Schopenhauer y la dialéctica»), el fundador del pesimismo señala que no es lo mismo la verdad objetiva que una proposición y su aprobación por los que la discuten. Debido a la perversidad natural del ser humano, en las disputas cotidianas no se procura, en efecto, que la verdad salga a la luz, sino que cada contendiente se afana en que se le dé la razón. En este opúsculo Schopenhauer busca, con gran ingenio, asistir a los hombres en tal inclinación.",
+      "timestamp": "2025-03-31T10:31:10-03:00",
+      "languages": "spa",
+      "identifiers": "revision:1.0,epl:8163",
+      "cover": "4_Elartedetenerrazon.jpg",
+      "formats": [
+        {
+          "type": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=1l2pZgsyrLJALSlkzqHaLBmL60abRxqq9"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "uuid": "023daba7-7187-4f0f-a737-cec47897f6a7",
+      "title": "El infinito en un junco",
+      "title_sort": "El infinito en un junco",
+      "authors": [
+        "Iréne Vallejo"
+      ],
+      "authors_sort": "Vallejo, Iréne",
+      "publisher": "Siruela",
+      "pubdate": "2019-09-22T02:00:00-03:00",
+      "rating": null,
+      "isbn": "9788417860868",
+      "tags": [
+        "S2"
+      ],
+      "series": null,
+      "series_index": null,
+      "comments": "<div><p class=\"description\">De humo, de piedra, de arcilla, de seda, de piel, de árboles, de plástico y de luz…</p><p class=\"description\"></p><p class=\"description\">Un recorrido por la vida del libro y de quienes lo han salvaguardado durante casi treinta siglos.</p><p class=\"description\">«Una admirable indagación sobre los orígenes del mayor instrumento de libertad que se ha dado el ser humano: el libro».</p><p class=\"description\">RAFAEL ARGULLOL</p><p class=\"description\">«Los libros de Irene Vallejo, claros e inteligentes, se leen muy bien e invitan a pensar. En la mejor línea humanista».</p><p class=\"description\">CARLOS GARCÍA GUAL</p><p class=\"description\">«Es un deleite leer la prosa de Irene Vallejo, creadora, brillante, plena de sensibilidad».</p><p class=\"description\">LUIS LANDERO</p><p class=\"description\">Este es un libro sobre la historia de los libros. Un recorrido por la vida de ese fascinante artefacto que inventamos para que las palabras pudieran viajar en el espacio y en el tiempo. La historia de su fabricación, de todos los tipos que hemos ensayado a lo largo de casi treinta siglos: libros de humo, de piedra, de arcilla, de juncos, de seda, de piel, de árboles y, los últimos llegados, de plástico y luz.</p><p class=\"description\">Es, además, un libro de viajes. Una ruta con escalas en los campos de batalla de Alejandro y en la Villa de los Papiros bajo la erupción del Vesubio, en los palacios de Cleopatra y en el escenario del crimen de Hipatia, en las primeras librerías conocidas y en los talleres de copia manuscrita, en las hogueras donde ardieron códices prohibidos, en el gulag, en la biblioteca de Sarajevo y en el laberinto subterráneo de Oxford en el año 2000. Un hilo que une a los clásicos con el vertiginoso mundo contemporáneo, conectándolos con debates actuales: Aristófanes y los procesos judiciales contra humoristas, Safo y la voz literaria de las mujeres, Tito Livio y el fenómeno fan, Séneca y la posverdad;</p><p class=\"description\">Pero, sobre todo, esta es una fabulosa aventura colectiva protagonizada por miles de personas que, a lo largo del tiempo, han hecho posibles y han protegido los libros: narradoras orales, escribas, iluminadores, traductores, vendedores ambulantes, maestras, sabios, espías, rebeldes, monjas, esclavos, aventureras; Lectores en paisajes de montaña y junto al mar que ruge, en las capitales donde la energía se concentra y en los enclaves más apartados donde el saber se refugia en tiempos de caos. Gente común cuyos nombres en muchos casos no registra la historia, esos salvadores de libros que son los auténticos protagonistas de este ensayo.</p></div>",
+      "timestamp": "2024-02-22T16:38:58-03:00",
+      "languages": "eng",
+      "identifiers": "isbn:9788417860868",
+      "cover": "5_Elinfinitoenunjunco.jpg",
+      "formats": [
+        {
+          "type": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=17yDxRMI_pSWLOQfrVYmpnDZkoG8QilTo"
+        },
+        {
+          "type": "MOBI",
+          "url": "https://drive.google.com/uc?export=download&id=1hXy9YHdd7JvHpm03_2tF46op4eg--yU4"
+        }
+      ]
+    }
+  ]
+}

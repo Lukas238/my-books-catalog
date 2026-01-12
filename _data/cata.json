@@ -1,0 +1,592 @@
+{
+  "catalog_title": "Cata's eBooks Library",
+  "catalog_name": "cata",
+  "total_books": 15,
+  "last_updated": "2026-01-12T22:47:35.168Z",
+  "books": [
+    {
+      "id": "1",
+      "uuid": "207697cc-3285-4c32-a5ef-f79da9581400",
+      "title": "Encuentra tu persona vitamina",
+      "title_sort": "Encuentra tu persona vitamina",
+      "authors": [
+        "Marian Rojas Estapé"
+      ],
+      "authors_sort": "Marian Rojas Estapé",
+      "publisher": "lineasdesaparecidas",
+      "pubdate": "2021-08-24T19:00:00-03:00",
+      "rating": null,
+      "isbn": null,
+      "tags": [
+        "Ensayo",
+        "Autoayuda"
+      ],
+      "series": null,
+      "series_index": null,
+      "comments": "<div>\n<p>¿Por qué hay personas que nos hacen sufrir tanto y otras que nos generan confianza y cuya sola presencia nos reconforta? ¿Por qué hay gente que tiene tendencia a establecer relaciones complicadas y dolorosas? ¿Amamos como nos amaron? ¿Hay «algo» bioquímico detrás de la confianza, el apego y el amor? ¿Cómo podemos acertar a la hora de elegir pareja?</p>\n<p>Estamos diseñados para vivir en familia y en sociedad, relacionarnos y querernos. Nuestra felicidad va a depender en gran medida de la capacidad que tengamos para mantener buenas relaciones con aquellos que nos rodean. Muchos, hoy en día, arrastramos heridas emocionales que nos impiden conectar de forma sana con el entorno. Encuentra tu persona vitamina te ayudará a comprender el vínculo con tus padres, tus hijos, tu pareja, tus amigos y tus compañeros de trabajo a la vez que entiendes tu historia emocional. Porque cuando uno se comprende, se siente aliviado.</p>\n<p>La doctora <strong>Marian Rojas Estapé </strong>te acerca al apego, a la infancia y al amor desde un punto de vista científico, psicológico y humano, y te habla de una hormona fundamental, la oxitocina. Un libro que te impulsa a encontrar personas vitamina, aquellas que sacan lo mejor de ti, te inspiran, te apoyan y con ello mejoran tu sistema inmune. </p></div>",
+      "timestamp": "2024-02-22T16:38:58-03:00",
+      "languages": "spa",
+      "identifiers": null,
+      "cover": "1_Encuentratupersonavitamina.jpg",
+      "formats": [
+        {
+          "type": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=1fTzX8A43qsGMenubrgCERm2wY5cDihp0"
+        },
+        {
+          "type": "MOBI",
+          "url": "https://drive.google.com/uc?export=download&id=1fW-gYx-mMfJsCYyPLu0pGPMLJ8jTjKNi"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "uuid": "48b9987a-6300-4844-ba67-e4d4132f4db6",
+      "title": "Vive Más: Reduce Tu Edad Biológica Y Aumenta Tu Vitalidad",
+      "title_sort": "Vive Más: Reduce Tu Edad Biológica Y Aumenta Tu Vitalidad",
+      "authors": [
+        "Marcos Vázquez García"
+      ],
+      "authors_sort": "García, Marcos Vázquez",
+      "publisher": "GRIJALBO",
+      "pubdate": "2023-10-05T00:00:00-03:00",
+      "rating": 4,
+      "isbn": "9788425361838",
+      "tags": [
+        "Health",
+        "Science",
+        "Health & Fitness",
+        "Diet & Nutrition",
+        "General",
+        "Medical",
+        "Nutrition",
+        "Diets"
+      ],
+      "series": null,
+      "series_index": null,
+      "comments": "<div>\n<p style=\"font-weight: bold\">Herramientas prácticas para reducir la edad biológica y rejuvenecer. </p>\n<p style=\"font-weight: bold\">De la mano de Marcos Vázquez, el divulgador de salud más reconocido en habla hispana, vamos a adentrarnos en el proceso de envejecimiento del cuerpo humano para descubrir qué es y por qué y cómo envejecemos. </p>\n<p>Marcos Vázquez nos adentra en el proceso de envejecimiento del cuerpo humano para descubrirnos qué es y por qué y cómo envejecemos. </p>\n<p>Nuestra edad cronológica avanza siempre a la misma velocidad y en la misma dirección, pero nuestra edad biológica es mucho más flexible y moldeable; los últimos avances científicos indican que puede incluso REJUVENECER ES POSIBLE. </p>\n<p>Vive más es la guía esencial para entender la ciencia de la longevidad y, sobre todo, para aplicarla de manera personalizada, proporcionando herramientas prácticas para mantener la salud y la vitalidad con el fin de ralentizar el envejecimiento y mejorar la calidad de vida y la apariencia. En ella aprenderás que el ejercicio es el elixir de la juventud, qué alimentos ralentizan el envejecimiento y qué efecto tienen estrategias como el ayuno intermitente. Nos enseña cómo potenciar el sistema inmunitario y optimizar las hormonas sexuales o cuáles son los mejores suplementos para alargar la juventud. </p>\n<p>En resumen, aprenderás las claves para morir joven, con muchos años. Pero Vive más va más allá. La última sección resume las tecnologías emergentes que nos permitirán, en pocas décadas, alargar de manera exponencial nuestra longevidad. El futuro es increíble, y está más cerca de lo que piensas.</p></div>",
+      "timestamp": "2024-02-22T16:38:58-03:00",
+      "languages": "spa",
+      "identifiers": "isbn:9788425361838,goodreads:195466428,google:qEbOEAAAQBAJ,amazon:B0CD9T57HC",
+      "cover": "2_ViveMasReduceTuEdadBiologicaYAumentaTuVitalidad.jpg",
+      "formats": [
+        {
+          "type": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=1_A3J_9CvzSrlaBjRQ3gHMzUmmj8G-jdz"
+        },
+        {
+          "type": "MOBI",
+          "url": "https://drive.google.com/uc?export=download&id=1IwfRIei9VBsAatWtcOK7vpt3tmei5Vw0"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "uuid": "6339b79d-8851-459d-9fb4-2b290767782f",
+      "title": "Verdades que Adelgazan: 10 Principios Básicos para un Entrenamiento Efectivo (Spanish Edition)",
+      "title_sort": "Verdades que Adelgazan: 10 Principios Básicos para un Entrenamiento Efectivo (Spanish Edition)",
+      "authors": [
+        "Marcos Vazquez"
+      ],
+      "authors_sort": "Vazquez, Marcos",
+      "publisher": "Fitness Revolucionario",
+      "pubdate": "2017-01-12T20:00:00-03:00",
+      "rating": null,
+      "isbn": null,
+      "tags": [],
+      "series": null,
+      "series_index": null,
+      "comments": null,
+      "timestamp": "2024-02-22T16:38:58-03:00",
+      "languages": "spa",
+      "identifiers": "mobi-asin:B01N22P744",
+      "cover": "3_VerdadesqueAdelgazan10PrincipiosBasicosparaunEntrenamientoEfectivo.jpg",
+      "formats": [
+        {
+          "type": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=1J-95s4OyjrVwOKEqsVIUHWw2dImCGv9T"
+        },
+        {
+          "type": "MOBI",
+          "url": "https://drive.google.com/uc?export=download&id=1r-gRCLWHLcu8xfuoh2IBsyerwhhGrPdu"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "uuid": "b35aed77-9e8f-40e1-8244-7c48d67155f3",
+      "title": "Saludable Mente: Hábitos Para Optimizar Tu Cerebro Y Mejorar Tu Salud a Cualquier Edad",
+      "title_sort": "Saludable Mente: Hábitos Para Optimizar Tu Cerebro Y Mejorar Tu Salud a Cualquier Edad",
+      "authors": [
+        "Marcos Vázquez García"
+      ],
+      "authors_sort": "García, Marcos Vázquez",
+      "publisher": "GRIJALBO",
+      "pubdate": "2021-01-01T00:00:00-03:00",
+      "rating": 4,
+      "isbn": "9788425359484",
+      "tags": [
+        "Health",
+        "Science"
+      ],
+      "series": null,
+      "series_index": null,
+      "comments": "<div>\n<p>El cerebro es lo que te hace ser tú mismo, y es mucho más moldeable de lo que piensas: lo esculpes con cada una de tus acciones. Además, investigaciones recientes afirman que no solo tiene la capacidad de cambiar, sino que lo hace constantemente. Cada experiencia vital moldea detalles microscópicos de tu esencia neuronal. Lo que haces altera lo que eres. El objetivo de este libro es ayudarte a entender mejor su funcionamiento, pero sobre todo, enseñarte a mejorarlo. Cuidar de tu cerebro no solo te ayudará a prevenir trastornos como la demencia, el alzéimer o el párkinson, sinó también a rendir mejor en tu día a día. La salud del cerebro depende de la del resto del cuerpo, y no podemos optimizar su funcionamiento sin entender antes cómo influyen en él la dieta, la actividad física o el estrés ni considerar la estrecha relación entre nuestra microbiota y nuestro estado de ánimo así como el impacto del contacto social en nuestra salud mental. Las recomendaciones de Marcos Vázquez te ayudarán a mejorar tu capacidad de aprender y recordar, a aumentar tu resistencia ante la enfermedad mental, a entender cómo potenciar la plasticidad cerebral y a mejorar tu reserva cognitiva. Posees en tu cabeza el objeto más fascinante que jamás se ha descubierto. Es el momento de desvelar sus misterios y potenciarlo al máximo.</p></div>",
+      "timestamp": "2024-02-22T16:38:58-03:00",
+      "languages": "spa",
+      "identifiers": "google:tuEGEAAAQBAJ,isbn:9788425359484,goodreads:56465416,amazon:B08MNBGK83",
+      "cover": "4_SaludableMenteHabitosParaOptimizarTuCerebroYMejorarTuSaludaCualquierEdad.jpg",
+      "formats": [
+        {
+          "type": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=1vzFtTnnvna57k0oVG8y6T5L3sSm9cYKO"
+        },
+        {
+          "type": "MOBI",
+          "url": "https://drive.google.com/uc?export=download&id=1bCmoIFSQHgd7AphjdglBHgIU2dCFmfrS"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "uuid": "3435530c-2631-498e-9cb8-5aefac6d0391",
+      "title": "El infinito en un junco",
+      "title_sort": "El infinito en un junco",
+      "authors": [
+        "Iréne Vallejo"
+      ],
+      "authors_sort": "Vallejo, Iréne",
+      "publisher": "Siruela",
+      "pubdate": "2019-09-22T02:00:00-03:00",
+      "rating": null,
+      "isbn": "9788417860868",
+      "tags": [
+        "S2"
+      ],
+      "series": null,
+      "series_index": null,
+      "comments": "<div><p class=\"description\">De humo, de piedra, de arcilla, de seda, de piel, de árboles, de plástico y de luz…</p><p class=\"description\"></p><p class=\"description\">Un recorrido por la vida del libro y de quienes lo han salvaguardado durante casi treinta siglos.</p><p class=\"description\">«Una admirable indagación sobre los orígenes del mayor instrumento de libertad que se ha dado el ser humano: el libro».</p><p class=\"description\">RAFAEL ARGULLOL</p><p class=\"description\">«Los libros de Irene Vallejo, claros e inteligentes, se leen muy bien e invitan a pensar. En la mejor línea humanista».</p><p class=\"description\">CARLOS GARCÍA GUAL</p><p class=\"description\">«Es un deleite leer la prosa de Irene Vallejo, creadora, brillante, plena de sensibilidad».</p><p class=\"description\">LUIS LANDERO</p><p class=\"description\">Este es un libro sobre la historia de los libros. Un recorrido por la vida de ese fascinante artefacto que inventamos para que las palabras pudieran viajar en el espacio y en el tiempo. La historia de su fabricación, de todos los tipos que hemos ensayado a lo largo de casi treinta siglos: libros de humo, de piedra, de arcilla, de juncos, de seda, de piel, de árboles y, los últimos llegados, de plástico y luz.</p><p class=\"description\">Es, además, un libro de viajes. Una ruta con escalas en los campos de batalla de Alejandro y en la Villa de los Papiros bajo la erupción del Vesubio, en los palacios de Cleopatra y en el escenario del crimen de Hipatia, en las primeras librerías conocidas y en los talleres de copia manuscrita, en las hogueras donde ardieron códices prohibidos, en el gulag, en la biblioteca de Sarajevo y en el laberinto subterráneo de Oxford en el año 2000. Un hilo que une a los clásicos con el vertiginoso mundo contemporáneo, conectándolos con debates actuales: Aristófanes y los procesos judiciales contra humoristas, Safo y la voz literaria de las mujeres, Tito Livio y el fenómeno fan, Séneca y la posverdad;</p><p class=\"description\">Pero, sobre todo, esta es una fabulosa aventura colectiva protagonizada por miles de personas que, a lo largo del tiempo, han hecho posibles y han protegido los libros: narradoras orales, escribas, iluminadores, traductores, vendedores ambulantes, maestras, sabios, espías, rebeldes, monjas, esclavos, aventureras; Lectores en paisajes de montaña y junto al mar que ruge, en las capitales donde la energía se concentra y en los enclaves más apartados donde el saber se refugia en tiempos de caos. Gente común cuyos nombres en muchos casos no registra la historia, esos salvadores de libros que son los auténticos protagonistas de este ensayo.</p></div>",
+      "timestamp": "2024-02-22T16:38:58-03:00",
+      "languages": "eng",
+      "identifiers": "isbn:9788417860868",
+      "cover": "5_Elinfinitoenunjunco.jpg",
+      "formats": [
+        {
+          "type": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=1Z695o25DbQEaL1PS_xI3LsS2bv2pKyuS"
+        },
+        {
+          "type": "MOBI",
+          "url": "https://drive.google.com/uc?export=download&id=1YmezP15OPy47RKTXwL3rUx8Bkyj3fk2V"
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "uuid": "8465bdde-9950-4ac5-a480-d6db2c644aa0",
+      "title": "Fitness revolucionario. Lecciones ancestrales para una salud salvaje",
+      "title_sort": "Fitness revolucionario. Lecciones ancestrales para una salud salvaje",
+      "authors": [
+        "Marcos Vázquez"
+      ],
+      "authors_sort": "Vázquez, Marcos",
+      "publisher": "Anaya Multimedia",
+      "pubdate": "2018-09-20T00:00:00-03:00",
+      "rating": 5,
+      "isbn": "9788441540194",
+      "tags": [
+        "Crafts & Hobbies",
+        "General",
+        "Science",
+        "Life Sciences",
+        "Health & Fitness",
+        "Diet & Nutrition",
+        "Diets",
+        "Exercise"
+      ],
+      "series": null,
+      "series_index": null,
+      "comments": "<div>\n<p style=\"font-weight: bold\">Escrito por Marcos Vázquez autor del popular blog Fitness Revolucionario.</p>\n<p style=\"font-weight: bold\">Olvida las dietas, escapa del gimnasio, únete a la revolución.</p>\n<p style=\"font-weight: bold\">Un libro absolutamente salvaje, que te impulsa a vivir de forma beneficiosa e invita a mejorar tu salud.</p>\n<p>La civilización tiene una relación paradójica con la salud. Por un lado, vivimos ahora más que nunca y tenemos acceso a comodidades impensables hace unas pocas décadas. Por otro lado, las nuevas tecnologías crean nuevos problemas, dando lugar a las enfermedades del progreso, como obesidad, diabetes, cáncer, aterosclerosis y depresión. Vivimos más pero pasamos más tiempo enfermos.</p>\n<p>Este libro detalla cómo evitar este triste destino. Entenderás por qué los genes tienen el secreto para deshacerse fácilmente del sobrepeso y conocerás los aspectos del mundo moderno que contribuyen a los trastornos del progreso. Te familiarizarás con las tradiciones de las poblaciones más saludables del planeta y aprenderás a aplicar la sabiduría del pasado para mejorar tu cuerpo en el presente.</p>\n<p>En un mundo plagado de mitos y falsas promesas, Fitness Revolucionario ofrece una visión científica y global para eliminar esos kilos de más, pero también para descansar mejor y vivir con más energía.</p>\n<p style=\"font-weight: bold\">Miles de personas han logrado su objetivo siguiendo los principios que encontrarás en este libro. Es el momento de experimentar una salud salvaje.</p>\n<h3>Biografía del autor</h3>\n<p>Marcos Vázquez es el autor del popular blog Fitness Revolucionario, galardonado con múltiples premios por su labor divulgadora en materia de salud. Es también creador de Radio Fitness Revolucionario, el podcast de salud y fitness de habla hispana más escuchado, donde entrevista a grandes expertos en salud, entrenamiento, nutrición, biología o genética, entre otros muchos temas. Es docente en diferentes instituciones de formación en salud y participa como ponente en múltiples congresos y eventos.</p></div>",
+      "timestamp": "2024-02-22T16:38:58-03:00",
+      "languages": "spa",
+      "identifiers": "isbn:9788441540194,google:g3hvDwAAQBAJ,amazon:8441540195",
+      "cover": "6_FitnessrevolucionarioLeccionesancestralesparaunasaludsalvaje.jpg",
+      "formats": [
+        {
+          "type": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=1NGgf-uz7w8qhP1wHgS_Z7eGckiLrithO"
+        },
+        {
+          "type": "MOBI",
+          "url": "https://drive.google.com/uc?export=download&id=1VYGM4CUaAJO2VrwA_WNhS1Q6SSJCB4Qg"
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "uuid": "f463fa80-c236-4b30-b9b1-e6cef8bf6188",
+      "title": "La Historia De Maia",
+      "title_sort": "Historia De Maia, La",
+      "authors": [
+        "Lucinda Riley"
+      ],
+      "authors_sort": "Riley, Lucinda",
+      "publisher": "PLAZA & JANÉS",
+      "pubdate": "2014-11-01T00:00:00-03:00",
+      "rating": 4,
+      "isbn": "9788401017216",
+      "tags": [
+        "Fiction",
+        "Romance",
+        "Contemporary",
+        "Cultural Heritage",
+        "Romantica"
+      ],
+      "series": {
+        "_": "Las Siete Hermanas",
+        "$": {
+          "index": "2.0"
+        }
+      },
+      "series_index": null,
+      "comments": "<div>\n<p>Lucinda Riley, autora superventas mundial, presenta una nueva y emocionante serie basada en la mitología griega y en la astrología que hará las delicias de sus lectoras. A la muerte de su padre seis hermanas irán en busca de su origen y lo que descubran les hará comprender que su amor estaba escrito en las estrellas. Maia D'Apliese y sus hermanas regresan a la impresionante mansión familiar donde crecieron al descubrir que su adorado padre, que las adoptó en distintos lugares cuando no eran más que bebés, acaba de fallecer. Cada una recibe un sobre que contiene una prometedora pista sobre su origen. A Maia, la mayor de las hermanas y nuestra protagonista, la suya le lleva a una casa en ruinas en Río de Janeiro. Allí comenzará a recomponer las piezas de su historia. Ochenta años antes, en la Belle Époque de Río de Janeiro, el padre de Izabela Bonifacio aspira a que su hija se case con un aristócrata. Por su lado, el arquitecto Heitor da Silva Costa trabaja en la concepción de una inmensa estatua que se llamará el Cristo Redentor, y su búsqueda del escultor idóneo para llevar a cabo tan ambiciosa obra lo conduce hasta París. Apasionada y deseosa de conocer mundo, Izabela convence a su padre para que la deje acompañarlo a París antes de casarse. Allí, entre el estudio de Paul Landowski y los bulliciosos cafés de Montparnasse, Izabela conocerá al ambicioso y joven escultor Laurent Brouilly, y sabrá desde el primer instante que su vida ha cambiado para siempre. Si quieres saber más, incluso sobre mitología griega, las Pléyades, las esferas armilares..., visita la web de Lucinda Riley en español: esp.lucindariley.co.uk. También encontrarás documentación sobre el Cristo Redentor y el escultor Paul Landowski. La crítica ha dicho... «La serie Las Siete Hermanas es romántica, arrolladora, lujosa y glamurosa.» The Daily Mail «Una pizca de misterio, un poco de romance, algo de ficción histórica y mucho drama familiar en una historia maravillosa. Una apuesta segura para fans de Kate Morton, Kristin Hannah o Maeve Binchy.» Library Journal «Riley es una experta contadora de relatos románticos que entreteje con habilidad la historia con la ficción. Un libro absorbente y fascinante que explora la mitología y la astronomía que esconde la constelación de las Siete Hermanas.» Booklist «Lucinda Riley nos deleita con la novela más ambiciosa y emocionante de cuantas ha escrito. Un laberinto de historias atractivas escritas con la famosa y habitual pluma que ha convertido a Riley en una de las mejores autoras de ficción de hoy en día.» The Lancashire Evening Post Los lectores han dicho... «Me recuerda mucho a las historias de Kate Morton, en donde se mezclan historias y protagonistas actuales con pasados, me parece apasionante.» Blog Los augurios de la luna «Un libro de ficción histórica y amor que te atrapa entre sus páginas y que entre dos generaciones distintas te hace soñar con el verdadero amor.» Blog Foreverland: el paraíso para siempre «Un libro con dos historias de amor preciosas, una novela llena de intriga, te deja con ganas de continuar en todo momento. Un libro que recomiendo mucho, me ha encantado.» Blog Los libros de Marta Martiti «Una historia con la que se da inicio a una saga familiar que combina personajes ficticios y reales, y nos proporciona una interesante lección de historia con una lectura de lo más amena.» Blog Bookeando con Ma Ángeles</p></div>",
+      "timestamp": "2024-02-22T16:38:58-03:00",
+      "languages": "spa",
+      "identifiers": "google:K4SrCwAAQBAJ,isbn:9788401017216,goodreads:29920108,amazon:B01CITGU6I",
+      "cover": "7_LaHistoriaDeMaia.jpg",
+      "formats": [
+        {
+          "type": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=1uJgzgYg5frFTFx4RTNRsayY4KfVvIzI9"
+        },
+        {
+          "type": "MOBI",
+          "url": "https://drive.google.com/uc?export=download&id=1x3CnJmDtK3YOBo1g3jS59c6rEQ9AD5wA"
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "uuid": "8dc0d522-5421-4aa9-8c88-557bd2df37b8",
+      "title": "La única historia",
+      "title_sort": "La única historia",
+      "authors": [
+        "Julian Barnes"
+      ],
+      "authors_sort": "Barnes, Julian",
+      "publisher": null,
+      "pubdate": "2019-02-06T02:00:00-03:00",
+      "rating": null,
+      "isbn": null,
+      "tags": [
+        "Novela",
+        "Drama"
+      ],
+      "series": null,
+      "series_index": null,
+      "comments": "«¿Preferirías amar más y sufrir más o amar menos y sufrir menos? Creo que, en definitiva, esa es la única cuestión», reflexiona al inicio de la novela su protagonista. En la década de los sesenta, cuando tenía diecinueve años y regresó de la universidad para pasar el verano en casa de sus padres, Paul se apuntó a un club de tenis en el que conoció a Susan Macleod, de cuarenta y ocho años, casada no muy felizmente y con dos hijas ya mayores. Entre ese joven inexperto en asuntos de amor y sexo y esa mujer madura, ingeniosa, inteligente y que bebe más de la cuenta se inicia una relación que marcará a Paul el resto de su vida. Ahora, muchos años después, él evoca esa aventura juvenil, se confronta con una experiencia que fue crucial e indeleble y rememora los momentos felices, pero también los dolorosos que vinieron después. Siguiendo la estela de la extraordinaria El sentido de un final, con la que ganó el Booker en 2011, Julian Barnes ha escrito otra novela sutil, profunda, demoledora y bellísima sobre los vericuetos del amor y el paso y el poso del tiempo. Si en su juventud el autor fue un maestro de la pirueta, un virtuoso en el manejo de los recursos literarios, en sus obras de madurez mantiene esa pericia con las formas y estructuras narrativas, pero suma a ella una hondura solo al alcance de los escritores verdaderamente grandes. El resultado es una novela que indaga de modo deslumbrante en el placer y el dolor del deseo, en las heridas de las relaciones que dejamos atrás, en cómo el paso de los años nos transforma y en cómo afrontamos nuestro pasado.",
+      "timestamp": "2024-02-22T16:38:58-03:00",
+      "languages": "spa",
+      "identifiers": null,
+      "cover": "8_Launicahistoria.jpg",
+      "formats": [
+        {
+          "type": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=1LPbr-HEgrt8-dxUJ4hSyR9fd_PyxfQEF"
+        },
+        {
+          "type": "MOBI",
+          "url": "https://drive.google.com/uc?export=download&id=1ieJEnQ9lMwujNyp4zNrqCG6F9EuZjuej"
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "uuid": "8540b032-8382-44cc-a7b5-1fd3ba46363d",
+      "title": "Hábitos atómicos (Atomic Habits) Spanish Edition",
+      "title_sort": "Hábitos atómicos (Atomic Habits) Spanish Edition",
+      "authors": [
+        "James Clear"
+      ],
+      "authors_sort": "Clear, James",
+      "publisher": "Booket Paidós México",
+      "pubdate": "2019-03-25T06:11:48-03:00",
+      "rating": null,
+      "isbn": null,
+      "tags": [],
+      "series": null,
+      "series_index": null,
+      "comments": "A 3 décadas de que Stephen Covey nos revelara los 7 hábitos de la gente altamente efectiva, James Clear nos enseña la forma más sencilla y práctica de incorporar los mejores hábitos a nuestra vida diaria.HÁBITOS ATÓMICOS parte de una simple pero poderosa pregunta: ¿Cómo podemos vivir mejor? Sabemos que unos buenos hábitos nos permiten mejorar significativamente nuestra vida, pero con frecuencia nos desviamos del camino: dejamos de hacer ejercicio, comemos mal, dormimos poco, despilfarramos. ¿Por qué es tan fácil caer en los malos hábitos y tan complicado seguir los buenos?James Clear nos brinda fantásticas ideas basadas en investigaciones científicas, que le permiten revelarnos cómo podemos transformar pequeños hábitos cotidianos para cambiar nuestra vida y mejorarla. Esta guía pone al descubierto las fuerzas ocultas que moldean nuestro comportamiento—desde nuestra mentalidad, pasando por el ambiente y hasta la genética— y nos demuestra cómo aplicar cada cambio a nuestra vida y...",
+      "timestamp": "2024-02-22T16:38:58-03:00",
+      "languages": "spa",
+      "identifiers": null,
+      "cover": "9_HabitosatomicosSpanishEdition.jpg",
+      "formats": [
+        {
+          "type": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=1zlwOca6wWMfNU_IgY6dMiBH87G3sQnvN"
+        },
+        {
+          "type": "MOBI",
+          "url": "https://drive.google.com/uc?export=download&id=1bCiOj2FcRBZWyyMFUQQ-FMr56I3Coe-7"
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "uuid": "da3bbae1-e47f-4874-b757-a86270213630",
+      "title": "Cómo hacer que te pasen cosas buenas / How To Make Good Things Happen: Entiende tu cerebro, gestiona tus emociones, mejora tu vida",
+      "title_sort": "Cómo hacer que te pasen cosas buenas / How To Make Good Things Happen: Entiende tu cerebro, gestiona tus emociones, mejora tu vida",
+      "authors": [
+        "Marian Rojas Estapé"
+      ],
+      "authors_sort": "Estapé, Marian Rojas",
+      "publisher": "Planeta Publishing",
+      "pubdate": "2023-07-18T00:00:00-03:00",
+      "rating": 5,
+      "isbn": "9786073902342",
+      "tags": [],
+      "series": null,
+      "series_index": null,
+      "comments": "<div>\n<p>Uniendo el punto de vista científico, psicológico y humano, la autora nos ofrece una reflexión profunda, salpicada de útiles consejos y con vocación eminentemente didáctica, acerca de la aplicación de nuestras propias capacidades al empeño de procurarnos una existencia plena y feliz: conocer y optimizar determinadas zonas del cerebro, fijar metas y objetivos en la vida, ejercitar la voluntad, poner en marcha la inteligencia emocional, desarrollar la asertividad, evitar el exceso de autocrítica y autoexigencia, reivindicar el papel del optimismo…</p>\n<p style=\"font-weight: bold\">ENGLISH DESCRIPTION</p>\n<p style=\"font-weight: bold\">An empowering journey through the mechanisms of the mind from one of the world’s leading mental health experts. </p>\n<p>Psychiatrist Marián Rojas Estapé presents the essential guide to neuroscience-driven mindfulness. This is a thorough look at how our brains react to stress, threats, hyperstimulation, and the vices of our digital age. Combining science, psychology, and philosophy, Estapé delivers practical advice about how we can cultivate a happy existence. This includes understanding the parts of the brain, setting healthy goals and objectives, strengthening willpower, cultivating emotional intelligence, developing assertiveness, avoiding excessive self-criticism and self-demand, and mastering the proven art of optimism. </p>\n<h3>About the Author</h3>\n<p>La doctora <strong>Marian Rojas Estapé</strong> es psiquiatra licenciada en Medicina y Cirugía por la Universidad de Navarra. Trabaja en el Instituto Español de Investigaciones Psiquiátricas, en Madrid, y su labor profesional se centra, principalmente, en el tratamiento de personas con ansiedad, depresión, trastornos de personalidad, trastornos de conducta y en terapias familiares.</p>\n<p>Es profesora invitada de la escuela de negocios IPADE en México y ha participado en varios proyectos de cooperación y voluntariado fuera de España. Creadora del proyecto <em>ilussio</em> sobre emociones, motivación y felicidad en el mundo empresarial, es, además, asidua conferenciante nacional e internacional y colaboradora habitual en medios de comunicación como en el programa <em>Fin de Semana,</em> de Cope, con Cristina López Schlichting y en otros de la cadena SER.</p>\n<p>Marián Rojas Estapé was born in Madrid in 1983. She is a psychiatrist, and the author of Cómo hacer que te pasen cosas buenas, which was a Spanish non-fiction bestseller in 2019. Marián Rojas Estapé, who currently works at the Spanish Institute of Psychiatric Research graduated from the University of Navarra in 2007. She then volunteered with several NGOs helping victims of sexual trafficking and severe trauma. These experiences inspired her to learn more about emotional pain and how to heal it. </p></div>",
+      "timestamp": "2024-02-22T16:39:05-03:00",
+      "languages": "spa",
+      "identifiers": "isbn:9786073902342,amazon:6073902344",
+      "cover": "10_ComohacerquetepasencosasbuenasHowToMakeGoodThingsHappenEntiendetucerebrogest.jpg",
+      "formats": [
+        {
+          "type": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=1wwt3ll5K3OuMrkA4t_lsdPjFe-o1jAEW"
+        },
+        {
+          "type": "MOBI",
+          "url": "https://drive.google.com/uc?export=download&id=1FbbJcHMQVli0hKNx81EVsGw0btsL0Wn2"
+        }
+      ]
+    },
+    {
+      "id": "11",
+      "uuid": "65fa9f13-299a-4dc9-a530-323c407b8ac9",
+      "title": "El Mundo De Los Latentes",
+      "title_sort": "Mundo De Los Latentes, El",
+      "authors": [
+        "Kary Pintos"
+      ],
+      "authors_sort": "Pintos, Kary",
+      "publisher": "Planeta Argentina",
+      "pubdate": "2023-04-01T00:00:00-03:00",
+      "rating": null,
+      "isbn": "9789504981213",
+      "tags": [
+        "Education",
+        "Educational Policy & Reform",
+        "General"
+      ],
+      "series": null,
+      "series_index": null,
+      "comments": "<div>\n<p>Así como en su primer libro, <em>Herramientas de crianza</em> , Kary Pintos profundiza en los primeros años de vida, esta vez nos invita a dar un paso más para hablar de los y las latentes, esa etapa que comienza alrededor de los cinco o seis años y culmina con la pubertad dando lugar a la adolescencia, todo un mundo en sí mismo, muchas veces misterioso y del que poco se habla. <br>A diferencia de los primeros años de vida y la adolescencia que son muy ruidosos, la latencia se llama así porque es un período más interno y silencioso, y al que muchas veces se le presta poca atención. Incluso se puede llegar a pensar que ya no nos necesitan tanto, cuando la realidad es que siempre lo hacen. Aunque ya no será la dependencia absoluta hacia nosotros que tenían cuando eran bebés o en la primera infancia, sino que será necesario acompañar sin obstaculizar su desarrollo ni hacer por ellos, sin alejarnos demasiado como para ausentarnos.<br>En este nuevo libro, escrito desde el doble rol de mamá de cinco hijos y psicóloga, Kary nos comparte sus herramientas para acompañar esta nueva etapa en la vida de nuestros hijos e hijas. Una en la que el mundo familiar se expande para empezar a convivir con el mundo exterior que en la latencia toma mucho protagonismo y empieza a competir: ídolos, youtubers, maestros, tiktokers, padres y madres de sus amigos. Por eso, es fundamental conocerlo.<br>En <em>El mundo de los latentes</em> también encontraremos información para repensarnos a nosotros mismos, ya que toda etapa de la vida (llámese niñez, latencia o adolescencia) se trata de los hijos e hijas y de quienes criamos. Ellos no son sin quien los cría.</p>\n<p>¿Estás listo para entrar en su mundo? ¡Tu latente te necesita!</p></div>",
+      "timestamp": "2024-03-12T13:16:07-03:00",
+      "languages": "spa",
+      "identifiers": "isbn:9789504981213,goodreads:125255848,amazon:B0C1KTC15Z,google:qbW3EAAAQBAJ",
+      "cover": "11_ElMundoDeLosLatentes.jpg",
+      "formats": [
+        {
+          "type": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=1NaaaSjqMDl7yYujNVD5zLZiNkJZoQWE1"
+        },
+        {
+          "type": "MOBI",
+          "url": "https://drive.google.com/uc?export=download&id=1TJIBA-bMxg0l-JeSteqGWU8zEigdLc9_"
+        }
+      ]
+    },
+    {
+      "id": "14",
+      "uuid": "627d84e8-46a5-4647-9ad9-2bbf3e7f64f8",
+      "title": "Los Reyes De La Casa",
+      "title_sort": "Reyes De La Casa, Los",
+      "authors": [
+        "Delphine de Vigan"
+      ],
+      "authors_sort": "Vigan, Delphine de",
+      "publisher": "Anagrama",
+      "pubdate": "2021-03-04T00:00:00-03:00",
+      "rating": 4,
+      "isbn": "9788433981264",
+      "tags": [
+        "Thriller",
+        "Contemporary",
+        "Adult",
+        "Mystery",
+        "S2"
+      ],
+      "series": null,
+      "series_index": null,
+      "comments": "<div>\n<p style=\"font-weight: bold\">Una novela sobrecogedora sobre los peligros de la sobreexposición en redes, la explotación infantil y la falsa felicidad.</p>\n<p>Mélanie Claux y Clara Roussel. Dos mujeres conectadas a través de una niña. Mélanie ha participado en un <em>reality show</em> televisivo y es seguidora de sus sucesivas ediciones. Cuando se convierte en madre de un niño y una niña, Sammy y Kimmy, empieza a grabar su día a día y cuelga los vídeos en YouTube. Crecen en visitas y seguidores, llegan los patrocinadores, Mélanie crea su propio canal y el dinero fluye. Lo que al principio consistía sin más en grabar de tanto en tanto las andanzas cotidianas de sus hijos se profesionaliza, y tras la fachada de este canal familiar tierno y edulcorado hay rodajes interminables con los niños y retos absurdos para generar material. Todo es artificio, todo está en venta, todo es felicidad impostada, realidad ficticia.</p>\n<p>Hasta que un día Kimmy, la hija de corta edad, desaparece. Alguien la ha secuestrado y empieza a enviar extrañas peticiones. Es entonces cuando el destino de Mélanie se cruza con el de Clara, policía solitaria sin apenas vida personal y que vive por y para el trabajo. Ella se hará cargo del caso.</p>\n<p>La novela arranca en el presente y se extiende hasta el futuro cercano. Arranca con estas dos mujeres y se extiende a la existencia posterior de esos dos niños explotados. De Vigan ha escrito una narración perturbadora que es al mismo tiempo un thriller inquietante, un relato con pinceladas de ciencia ficción sobre algo muy real y un documento demoledor sobre la alienación contemporánea, la explotación de la intimidad, la falsa felicidad proyectada en las pantallas y la manipulación de las emociones.</p>\n<h3>Críticas</h3>\n<p>«Una novela vertiginosa... Un thriller cautivador al estilo de <em>El show de Truman</em>. De Vigan cambia de género con virtuosismo, pero mantiene la misma sensibilidad» (Olivia de Lamberterie, <em>Elle).</em></p>\n<p>«Un retrato potente, agrio y necesario de nuestra sociedad» (Nathalie Crom, <em>Télérama).</em></p>\n<p>«Una arquitectura narrativa adictiva, una intriga muy bien documentada, una escritura delicada» (Anna Cabana, <em>Le Journal du Dimanche).</em></p>\n<p>«Una novela extralúcida sobre nuestro mundo... Su modo de cuestionar el presente y el futuro impresiona» (Philippe Chevilley, <em>Les Échos).</em></p>\n<p>«Me ha apasionado y aterrado... Una novela formidable» (Anne-Élisabeth Lemoine, <em>C à Vous).</em></p>\n<p>«Un estilo preciso y eficaz que nos arrastra en una sorprendente pirueta» (Baptiste Liger, <em>Lire).</em></p>\n<p>«Pavorosa y fascinante» (Amélie Cordonnier, <em>Femme Actuelle).</em></p>\n<p>«Deslumbrante, necesaria y original» (Mohammed Aïssaoui, <em>Le Figaro).</em></p>\n<p>«Sombría y apasionante» (Élisabeth Philippe, <em>Le Nouvel Observateur).</em></p>\n<p>«Una novela extraordinaria» (Bernard Lehut, <em>RTL).</em></p>\n<h3>Descripción del Libro</h3>\n<p style=\"font-weight: bold\">Una novela sobrecogedora sobre los peligros de la sobreexposición en redes, la explotación infantil y la falsa felicidad.</p>\n<h3>Biografía del autor</h3>\n<p><strong>Delphine de Vigan</strong> (Boulogne-Billancourt, 1966) vive en París. En Anagrama ha publicado, desde 2012: Días sin hambre: «Maneja la materia autobiográfica con una contención que remite a Marguerite Duras» (Marta Sanz); No y yo: «Maestría y ternura... Una novela atípica» (Juanjo M. Jambrina, Jot Down); Las horas subterráneas: «Sensible, inquietante y un poco triste. Triste y soberbia» (François Busnel, <em>L’Express)</em> ; Nada se opone a la noche, que la consagró internacionalmente, ha vendido en Francia más de ochocientos mil ejemplares, ha sido publicada por una veintena de editoriales extranjeras y ha recibido el Premio de Novela Fnac, el Premio de Novela de las Televisiones Francesas, el Premio Renaudot de los Institutos de Francia, el Gran Premio de la Heroína Madame Figaro y el Gran Premio de las Lectoras de Elle: «Este magnífico testimonio la confirma como una escritora contemporánea de referencia. Imprescindible» (Sònia Hernández, <em>La Vanguardia);</em> «Con sobriedad y precisión, sin sentimentalismo (pero no sin sentimiento), Delphine de Vigan firma una inteligente, magnífica e implacable novela» (Elvira Navarro); Basada en hechos reales, galardonada con el Premio Renaudot y el Goncourt de los Estudiantes, y llevada al cine por Roman Polanski: «Hace alarde de maestría expresiva para disolver los límites de lo que es verdad y lo que es mentira... Apasiona» (Robert Saladrigas, <em>La Vanguardia);</em> Las lealtades: «Perturbadora» (Javier Aparicio Maydeu, <em>El País)</em> ; «Cuestiona a una sociedad que mira hacia otro lado, ante las violencias soterradas» (Lourdes Ventura, <em>El Mundo);</em> y Las gratitudes: «Pequeño prodigio con el que la autora francesa reflexiona sobre la vejez, la soledad y la importancia de las palabras» (David Morán <em>, ABC).</em></p></div>",
+      "timestamp": "2024-03-23T22:50:50-03:00",
+      "languages": "spa",
+      "identifiers": "google:Kl-JEAAAQBAJ,mobi-asin:891b3b56-6c68-4bae-b20b-66f2065666f4,isbn:9788433981264,amazon:8433981269,goodreads:63001133",
+      "cover": "14_LosReyesDeLaCasa.jpg",
+      "formats": [
+        {
+          "type": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=1WGj5xnXJBpZNky538uESqxDy4dhppn6d"
+        },
+        {
+          "type": "MOBI",
+          "url": "https://drive.google.com/uc?export=download&id=112UBaVZXZKx6qPWjhLBONUZhf8EVaXUM"
+        }
+      ]
+    },
+    {
+      "id": "15",
+      "uuid": "c39ee34d-b904-4a2d-8855-ad6a6c0f27e0",
+      "title": "Cazabacterias en La Cocina: Cómo Cocinar Sin Intoxicar a La Familia",
+      "title_sort": "Cazabacterias en La Cocina: Cómo Cocinar Sin Intoxicar a La Familia",
+      "authors": [
+        "Mariana Koppmann"
+      ],
+      "authors_sort": "Koppmann, Mariana",
+      "publisher": "Siglo XXI Editores",
+      "pubdate": "2015-08-01T00:00:00-03:00",
+      "rating": 4,
+      "isbn": null,
+      "tags": [
+        "peligros quimicos",
+        "brotes de eta",
+        "enfermedades transmitidas por alimentos",
+        "inocuidad",
+        "seguridad alimentaria",
+        "contaminacion cruzada en el hogar",
+        "riesgo alimentario",
+        "preservacion de alimentos",
+        "buenas practicas de elaboracion de alimentos",
+        "recalentamiento de alimentos",
+        "contaminacion de los alimentos",
+        "agua potable",
+        "orden de la alacena",
+        "peligros fisicos",
+        "patogenos",
+        "bacterias",
+        "peligros biologicos",
+        "higiene alimentaria",
+        "envases",
+        "lavado de manos",
+        "inocuidad de la granja a la mesa",
+        "la vianda para el colegio",
+        "alimentos",
+        "cazabacterias",
+        "almacenamiento de alimentos",
+        "manipulacion segura de alimentos",
+        "peligros en los alimentos",
+        "limpieza y desinfeccion en el hogar",
+        "contaminacion cruzada en la heladera hogarena",
+        "manejo de productos de limpieza en el hogar",
+        "coccion de alimentos",
+        "prevencion de eta",
+        "etiquetas/ rotulo de alimentos envasados",
+        "descongelacion de alimentos en el hogar",
+        "lavado de frutas y vegetales",
+        "hongos",
+        "compra de alimentos",
+        "parasitos",
+        "sindrome uremico hemolitico",
+        "orden de la heladera",
+        "virus",
+        "productos de limpieza",
+        "educacion alimentaria",
+        "comer afuera",
+        "enfriamiento seguro de alimentos"
+      ],
+      "series": null,
+      "series_index": null,
+      "comments": "Si se me descongeló el pollo, pero no completamente, ¿puedo volver a congelarlo? ¿Tengo que prestarle atención a la fecha de vencimiento, o es una mentira del capitalismo apátrida? Si es casero no puede hacerme mal, ¿o sí? ¿Cuál es la forma realmente segura de preparar una vianda? ¿Es verdad que el fuego mata todo? ¿Es riesgoso comer sushi? ¿Y un pancho en la calle? ¿Cómo pudo llegar una bacteria a la torta de cumpleaños si quedó fuera de la heladera sólo un par de horas? ¿No es raro que la carne envasada al vacío se vea más oscura? ¿Qué cosas tendría que mirar en un delivery para despejar cualquier duda? Preguntas como estas nos acompañan al supermercado, se quedan en casa –y no sólo en la cocina– y hasta salen a comer con nosotros al restaurante y al picnic. Diariamente, se produce en el mundo una enorme cantidad de casos de enfermedades transmitidas por los alimentos (ETA) a pesar de que sólo quedan registrados entre el 1 y el 10% de ellos. Por eso, es mejor conocer a nuestros posibles enemigos (visibles o invisibles) para saber de dónde provienen, por qué pueden contaminar nuestras más exquisitas preparaciones y cómo eliminarlos (del campo a la mesa). En este libro, las cazabacterias –detectives profesionales de nuestros hábitos en torno a la comida– nos enseñan a ser cuidadosos y precavidos con las compras, el lavado, el almacenamiento, la conservación, la cocción y el consumo de los alimentos, para así evitar desde un simple malestar hasta graves enfermedades completamente prevenibles. Cazabacterias en la cocina nos cuenta cómo se contaminan los alimentos, a qué temperaturas pueden crecer y desarrollarse los microorganismos capaces de enfermarnos y de qué modo suelen adaptarse a distintas condiciones del ambiente. También derriba los mitos y creencias culinarias más arraigados sobre seguridad alimentaria, ofrece un cuadro de los principales peligros biológicos asociados a los incidentes de ETA –las formas de transmisión, su dosis infectiva, sus síntomas y las estrategias para su prevención– y da cuenta de los brotes que revolucionaron el mundo científico. Bienvenidos a este manual de Cazabacteriología, una lupa sobre nuestras costumbres alimentarias y un compendio de soluciones certeras, claras y divertidas, que todos deberíamos conocer (no sólo los profesionales y los obsesivos) para manejarnos con seguridad en nuestra vida cotidiana y no enfermar en el intento. ¡A comer se ha dicho!",
+      "timestamp": "2024-08-14T10:32:24-03:00",
+      "languages": "eng",
+      "identifiers": "goodreads:26169730,amazon:B012Y6EUDU,mobi-asin:B012Y6EUDU",
+      "cover": "15_CazabacteriasenLaCocinaComoCocinarSinIntoxicaraLaFamilia.jpg",
+      "formats": [
+        {
+          "type": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=1FOi0D7KbQDFxfn3IcwMA7sQgyo0Fdxky"
+        },
+        {
+          "type": "MOBI",
+          "url": "https://drive.google.com/uc?export=download&id=19EYR92l1y7M553oObWebAg6QtFbPBMVL"
+        }
+      ]
+    },
+    {
+      "id": "16",
+      "uuid": "7019df32-f96d-4390-abe8-3bd9ad14ab9d",
+      "title": "La Asistenta",
+      "title_sort": "Asistenta, La",
+      "authors": [
+        "Freida McFadden"
+      ],
+      "authors_sort": "McFadden, Freida",
+      "publisher": "SUMA",
+      "pubdate": "2022-04-26T00:00:00-03:00",
+      "rating": 4,
+      "isbn": "9788491298359",
+      "tags": [
+        "Fiction",
+        "Thrillers",
+        "General",
+        "Psychological",
+        "Thriller.Psicológico",
+        "2023"
+      ],
+      "series": {
+        "_": "The Housemaid",
+        "$": {
+          "index": "1.0"
+        }
+      },
+      "series_index": null,
+      "comments": "<div>\n<p>EL LIBRO DEL QUE TODO EL MUNDO HABLA Un thriller psicológico absolutamente adictivo que los lectores de La mujer en la ventana y La pareja de al lado no se querrán perder. Novela ganadora del Premio Valencia Negra en la categoría Best Novel. Todos los días friego la preciosa casa de los Winchester de arriba abajo. Recojo a su hija del colegio y preparo deliciosas comidas para toda la familia antes de subir a cenar sola en mi minúscula habitación del piso superior. Intento no prestar atención a Nina cuando lo ensucia todo simplemente para ver cómo lo limpio. A las extrañas mentiras que cuenta sobre su propia hija. A su marido, que cada día parece más abatido. Pero cuando miro a Andrew a los ojos, castaños, encantadores y llenos de dolor, no me resulta difícil imaginar cómo sería vivir en la piel de Nina. El gran vestidor, el coche de lujo, el esposo perfecto. Hasta que un día no me resisto a probarme uno de sus maravillosos vestidos blancos. Solo quiero saber qué se siente. Pero ella pronto lo descubre, y cuando me doy cuenta de que la puerta de mi habitación solo se cierra por fuera ya es demasiado tarde. Algo me reconforta: los Winchester no saben quién soy en realidad. No saben de lo que soy capaz... ***Y tampoco te puedes perder El secreto de la asistenta (Premio Goodreads 2023 al mejor thriller del año) y La asistenta te vigila.*** Los lectores comentan: «¡No podía dejarlo!... ¡Una montaña rusa increíble!». «Adictivo... Pura perfección». «¡Fantástico!... Me lo leí en una sola noche de lectura compulsiva... El final te deja noqueado». «¡Increíble!... ¡Alucinante!... Una absoluta delicia con una oscura guarnición de exquisiteces. ¡Es todo y más!». «No te vas a poder creer la dirección que toma este libro... Sus giros te dejan con la boca abierta... ¡Un thriller deslumbrante!». «¡Un cinco estrellas perfecto!». «¡Todavía no he leído una novela de Freida McFadden que no me vuele la cabeza! Esta me la acabé en una sentada. El final fue absolutamente perfecto y me dejó con ganas de más». «Oscuro y retorcido, no podrás dejar de pasar páginas hasta su escalofriantemente delicioso final. ¡Cinco estrellas supermerecidas!».</p></div>",
+      "timestamp": "2025-01-09T15:46:48-03:00",
+      "languages": "spa",
+      "identifiers": "isbn:9788491298359,amazon:B0CD9M3ZKJ,goodreads:195466446,google:5EbOEAAAQBAJ",
+      "cover": "16_LaAsistenta.jpg",
+      "formats": [
+        {
+          "type": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=1eaGFQWof0Qi66_-lAjXcbx-dbRCTpJPE"
+        }
+      ]
+    },
+    {
+      "id": "17",
+      "uuid": "97f9c801-7473-4f4d-9dbe-1ac31be7570b",
+      "title": "Todas Las Veces Que Se Te Acelera El Corazón",
+      "title_sort": "Todas Las Veces Que Se Te Acelera El Corazón",
+      "authors": [
+        "Carmen Arteaga"
+      ],
+      "authors_sort": "Arteaga, Carmen",
+      "publisher": "ePubLibre",
+      "pubdate": "2023-05-25T00:00:00-03:00",
+      "rating": 4,
+      "isbn": null,
+      "tags": [
+        "Romance",
+        "Novela",
+        "Romántico"
+      ],
+      "series": null,
+      "series_index": null,
+      "comments": "<div>\n<p>Minerva sabe lo que es volar y también que te corten las alas. </p>\n<p>Alex se ha refugiado en una casa de cristal, tras una capucha y su colección de sonrisas. </p>\n<p>Chris siente que le sobran las ganas, pero le falta tiempo. </p>\n<p>Un sueño roto, Thelma y Louise, una lista de estupideces, una fiesta que nadie quiere celebrar y ese bum-bum-bum que deberíamos saber escuchar. Porque vivir consiste en sentir todas las veces que se te acelera el corazón.</p></div>",
+      "timestamp": "2025-01-09T15:46:48-03:00",
+      "languages": "eng",
+      "identifiers": "revision:1.0,epl:73586,amazon:B0C4LGRQD4,goodreads:150348873",
+      "cover": "17_TodasLasVecesQueSeTeAceleraElCorazon.jpg",
+      "formats": [
+        {
+          "type": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=1WS7LHRc6OhRx6PUHbo6oLMXZQhg0_04F"
+        }
+      ]
+    }
+  ]
+}

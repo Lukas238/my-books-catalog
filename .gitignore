@@ -1,4 +1,25 @@
-tmp/**
-!tmp/.keep
+# Export files from Calibre/rclone
+_exports/**
+!_exports/.keep
+
+# Jekyll
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+vendor/
+
+# Node
+node_modules/
+package-lock.json
+
+# Ruby
+Gemfile.lock
+
+# macOS
 .DS_Store
 .thumbs
+
+# Old HTML files (for reference during migration)
+*/index.html
+!index.html

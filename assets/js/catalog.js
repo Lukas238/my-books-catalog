@@ -3,7 +3,13 @@ const bookPreview = document.querySelector('#book-preview');
 const bookPreviewConten = document.querySelector('#book-preview .book-preview__content ');
 
 books.forEach(book => {
-    book.addEventListener('click', () => {
+    book.addEventListener('click', (event) => {
+        // Check if shift key was pressed during click
+        if (event.shiftKey) {
+            // Enable download buttons for all books
+            document.querySelector('body').classList.add('-show-books-formats');
+        }
+
         bookPreview.classList.add('show');
         const bookClone = book.cloneNode(true);
 

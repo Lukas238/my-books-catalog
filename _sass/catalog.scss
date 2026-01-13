@@ -66,6 +66,7 @@ body {
 
 body[data-bs-theme="dark"] {
     #filters-area, #controls-area {
+      color: rgba(255,255,255,0.65);
         button {
             color: rgba(255, 255, 255, 0.65);
             background-color: transparent;

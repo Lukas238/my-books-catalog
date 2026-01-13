@@ -157,7 +157,7 @@ async function processData(options) {
     const gdriveFiles = await readJSON(options.json);
 
     const fileIdMap = buildFileIdMap(gdriveFiles);
-    const catalogTitle = xmlData.calibredb.$.title;
+    const catalogTitle = xmlData.calibredb.$ && xmlData.calibredb.$.title ? xmlData.calibredb.$.title : null;
     const records = xmlData.calibredb.record || [];
 
     console.log(`Processing ${records.length} books from "${catalogTitle}"`);
@@ -216,7 +216,7 @@ async function processData(options) {
 
     // Create output data structure
     const output = {
-        catalog_title: catalogTitle,
+        catalog_title: catalogTitle || options.name.charAt(0).toUpperCase() + options.name.slice(1),
         catalog_name: options.name,
         total_books: books.length,
         last_updated: new Date().toISOString(),

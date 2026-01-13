@@ -117,7 +117,11 @@
                 {% if page.layout == 'catalog' %}
                     {% assign catalog_name = page.url | remove_first: '/' | split: '/' | first %}
                     {% assign catalog_data = site.data[catalog_name] %}
-                    {{ catalog_data.catalog_title }} · <span class="fw-lighter">Book Catalog</span>
+                    {% if catalog_data.catalog_title contains "'" or catalog_data.catalog_title contains "Library" or catalog_data.catalog_title contains "eBooks" %}
+                        {{ catalog_data.catalog_title }}
+                    {% else %}
+                        {{ catalog_data.catalog_title }} · <span class="fw-lighter">Book Catalog</span>
+                    {% endif %}
                 {% else %}
                     Lucas Dasso · <span class="fw-lighter">Book Catalogs</span>
                 {% endif %}

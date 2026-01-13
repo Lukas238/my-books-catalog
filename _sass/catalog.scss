@@ -321,6 +321,11 @@ body[data-bs-theme="dark"] {
         }
     }
 
+    // Add transition only to controls (not grid)
+    main.container-xxl #catalog-controls {
+        transition: margin-right .5s ease;
+    }
+
     // Adjust controls and grid view margin when drawer is open
     main.container-xxl.drawer-open #catalog-controls,
     section#books-list:not(.-view-list).drawer-open {

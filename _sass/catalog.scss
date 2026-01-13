@@ -125,7 +125,7 @@ body[data-bs-theme="dark"] {
 // Books list - Table View
 #books-list.-view-list {
     display: grid;
-    grid-template-columns: 80px 1fr 320px 120px;
+    grid-template-columns: 80px minmax(200px, 2fr) minmax(150px, 1fr) minmax(150px, 1fr) minmax(200px, 1.5fr) 80px 120px;
     gap: 0;
     padding: 0;
 
@@ -151,7 +151,8 @@ body[data-bs-theme="dark"] {
         .book-cell {
             padding: 0.5rem;
             border-bottom: 1px solid var(--bs-border-color);
-            vertical-align: middle;
+            display: flex;
+            align-items: center;
 
             &.book-cell--cover {
                 cursor: pointer;
@@ -165,6 +166,40 @@ body[data-bs-theme="dark"] {
 
             &.book-cell--title {
                 cursor: pointer;
+                font-weight: 500;
+                padding-left: 1rem;
+            }
+
+            &.book-cell--authors,
+            &.book-cell--series,
+            &.book-cell--tags {
+                font-size: 0.875rem;
+                display: flex;
+                flex-wrap: wrap;
+                align-content: center;
+
+                .filter-link {
+                    cursor: pointer;
+                    color: inherit;
+                    text-decoration: underline;
+                    text-decoration-thickness: 1px;
+                    text-underline-offset: 2px;
+
+                    &:hover {
+                        text-decoration: underline;
+                        opacity: 0.8;
+                    }
+                }
+            }
+
+            &.book-cell--date {
+                font-size: 0.875rem;
+                color: var(--bs-secondary-color);
+            }
+
+            &.book-cell--added {
+                font-size: 0.875rem;
+                color: var(--bs-secondary-color);
             }
         }
     }

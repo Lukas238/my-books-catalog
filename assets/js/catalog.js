@@ -82,14 +82,33 @@ function sortBooks(sortBy = 'title', order = 'desc') {
         let aData = a.getAttribute(`data-${sortBy}`);
         let bData = b.getAttribute(`data-${sortBy}`);
 
-        // For number based comparison (id and date are numeric)
-        if (sortBy === 'id' || sortBy === 'date') {
+        // For number based comparison (id, date, added are numeric)
+        if (sortBy === 'id' || sortBy === 'date' || sortBy === 'added') {
             aData = Number(aData);
             bData = Number(bData);
             return order === 'asc' ? aData - bData : bData - aData;
         }
 
-        // For text based comparison (title and authors are strings)
+        // For series: empty values go to the end, then sort by name + index
+        if (sortBy === 'series') {
+            if (!aData && !bData) return 0;
+            if (!aData) return 1;  // a goes to end
+            if (!bData) return -1; // b goes to end
+
+            // Compare series names
+            const seriesCompare = order === 'asc' ? aData.localeCompare(bData) : bData.localeCompare(aData);
+
+            // If same series, sort by series_index
+            if (seriesCompare === 0) {
+                const aIndex = Number(a.getAttribute('data-series-index')) || 0;
+                const bIndex = Number(b.getAttribute('data-series-index')) || 0;
+                return order === 'asc' ? aIndex - bIndex : bIndex - aIndex;
+            }
+
+            return seriesCompare;
+        }
+
+        // For text based comparison (title, authors, series are strings)
         return order === 'asc' ? aData.localeCompare(bData) : bData.localeCompare(aData);
     });
 
@@ -108,7 +127,9 @@ const btn_sort_title = document.querySelector('#sort-title');
 btn_sort_title.addEventListener('click', (e) => {
     // Remove other sort buttons from the class
     btn_sort_author.classList.remove('desc', 'asc');
-    btn_sort_id.classList.remove('desc', 'asc');
+    btn_sort_series.classList.remove('desc', 'asc');
+    btn_sort_date.classList.remove('desc', 'asc');
+    btn_sort_added.classList.remove('desc', 'asc');
 
     if (!btn_sort_title.classList.contains('desc') && !btn_sort_title.classList.contains('asc')) {
         btn_sort_title.classList.add('asc'); // Default
@@ -124,7 +145,9 @@ const btn_sort_author = document.querySelector('#sort-author');
 btn_sort_author.addEventListener('click', (e) => {
     // Remove other sort buttons from the class
     btn_sort_title.classList.remove('desc', 'asc');
-    btn_sort_id.classList.remove('desc', 'asc');
+    btn_sort_date.classList.remove('desc', 'asc');
+    btn_sort_series.classList.remove('desc', 'asc');
+    btn_sort_added.classList.remove('desc', 'asc');
 
     if (!btn_sort_author.classList.contains('desc') && !btn_sort_author.classList.contains('asc')) {
         btn_sort_author.classList.add('asc'); // Default
@@ -135,20 +158,58 @@ btn_sort_author.addEventListener('click', (e) => {
     sortBooks('authors', btn_sort_author.classList.contains('desc') ? 'desc' : 'asc');
 });
 
-// Sort by date
-const btn_sort_id = document.querySelector('#sort-id');
-btn_sort_id.addEventListener('click', (e) => {
+// Sort by Series
+const btn_sort_series = document.querySelector('#sort-series');
+btn_sort_series.addEventListener('click', (e) => {
+    // Remove other sort buttons from the class
+    btn_sort_title.classList.remove('desc', 'asc');
+    btn_sort_date.classList.remove('desc', 'asc');
+    btn_sort_author.classList.remove('desc', 'asc');
+    btn_sort_added.classList.remove('desc', 'asc');
+
+    if (!btn_sort_series.classList.contains('desc') && !btn_sort_series.classList.contains('asc')) {
+        btn_sort_series.classList.add('asc'); // Default
+    } else {
+        btn_sort_series.classList.toggle('desc');
+        btn_sort_series.classList.toggle('asc');
+    }
+    sortBooks('series', btn_sort_series.classList.contains('desc') ? 'desc' : 'asc');
+});
+
+// Sort by publication date
+const btn_sort_date = document.querySelector('#sort-date');
+btn_sort_date.addEventListener('click', (e) => {
     // Remove other sort buttons from the class
     btn_sort_title.classList.remove('desc', 'asc');
     btn_sort_author.classList.remove('desc', 'asc');
+    btn_sort_series.classList.remove('desc', 'asc');
+    btn_sort_added.classList.remove('desc', 'asc');
 
-    if (!btn_sort_id.classList.contains('desc') && !btn_sort_id.classList.contains('asc')) {
-        btn_sort_id.classList.add('desc'); // Add desc by default
+    if (!btn_sort_date.classList.contains('desc') && !btn_sort_date.classList.contains('asc')) {
+        btn_sort_date.classList.add('desc'); // Default: newest first
     } else {
-        btn_sort_id.classList.toggle('desc');
-        btn_sort_id.classList.toggle('asc');
+        btn_sort_date.classList.toggle('desc');
+        btn_sort_date.classList.toggle('asc');
     }
-    sortBooks('date', btn_sort_id.classList.contains('desc') ? 'desc' : 'asc');
+    sortBooks('date', btn_sort_date.classList.contains('desc') ? 'desc' : 'asc');
+});
+
+// Sort by added date
+const btn_sort_added = document.querySelector('#sort-added');
+btn_sort_added.addEventListener('click', (e) => {
+    // Remove other sort buttons from the class
+    btn_sort_title.classList.remove('desc', 'asc');
+    btn_sort_author.classList.remove('desc', 'asc');
+    btn_sort_series.classList.remove('desc', 'asc');
+    btn_sort_date.classList.remove('desc', 'asc');
+
+    if (!btn_sort_added.classList.contains('desc') && !btn_sort_added.classList.contains('asc')) {
+        btn_sort_added.classList.add('desc'); // Default: newest first
+    } else {
+        btn_sort_added.classList.toggle('desc');
+        btn_sort_added.classList.toggle('asc');
+    }
+    sortBooks('added', btn_sort_added.classList.contains('desc') ? 'desc' : 'asc');
 });
 
 // Reset search and sort settings
@@ -159,27 +220,91 @@ document.querySelector('#sort-reset').addEventListener('click', (e) => {
     // And restore display to all books
     books.forEach(book => book.style.display = '');
 
-    // Reset the sort to default
-    btn_sort_id.classList.remove('desc', 'asc');
-    btn_sort_id.click();
+    // Reset the sort to default (added date, newest first)
+    btn_sort_added.classList.remove('desc', 'asc');
+    btn_sort_added.click();
 });
 
 /**
- *  Search box
+ *  Search box - supports text search and [type: value] filters
  * ****************************
  */
 const searchBox = document.querySelector('#search-box input');
-searchBox.addEventListener('input', (e) => {
-    const searchValue = e.target.value.trim().toLowerCase();
+
+function applyFilters() {
+    const searchValue = searchBox.value.trim().toLowerCase();
+
+    // Parse [type: value] patterns
+    const filterPattern = /\[(\w+):\s*([^\]]+)\]/g;
+    const filters = [];
+    let match;
+
+    while ((match = filterPattern.exec(searchValue)) !== null) {
+        filters.push({
+            type: match[1],
+            value: match[2].trim()
+        });
+    }
+
+    // Get remaining text (non-filter search)
+    const textSearch = searchValue.replace(filterPattern, '').trim();
+
     books.forEach(book => {
-        const title = book.getAttribute('data-title');
-        const authors = book.getAttribute('data-authors');
-        if (title.includes(searchValue) || authors.includes(searchValue)) {
-            book.style.display = ''; // Empty = use CSS default
-        } else {
-            book.style.display = 'none';
+        let matches = true;
+
+        // Apply filters [type: value]
+        filters.forEach(filter => {
+            if (filter.type === 'series') {
+                const bookSeries = book.getAttribute('data-series');
+                // Handle empty series
+                if (!bookSeries || bookSeries === '') {
+                    matches = false;
+                } else if (bookSeries.toLowerCase() !== filter.value.toLowerCase()) {
+                    matches = false;
+                }
+            } else if (filter.type === 'tag') {
+                const bookTags = book.getAttribute('data-tags');
+                if (!bookTags || !bookTags.split('|').includes(filter.value)) matches = false;
+            } else if (filter.type === 'author') {
+                const bookAuthors = book.getAttribute('data-authors');
+                if (!bookAuthors || !bookAuthors.includes(filter.value)) matches = false;
+            }
+        });
+
+        // Apply text search (if any)
+        if (textSearch && matches) {
+            const title = book.getAttribute('data-title');
+            const authors = book.getAttribute('data-authors');
+            if (!title.includes(textSearch) && !authors.includes(textSearch)) {
+                matches = false;
+            }
         }
+
+        book.style.display = matches ? '' : 'none';
     });
+}
+
+searchBox.addEventListener('input', applyFilters);
+
+/**
+ *  Filter links (authors, series, tags)
+ * ****************************
+ */
+document.addEventListener('click', (e) => {
+    if (e.target.classList.contains('filter-link')) {
+        const filterType = e.target.getAttribute('data-filter-type');
+        const filterValue = e.target.getAttribute('data-filter-value');
+
+        // Check if this filter already exists
+        const currentValue = searchBox.value.trim();
+        const filterString = `[${filterType}: ${filterValue}]`;
+
+        if (!currentValue.includes(filterString)) {
+            // Add to search box
+            searchBox.value = currentValue ? `${currentValue} ${filterString}` : filterString;
+            applyFilters();
+        }
+    }
 });
 
 /**
@@ -306,6 +431,10 @@ function init() {
     if (urlParams.get('download') === '1' || urlParams.get('download') === 'true') {
         document.querySelector('body').classList.add('-show-books-formats');
     }
+
+    // Apply default sort: Added date, newest first
+    btn_sort_added.classList.add('desc');
+    sortBooks('added', 'desc');
 }
 
 init();

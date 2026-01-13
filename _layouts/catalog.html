@@ -26,9 +26,17 @@ layout: default
                         <i class="bi bi-person d-sm-none"></i>
                         <span class="d-none d-sm-inline">Author</span>
                     </button>,
-                    <button id="sort-id" type="button" class="desc p-1 btn btn-sm btn-sort" title="Sort by Date">
-                        <i class="bi bi-calendar-date d-sm-none"></i>
-                        <span class="d-none d-sm-inline">Date</span>
+                    <button id="sort-series" type="button" class="p-1 btn btn-sm btn-sort" title="Sort by Series">
+                        <i class="bi bi-collection d-sm-none"></i>
+                        <span class="d-none d-sm-inline">Series</span>
+                    </button>,
+                    <button id="sort-date" type="button" class="p-1 btn btn-sm btn-sort" title="Sort by Publication Date">
+                        <i class="bi bi-calendar-event d-sm-none"></i>
+                        <span class="d-none d-sm-inline">Pub</span>
+                    </button>,
+                    <button id="sort-added" type="button" class="desc p-1 btn btn-sm btn-sort" title="Sort by Added Date">
+                        <i class="bi bi-calendar-plus d-sm-none"></i>
+                        <span class="d-none d-sm-inline">Added</span>
                     </button>
                     <button id="sort-reset" type="button" class="btn btn-sm btn-reset" title="Reset filters">
                         <i class="bi bi-trash"></i>
@@ -90,7 +98,11 @@ layout: default
         {% for book in catalog_data.books %}
         {% assign authors_string = book.authors | join: ', ' %}
         {% assign timestamp_unix = book.timestamp | date: "%s" %}
-        <article id="book-{{ book.id }}" class="book" data-id="{{ book.id }}" data-authors="{{ authors_string | downcase }}" data-title="{{ book.title | downcase }}" data-date="{{ timestamp_unix }}" data-index="{{ forloop.index }}">
+        {% assign pubdate_unix = book.pubdate | date: "%s" %}
+        {% assign tags_string = book.tags | join: '|' | downcase %}
+        {% assign series_string = book.series | default: '' | downcase %}
+        {% assign series_index = book.series_index | default: 0 %}
+        <article id="book-{{ book.id }}" class="book" data-id="{{ book.id }}" data-authors="{{ authors_string | downcase }}" data-title="{{ book.title | downcase }}" data-date="{{ pubdate_unix }}" data-added="{{ timestamp_unix }}" data-series="{{ series_string }}" data-series-index="{{ series_index }}" data-tags="{{ tags_string }}" data-index="{{ forloop.index }}">
 
             <!-- Grid View -->
             <div class="book__grid">
@@ -105,8 +117,39 @@ layout: default
                     <img src="/assets/covers/{{ catalog_name }}/{{ book.cover }}" loading="lazy" alt="{{ book.title }}" class="d-block mx-auto shadow"/>
                 </div>
                 <div class="book-cell book-cell--title">{{ book.title }}</div>
-                <div class="book-cell book-cell--authors">{{ authors_string }}</div>
-                <div class="book-cell book-cell--date">{{ book.timestamp | date: "%Y-%m-%d" }}</div>
+                <div class="book-cell book-cell--authors">
+                    {% for author in book.authors %}
+                        <span class="filter-link" data-filter-type="author" data-filter-value="{{ author | downcase }}" title="Click to filter by this author">{{ author }}</span>{% unless forloop.last %}, {% endunless %}
+                    {% endfor %}
+                </div>
+                <div class="book-cell book-cell--series">
+                    {% if book.series %}
+                        <span class="filter-link" data-filter-type="series" data-filter-value="{{ book.series | downcase }}" title="Click to filter by this series">
+                            {{ book.series }}{% if book.series_index %} #{{ book.series_index }}{% endif %}
+                        </span>
+                    {% else %}
+                        <span class="text-muted">—</span>
+                    {% endif %}
+                </div>
+                <div class="book-cell book-cell--tags">
+                    {% if book.tags.size > 0 %}
+                        {% for tag in book.tags %}
+                            <span class="filter-link" data-filter-type="tag" data-filter-value="{{ tag | downcase }}" title="Click to filter by this tag">{{ tag }}</span>{% unless forloop.last %}, {% endunless %}
+                        {% endfor %}
+                    {% else %}
+                        <span class="text-muted">—</span>
+                    {% endif %}
+                </div>
+                <div class="book-cell book-cell--date">
+                    {% if book.pubdate %}
+                        {{ book.pubdate | date: "%Y" }}
+                    {% else %}
+                        <span class="text-muted">—</span>
+                    {% endif %}
+                </div>
+                <div class="book-cell book-cell--added">
+                    {{ book.timestamp | date: "%Y-%m-%d" }}
+                </div>
             </div>
 
             <!-- Preview Content (hidden, shown in sidebar) -->

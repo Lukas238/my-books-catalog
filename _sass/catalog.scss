@@ -182,9 +182,8 @@ body[data-bs-theme="dark"] {
         height: auto;
         width: auto;
         object-fit: contain;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35) !important;
         transition: transform 0.2s ease;
-        border: 1px solid #ddd;
 
         &:hover {
             transform: scale(1.03);
@@ -343,7 +342,6 @@ body[data-bs-theme="dark"] {
                     height: 500px;
                     max-height: none;
                     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
-                    border: 1px solid #ddd;
                 }
             }
 

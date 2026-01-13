@@ -321,12 +321,6 @@ body[data-bs-theme="dark"] {
         }
     }
 
-    // Add transition to controls and grid for smooth animation
-    main.container-xxl #catalog-controls,
-    section#books-list:not(.-view-list) {
-        transition: margin-right .5s ease;
-    }
-
     // Adjust controls and grid view margin when drawer is open
     main.container-xxl.drawer-open #catalog-controls,
     section#books-list:not(.-view-list).drawer-open {

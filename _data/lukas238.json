@@ -1,8 +1,8 @@
 {
   "catalog_title": "Lukas238",
   "catalog_name": "lukas238",
-  "total_books": 452,
-  "last_updated": "2026-01-13T00:39:27.666Z",
+  "total_books": 451,
+  "last_updated": "2026-01-13T21:19:11.364Z",
   "books": [
     {
       "id": "8",
@@ -13931,34 +13931,6 @@
         {
           "type": "EPUB",
           "url": "https://drive.google.com/uc?export=download&id=1HsveJ5Lhk9I6UcwGSA83IrMd3CXAVbqI"
-        }
-      ]
-    },
-    {
-      "id": "885",
-      "uuid": "6f518a5c-ee34-4f3d-9a8a-914367348c5c",
-      "title": "My Clippings",
-      "title_sort": "My Clippings",
-      "authors": [
-        "Unknown"
-      ],
-      "authors_sort": "Unknown",
-      "publisher": null,
-      "pubdate": "0100-12-31T21:00:00-03:00",
-      "rating": null,
-      "isbn": null,
-      "tags": [],
-      "series": null,
-      "series_index": null,
-      "comments": null,
-      "timestamp": "2025-10-06T09:38:52-03:00",
-      "languages": null,
-      "identifiers": null,
-      "cover": null,
-      "formats": [
-        {
-          "type": "TXT",
-          "url": "https://drive.google.com/uc?export=download&id=1MmUYUdG0PJpw-VxTDF2zvNXm52TucIxz"
         }
       ]
     },

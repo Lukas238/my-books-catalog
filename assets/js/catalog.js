@@ -215,7 +215,7 @@ books.forEach(book => {
 });
 
 // Close preview handler
-const closePreviewBtn = document.querySelector('#book-preview .btn-secondary');
+const closePreviewBtn = document.querySelector('#book-preview .btn-close');
 if (closePreviewBtn) {
     closePreviewBtn.addEventListener('click', () => {
         bookPreview.classList.remove('show');
@@ -228,6 +228,7 @@ if (closePreviewBtn) {
 const bookPreviewEl = document.querySelector('#book-preview');
 if (bookPreviewEl) {
     bookPreviewEl.addEventListener('hidden.bs.collapse', () => {
+        toggleDrawerState(false);
         updateURLHash();
     });
 }

@@ -7,7 +7,7 @@ body {
     font-weight: lighter;
 }
 
-#controls-area {
+#filters-area {
     font-size: 0.8em;
 
     button {
@@ -54,12 +54,24 @@ body {
     }
 }
 
+#controls-area {
+    @media (max-width: 575px) {
+        gap: 0.25rem !important;
+        
+        .border-start {
+            border-left: none !important;
+            padding-left: 0.25rem !important;
+        }
+    }
+}
+
 body[data-bs-theme="dark"] {
-    #controls-area {
-        #sort-box {
-            .btn-sort:after {
-                filter: invert(1);
-            }
+    #filters-area, #controls-area {
+      button:hover{
+            color: rgba(255, 255, 255, 1);
+        }
+        button i {
+            color: rgba(255, 255, 255, 1);
         }
     }
 }

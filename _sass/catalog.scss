@@ -282,11 +282,18 @@ body[data-bs-theme="dark"] {
 
             &.book-cell--title {
                 cursor: pointer;
-                font-weight: 500;
+                font-weight: lighter;
+                font-size: 1.1rem;
                 padding-left: 1rem;
             }
 
-            &.book-cell--authors,
+            &.book-cell--authors {
+                font-size: 1.1rem;
+                display: flex;
+                flex-wrap: wrap;
+                align-content: center;
+            }
+
             &.book-cell--series,
             &.book-cell--tags {
                 font-size: 0.875rem;

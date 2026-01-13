@@ -2,16 +2,19 @@ const books = document.querySelectorAll('.book');
 const bookPreview = document.querySelector('#book-preview');
 const bookPreviewConten = document.querySelector('#book-preview .book-preview__content ');
 const booksList = document.querySelector('#books-list');
+const mainContainer = document.querySelector('main.container-xxl');
 
-// Function to toggle drawer-open class on books list
+// Function to toggle drawer-open class on books list and main container
 function toggleDrawerState(isOpen) {
     console.log('toggleDrawerState called with:', isOpen);
     console.log('booksList element:', booksList);
     if (isOpen) {
         booksList.classList.add('drawer-open');
+        mainContainer.classList.add('drawer-open');
         console.log('Added drawer-open class. Classes:', booksList.className);
     } else {
         booksList.classList.remove('drawer-open');
+        mainContainer.classList.remove('drawer-open');
         console.log('Removed drawer-open class. Classes:', booksList.className);
     }
 }

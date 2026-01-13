@@ -308,7 +308,8 @@ body[data-bs-theme="dark"] {
         }
     }
 
-    // Grid view: adjust margin when drawer is open
+    // Adjust controls and grid view margin when drawer is open
+    main.container-xxl.drawer-open #catalog-controls,
     section#books-list:not(.-view-list).drawer-open {
         margin-right: var(--book-preview-width) !important;
         transition: margin-right .5s ease;

@@ -231,6 +231,14 @@ books.forEach(book => {
             // Toggle drawer state for grid view adjustment
             toggleDrawerState(true);
 
+            // Wait for grid reflow, then scroll to active book
+            setTimeout(() => {
+                const activeBook = document.querySelector('.book.active');
+                if (activeBook) {
+                    activeBook.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            }, 550); // Wait for transition (500ms) + small buffer
+
             // Update URL hash with open book
             updateURLHash();
         });
@@ -242,8 +250,22 @@ const closePreviewBtn = document.querySelector('#book-preview .btn-close');
 if (closePreviewBtn) {
     closePreviewBtn.addEventListener('click', () => {
         bookPreview.classList.remove('show');
-        clearActiveBook();
         toggleDrawerState(false);
+
+        // Wait for grid reflow, then scroll to active book and clear it
+        setTimeout(() => {
+            const activeBook = document.querySelector('.book.active');
+            if (activeBook) {
+                activeBook.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                // Clear active after scroll starts
+                setTimeout(() => {
+                    clearActiveBook();
+                }, 100);
+            } else {
+                clearActiveBook();
+            }
+        }, 550); // Wait for transition (500ms) + small buffer
+
         updateURLHash();
     });
 }
@@ -252,8 +274,22 @@ if (closePreviewBtn) {
 const bookPreviewEl = document.querySelector('#book-preview');
 if (bookPreviewEl) {
     bookPreviewEl.addEventListener('hidden.bs.collapse', () => {
-        clearActiveBook();
         toggleDrawerState(false);
+
+        // Wait for grid reflow, then scroll to active book and clear it
+        setTimeout(() => {
+            const activeBook = document.querySelector('.book.active');
+            if (activeBook) {
+                activeBook.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                // Clear active after scroll starts
+                setTimeout(() => {
+                    clearActiveBook();
+                }, 100);
+            } else {
+                clearActiveBook();
+            }
+        }, 550); // Wait for transition (500ms) + small buffer
+
         updateURLHash();
     });
 }

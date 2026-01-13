@@ -141,14 +141,20 @@ layout: default
                     {% endif %}
                 </div>
                 <div class="book-cell book-cell--date">
-                    {% if book.pubdate %}
+                    {% assign pub_year = book.pubdate | date: "%Y" %}
+                    {% if book.pubdate and pub_year != "0101" and pub_year != "0100" %}
                         {{ book.pubdate | date: "%Y" }}
                     {% else %}
                         <span class="text-muted">—</span>
                     {% endif %}
                 </div>
                 <div class="book-cell book-cell--added">
-                    {{ book.timestamp | date: "%Y-%m-%d" }}
+                    {% assign added_year = book.timestamp | date: "%Y" %}
+                    {% if added_year != "0101" and added_year != "0100" %}
+                        {{ book.timestamp | date: "%Y-%m-%d" }}
+                    {% else %}
+                        <span class="text-muted">—</span>
+                    {% endif %}
                 </div>
             </div>
 
@@ -164,15 +170,14 @@ layout: default
                     {% if book.isbn %}
                     <li class="list-group-item">
                         <label>ISBN:</label>
-                        <a href="https://www.goodreads.com/search?q={{ book.isbn }}" target="_blank">{{ book.isbn }}</a>
+                        <small><a href="https://www.goodreads.com/search?q={{ book.isbn }}" target="_blank">{{ book.isbn }}</a></small>
                     </li>
                     {% endif %}
 
                     {% if book.series %}
                     <li class="list-group-item">
                         <label>Series:</label>
-                        <span class="fs-6">{{ book.series }}</span> -
-                        <span class="text-muted">Book #{{ book.series_index | default: '?' }}</span>
+                        <small>{{ book.series }} - <span class="text-muted">Book #{{ book.series_index | default: '?' }}</span></small>
                     </li>
                     {% endif %}
 
@@ -183,10 +188,31 @@ layout: default
                     </li>
                     {% endif %}
 
+                    {% if book.pubdate %}
+                    {% assign pub_year = book.pubdate | date: "%Y" %}
+                    {% if pub_year != "0101" and pub_year != "0100" %}
+                    <li class="list-group-item">
+                        <label>Published:</label>
+                        <small>{{ book.pubdate | date: "%Y" }}</small>
+                    </li>
+                    {% endif %}
+                    {% endif %}
+
                     <li class="list-group-item">
                         <label>Added On:</label>
-                        {{ book.timestamp | date: "%Y-%m-%d" }}
+                        <small>{{ book.timestamp | date: "%Y-%m-%d" }}</small>
                     </li>
+
+                    {% if book.tags.size > 0 %}
+                    <li class="list-group-item">
+                        <label>Keywords:</label>
+                        <small>
+                            {% for tag in book.tags %}
+                                {{ tag }}{% unless forloop.last %}, {% endunless %}
+                            {% endfor %}
+                        </small>
+                    </li>
+                    {% endif %}
                 </ul>
 
                 <div class="text-center m-3">

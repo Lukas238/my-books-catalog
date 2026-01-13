@@ -2,6 +2,174 @@ const books = document.querySelectorAll('.book');
 const bookPreview = document.querySelector('#book-preview');
 const bookPreviewConten = document.querySelector('#book-preview .book-preview__content ');
 
+/**
+ * URL State Management
+ * Saves and restores: sort, order, search filter, and open book
+ */
+function updateURLHash() {
+    const searchBox = document.querySelector('#search-box input');
+    const params = new URLSearchParams();
+
+    // Get active sort button
+    const activeSortBtn = document.querySelector('.btn-sort.desc, .btn-sort.asc');
+    if (activeSortBtn) {
+        const sortId = activeSortBtn.id.replace('sort-', '');
+        const order = activeSortBtn.classList.contains('desc') ? 'desc' : 'asc';
+        params.set('sort', sortId);
+        params.set('order', order);
+    }
+
+    // Get search/filter value
+    if (searchBox.value) {
+        params.set('filter', searchBox.value);
+    }
+
+    // Get open book ID
+    if (bookPreview.classList.contains('show')) {
+        const openBook = bookPreviewConten.querySelector('.book');
+        if (openBook) {
+            params.set('book', openBook.getAttribute('data-id'));
+        }
+    }
+
+    // Update URL without reloading page
+    const newHash = params.toString();
+    if (newHash) {
+        history.replaceState(null, '', '#' + newHash);
+    } else {
+        history.replaceState(null, '', window.location.pathname);
+    }
+}
+
+function restoreStateFromURL() {
+    const hash = window.location.hash.substring(1);
+    if (!hash) return;
+
+    const params = new URLSearchParams(hash);
+
+    // Restore search/filter
+    const filterValue = params.get('filter');
+    if (filterValue) {
+        const searchBox = document.querySelector('#search-box input');
+        searchBox.value = filterValue;
+        applyFilters();
+    }
+
+    // Restore sort and order
+    const sortBy = params.get('sort');
+    const order = params.get('order') || 'desc';
+    if (sortBy) {
+        const sortBtn = document.querySelector(`#sort-${sortBy}`);
+        if (sortBtn) {
+            // Remove default sort classes
+            document.querySelectorAll('.btn-sort').forEach(btn => {
+                btn.classList.remove('desc', 'asc');
+            });
+            // Apply the sort from URL
+            sortBtn.classList.add(order);
+            sortBooks(sortBy, order);
+        }
+    }
+
+    // Restore open book (after a small delay to ensure books are rendered)
+    const bookId = params.get('book');
+    if (bookId) {
+        setTimeout(() => {
+            const book = document.querySelector(`[data-id="${bookId}"]`);
+            if (book) {
+                const clickableElement = book.querySelector('.book__cover, .book-cell--cover');
+                if (clickableElement) {
+                    clickableElement.click();
+                }
+            }
+        }, 100);
+    }
+}
+
+/**
+ * URL State Management
+ * Saves and restores: sort, order, search filter, and open book
+ */
+function updateURLHash() {
+    const searchBox = document.querySelector('#search-box input');
+    const params = new URLSearchParams();
+
+    // Get active sort button
+    const activeSortBtn = document.querySelector('.btn-sort.desc, .btn-sort.asc');
+    if (activeSortBtn) {
+        const sortId = activeSortBtn.id.replace('sort-', '');
+        const order = activeSortBtn.classList.contains('desc') ? 'desc' : 'asc';
+        params.set('sort', sortId);
+        params.set('order', order);
+    }
+
+    // Get search/filter value
+    if (searchBox.value) {
+        params.set('filter', searchBox.value);
+    }
+
+    // Get open book ID
+    if (bookPreview.classList.contains('show')) {
+        const openBook = bookPreviewConten.querySelector('.book');
+        if (openBook) {
+            params.set('book', openBook.getAttribute('data-id'));
+        }
+    }
+
+    // Update URL without reloading page
+    const newHash = params.toString();
+    if (newHash) {
+        history.replaceState(null, '', '#' + newHash);
+    } else {
+        history.replaceState(null, '', window.location.pathname);
+    }
+}
+
+function restoreStateFromURL() {
+    const hash = window.location.hash.substring(1);
+    if (!hash) return;
+
+    const params = new URLSearchParams(hash);
+
+    // Restore search/filter
+    const filterValue = params.get('filter');
+    if (filterValue) {
+        const searchBox = document.querySelector('#search-box input');
+        searchBox.value = filterValue;
+        applyFilters();
+    }
+
+    // Restore sort and order
+    const sortBy = params.get('sort');
+    const order = params.get('order') || 'desc';
+    if (sortBy) {
+        const sortBtn = document.querySelector(`#sort-${sortBy}`);
+        if (sortBtn) {
+            // Remove default sort classes
+            document.querySelectorAll('.btn-sort').forEach(btn => {
+                btn.classList.remove('desc', 'asc');
+            });
+            // Apply the sort from URL
+            sortBtn.classList.add(order);
+            sortBooks(sortBy, order);
+        }
+    }
+
+    // Restore open book (after a small delay to ensure books are rendered)
+    const bookId = params.get('book');
+    if (bookId) {
+        setTimeout(() => {
+            const book = document.querySelector(`[data-id="${bookId}"]`);
+            if (book) {
+                const clickableElement = book.querySelector('.book__cover, .book-cell--cover');
+                if (clickableElement) {
+                    clickableElement.click();
+                }
+            }
+        }, 100);
+    }
+}
+
 books.forEach(book => {
     // Attach click handler to clickable elements
     const clickableElements = book.querySelectorAll('.book__cover, .book-cell--cover, .book-cell--title');
@@ -22,9 +190,32 @@ books.forEach(book => {
 
             // Also scroll to the top of the preview content after the book is loaded
             bookPreviewConten.scrollTo({ top: 0, behavior: 'smooth' });
+
+            // Update URL hash with open book
+            updateURLHash();
+
+            // Update URL hash with open book
+            updateURLHash();
         });
     });
 });
+
+// Close preview handler
+const closePreviewBtn = document.querySelector('#book-preview .btn-secondary');
+if (closePreviewBtn) {
+    closePreviewBtn.addEventListener('click', () => {
+        bookPreview.classList.remove('show');
+        updateURLHash();
+    });
+}
+
+// Also listen for Bootstrap collapse hidden event
+const bookPreviewEl = document.querySelector('#book-preview');
+if (bookPreviewEl) {
+    bookPreviewEl.addEventListener('hidden.bs.collapse', () => {
+        updateURLHash();
+    });
+}
 
 // Add prev and next book navigation buttons to the preview pane
 document.querySelector('#loadPrevBook').addEventListener('click', () => {
@@ -116,6 +307,9 @@ function sortBooks(sortBy = 'title', order = 'desc') {
     books.forEach((book, index) => {
         book.style.order = index;
     });
+
+    // Update URL with sort state
+    updateURLHash();
 }
 
 /**
@@ -282,6 +476,9 @@ function applyFilters() {
 
         book.style.display = matches ? '' : 'none';
     });
+
+    // Update URL with filter state
+    updateURLHash();
 }
 
 searchBox.addEventListener('input', applyFilters);
@@ -432,9 +629,15 @@ function init() {
         document.querySelector('body').classList.add('-show-books-formats');
     }
 
-    // Apply default sort: Added date, newest first
-    btn_sort_added.classList.add('desc');
-    sortBooks('added', 'desc');
+    // Apply default sort only if no hash state exists
+    const hash = window.location.hash.substring(1);
+    if (!hash) {
+        btn_sort_added.classList.add('desc');
+        sortBooks('added', 'desc');
+    } else {
+        // Restore state from URL
+        restoreStateFromURL();
+    }
 }
 
 init();

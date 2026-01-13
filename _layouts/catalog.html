@@ -86,24 +86,30 @@ layout: default
         </div>
     </div>
 
-    <section id="books-list" class="d-flex align-content-end flex-wrap m-0 pt-2">
-        <table id="table-header" class="table table-sm d-none m-0">
-            <thead class="d-block">
-                <tr class="d-flex">
-                    <th class="col-cover"></th>
-                    <th class="col-title flex-grow-1">Title</th>
-                    <th class="col-authors">Authors</th>
-                    <th class="col-added-on">Added on</th>
-                </tr>
-            </thead>
-        </table>
-
+    <section id="books-list" class="m-0 pt-2">
         {% for book in catalog_data.books %}
         {% assign authors_string = book.authors | join: ', ' %}
-        <article id="book-{{ book.id }}" class="book" title="{{ book.title }}" data-id="{{ book.id }}" data-authors="{{ authors_string }}" data-title="{{ book.title }}" data-index="{{ forloop.index }}">
-            <header title="{{ book.title }}">
-                <img src="/assets/covers/{{ catalog_name }}/{{ book.cover }}" loading="lazy" alt="{{ book.title }}" class="d-block mx-auto shadow" width="250" height="auto"/>
-            </header>
+        {% assign timestamp_unix = book.timestamp | date: "%s" %}
+        <article id="book-{{ book.id }}" class="book" data-id="{{ book.id }}" data-authors="{{ authors_string | downcase }}" data-title="{{ book.title | downcase }}" data-date="{{ timestamp_unix }}" data-index="{{ forloop.index }}">
+
+            <!-- Grid View -->
+            <div class="book__grid">
+                <div class="book__cover" title="{{ book.title }}">
+                    <img src="/assets/covers/{{ catalog_name }}/{{ book.cover }}" loading="lazy" alt="{{ book.title }}" class="d-block mx-auto shadow" width="250" height="auto"/>
+                </div>
+            </div>
+
+            <!-- Table View -->
+            <div class="book__table">
+                <div class="book-cell book-cell--cover">
+                    <img src="/assets/covers/{{ catalog_name }}/{{ book.cover }}" loading="lazy" alt="{{ book.title }}" class="d-block mx-auto shadow"/>
+                </div>
+                <div class="book-cell book-cell--title">{{ book.title }}</div>
+                <div class="book-cell book-cell--authors">{{ authors_string }}</div>
+                <div class="book-cell book-cell--date">{{ book.timestamp | date: "%Y-%m-%d" }}</div>
+            </div>
+
+            <!-- Preview Content (hidden, shown in sidebar) -->
             <div class="book__body">
                 <h1 class="h3 text-center my-4 py-3 fw-lighter">{{ book.title }}</h1>
                 <ul class="book__meta list-group">
@@ -172,18 +178,6 @@ layout: default
                     <div>{{ book.comments }}</div>
                 </div>
                 {% endif %}
-            </div>
-            <div class="book__table d-none border-bottom">
-                <table class="table table-sm m-0">
-                    <tbody>
-                        <tr>
-                            <td class="col-cover"><img src="/assets/covers/{{ catalog_name }}/{{ book.cover }}" alt="{{ book.title }}" class="d-block mx-auto shadow"/></td>
-                            <td class="col-title">{{ book.title }}</td>
-                            <td class="col-authors">{{ authors_string }}</td>
-                            <td class="col-added-on">{{ book.timestamp | date: "%Y-%m-%d" }}</td>
-                        </tr>
-                    </tbody>
-                </table>
             </div>
         </article>
         {% endfor %}

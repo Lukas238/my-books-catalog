@@ -3,21 +3,26 @@ const bookPreview = document.querySelector('#book-preview');
 const bookPreviewConten = document.querySelector('#book-preview .book-preview__content ');
 
 books.forEach(book => {
-    book.addEventListener('click', (event) => {
-        // Check if shift key was pressed during click
-        if (event.shiftKey) {
-            // Enable download buttons for all books
-            document.querySelector('body').classList.add('-show-books-formats');
-        }
+    // Attach click handler to clickable elements
+    const clickableElements = book.querySelectorAll('.book__cover, .book-cell--cover, .book-cell--title');
 
-        bookPreview.classList.add('show');
-        const bookClone = book.cloneNode(true);
+    clickableElements.forEach(element => {
+        element.addEventListener('click', (event) => {
+            // Check if shift key was pressed during click
+            if (event.shiftKey) {
+                // Enable download buttons for all books
+                document.querySelector('body').classList.add('-show-books-formats');
+            }
 
-        bookPreviewConten.innerHTML = '';
-        bookPreviewConten.appendChild(bookClone);
+            bookPreview.classList.add('show');
+            const bookClone = book.cloneNode(true);
 
-        // Also scroll to the top of the preview content after the book is loaded
-        bookPreviewConten.scrollTo({ top: 0, behavior: 'smooth' });
+            bookPreviewConten.innerHTML = '';
+            bookPreviewConten.appendChild(bookClone);
+
+            // Also scroll to the top of the preview content after the book is loaded
+            bookPreviewConten.scrollTo({ top: 0, behavior: 'smooth' });
+        });
     });
 });
 
@@ -68,24 +73,30 @@ document.querySelector('#loadNextBook').addEventListener('click', () => {
 });
 
 // Sort books by article data attributes, asc or desc
+// Uses style.order to avoid DOM manipulation and image reloading
 function sortBooks(sortBy = 'title', order = 'desc') {
     const booksList = document.querySelector('#books-list');
     const books = Array.from(booksList.querySelectorAll('.book'));
 
     books.sort((a, b) => {
-        const aData = a.getAttribute(`data-${sortBy}`);
-        const bData = b.getAttribute(`data-${sortBy}`);
+        let aData = a.getAttribute(`data-${sortBy}`);
+        let bData = b.getAttribute(`data-${sortBy}`);
 
-        // For number based comparison
-        if (sortBy === 'id') {
+        // For number based comparison (id and date are numeric)
+        if (sortBy === 'id' || sortBy === 'date') {
+            aData = Number(aData);
+            bData = Number(bData);
             return order === 'asc' ? aData - bData : bData - aData;
         }
 
-        // For text based comparison
+        // For text based comparison (title and authors are strings)
         return order === 'asc' ? aData.localeCompare(bData) : bData.localeCompare(aData);
     });
 
-    books.forEach(book => booksList.appendChild(book));
+    // Set order without moving DOM elements
+    books.forEach((book, index) => {
+        book.style.order = index;
+    });
 }
 
 /**
@@ -137,16 +148,16 @@ btn_sort_id.addEventListener('click', (e) => {
         btn_sort_id.classList.toggle('desc');
         btn_sort_id.classList.toggle('asc');
     }
-    sortBooks('id', btn_sort_id.classList.contains('desc') ? 'desc' : 'asc');
+    sortBooks('date', btn_sort_id.classList.contains('desc') ? 'desc' : 'asc');
 });
 
 // Reset search and sort settings
 document.querySelector('#sort-reset').addEventListener('click', (e) => {
-    // Clear the serch box too
+    // Clear the search box too
     document.querySelector('#search-box input').value = '';
 
-    // And restore the inline-block to all books
-    books.forEach(book => book.style.display = 'inline-block');
+    // And restore display to all books
+    books.forEach(book => book.style.display = '');
 
     // Reset the sort to default
     btn_sort_id.classList.remove('desc', 'asc');
@@ -161,10 +172,10 @@ const searchBox = document.querySelector('#search-box input');
 searchBox.addEventListener('input', (e) => {
     const searchValue = e.target.value.trim().toLowerCase();
     books.forEach(book => {
-        const title = book.getAttribute('data-title').toLowerCase();
-        const authors = book.getAttribute('data-authors').toLowerCase();
+        const title = book.getAttribute('data-title');
+        const authors = book.getAttribute('data-authors');
         if (title.includes(searchValue) || authors.includes(searchValue)) {
-            book.style.display = 'inline-block';
+            book.style.display = ''; // Empty = use CSS default
         } else {
             book.style.display = 'none';
         }

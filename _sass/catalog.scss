@@ -87,26 +87,74 @@ body[data-bs-theme="dark"] {
     }
 }
 
+// Books list - Grid View (default)
 #books-list {
-    &.-view-list {
-        #table-header {
-            display: block !important;
-            width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: start;
+}
+
+.book {
+    width: 33%;
+    padding: 0.8em;
+
+    // Grid view content
+    .book__grid {
+        display: block;
+    }
+
+    .book__cover {
+        cursor: pointer;
+
+        img {
+            max-width: 100%;
+        }
+    }
+
+    // Table view content (hidden in grid mode)
+    .book__table {
+        display: none;
+    }
+
+    // Preview content (always hidden, shown in sidebar)
+    .book__body {
+        display: none;
+    }
+}
+
+// Books list - Table View
+#books-list.-view-list {
+    display: grid;
+    grid-template-columns: 80px 1fr 320px 120px;
+    gap: 0;
+    padding: 0;
+
+    .book {
+        display: grid;
+        grid-column: 1 / -1; // Span all columns
+        grid-template-columns: subgrid; // Inherit parent grid columns
+        width: auto;
+        padding: 0;
+
+        // Hide grid view
+        .book__grid {
+            display: none;
         }
 
-        #table-header,
-        .book {
-            display: block;
-            width: 100% !important;
-            padding: 0 !important;
+        // Show table view
+        .book__table {
+            display: grid;
+            grid-column: 1 / -1; // Span all columns
+            grid-template-columns: subgrid; // Inherit parent grid columns
+        }
 
-            td {
-                vertical-align: middle;
-            }
+        .book-cell {
+            padding: 0.5rem;
+            border-bottom: 1px solid var(--bs-border-color);
+            vertical-align: middle;
 
-            .col-cover {
+            &.book-cell--cover {
                 cursor: pointer;
-                width: 80px;
 
                 img {
                     object-fit: cover;
@@ -115,51 +163,10 @@ body[data-bs-theme="dark"] {
                 }
             }
 
-            .col-title {
-                min-width: 320px;
-            }
-
-            .col-authors {
-                width: 320px;
-                min-width: 320px;
-            }
-
-            .col-added-on {
-                width: 120px;
+            &.book-cell--title {
+                cursor: pointer;
             }
         }
-
-        .book {
-            margin: 0 !important;
-            width: 33%;
-
-            header {
-                display: none;
-            }
-
-            .book__table {
-                display: block !important;
-                margin-top: -1px;
-            }
-        }
-    }
-}
-
-.book {
-    display: inline-block;
-    width: 33%;
-    padding: 0.8em;
-
-    header {
-        cursor: pointer;
-
-        img {
-            max-width: 100%;
-        }
-    }
-
-    .book__body {
-        display: none;
     }
 }
 

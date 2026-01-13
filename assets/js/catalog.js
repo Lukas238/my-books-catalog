@@ -1,6 +1,20 @@
 const books = document.querySelectorAll('.book');
 const bookPreview = document.querySelector('#book-preview');
 const bookPreviewConten = document.querySelector('#book-preview .book-preview__content ');
+const booksList = document.querySelector('#books-list');
+
+// Function to toggle drawer-open class on books list
+function toggleDrawerState(isOpen) {
+    console.log('toggleDrawerState called with:', isOpen);
+    console.log('booksList element:', booksList);
+    if (isOpen) {
+        booksList.classList.add('drawer-open');
+        console.log('Added drawer-open class. Classes:', booksList.className);
+    } else {
+        booksList.classList.remove('drawer-open');
+        console.log('Removed drawer-open class. Classes:', booksList.className);
+    }
+}
 
 /**
  * URL State Management
@@ -191,8 +205,8 @@ books.forEach(book => {
             // Also scroll to the top of the preview content after the book is loaded
             bookPreviewConten.scrollTo({ top: 0, behavior: 'smooth' });
 
-            // Update URL hash with open book
-            updateURLHash();
+            // Toggle drawer state for grid view adjustment
+            toggleDrawerState(true);
 
             // Update URL hash with open book
             updateURLHash();
@@ -205,6 +219,7 @@ const closePreviewBtn = document.querySelector('#book-preview .btn-secondary');
 if (closePreviewBtn) {
     closePreviewBtn.addEventListener('click', () => {
         bookPreview.classList.remove('show');
+        toggleDrawerState(false);
         updateURLHash();
     });
 }
@@ -492,15 +507,20 @@ document.addEventListener('click', (e) => {
         const filterType = e.target.getAttribute('data-filter-type');
         const filterValue = e.target.getAttribute('data-filter-value');
 
-        // Check if this filter already exists
         const currentValue = searchBox.value.trim();
         const filterString = `[${filterType}: ${filterValue}]`;
 
-        if (!currentValue.includes(filterString)) {
-            // Add to search box
-            searchBox.value = currentValue ? `${currentValue} ${filterString}` : filterString;
-            applyFilters();
+        // If shift key is pressed, add to existing filters (if not already present)
+        if (e.shiftKey) {
+            if (!currentValue.includes(filterString)) {
+                searchBox.value = currentValue ? `${currentValue} ${filterString}` : filterString;
+            }
+        } else {
+            // Normal click: replace with this filter only
+            searchBox.value = filterString;
         }
+
+        applyFilters();
     }
 });
 

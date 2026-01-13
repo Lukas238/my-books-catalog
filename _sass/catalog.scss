@@ -234,6 +234,7 @@ body[data-bs-theme="dark"] {
     position: absolute;
     top: 0;
     right: 0;
+    z-index: 1000;
 
     &:not(.show) {
         display: none !important;
@@ -264,20 +265,36 @@ body[data-bs-theme="dark"] {
     }
 }
 
+// Desktop behavior
 @media screen and (min-width: 768px) {
+    :root {
+        --book-preview-width: 450px;
+    }
+
     #books-list .book {
         width: 200px;
     }
 
     #book-preview {
-        --book-preview-width: 450px;
         width: var(--book-preview-width);
         right: 0;
         transition: right .5s ease;
+        position: fixed;
 
         &:not(.show) {
             right: calc(var(--book-preview-width) * -1);
         }
+    }
+
+    // Grid view: adjust margin when drawer is open
+    section#books-list:not(.-view-list).drawer-open {
+        margin-right: var(--book-preview-width) !important;
+        transition: margin-right .5s ease;
+    }
+
+    // Table view: enable horizontal scroll
+    #books-list.-view-list {
+        overflow-x: auto;
     }
 }
 

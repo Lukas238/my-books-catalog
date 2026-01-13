@@ -81,6 +81,10 @@ body[data-bs-theme="dark"] {
             }
         }
     }
+
+    #header .nav-title {
+        color: rgba(255, 255, 255, 0.65);
+    }
 }
 
 #books-list {

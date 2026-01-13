@@ -235,7 +235,7 @@ books.forEach(book => {
             setTimeout(() => {
                 const activeBook = document.querySelector('.book.active');
                 if (activeBook) {
-                    activeBook.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    activeBook.scrollIntoView({ behavior: 'auto', block: 'center' });
                 }
             }, 550); // Wait for transition (500ms) + small buffer
 
@@ -256,7 +256,7 @@ if (closePreviewBtn) {
         setTimeout(() => {
             const activeBook = document.querySelector('.book.active');
             if (activeBook) {
-                activeBook.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                activeBook.scrollIntoView({ behavior: 'auto', block: 'center' });
                 // Clear active after scroll starts
                 setTimeout(() => {
                     clearActiveBook();
@@ -280,7 +280,7 @@ if (bookPreviewEl) {
         setTimeout(() => {
             const activeBook = document.querySelector('.book.active');
             if (activeBook) {
-                activeBook.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                activeBook.scrollIntoView({ behavior: 'auto', block: 'center' });
                 // Clear active after scroll starts
                 setTimeout(() => {
                     clearActiveBook();

@@ -143,12 +143,25 @@ body[data-bs-theme="dark"] {
     #book-preview .book__body {
         color: rgba(255, 255, 255, 0.85);
 
-        h1, h3, .h3 {
+        > h1, > h3, > .h3 {
             background-color: var(--bs-light-bg-subtle) !important;
         }
 
         a {
             color: var(--bs-list-group-color) !important;
+        }
+    }
+
+    #book-preview .book-preview__header {
+        .btn-light {
+            background-color: var(--bs-dark-bg-subtle);
+            border-color: var(--bs-border-color);
+            color: rgba(255, 255, 255, 0.85);
+
+            &:hover {
+                background-color: var(--bs-secondary-bg);
+                color: rgba(255, 255, 255, 1);
+            }
         }
     }
 }

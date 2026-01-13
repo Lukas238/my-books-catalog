@@ -253,8 +253,13 @@ if (headerPrevBtn) {
         const currentBookIndex = visibleBooks.findIndex(book => book.getAttribute('data-id') === currentBookId);
         const prevBookIndex = (currentBookIndex - 1 + visibleBooks.length) % visibleBooks.length;
 
-        const clickTarget = visibleBooks[prevBookIndex].querySelector('.book__cover, .book-cell--cover');
-        if (clickTarget) clickTarget.click();
+        const prevBook = visibleBooks[prevBookIndex];
+        const clickTarget = prevBook.querySelector('.book__cover, .book-cell--cover');
+        if (clickTarget) {
+            clickTarget.click();
+            // Scroll to book if out of view
+            prevBook.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
     });
 }
 
@@ -275,8 +280,13 @@ if (headerNextBtn) {
         const currentBookIndex = visibleBooks.findIndex(book => book.getAttribute('data-id') === currentBookId);
         const nextBookIndex = (currentBookIndex + 1) % visibleBooks.length;
 
-        const clickTarget = visibleBooks[nextBookIndex].querySelector('.book__cover, .book-cell--cover');
-        if (clickTarget) clickTarget.click();
+        const nextBook = visibleBooks[nextBookIndex];
+        const clickTarget = nextBook.querySelector('.book__cover, .book-cell--cover');
+        if (clickTarget) {
+            clickTarget.click();
+            // Scroll to book if out of view
+            nextBook.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
     });
 }
 

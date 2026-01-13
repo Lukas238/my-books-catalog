@@ -232,51 +232,49 @@ if (bookPreviewEl) {
     });
 }
 
-// Add prev and next book navigation buttons to the preview pane
-document.querySelector('#loadPrevBook').addEventListener('click', () => {
-    const currentBookId = bookPreviewConten.querySelector('.book').getAttribute('data-id');
-    const currentBookIndex = Array.from(books).findIndex(book => book.getAttribute('data-id') === currentBookId);
-    const prevBookIndex = (currentBookIndex - 1 + books.length) % books.length;
+// Header prev button
+const headerPrevBtn = document.querySelector('#loadPrevBook-header');
+if (headerPrevBtn) {
+    headerPrevBtn.addEventListener('click', () => {
+        const currentBookId = bookPreviewConten.querySelector('.book').getAttribute('data-id');
 
-    // Check if the previous book is visible (not filtered out), if not, keep looking back
-    let foundVisible = false;
-    let searchIndex = prevBookIndex;
-    while (!foundVisible) {
-        if (books[searchIndex].style.display !== 'none') {
-            foundVisible = true;
-            books[searchIndex].click();
-        } else {
-            searchIndex = (searchIndex - 1 + books.length) % books.length;
-            if (searchIndex === currentBookIndex) {
-                // We've looped through all books and found none visible
-                break;
-            }
-        }
-    }
-});
+        const visibleBooks = Array.from(books)
+            .filter(book => book.style.display !== 'none')
+            .sort((a, b) => {
+                const orderA = parseInt(a.style.order) || 0;
+                const orderB = parseInt(b.style.order) || 0;
+                return orderA - orderB;
+            });
 
-document.querySelector('#loadNextBook').addEventListener('click', () => {
-    const currentBookId = bookPreviewConten.querySelector('.book').getAttribute('data-id');
-    const currentBookIndex = Array.from(books).findIndex(book => book.getAttribute('data-id') === currentBookId);
-    const nextBookIndex = (currentBookIndex + 1) % books.length;
+        const currentBookIndex = visibleBooks.findIndex(book => book.getAttribute('data-id') === currentBookId);
+        const prevBookIndex = (currentBookIndex - 1 + visibleBooks.length) % visibleBooks.length;
 
-    // Check if the next book is visible (not filtered out), if not, keep looking forward
-    let foundVisible = false;
-    let searchIndex = nextBookIndex;
+        const clickTarget = visibleBooks[prevBookIndex].querySelector('.book__cover, .book-cell--cover');
+        if (clickTarget) clickTarget.click();
+    });
+}
 
-    while (!foundVisible) {
-        if (books[searchIndex].style.display !== 'none') {
-            foundVisible = true;
-            books[searchIndex].click();
-        } else {
-            searchIndex = (searchIndex + 1) % books.length;
-            if (searchIndex === currentBookIndex) {
-                // We've looped through all books and found none visible
-                break;
-            }
-        }
-    }
-});
+// Header next button
+const headerNextBtn = document.querySelector('#loadNextBook-header');
+if (headerNextBtn) {
+    headerNextBtn.addEventListener('click', () => {
+        const currentBookId = bookPreviewConten.querySelector('.book').getAttribute('data-id');
+
+        const visibleBooks = Array.from(books)
+            .filter(book => book.style.display !== 'none')
+            .sort((a, b) => {
+                const orderA = parseInt(a.style.order) || 0;
+                const orderB = parseInt(b.style.order) || 0;
+                return orderA - orderB;
+            });
+
+        const currentBookIndex = visibleBooks.findIndex(book => book.getAttribute('data-id') === currentBookId);
+        const nextBookIndex = (currentBookIndex + 1) % visibleBooks.length;
+
+        const clickTarget = visibleBooks[nextBookIndex].querySelector('.book__cover, .book-cell--cover');
+        if (clickTarget) clickTarget.click();
+    });
+}
 
 // Sort books by article data attributes, asc or desc
 // Uses style.order to avoid DOM manipulation and image reloading

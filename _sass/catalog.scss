@@ -240,8 +240,16 @@ body[data-bs-theme="dark"] {
         display: none !important;
     }
 
+    .book-preview__header {
+        position: sticky;
+        top: 0;
+        background-color: inherit;
+        z-index: 10;
+        flex-shrink: 0;
+    }
+
     .book-preview__content {
-        height: calc(100% - 52px);
+        flex: 1;
         overflow-y: auto;
 
         .book {

@@ -260,15 +260,14 @@ layout: default
 </main>
 
 <aside id="book-preview" class="container-xxl bg-light-subtle shadow-lg d-flex flex-column">
-    <header class="visually-hidden">
-        <h2 class="h4 py-2">Book preview</h2>
+    <header class="book-preview__header py-2 px-2 border-bottom d-flex justify-content-between align-items-center">
+        <div class="d-flex gap-1">
+            <button id="loadPrevBook-header" class="btn btn-sm btn-light" title="Previous"><i class="bi bi-chevron-left"></i></button>
+            <button id="loadNextBook-header" class="btn btn-sm btn-light" title="Next"><i class="bi bi-chevron-right"></i></button>
+        </div>
+        <button type="button" class="btn-close ms-auto" data-bs-toggle="collapse" data-bs-target="#book-preview" aria-label="Close"></button>
     </header>
     <div class="book-preview__content"></div>
-    <footer class="py-2 border-top mt-3 d-flex justify-content-between">
-        <button id="loadPrevBook" class="btn btn-light"><i class="bi bi-chevron-left"></i><span class="visually-hidden">Previous book</span></button>
-        <button type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#book-preview">Close Preview</button>
-        <button id="loadNextBook" class="btn btn-light"><i class="bi bi-chevron-right"></i><span class="visually-hidden">Next book</span></button>
-    </footer>
 </aside>
 
 <div id="qr-modal" class="modal" tabindex="-1">

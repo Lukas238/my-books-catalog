@@ -146,6 +146,10 @@ body[data-bs-theme="dark"] {
         h1, h3, .h3 {
             background-color: var(--bs-light-bg-subtle) !important;
         }
+
+        a {
+            color: var(--bs-list-group-color) !important;
+        }
     }
 }
 

@@ -9,57 +9,66 @@ layout: default
 <main class="container-xxl">
 
     <div class="sticky-top bg-white py-3">
-        <div id="search-box" class="py-1">
-            <input class="form-control border" placeholder="Search by title or author">
-        </div>
-
-        <div id="controls-area" class="d-flex me-3 py-1">
-            <div id="sort-box" class="d-inline-block">
-                <label title="Sort by:">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-filter" viewbox="0 0 16 16">
-                        <path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5"/>
-                    </svg>
-                    <strong class="d-none">Sort by:</strong>
-                </label>
-
-                <button id="sort-title" type="button" class="p-1 btn btn-sm btn-sort" title="Sort by Title"><span class="d-none d-sm-inline">Title</span></button>,
-                <button id="sort-author" type="button" class="p-1 btn btn-sm btn-sort" title="Sort by Author"><span class="d-none d-sm-inline">Author</span></button>,
-                <button id="sort-id" type="button" class="desc p-1 btn btn-sm btn-sort" title="Sort by Date"><span class="d-none d-sm-inline">Date</span></button>
+        <div class="d-flex align-items-center gap-3 flex-wrap">
+            <!-- Search box -->
+            <div id="search-box" style="width: 300px; flex: 1 1 300px; max-width: 100%;">
+                <input class="form-control border" placeholder="Search by title or author">
             </div>
 
-            <div class="border-start ms-2 ps-2 flex-grow-1">
-                <button id="sort-reset" type="button" class="text-end btn btn-sm btn-reset" title="Clean all filter">
-                    <i class="bi bi-x"></i>
-                    <span class="d-none d-sm-inline">Reset Filters</span>
-                </button>
-            </div>
+            <!-- Sort and reset controls -->
+            <div id="controls-area" class="d-flex align-items-center flex-wrap gap-2">
+                <div id="sort-box" class="d-inline-block">
+                    <label title="Sort by:">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-filter" viewbox="0 0 16 16">
+                            <path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5"/>
+                        </svg>
+                        <strong class="d-none">Sort by:</strong>
+                    </label>
 
-            <div class="view-qr ms-2 border-start ps-2 ">
-                <button type="button" class="btn btn-sm" data-bs-toggle="modal" data-bs-target="#qr-modal" title="View catalog QR code">
-                    <i class="bi bi-qr-code"></i>
-                </button>
-            </div>
-
-            <div id="views-box" class="ms-2 border-start ps-2 nav-item align-items-center d-flex">
-                <label>
-                    <strong class="d-none">View:</strong>
-                </label>
-                <i class="bi bi-grid"></i>
-                <div class="ms-2 form-switch">
-                    <input class="form-check-input" type="checkbox" role="switch" id="layoutSwitcher" title="Layout switcher"/>
+                    <button id="sort-title" type="button" class="p-1 btn btn-sm btn-sort" title="Sort by Title"><span class="d-none d-sm-inline">Title</span></button>,
+                    <button id="sort-author" type="button" class="p-1 btn btn-sm btn-sort" title="Sort by Author"><span class="d-none d-sm-inline">Author</span></button>,
+                    <button id="sort-id" type="button" class="desc p-1 btn btn-sm btn-sort" title="Sort by Date"><span class="d-none d-sm-inline">Date</span></button>
                 </div>
-                <i class="bi bi-list"></i>
+
+                <div class="border-start ms-2 ps-2">
+                    <button id="sort-reset" type="button" class="btn btn-sm btn-reset" title="Reset filters">
+                        <i class="bi bi-trash"></i>
+                    </button>
+                </div>
             </div>
 
-            <div class="ms-2 border-start ps-2 nav-item align-items-center d-flex">
-                <label>
-                    <strong class="d-none">Theme:</strong>
-                </label>
-                <i class="bi bi-brightness-high"></i>
-                <div class="ms-2 form-switch">
-                    <input class="form-check-input" type="checkbox" role="switch" id="themingSwitcher" title="Theme switcher"/>
+            <!-- Flexible space -->
+            <div class="flex-grow-1"></div>
+
+            <!-- Right side controls -->
+            <div class="d-flex align-items-center gap-2">
+                <div class="view-qr border-start ps-2">
+                    <button type="button" class="btn btn-sm" data-bs-toggle="modal" data-bs-target="#qr-modal" title="View catalog QR code">
+                        <i class="bi bi-qr-code"></i>
+                    </button>
                 </div>
-                <i class="bi bi-moon"></i>
+
+                <div id="views-box" class="border-start ps-2 nav-item align-items-center d-flex">
+                    <label>
+                        <strong class="d-none">View:</strong>
+                    </label>
+                    <i class="bi bi-grid"></i>
+                    <div class="ms-2 form-switch">
+                        <input class="form-check-input" type="checkbox" role="switch" id="layoutSwitcher" title="Layout switcher"/>
+                    </div>
+                    <i class="bi bi-list"></i>
+                </div>
+
+                <div class="border-start ps-2 nav-item align-items-center d-flex">
+                    <label>
+                        <strong class="d-none">Theme:</strong>
+                    </label>
+                    <i class="bi bi-brightness-high"></i>
+                    <div class="ms-2 form-switch">
+                        <input class="form-check-input" type="checkbox" role="switch" id="themingSwitcher" title="Theme switcher"/>
+                    </div>
+                    <i class="bi bi-moon"></i>
+                </div>
             </div>
         </div>
     </div>

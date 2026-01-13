@@ -107,14 +107,14 @@ layout: default
             <!-- Grid View -->
             <div class="book__grid">
                 <div class="book__cover" title="{{ book.title }}">
-                    <img src="/assets/covers/{{ catalog_name }}/{{ book.cover }}" loading="lazy" alt="{{ book.title }}" class="d-block mx-auto shadow" width="250" height="auto"/>
+                    <img src="/assets/covers/{{ catalog_name }}/{{ book.cover }}" loading="lazy" alt="{{ book.title }}" class="d-block mx-auto" width="250" height="auto"/>
                 </div>
             </div>
 
             <!-- Table View -->
             <div class="book__table">
                 <div class="book-cell book-cell--cover">
-                    <img src="/assets/covers/{{ catalog_name }}/{{ book.cover }}" loading="lazy" alt="{{ book.title }}" class="d-block mx-auto shadow"/>
+                    <img src="/assets/covers/{{ catalog_name }}/{{ book.cover }}" loading="lazy" alt="{{ book.title }}" class="d-block mx-auto"/>
                 </div>
                 <div class="book-cell book-cell--title">{{ book.title }}</div>
                 <div class="book-cell book-cell--authors">

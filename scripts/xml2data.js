@@ -214,13 +214,21 @@ async function processData(options) {
         return book;
     }));
 
+    // Filter out "My Clippings" book
+    const filteredBooks = books.filter(book => book.title !== 'My Clippings');
+    const excludedCount = books.length - filteredBooks.length;
+
+    if (excludedCount > 0) {
+        console.log(`⚠ Excluded ${excludedCount} book(s): "My Clippings"`);
+    }
+
     // Create output data structure
     const output = {
         catalog_title: catalogTitle || options.name.charAt(0).toUpperCase() + options.name.slice(1),
         catalog_name: options.name,
-        total_books: books.length,
+        total_books: filteredBooks.length,
         last_updated: new Date().toISOString(),
-        books: books
+        books: filteredBooks
     };
 
     // Write output file
@@ -230,7 +238,7 @@ async function processData(options) {
     fs.mkdirSync(options.output, { recursive: true });
     fs.writeFileSync(outputPath, JSON.stringify(output, null, 2));
 
-    console.log(`✓ Successfully processed ${books.length} books`);
+    console.log(`✓ Successfully processed ${filteredBooks.length} books`);
     console.log(`✓ Output written to ${outputPath}`);
 
     // Generate catalog page in _catalogs/ collection

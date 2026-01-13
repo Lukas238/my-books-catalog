@@ -57,11 +57,20 @@ body {
                 visibility: visible;
             }
 
+            // Default hover shows asc (up arrow)
             &:hover:not(.asc):not(.desc):after {
-                content: "\F145";
+                content: "\F124";
                 visibility: visible;
             }
+        }
 
+        // Buttons that start with desc - show desc arrow on hover
+        #sort-added:hover:not(.asc):not(.desc):after,
+        #sort-date:hover:not(.asc):not(.desc):after {
+            content: "\F145";
+        }
+
+        .btn-sort {
             &.asc,
             &.desc {
                 opacity: 1;

@@ -19,6 +19,23 @@ function toggleDrawerState(isOpen) {
     }
 }
 
+// Function to set active book
+function setActiveBook(bookId) {
+    // Remove active class from all books
+    books.forEach(b => b.classList.remove('active'));
+
+    // Add active class to selected book
+    const activeBook = Array.from(books).find(b => b.getAttribute('data-id') === bookId);
+    if (activeBook) {
+        activeBook.classList.add('active');
+    }
+}
+
+// Function to clear active book
+function clearActiveBook() {
+    books.forEach(b => b.classList.remove('active'));
+}
+
 /**
  * URL State Management
  * Saves and restores: sort, order, search filter, and open book
@@ -208,6 +225,9 @@ books.forEach(book => {
             // Also scroll to the top of the preview content after the book is loaded
             bookPreviewConten.scrollTo({ top: 0, behavior: 'smooth' });
 
+            // Set active book
+            setActiveBook(book.getAttribute('data-id'));
+
             // Toggle drawer state for grid view adjustment
             toggleDrawerState(true);
 
@@ -222,6 +242,7 @@ const closePreviewBtn = document.querySelector('#book-preview .btn-close');
 if (closePreviewBtn) {
     closePreviewBtn.addEventListener('click', () => {
         bookPreview.classList.remove('show');
+        clearActiveBook();
         toggleDrawerState(false);
         updateURLHash();
     });
@@ -231,6 +252,7 @@ if (closePreviewBtn) {
 const bookPreviewEl = document.querySelector('#book-preview');
 if (bookPreviewEl) {
     bookPreviewEl.addEventListener('hidden.bs.collapse', () => {
+        clearActiveBook();
         toggleDrawerState(false);
         updateURLHash();
     });
@@ -257,6 +279,8 @@ if (headerPrevBtn) {
         const clickTarget = prevBook.querySelector('.book__cover, .book-cell--cover');
         if (clickTarget) {
             clickTarget.click();
+            // Set active book
+            setActiveBook(prevBook.getAttribute('data-id'));
             // Scroll to book if out of view
             prevBook.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
@@ -284,6 +308,8 @@ if (headerNextBtn) {
         const clickTarget = nextBook.querySelector('.book__cover, .book-cell--cover');
         if (clickTarget) {
             clickTarget.click();
+            // Set active book
+            setActiveBook(nextBook.getAttribute('data-id'));
             // Scroll to book if out of view
             nextBook.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }

@@ -57,10 +57,9 @@ body {
 #controls-area {
     @media (max-width: 575px) {
         gap: 0.25rem !important;
-        
+
         .border-start {
             border-left: none !important;
-            padding-left: 0.25rem !important;
         }
     }
 }

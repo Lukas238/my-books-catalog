@@ -16,7 +16,7 @@ layout: default
             </div>
 
             <!-- Sort and reset controls -->
-            <div id="filters-area" class="d-flex align-items-center flex-wrap gap-2">
+            <div id="filters-area" class="d-flex align-items-center flex-wrap">
                 <div id="sort-box" class="d-inline-block">
                     <button id="sort-title" type="button" class="p-1 btn btn-sm btn-sort" title="Sort by Title">
                         <i class="bi bi-card-heading d-sm-none"></i>
@@ -30,9 +30,6 @@ layout: default
                         <i class="bi bi-calendar-date d-sm-none"></i>
                         <span class="d-none d-sm-inline">Date</span>
                     </button>
-                </div>
-
-                <div class="ms-2">
                     <button id="sort-reset" type="button" class="btn btn-sm btn-reset" title="Reset filters">
                         <i class="bi bi-trash"></i>
                     </button>
@@ -44,20 +41,20 @@ layout: default
 
             <!-- Right side controls -->
             <div id="controls-area" class="d-flex align-items-center gap-2">
-                <div class="view-qr border-start ps-2">
+                <div class="view-qr border-start ps-md-2">
                     <button type="button" class="btn btn-sm" data-bs-toggle="modal" data-bs-target="#qr-modal" title="View catalog QR code">
                         <i class="bi bi-qr-code"></i>
                     </button>
                 </div>
 
                 <!-- Mobile: Single icon buttons -->
-                <div id="views-box-mobile" class="border-start ps-2 d-sm-none">
+                <div id="views-box-mobile" class="border-start ps-md-2 d-sm-none">
                     <button type="button" class="btn btn-sm" id="layoutSwitcherMobile" title="Toggle view">
                         <i class="bi bi-grid"></i>
                     </button>
                 </div>
 
-                <div id="theme-box-mobile" class="border-start ps-2 d-sm-none">
+                <div id="theme-box-mobile" class="border-start ps-md-2 d-sm-none">
                     <button type="button" class="btn btn-sm" id="themingSwitcherMobile" title="Toggle theme">
                         <i class="bi bi-brightness-high"></i>
                     </button>

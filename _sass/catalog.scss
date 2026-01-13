@@ -212,6 +212,19 @@ body[data-bs-theme="dark"] {
         font-style: italic;
         font-size: 0.8em;
     }
+
+    .filter-link {
+        cursor: pointer;
+        color: inherit;
+        text-decoration: underline;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 2px;
+
+        &:hover {
+            text-decoration: underline;
+            opacity: 0.8;
+        }
+    }
 }
 
 #book-preview {

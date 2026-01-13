@@ -150,6 +150,14 @@ body[data-bs-theme="dark"] {
         a {
             color: var(--bs-list-group-color) !important;
         }
+
+        .book_description {
+            color: rgba(255, 255, 255, 0.85);
+
+            * {
+                color: inherit;
+            }
+        }
     }
 
     #book-preview .book-preview__header {

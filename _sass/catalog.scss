@@ -15,37 +15,57 @@ body {
     }
 
     #sort-box {
-        .btn-sort {
-            padding: 0 0.2em !important;
-            opacity: .5;
+        font-size: 0;
 
-            &:after {
-                content: '';
-                vertical-align: middle;
-                display: inline-block;
-                height: 17px;
-                width: 10px;
-                line-height: 1em;
+        .btn-sort {
+            padding: 0 !important;
+            padding-right: 0.7em !important;
+            padding-left: 0.2em !important;
+            min-width: 1.5em;
+            opacity: .5;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            line-height: 1.2rem;
+
+            i {
+                flex-shrink: 0;
             }
 
             &:after {
-                content: "\F124";
+                content: '';
+                position: absolute;
+                right: 2px;
+                bottom: 0;
+                vertical-align: middle;
+                height: 17px;
+                width: 8px;
+                line-height: 1em;
                 font-family: "bootstrap-icons";
+                visibility: hidden;
+            }
+
+            &.asc:after {
+                content: "\F124";
+                visibility: visible;
             }
 
             &.desc:after {
                 content: "\F145";
-                font-family: "bootstrap-icons";
+                visibility: visible;
             }
 
             &.asc,
             &.desc {
                 opacity: 1;
-
-                &:after {
-                    display: inline-block;
-                }
             }
+        }
+
+        #sort-author {
+            padding-right: 0.4em !important;
+            padding-left: 0.1em !important;
         }
     }
 

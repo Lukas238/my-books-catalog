@@ -2,7 +2,7 @@
   "catalog_title": "Maripaz's eBooks Library",
   "catalog_name": "maripaz",
   "total_books": 25,
-  "last_updated": "2026-01-12T22:47:35.217Z",
+  "last_updated": "2026-01-13T00:32:05.381Z",
   "books": [
     {
       "id": "1",
@@ -451,13 +451,8 @@
         "Drama",
         "Histórico"
       ],
-      "series": {
-        "_": "Episodios de una guerra interminable",
-        "$": {
-          "index": "3.0"
-        }
-      },
-      "series_index": null,
+      "series": "Episodios de una guerra interminable",
+      "series_index": 3,
       "comments": "<div>\n<p>En los buenos tiempos, las chicas se casan por amor. En los malos, no siempre pueden elegir. En el Madrid recién salido de la guerra civil, sobrevivir es un duro oficio cotidiano. Especialmente para Manolita, una joven de dieciocho años que, con su padre y su madrastra encarcelados, y su hermano Antonio escondido en un tablao flamenco, tiene que hacerse cargo de su hermana Isabel y de otros tres más pequeños. A Antonio se le ocurrirá una manera desesperada de prolongar la resistencia en los años más terribles de la represión: utilizar unas multicopistas que nadie sabe poner en marcha para imprimir propaganda clandestina. Y querrá que sea su hermana Manolita, la señorita \"Conmigo No Contéis\", quien visite a un preso que puede darles la clave de su funcionamiento. Manolita no sabe que ese muchacho tímido y sin aparente atractivo va a ser en realidad un hombre determinante en su vida, y querrá visitarlo de nuevo, después de varios periplos, en el destacamento penitenciario de El Valle de los Caídos. Pero antes deberá descubrir quién es el delator que merodea por el barrio. Las tres bodas de Manolita, de Almudena Grandes, es una emotiva historia coral sobre los años de pobreza y desolación en la inmediata posguerra, y un tapiz inolvidable de vidas y destinos, de personajes reales e imaginados. Una novela memorable sobre la red de solidaridad que tejen muchas personas, desde los artistas de un tablao flamenco hasta las mujeres que hacen cola en la cárcel para visitar a los presos, o los antiguos amigos del colegio de su hermano, para proteger a una joven con coraje. Con Inés y la alegría Almudena Grandes inauguró la serie Episodios de una Guerra Interminable, a la que pertenecen El lector de Julio Verne y ahora Las tres bodas de Manolita. (Fuente: La Casa del Libro).</p></div>",
       "timestamp": "2025-02-03T17:19:33-03:00",
       "languages": "spa",
@@ -623,13 +618,8 @@
         "Historical",
         "Romance"
       ],
-      "series": {
-        "_": "El Café del Ángel",
-        "$": {
-          "index": "4.0"
-        }
-      },
-      "series_index": null,
+      "series": "El Café del Ángel",
+      "series_index": 4,
       "comments": "<div>\n<p>La autora de «La Villa de las Telas» vuelve con una cautivadora nueva saga familiar en torno a un emblemático café tras la Segunda Guerra Mundial. Un legendario café Una familia valiente Un amor prohibido Wiesbaden, 1945. La joven Hilde apenas puede creer su suerte: la guerra ha terminado y el Café del Ángel se ha salvado milagrosamente. Hilde sueña con volver a convertir el negocio familiar en el glamouroso lugar que reunía a artistas y personalidades de la ciudad. Pero los primeros conflictos no tardan en surgir cuando una bella joven entra en el café y se presenta como su prima Luisa. ¿Quién es esa enigmática mujer que ha luchado por llegar hasta allí desde Prusia Oriental? Entre las dos jóvenes crece una rivalidad que amenaza con envenenar el ambiente del café. Hasta que ambas se dan cuenta de que tienen algo en común: un secreto de la guerra que les ha perseguido hasta el día de hoy...</p></div>",
       "timestamp": "2025-04-25T18:40:40-03:00",
       "languages": "spa",
@@ -661,13 +651,8 @@
         "General",
         "Historical"
       ],
-      "series": {
-        "_": "El Café del Ángel",
-        "$": {
-          "index": "4.0"
-        }
-      },
-      "series_index": null,
+      "series": "El Café del Ángel",
+      "series_index": 4,
       "comments": "<div>\n<p>La esperada cuarta entrega de la fascinante saga familiar de Anne Jacobs, autora de La Villa de las Telas. Wiesbaden, 1961. Ahora que Hilde Koch ha modernizado el café familiar con mucho cariño y lo regenta con dedicación, de pronto su hermano Wilhelm pretende disputarle la dirección del negocio. Su gran sueño de labrarse una carrera en el cine ha fracasado, mientras que su mujer, Karin, goza de un gran éxito como actriz. Tampoco en el viñedo de Jean-Jacques, el marido de Hilde, van muy bien las cosas. Y quien sale en su ayuda es nada menos que el rebelde Mischa, que entre las viñas no solo encuentra un trabajo, sino también algo que en absoluto esperaba: el amor. Sin embargo, por Wiesbaden empieza a correr un desagradable rumor que hace que todos teman por la supervivencia del café...</p></div>",
       "timestamp": "2025-04-25T18:40:40-03:00",
       "languages": "spa",
@@ -698,13 +683,8 @@
         "Romance",
         "prose_history"
       ],
-      "series": {
-        "_": "El Café del Ángel",
-        "$": {
-          "index": "2.0"
-        }
-      },
-      "series_index": null,
+      "series": "El Café del Ángel",
+      "series_index": 2,
       "comments": "<div>\n<p style=\"font-weight: bold\">La autora de «La Villa de las Telas» vuelve con la segunda entrega de una emocionante nueva trilogía en torno a una familia que regenta un evocador café alemán tras la Segunda Guerra Mundial. </p>\n<p><strong>Wiesbaden, 1951.</strong> Al Café del Ángel le ha salido competencia. Junto al tradicional establecimiento de la familia Koch ha abierto otro más el Café del Rey. Mientras Hilde Koch intenta en vano convencer a sus padres para que modernicen el local, su gran amor, por el que tanto ha luchado, parece a punto de resquebrajarse. </p>\n<p>A su hermano August tampoco le van mejor las cosas. Cuando regresa a Alemania, tras haber sido prisionero de guerra de los rusos, comienza a sentirse atraído precisamente por una misteriosa joven rusa, cuya llegada amenaza con dividir a la familia...</p></div>",
       "timestamp": "2025-04-25T18:40:40-03:00",
       "languages": "spa",
@@ -734,13 +714,8 @@
         "Historical",
         "Romance"
       ],
-      "series": {
-        "_": "El Café del Ángel",
-        "$": {
-          "index": "3.0"
-        }
-      },
-      "series_index": null,
+      "series": "El Café del Ángel",
+      "series_index": 3,
       "comments": "<div>\n<p style=\"font-weight: bold\">La autora de «La Villa de las Telas» vuelve a emocionar con el tercer volumen de su exitosa saga familiar ambientada en un evocador café alemán de la posguerra. </p>\n<p><strong>Wiesbaden, 1959</strong>. Hilde, la hija de la familia, dirige ahora el Café del Ángel y ha llevado un soplo de aire fresco al tradicional establecimiento. Además, el nuevo pastelero resulta ser todo un descubrimiento y sus tentadoras creaciones reposteras atraen cada vez a más clientes. </p>\n<p>Pero Hilde y su prima Luisa tienen motivos para temer por su felicidad Jean-Jacques, el marido de Hilde, pasa mucho tiempo con la guapa francesa que trabaja en sus viñedos, y Fritz, el esposo de Luisa, parece ocultarle algo. De repente, la llegada de una carta abre viejas heridas de los tiempos de la guerra, y todos los miembros de la familia van a ser puestos a prueba. </p>\n<p>El futuro del Café del Ángel está en juego... </p>\n<p style=\"font-weight: bold\">Los lectores han dicho... </p>\n<p>«El estilo ameno y sencillo de la autora, la intensidad de las emociones, la pasión que mueve a sus personajes y el esmerado contexto histórico componen una atractiva lectura, de las que conmueven y cautivan a lo largo de todas sus páginas». </p>\n<p>Blog <em>Me gustan los libros</em></p></div>",
       "timestamp": "2025-04-25T18:40:40-03:00",
       "languages": "spa",
@@ -772,13 +747,8 @@
         "General",
         "Historical"
       ],
-      "series": {
-        "_": "El Café del Ángel",
-        "$": {
-          "index": "5.0"
-        }
-      },
-      "series_index": null,
+      "series": "El Café del Ángel",
+      "series_index": 5,
       "comments": "<div>\n<p style=\"font-weight: bold\">Nuevos desafíos para la familia Koch y un viaje que despierta anhelos profundamente escondidos en la quinta y emocionante entrega de la nueva saga familiar de Anne Jacobs, autora de <em>La villa de las telas.</em> </p>\n<p><strong>Wiesbaden, 1965.</strong> El Café del Ángel vive años prósperos bajo la dirección de Hilde y necesita con urgencia más personal. Pero cuando Hilde contrata a un nuevo camarero italiano, Giuseppe, a sus padres les resulta difícil aceptar su mentalidad «sureña». También hay turbulencias en el matrimonio de su hermano, Willi, que triunfa en el teatro de Wiesbaden mientras coquetea con una guapa compañera. Cuando la situación en el café llega a un punto insostenible, Hilde decide hacer las maletas. Inspirada por las descripciones de Giuseppe de su tierra natal, parte hacia Italia con su cuñada Svetlana. Ambas anhelan tomarse un respiro, pero ¿realmente van a dejar el café en manos de la familia? El sol del verano y el mar azul pueden hacer olvidar todas las dudas...</p></div>",
       "timestamp": "2025-04-25T18:45:42-03:00",
       "languages": "spa",

@@ -57,6 +57,11 @@ body {
                 visibility: visible;
             }
 
+            &:hover:not(.asc):not(.desc):after {
+                content: "\F145";
+                visibility: visible;
+            }
+
             &.asc,
             &.desc {
                 opacity: 1;

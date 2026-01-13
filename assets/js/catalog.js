@@ -186,10 +186,29 @@ document.querySelector('#layoutSwitcher').addEventListener('click', () => {
     updateLayout();
 });
 
+// Mobile layout button
+document.querySelector('#layoutSwitcherMobile').addEventListener('click', function() {
+    const checkbox = document.querySelector('#layoutSwitcher');
+    checkbox.checked = !checkbox.checked;
+    updateLayout();
+
+    // Update icon
+    const icon = this.querySelector('i');
+    icon.className = checkbox.checked ? 'bi bi-list' : 'bi bi-grid';
+});
+
 function loadLayoutFromCookie() {
     const layoutCookie = document.cookie.split('; ').find(row => row.startsWith('layout='));
     if (layoutCookie) {
-        document.querySelector('#layoutSwitcher').checked = layoutCookie.split('=')[1] === 'list';
+        const isListView = layoutCookie.split('=')[1] === 'list';
+        document.querySelector('#layoutSwitcher').checked = isListView;
+
+        // Update mobile icon
+        const mobileIcon = document.querySelector('#layoutSwitcherMobile i');
+        if (mobileIcon) {
+            mobileIcon.className = isListView ? 'bi bi-list' : 'bi bi-grid';
+        }
+
         updateLayout();
     }
 }
@@ -208,10 +227,29 @@ document.querySelector('#themingSwitcher').addEventListener('click', () => {
     updateTheme();
 });
 
+// Mobile theme button
+document.querySelector('#themingSwitcherMobile').addEventListener('click', function() {
+    const checkbox = document.querySelector('#themingSwitcher');
+    checkbox.checked = !checkbox.checked;
+    updateTheme();
+
+    // Update icon
+    const icon = this.querySelector('i');
+    icon.className = checkbox.checked ? 'bi bi-moon' : 'bi bi-brightness-high';
+});
+
 function loadThemeFromCookie() {
     const themeCookie = document.cookie.split('; ').find(row => row.startsWith('theme='));
     if (themeCookie) {
-        document.querySelector('#themingSwitcher').checked = themeCookie.split('=')[1] === 'dark';
+        const isDarkMode = themeCookie.split('=')[1] === 'dark';
+        document.querySelector('#themingSwitcher').checked = isDarkMode;
+
+        // Update mobile icon
+        const mobileIcon = document.querySelector('#themingSwitcherMobile i');
+        if (mobileIcon) {
+            mobileIcon.className = isDarkMode ? 'bi bi-moon' : 'bi bi-brightness-high';
+        }
+
         updateTheme();
     }
 }

@@ -50,7 +50,21 @@ layout: default
                     </button>
                 </div>
 
-                <div id="views-box" class="border-start ps-2 nav-item align-items-center d-flex">
+                <!-- Mobile: Single icon buttons -->
+                <div id="views-box-mobile" class="border-start ps-2 d-sm-none">
+                    <button type="button" class="btn btn-sm" id="layoutSwitcherMobile" title="Toggle view">
+                        <i class="bi bi-grid"></i>
+                    </button>
+                </div>
+
+                <div id="theme-box-mobile" class="border-start ps-2 d-sm-none">
+                    <button type="button" class="btn btn-sm" id="themingSwitcherMobile" title="Toggle theme">
+                        <i class="bi bi-brightness-high"></i>
+                    </button>
+                </div>
+
+                <!-- Desktop: Switch controls -->
+                <div id="views-box" class="border-start ps-2 nav-item align-items-center d-none d-sm-flex">
                     <label>
                         <strong class="d-none">View:</strong>
                     </label>
@@ -61,7 +75,7 @@ layout: default
                     <i class="bi bi-list"></i>
                 </div>
 
-                <div class="border-start ps-2 nav-item align-items-center d-flex">
+                <div class="border-start ps-2 nav-item align-items-center d-none d-sm-flex">
                     <label>
                         <strong class="d-none">Theme:</strong>
                     </label>

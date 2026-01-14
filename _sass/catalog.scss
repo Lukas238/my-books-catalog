@@ -130,6 +130,11 @@ body {
     }
 }
 
+#search-box input {
+    font-family: inherit;
+    font-weight: lighter;
+}
+
 body[data-bs-theme="dark"] {
     #filters-area, #controls-area {
       color: rgba(255,255,255,0.65);

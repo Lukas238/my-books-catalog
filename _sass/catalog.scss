@@ -137,6 +137,11 @@ body {
 
 body.drawer-open {
     overflow: hidden;
+
+    main.container-xxl {
+        height: 100vh;
+        overflow-y: auto;
+    }
 }
 
 body[data-bs-theme="dark"] {

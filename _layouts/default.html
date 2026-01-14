@@ -111,26 +111,28 @@
 </head>
 
 <body>
-    <header id="header" class="container-xxl border-bottom py-4">
-        <a href="/">
-            <h2 class="nav-title">
-                {% if page.layout == 'catalog' %}
-                    {% assign catalog_name = page.url | remove_first: '/' | split: '/' | first %}
-                    {% assign catalog_data = site.data[catalog_name] %}
-                    {% if catalog_data.catalog_title contains "'" or catalog_data.catalog_title contains "Library" or catalog_data.catalog_title contains "eBooks" %}
-                        {{ catalog_data.catalog_title }}
+    <div id="page-wrapper">
+        <header id="header" class="container-xxl border-bottom py-4">
+            <a href="/">
+                <h2 class="nav-title">
+                    {% if page.layout == 'catalog' %}
+                        {% assign catalog_name = page.url | remove_first: '/' | split: '/' | first %}
+                        {% assign catalog_data = site.data[catalog_name] %}
+                        {% if catalog_data.catalog_title contains "'" or catalog_data.catalog_title contains "Library" or catalog_data.catalog_title contains "eBooks" %}
+                            {{ catalog_data.catalog_title }}
+                        {% else %}
+                            {{ catalog_data.catalog_title }} · <span class="fw-lighter">Book Catalog</span>
+                        {% endif %}
                     {% else %}
-                        {{ catalog_data.catalog_title }} · <span class="fw-lighter">Book Catalog</span>
+                        Lucas Dasso · <span class="fw-lighter">Book Catalogs</span>
                     {% endif %}
-                {% else %}
-                    Lucas Dasso · <span class="fw-lighter">Book Catalogs</span>
-                {% endif %}
-            </h2>
-        </a>
-    </header>
+                </h2>
+            </a>
+        </header>
 
-    <div class="content-wrapper {% if page.layout == 'catalog' %}wide{% else %}narrow{% endif %}">
-        {{ content }}
+        <div class="content-wrapper {% if page.layout == 'catalog' %}wide{% else %}narrow{% endif %}">
+            {{ content }}
+        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

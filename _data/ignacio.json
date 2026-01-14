@@ -1,8 +1,8 @@
 {
-  "catalog_title": "Ignacio",
+  "catalog_title": "Ignacio's eBooks Library",
   "catalog_name": "ignacio",
   "total_books": 5,
-  "last_updated": "2026-01-14T02:40:38.989Z",
+  "last_updated": "2026-01-14T17:58:32.876Z",
   "books": [
     {
       "id": "1",
@@ -31,7 +31,7 @@
       "formats": [
         {
           "type": "EPUB",
-          "url": "https://drive.google.com/uc?export=download&id=1E7N__uGjmaNya-CM_N3peqwaqats9J-J"
+          "url": "https://drive.google.com/uc?export=download&id=1XlpqMH_U3enMmocoS5r3Zdb2ynuSj8Mp"
         }
       ]
     },
@@ -61,7 +61,7 @@
       "formats": [
         {
           "type": "EPUB",
-          "url": "https://drive.google.com/uc?export=download&id=1ZoFKyBhjSLz8YIrma-Llrvrk5MldNmen"
+          "url": "https://drive.google.com/uc?export=download&id=1b1F5z1fetobU0OS0sj8fhOVPs9DHaGf0"
         }
       ]
     },
@@ -92,7 +92,7 @@
       "formats": [
         {
           "type": "EPUB",
-          "url": "https://drive.google.com/uc?export=download&id=1q8qKP07EgfPJSjwu-Dp7qOjIp_KqmZ1-"
+          "url": "https://drive.google.com/uc?export=download&id=1ibDvCMkUUs3Tjz0ME2hSqiysn-YFwhhn"
         }
       ]
     },
@@ -123,7 +123,7 @@
       "formats": [
         {
           "type": "EPUB",
-          "url": "https://drive.google.com/uc?export=download&id=1l2pZgsyrLJALSlkzqHaLBmL60abRxqq9"
+          "url": "https://drive.google.com/uc?export=download&id=1my1J7WoriRKKQt6gNYgJz7VDjRtUw7Ly"
         }
       ]
     },
@@ -153,11 +153,11 @@
       "formats": [
         {
           "type": "EPUB",
-          "url": "https://drive.google.com/uc?export=download&id=17yDxRMI_pSWLOQfrVYmpnDZkoG8QilTo"
+          "url": "https://drive.google.com/uc?export=download&id=1-nrI3rSQ6v_JOCju_COLuGwYCHoA9jnh"
         },
         {
           "type": "MOBI",
-          "url": "https://drive.google.com/uc?export=download&id=1hXy9YHdd7JvHpm03_2tF46op4eg--yU4"
+          "url": "https://drive.google.com/uc?export=download&id=1DkwZO8N39xe0Gz1mmnQI10x-CnoK3y2O"
         }
       ]
     }

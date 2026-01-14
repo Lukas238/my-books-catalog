@@ -1,8 +1,8 @@
 {
-  "catalog_title": "Cata",
+  "catalog_title": "Cata's eBooks Library",
   "catalog_name": "cata",
-  "total_books": 15,
-  "last_updated": "2026-01-14T02:40:38.974Z",
+  "total_books": 23,
+  "last_updated": "2026-01-14T17:58:32.867Z",
   "books": [
     {
       "id": "1",
@@ -31,11 +31,11 @@
       "formats": [
         {
           "type": "EPUB",
-          "url": "https://drive.google.com/uc?export=download&id=1fTzX8A43qsGMenubrgCERm2wY5cDihp0"
+          "url": "https://drive.google.com/uc?export=download&id=1fYSqPEvwCAL7-QiQthernUWTtBFHYQJ4"
         },
         {
           "type": "MOBI",
-          "url": "https://drive.google.com/uc?export=download&id=1fW-gYx-mMfJsCYyPLu0pGPMLJ8jTjKNi"
+          "url": "https://drive.google.com/uc?export=download&id=1xLrW-1m58wXBIK44V239MjmUtfYCqEr0"
         }
       ]
     },
@@ -72,11 +72,11 @@
       "formats": [
         {
           "type": "EPUB",
-          "url": "https://drive.google.com/uc?export=download&id=1_A3J_9CvzSrlaBjRQ3gHMzUmmj8G-jdz"
+          "url": "https://drive.google.com/uc?export=download&id=1LAhlUXARQjQ9TlyuaNmcSKuIKaNcLmts"
         },
         {
           "type": "MOBI",
-          "url": "https://drive.google.com/uc?export=download&id=1IwfRIei9VBsAatWtcOK7vpt3tmei5Vw0"
+          "url": "https://drive.google.com/uc?export=download&id=1hXOVBXX4sN7PGDtCfqiJOLt_k6tgANXx"
         }
       ]
     },
@@ -104,11 +104,11 @@
       "formats": [
         {
           "type": "EPUB",
-          "url": "https://drive.google.com/uc?export=download&id=1J-95s4OyjrVwOKEqsVIUHWw2dImCGv9T"
+          "url": "https://drive.google.com/uc?export=download&id=1Z8YAQDitdsggbg-oNu5lYoWGrDUsPb8N"
         },
         {
           "type": "MOBI",
-          "url": "https://drive.google.com/uc?export=download&id=1r-gRCLWHLcu8xfuoh2IBsyerwhhGrPdu"
+          "url": "https://drive.google.com/uc?export=download&id=1FsBvs_Wh4c_NNfo2dWcNqNE1SMZnvgwB"
         }
       ]
     },
@@ -139,11 +139,11 @@
       "formats": [
         {
           "type": "EPUB",
-          "url": "https://drive.google.com/uc?export=download&id=1vzFtTnnvna57k0oVG8y6T5L3sSm9cYKO"
+          "url": "https://drive.google.com/uc?export=download&id=1vtaU0-k2QyKEri1DLr5T_0zmYlT4nFyb"
         },
         {
           "type": "MOBI",
-          "url": "https://drive.google.com/uc?export=download&id=1bCmoIFSQHgd7AphjdglBHgIU2dCFmfrS"
+          "url": "https://drive.google.com/uc?export=download&id=12ZEkdYWGEebzY9IOtCI4hyMfeVzzNprC"
         }
       ]
     },
@@ -173,11 +173,11 @@
       "formats": [
         {
           "type": "EPUB",
-          "url": "https://drive.google.com/uc?export=download&id=1Z695o25DbQEaL1PS_xI3LsS2bv2pKyuS"
+          "url": "https://drive.google.com/uc?export=download&id=1-uqSN1nPWO24elGE8W5tjzLnUrW_jcYf"
         },
         {
           "type": "MOBI",
-          "url": "https://drive.google.com/uc?export=download&id=1YmezP15OPy47RKTXwL3rUx8Bkyj3fk2V"
+          "url": "https://drive.google.com/uc?export=download&id=173bt_PzypiJp6EZ-1jDx55wx9fQVs6JP"
         }
       ]
     },
@@ -214,11 +214,11 @@
       "formats": [
         {
           "type": "EPUB",
-          "url": "https://drive.google.com/uc?export=download&id=1NGgf-uz7w8qhP1wHgS_Z7eGckiLrithO"
+          "url": "https://drive.google.com/uc?export=download&id=1t03B2XNYv9RLMGuT0JnXSkhpfU6HoVAu"
         },
         {
           "type": "MOBI",
-          "url": "https://drive.google.com/uc?export=download&id=1VYGM4CUaAJO2VrwA_WNhS1Q6SSJCB4Qg"
+          "url": "https://drive.google.com/uc?export=download&id=1Uo6OmdlLFSDiVc8G0w5rWgLYOZJLkIrE"
         }
       ]
     },
@@ -252,11 +252,11 @@
       "formats": [
         {
           "type": "EPUB",
-          "url": "https://drive.google.com/uc?export=download&id=1uJgzgYg5frFTFx4RTNRsayY4KfVvIzI9"
+          "url": "https://drive.google.com/uc?export=download&id=1OB3Ihc9C0jb2IElR3RvO9e9kaDQvEuat"
         },
         {
           "type": "MOBI",
-          "url": "https://drive.google.com/uc?export=download&id=1x3CnJmDtK3YOBo1g3jS59c6rEQ9AD5wA"
+          "url": "https://drive.google.com/uc?export=download&id=1tbM8xP_oEBwSQNG9ltLM_nI9DQjK8wPj"
         }
       ]
     },
@@ -287,11 +287,11 @@
       "formats": [
         {
           "type": "EPUB",
-          "url": "https://drive.google.com/uc?export=download&id=1LPbr-HEgrt8-dxUJ4hSyR9fd_PyxfQEF"
+          "url": "https://drive.google.com/uc?export=download&id=17cVzaLJeARxwuXMqF7U2jqsW0e74ksE4"
         },
         {
           "type": "MOBI",
-          "url": "https://drive.google.com/uc?export=download&id=1ieJEnQ9lMwujNyp4zNrqCG6F9EuZjuej"
+          "url": "https://drive.google.com/uc?export=download&id=1yyr33VnXCn0VL2ERcrmGfY4BRW3NvdXz"
         }
       ]
     },
@@ -319,11 +319,11 @@
       "formats": [
         {
           "type": "EPUB",
-          "url": "https://drive.google.com/uc?export=download&id=1zlwOca6wWMfNU_IgY6dMiBH87G3sQnvN"
+          "url": "https://drive.google.com/uc?export=download&id=1_7NMlpSJW9YMwsbW8sK-JzaXEJ9-2wZe"
         },
         {
           "type": "MOBI",
-          "url": "https://drive.google.com/uc?export=download&id=1bCiOj2FcRBZWyyMFUQQ-FMr56I3Coe-7"
+          "url": "https://drive.google.com/uc?export=download&id=1284uxRrp3PXRz2YFbIT-nXoJPM_CIXOC"
         }
       ]
     },
@@ -351,11 +351,11 @@
       "formats": [
         {
           "type": "EPUB",
-          "url": "https://drive.google.com/uc?export=download&id=1wwt3ll5K3OuMrkA4t_lsdPjFe-o1jAEW"
+          "url": "https://drive.google.com/uc?export=download&id=1PN1xWvsd8U3z8lff26H6y3Xwm9bx1YGp"
         },
         {
           "type": "MOBI",
-          "url": "https://drive.google.com/uc?export=download&id=1FbbJcHMQVli0hKNx81EVsGw0btsL0Wn2"
+          "url": "https://drive.google.com/uc?export=download&id=1NZilJLBQwmvig5XXUuJOfyy8Yu91FXFN"
         }
       ]
     },
@@ -387,11 +387,11 @@
       "formats": [
         {
           "type": "EPUB",
-          "url": "https://drive.google.com/uc?export=download&id=1NaaaSjqMDl7yYujNVD5zLZiNkJZoQWE1"
+          "url": "https://drive.google.com/uc?export=download&id=171dV_zA7vCQN-ZqEyUkbqUB4ZSdwmr3y"
         },
         {
           "type": "MOBI",
-          "url": "https://drive.google.com/uc?export=download&id=1TJIBA-bMxg0l-JeSteqGWU8zEigdLc9_"
+          "url": "https://drive.google.com/uc?export=download&id=1Vl43Fr75PFd_NnMV-VVZJX0IarjjI0M4"
         }
       ]
     },
@@ -425,11 +425,11 @@
       "formats": [
         {
           "type": "EPUB",
-          "url": "https://drive.google.com/uc?export=download&id=1WGj5xnXJBpZNky538uESqxDy4dhppn6d"
+          "url": "https://drive.google.com/uc?export=download&id=1lTVsJMi0wvtnLly__hsDDEjJISdG7mYW"
         },
         {
           "type": "MOBI",
-          "url": "https://drive.google.com/uc?export=download&id=112UBaVZXZKx6qPWjhLBONUZhf8EVaXUM"
+          "url": "https://drive.google.com/uc?export=download&id=11p_dAhXY0L5XAoPTiOgzX4nBkb247_3m"
         }
       ]
     },
@@ -503,11 +503,11 @@
       "formats": [
         {
           "type": "EPUB",
-          "url": "https://drive.google.com/uc?export=download&id=1FOi0D7KbQDFxfn3IcwMA7sQgyo0Fdxky"
+          "url": "https://drive.google.com/uc?export=download&id=17cThRqlWvbzhUY21sTcXWPtPXp174yVi"
         },
         {
           "type": "MOBI",
-          "url": "https://drive.google.com/uc?export=download&id=19EYR92l1y7M553oObWebAg6QtFbPBMVL"
+          "url": "https://drive.google.com/uc?export=download&id=1AvLbwJMzfWZRT8danvPrdjHaBznCuUEr"
         }
       ]
     },
@@ -542,7 +542,7 @@
       "formats": [
         {
           "type": "EPUB",
-          "url": "https://drive.google.com/uc?export=download&id=1eaGFQWof0Qi66_-lAjXcbx-dbRCTpJPE"
+          "url": "https://drive.google.com/uc?export=download&id=10TBus9ayKBP-JSTurmI0PNwpu8H-XrRq"
         }
       ]
     },
@@ -574,7 +574,276 @@
       "formats": [
         {
           "type": "EPUB",
-          "url": "https://drive.google.com/uc?export=download&id=1WS7LHRc6OhRx6PUHbo6oLMXZQhg0_04F"
+          "url": "https://drive.google.com/uc?export=download&id=14dKUWYCJvenrKU7ACzw64DbRwsUUTwrr"
+        }
+      ]
+    },
+    {
+      "id": "21",
+      "uuid": "f55222c5-668a-42ed-8c2d-4f66e38c215c",
+      "title": "El monje que vendió su Ferrari",
+      "title_sort": "monje que vendió su Ferrari, El",
+      "authors": [
+        "Robin S. Sharma"
+      ],
+      "authors_sort": "Sharma, Robin S.",
+      "publisher": "ePubLibre",
+      "pubdate": "2005-01-01T00:00:00-03:00",
+      "rating": null,
+      "isbn": null,
+      "tags": [
+        "Divulgación",
+        "Autoayuda"
+      ],
+      "series": null,
+      "series_index": null,
+      "comments": "El monje que vendió su Ferrari es la sugerente y emotiva historia de Julian Mantle, un superabogado cuya vida estresante, desequilibrada y obsesionada con el dinero acaba provocándole un infarto. Ese desastre provoca en Julian una crisis espiritual que le lleva a enfrentarse a las grandes cuestiones de la vida. Esperando descubrir los secretos de la felicidad y el esclarecimiento, emprende un extraordinario viaje por el Himalaya para conocer una antiquísima cultura de hombres sabios. Y allí descubre un modo de vida más gozoso, así como un método que le permite liberar todo su potencial y vivir con pasión, determinación y paz. Escrito a modo de fábula, este libro contiene una serie de sencillas y eficaces lecciones para mejorar nuestra manera de vivir. Vigorosa fusión de la sabiduría espiritual de Oriente con los principios del éxito occidentales, muestra paso a paso cómo vivir con más coraje, alegría, equilibrio y satisfacción.",
+      "timestamp": "2026-01-13T18:35:16-03:00",
+      "languages": "spa",
+      "identifiers": null,
+      "cover": "21_ElmonjequevendiosuFerrari.jpg",
+      "formats": [
+        {
+          "type": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=1Ngy3DYgTpQZFiDRb8VLNc2KP0LnoxVfm"
+        }
+      ]
+    },
+    {
+      "id": "22",
+      "uuid": "cd39a7b3-c793-489b-98a6-aa4de8470300",
+      "title": "El método para vivir sin miedo",
+      "title_sort": "método para vivir sin miedo, El",
+      "authors": [
+        "Rafael Santandreu"
+      ],
+      "authors_sort": "Santandreu, Rafael",
+      "publisher": "Penguin Random House Grupo Editorial España",
+      "pubdate": "2023-04-12T19:00:00-03:00",
+      "rating": null,
+      "isbn": "9788425365515",
+      "tags": [
+        "Self-Help",
+        "Personal Growth",
+        "Self-Esteem",
+        "Psychology",
+        "Psychopathology",
+        "Anxieties & Phobias",
+        "Body; Mind & Spirit",
+        "Healing",
+        "General"
+      ],
+      "series": null,
+      "series_index": null,
+      "comments": "<div>\n<p><strong>Desde la publicación de</strong> Sin miedo <strong>y su famoso método de cuatro pasos, Rafael Santandreu empezó a recopilar en su canal de YouTube maravillosas historias de superación de la ansiedad, el trastorno obsesivo-compulsivo (TOC) y la hipocondría. Hoy esos testimonios superan el centenar (y siguen subiendo).</strong></p>\n<p><em>El método para vivir sin miedo</em> recoge una selección de esos testimonios, los pasos que dieron sus protagonistas y las dificultades que encontraron en su camino de curación. Se trata de jóvenes y mayores de todo tipo (médicos, empresarios, estudiantes...) que tienen en común haber realizado el trabajo de desarrollo personal más potente que existe. Esta selección de historias, junto con mi explicación del método y de cada caso en particular, tiene una poderosa intención, convencerte de algo que todos repiten: «Si yo pude hacerlo, tú también puedes».</p>\n<p>Su éxito es algo que lograron ellos y solo ellos, y así te lo explican en estas páginas y en los vídeos de YouTube asociados. No hay trampa ni cartón en lo que hicieron para recuperarse. Sólo mucho esfuerzo, un método muy claro y perseverancia a raudales. La salida está ahí, a tu alcance.</p>\n<h3>About the Author</h3>\n<p><strong>Rafael Santandreu</strong> es uno de los psicólogos más prestigiosos del país. Tras llevar a cabo sus estudios en España e Inglaterra, fue profesor en la Universitat Ramon Llull. En la década del 2000, trabajó con el célebre psicólogo Giorgio Nardone en su Centro di Terapia Strategica de Arezzo, en Italia. En la actualidad, reparte su trabajo entre la psicoterapia con pacientes -su gran pasión- y la formación de médicos y psicólogos. A sus consultas de Barcelona y Madrid acuden pacientes de todo el mundo de forma presencial o a través de videollamada.</p>\n<p>Sus libros, <em>El arte de no amargarse la vida, Las gafas de la felicidad, Ser feliz en Alaska,</em> <em>Nada es tan terrible</em> y <em>Sin miedo</em> , se han convertido en referentes internacionales de la psicología.</p>\n<p>--This text refers to an out of print or unavailable edition of this title.</p></div>",
+      "timestamp": "2026-01-13T18:35:16-03:00",
+      "languages": "spa",
+      "identifiers": "amazon:B0BX4SW2LV,google:Qt2wEAAAQBAJ,isbn:9788425365515",
+      "cover": "22_Elmetodoparavivirsinmiedo.jpg",
+      "formats": [
+        {
+          "type": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=1-0lT2phEZ5n2WDFGl5pRUTyIDURRs_AB"
+        }
+      ]
+    },
+    {
+      "id": "23",
+      "uuid": "f2ba73db-ce39-4f9d-bb51-75dd460b5ae8",
+      "title": "Pack Borja Vilaseca (Contiene: Encantado De Conocerme | Qué Harías Si No Tuvieras Miedo)",
+      "title_sort": "Pack Borja Vilaseca (Contiene: Encantado De Conocerme | Qué Harías Si No Tuvieras Miedo)",
+      "authors": [
+        "Borja Vilaseca"
+      ],
+      "authors_sort": "Vilaseca, Borja",
+      "publisher": "DEBOLS!LLO",
+      "pubdate": "2020-07-10T00:00:00-03:00",
+      "rating": 4,
+      "isbn": "9788466356299",
+      "tags": [
+        "Psychology",
+        "Personality",
+        "Self-Help",
+        "Personal Growth",
+        "Self-Esteem"
+      ],
+      "series": null,
+      "series_index": null,
+      "comments": "<div>\n<p style=\"font-weight: bold\">Dos libros de Borja Vilaseca, el autor del momento. </p>\n<p style=\"font-weight: bold\">Conócete a ti mismo a través del Eneagrama y prepárate para el cambio de era. </p>\n<p style=\"font-weight: bold\">¿A qué estás esperando? Súmate a la revolución. </p>\n<p style=\"font-weight: bold\">Qué harías si no tuvieras miedo </p>\n<p>El mundo para el que fuimos educados está dejando de existir. Somos una generación de transición entre dos la industrial/analógica y la del conocimiento/digital. De ahí que no nos quede más remedio que reinventarnos, cuestionando las viejas creencias y consignas con las que fuimos condicionados. Lo más difícil consiste en vencer el miedo al cambio. Irónicamente, evitar el riesgo y permanecer en nuestra zona de comodidad es lo más arriesgado que podemos hacer. Ha llegado la hora de saltar al vacío y emprender la travesía por el desierto, descubriendo de qué manera podemos desarrollar una profesión útil, creativa y con sentido que aporte mucho valor añadido. Solo así lograremos gozar de ingresos económicos abundantes y recurrentes en esta nueva era. </p>\n<p style=\"font-weight: bold\">Encantado de conocerme </p>\n<p>Hay tantos caminos para conocerse a uno mismo como seres humanos hay en este mundo. Estar verdaderamente bien con nosotros mismos es una simple cuestión de sabiduría. Y aunque es cierto que puede aprenderse sin ayudas externas, existen algunas herramientas psicológicas que contribuyen a facilitar, profundizar y acelerar este proceso de autoconocimiento. El Eneagrama es una de ellas. Es como un manual de instrucciones de la condición humana mediante el que podemos comprender las motivaciones profundas muchas veces inconscientes que hay detrás de nuestras conductas y actitudes. A través de la descripción de nueve tipos de personalidad, nos ayuda a ir más allá del ego y a reconectar con nuestra verdadera esencia.</p></div>",
+      "timestamp": "2026-01-13T18:35:16-03:00",
+      "languages": "spa",
+      "identifiers": "goodreads:54569601,google:T1jwDwAAQBAJ,isbn:9788466356299",
+      "cover": "23_PackBorjaVilaseca.jpg",
+      "formats": [
+        {
+          "type": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=1It9l4AlCz2C5JUhqzb4YqSNYiGwO5DOk"
+        }
+      ]
+    },
+    {
+      "id": "24",
+      "uuid": "6db4a52a-a266-4991-b4df-14690e798cd1",
+      "title": "Tus Zonas Erróneas (Edición de Lujo) / Your Erroneous Zones",
+      "title_sort": "Tus Zonas Erróneas (Edición de Lujo) / Your Erroneous Zones",
+      "authors": [
+        "Wayne W. Dyer"
+      ],
+      "authors_sort": "Dyer, Wayne W.",
+      "publisher": "Penguin Random House Grupo Editorial",
+      "pubdate": "2023-11-21T00:00:00-03:00",
+      "rating": null,
+      "isbn": "9788425363528",
+      "tags": [
+        "Self-Help",
+        "Personal Growth",
+        "Happiness",
+        "Self-Esteem",
+        "Spiritual"
+      ],
+      "series": null,
+      "series_index": null,
+      "comments": "<div>\n<p>El regalo perfecto. El libro de autoayuda más vendido de la historia. Gozar de buena salud es un estado natural, y los medios para alcanzarlo forman parte de las posibilidades de cada uno de nosotros. ¿Te sientes desbordado por la existencia? ¿Paralizado por compromisos --afectivos, laborales...-- que ya no te satisfacen? ¿Dominado por complejos de culpa o inseguridad? No proyectes tu insatisfacción en otros: la causa está en ti, en las «zonas erróneas» de tu personalidad, que te bloquean y te impiden realizarte. En este libro, el doctor Wayne W. Dyer muestra dónde se encuentran esas zonas erróneas, qué significan, adónde conducen y cómo superarlas. Esboza un camino para alcanzar la felicidad, un procedimiento que se basa en ser responsable y comprometerse con uno mismo. Y lo cuenta con la amenidad y sencillez de quien sabe que puede ayudar a mejorar la vida de otros. Después de décadas de éxito mundial, esta edición con acabados de lujo incluye el prólogo del doctor Enrique Rojas, psiquiatra de reconocido prestigio, que contextualiza y complementa magistralmente esta obra de referencia. Millones de personas y décadas de vigencia corroboran su eficacia. Saboréalo y concédete la posibilidad de conocerte mejor y ser más feliz. ENGLISH DESCRIPTION THE RECORD-BREAKING, #1 NEW YORK TIMES BESTSELLER - OVER 35 MILLION COPIES SOLD The first book by Wayne Dyer, author of the multimillion-copy bestseller Pulling Your Own Strings and national bestsellers There's a Spiritual Solution to Every Problem and Wisdom of the Ages, a positive and practical guide to breaking free from the trap of negative thinking and enjoying life to the fullest. If you're plagued by guilt or worry and find yourself unwittingly falling into the same old self-destructive patterns, then you have \"erroneous zones\" - whole facets of your approach to life that act as barriers to your success and happiness. Perhaps you believe that you have no control over your feelings and reactions - Dyer shows how you can take charge of yourself and manage how much you will let difficult times and people affect you. Or maybe you spend more time worrying what others think than working on what you want and need - Dyer points the way to true self-reliance. From self-image problems to over-dependence on others, Dyer gives you the tools you need to break free from negative thinking and enjoy life to the fullest.</p></div>",
+      "timestamp": "2026-01-13T18:35:16-03:00",
+      "languages": "spa",
+      "identifiers": "isbn:9788425363528,google:HWf8zwEACAAJ",
+      "cover": "24_TusZonasErroneasYourErroneousZones.jpg",
+      "formats": [
+        {
+          "type": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=14sfD733UteE04bMNhPUGq9BwoPGCNWP9"
+        }
+      ]
+    },
+    {
+      "id": "25",
+      "uuid": "911f9647-2f5b-4da1-9b36-823d50e39627",
+      "title": "Te Vas a Morir Y Todavía No Has Empezado a Vivir",
+      "title_sort": "Te Vas a Morir Y Todavía No Has Empezado a Vivir",
+      "authors": [
+        "Uli Moreno Montana",
+        "Laura Falces"
+      ],
+      "authors_sort": "Montana, Uli Moreno & Falces, Laura",
+      "publisher": "Monteam Editorial",
+      "pubdate": "2025-05-01T00:00:00-03:00",
+      "rating": 4,
+      "isbn": null,
+      "tags": [
+        "Self Help"
+      ],
+      "series": null,
+      "series_index": null,
+      "comments": "<div>\n<p style=\"font-weight: bold\">Si sientes que estás sobreviviendo más que viviendo, este libro es para ti. </p>\n<p>A menudo, creemos que para cambiar nuestra vida tenemos que embarcarnos en un gran viaje, encontrar una revelación o descubrir el secreto en algún lugar. Mientras tanto, la vida se nos escapa. Y el problema no es que, antes o después, vayamos a morir, sino morir sin haber empezado a vivir. Esperar que nuestra vida cambie por sí sola es dejarla en manos de un mundo que no podemos controlar, pasando por alto todo lo que sí depende de nosotros. </p>\n<p>Vivir mejor (y con más sentido) empieza con un soltar lo que ya no podemos cambiar y empezar a construir desde hoy todo aquello que deseamos ver cuando miremos atrás. </p>\n<p>En este libro descubrirás 29 principios que te ayudarán a vivir mejor (y con más sentido). Principios que te impulsarán a tomar mejores decisiones para que tu destino no dependa únicamente de tus circunstancias. Para que, en lugar de dejarte arrastrar, encuentres tu camino y construyas lo más valioso que tu propia vida. </p>\n<p>Estás aquí y eso ya es un comienzo. Lo demá autoconocimiento, salud mental, propósito, relaciones sanas, dinero, gestión del estrés, productividad, hábitos, felicidad en el trabajo, pensamiento crítico... no llega de golpe, pero se cultiva cuando sabes dónde mirar.</p></div>",
+      "timestamp": "2026-01-13T18:35:16-03:00",
+      "languages": "eng",
+      "identifiers": "mobi-asin:B0F48R6TJT,goodreads:231289006",
+      "cover": "25_TeVasaMorirYTodaviaNoHasEmpezadoaVivir.jpg",
+      "formats": [
+        {
+          "type": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=1kbKryXzy2fz1qM6elNR9cwVhdW9twahb"
+        }
+      ]
+    },
+    {
+      "id": "26",
+      "uuid": "f1beaeff-ec27-41a6-9155-12beecfec4e6",
+      "title": "Si Lo Crees, Lo Creas",
+      "title_sort": "Si Lo Crees, Lo Creas",
+      "authors": [
+        "Brian Tracy"
+      ],
+      "authors_sort": "Tracy, Brian",
+      "publisher": "DEBOLSILLO",
+      "pubdate": "2026-01-08T00:00:00-03:00",
+      "rating": null,
+      "isbn": "9788466387811",
+      "tags": [
+        "Ensayo",
+        "Autoayuda",
+        "Psicología"
+      ],
+      "series": null,
+      "series_index": null,
+      "comments": "<p><b>Descubre los secretos para eliminar pensamientos y conductas negativas y desbloquear todo tu potencial para el éxito.</b></p>\n\n    <p>Si te sientes abrumado o incapaz de escapar de tus pensamientos negativos, este libro te pondrá en el camino correcto. Ya sea que esta negatividad provenga de una relación pasada que terminó mal, un trauma infantil, un fracaso profesional o inseguridad, este libro te ayudará a reconocer cómo ésta, sea consciente o inconsciente, afecta tu personalidad, tu perspectiva y tus decisiones.</p>\n\n    <p><i>Si lo crees, lo creas</i> está lleno de consejos reveladores del autor <i>bestseller</i> Brian Tracy la psicoterapeuta Christina Stein, con los que aprenderás a identificar y superar patrones e ideas perjudiciales, a recuperar el control de tus pensamientos, sentimientos y acciones, a convertir lo negativo en positivo y a aceptar cambios inesperados en la vida para alcanzar tus metas y sentirte satisfecho.</p>",
+      "timestamp": "2026-01-13T18:35:16-03:00",
+      "languages": "eng",
+      "identifiers": "goodreads:242069676,isbn:9788466387811,revision:1.0,epl:71522",
+      "cover": "26_SiLoCreesLoCreas.jpg",
+      "formats": [
+        {
+          "type": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=1H275ORIUn9rOxOnEwk_XhZwwAK2w4So4"
+        }
+      ]
+    },
+    {
+      "id": "27",
+      "uuid": "1f86f1c5-691e-44d3-b336-7fc8aac3b361",
+      "title": "Sabia Mente",
+      "title_sort": "Sabia Mente",
+      "authors": [
+        "Marcos Vázquez"
+      ],
+      "authors_sort": "Vázquez, Marcos",
+      "publisher": "Tenos",
+      "pubdate": "2025-11-05T00:00:00-03:00",
+      "rating": 4,
+      "isbn": "9791387936037",
+      "tags": [
+        "Ciencias Sociales",
+        "Psicología",
+        "Motivación y emoción",
+        "Personalidad",
+        "Coaching",
+        "Autoayuda"
+      ],
+      "series": null,
+      "series_index": null,
+      "comments": "<div>\n<p>Nos ahogamos en información, pero estamos sedientos de sabiduría. Sin sabiduría, más información solo genera confusión. </p>\n<p>Sabia Mente combina sabiduría clásica con conocimiento moderno para ayudarte a desarrollar pensamiento crítico, entender mejor cómo funciona tu cerebro y, en definitiva, vivir una mejor vida. </p>\n<p>En la primera parte hablaremos del <em>ethos</em> , el carácter, o las cualidades personales que distinguen a una persona sabia. Antes de decidir cómo actuar, debemos decidir en quién nos queremos convertir. </p>\n<p>En la segunda parte explicaremos los principales sesgos cognitivos de nuestro cerebro y cómo podemos luchar contra ellos. Al reducir estos errores de pensamiento evitaremos caer en engaños y ser arrastrados por decisiones impulsivas y equivocadas. </p>\n<p>En la tercera parte veremos ejemplos de modelos mentales de aplicación general, tomados de distintas disciplinas. Estos modelos te ayudarán a ver el mundo con más claridad y a tomar mejores decisiones. </p>\n<p>En resumen, una buena vida requiere sabiduría, y este libro te ayudará a cultivarla.</p></div>",
+      "timestamp": "2026-01-13T18:35:16-03:00",
+      "languages": "eng",
+      "identifiers": "goodreads:241484498,isbn:9791387936037",
+      "cover": "27_SabiaMente.jpg",
+      "formats": [
+        {
+          "type": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=11ocy1V73xSMCxqzMdKhjJ0W1BgZVBf2l"
+        }
+      ]
+    },
+    {
+      "id": "28",
+      "uuid": "1cdbc052-e22d-4790-b057-090f439ea2c1",
+      "title": "Recupera Tu Mente, Reconquista Tu Vida",
+      "title_sort": "Recupera Tu Mente, Reconquista Tu Vida",
+      "authors": [
+        "Marian Rojas Estapé"
+      ],
+      "authors_sort": "Estapé, Marian Rojas",
+      "publisher": "Espasa",
+      "pubdate": "2024-04-03T00:00:00-03:00",
+      "rating": 4,
+      "isbn": "9788467073799",
+      "tags": [
+        "Self-Help",
+        "General",
+        "Psychology",
+        "Divulgación",
+        "Autoayuda"
+      ],
+      "series": null,
+      "series_index": null,
+      "comments": "<div>\n<p style=\"font-weight: bold\">Cómo rescatar la atención perdida en un mundo distraído e hiperconectado. </p>\n<p>Cada vez somos más <strong>impacientes y estamos más irritables.</strong> ¿Notas que te cuesta más prestar atención? ¿Has sentido ansiedad últimamente? ¿Toleras peor el aburrimiento y el dolor? </p>\n<p>Vivimos en la era de la <strong>gratificación instantánea</strong> , en la cultura de la inmediatez y las recompensas y buscamos la felicidad a golpe de clic. Llevamos una vida agitada e intensa, y con el <strong>modo </strong><span style=\"font-weight: bold; font-style: italic\">fast</span><strong> activado</strong>. Sin darnos cuenta nos hemos convertido en drogodependientes emocionales inundados de múltiples distracciones. Todo esto tiene un impacto en nuestra capacidad de <strong>prestar atención a lo importante</strong> , de profundizar y de concentrarnos. </p>\n<p>La buena noticia es que <strong>podemos rescatar la atención perdida</strong> , volver a reconectar con nosotros mismos y con todo lo maravilloso que nos rodea para encontrar ese equilibrio emocional que tanto ansiamos. </p>\n<p>En este libro, la <strong>doctora Marian Rojas Estapé</strong> , con su estilo divulgativo y científico, ahonda en estas y en otras cuestiones. Te presenta a la <strong>dopamina, la hormona del placer</strong> , y cómo afecta en la búsqueda de las recompensas inmediatas que están a la orden del día, en la percepción del dolor, del aburrimiento y del malestar. </p>\n<p><em>Recupera tu mente, reconquista tu vida</em> te ayuda a pensar qué conductas muestras cuando te ves envuelto en emociones que no sabes gestionar y te proporciona <strong>herramientas</strong> para que te comprendas mejor, y así <strong>recuperar el control de tu vida</strong>.</p></div>",
+      "timestamp": "2026-01-13T18:35:16-03:00",
+      "languages": "spa",
+      "identifiers": "epl:75832,revision:1.0,isbn:9788467073799,goodreads:208542465,google:0XT1EAAAQBAJ",
+      "cover": "28_RecuperaTuMenteReconquistaTuVida.jpg",
+      "formats": [
+        {
+          "type": "EPUB",
+          "url": "https://drive.google.com/uc?export=download&id=1bJmqlsOtKrTpZYPEOimk78PY9O3-aE9y"
         }
       ]
     }

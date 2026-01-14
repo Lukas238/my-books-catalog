@@ -135,13 +135,8 @@ body {
     font-weight: lighter;
 }
 
-body.drawer-open {
+body {
     overflow: hidden;
-
-    main.container-xxl {
-        height: 100vh;
-        overflow-y: auto;
-    }
 }
 
 body[data-bs-theme="dark"] {
@@ -498,6 +493,13 @@ body[data-bs-theme="dark"] {
     // Add transition only to controls (not grid)
     main.container-xxl #catalog-controls {
         transition: margin-right 0.3s ease;
+    }
+
+    // Main container always has scroll
+    main.container-xxl {
+        height: 100vh;
+        overflow-y: auto;
+        overflow-x: hidden;
     }
 
     // Adjust controls and grid view margin when drawer is open

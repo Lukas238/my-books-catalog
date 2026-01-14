@@ -62,11 +62,11 @@ node scripts/xml2data.js --xml ./_exports/eBooksSofi.xml --json ./_exports/eBook
 
 ## Regenerate all data files (after XML/JSON already exist in _exports/)
 ```bash
-node scripts/xml2data.js --xml ./_exports/eBooks238.xml --json ./_exports/eBooks238.json --output ./_data --name lukas238 &&
-node scripts/xml2data.js --xml ./_exports/eBooksCata.xml --json ./_exports/eBooksCata.json --output ./_data --name cata &&
-node scripts/xml2data.js --xml ./_exports/eBooksIgnacio.xml --json ./_exports/eBooksIgnacio.json --output ./_data --name ignacio &&
-node scripts/xml2data.js --xml ./_exports/eBooksMaripaz.xml --json ./_exports/eBooksMaripaz.json --output ./_data --name maripaz &&
-node scripts/xml2data.js --xml ./_exports/eBooksMartin.xml --json ./_exports/eBooksMartin.json --output ./_data --name martin &&
+node scripts/xml2data.js --xml ./_exports/eBooks238.xml --json ./_exports/eBooks238.json --output ./_data --name lukas238
+node scripts/xml2data.js --xml ./_exports/eBooksCata.xml --json ./_exports/eBooksCata.json --output ./_data --name cata
+node scripts/xml2data.js --xml ./_exports/eBooksIgnacio.xml --json ./_exports/eBooksIgnacio.json --output ./_data --name ignacio
+node scripts/xml2data.js --xml ./_exports/eBooksMaripaz.xml --json ./_exports/eBooksMaripaz.json --output ./_data --name maripaz
+node scripts/xml2data.js --xml ./_exports/eBooksMartin.xml --json ./_exports/eBooksMartin.json --output ./_data --name martin
 node scripts/xml2data.js --xml ./_exports/eBooksSofi.xml --json ./_exports/eBooksSofi.json --output ./_data --name sofi
 ```
 

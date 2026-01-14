@@ -1,8 +1,8 @@
 {
-  "catalog_title": "Lukas238",
+  "catalog_title": "My Books",
   "catalog_name": "lukas238",
   "total_books": 451,
-  "last_updated": "2026-01-13T21:19:11.364Z",
+  "last_updated": "2026-01-14T02:40:38.923Z",
   "books": [
     {
       "id": "8",
@@ -1130,8 +1130,8 @@
     {
       "id": "208",
       "uuid": "84138dff-4930-4cf7-ba48-6cf385a04660",
-      "title": "Dragonlance Chronicles",
-      "title_sort": "Dragonlance Chronicles",
+      "title": "Dragons of Autumn Twilight",
+      "title_sort": "Dragons of Autumn Twilight",
       "authors": [
         "Margaret Weis",
         "Tracy Hickman"
@@ -1150,17 +1150,17 @@
         "Fantasy & Magic",
         "Fantasy"
       ],
-      "series": "Dragonlance Chronicles",
+      "series": "Dragonlance: Chronicles",
       "series_index": 1,
       "comments": "<div>\n<p>With the return of the dragon minions of Takhisis, the Queen of Dragons, the land of Krynn has become more dangerous than ever. But as the nations of Krynn prepare to fight for their homes, their lives, and their freedom, longstanding hatreds and prejudices interfere. When fighting breaks out among the races, it seems the battle is lost before it even begins.<br><br>Meanwhile, the heroic Companions have been torn apart by war. A full season will pass before they meet again—if they meet again. Raistlin has made an ominous prediction, one that implies not all of the Companions will survive the fight. His warning, along with sinister dreams, haunt the friends as they search for the weapons that will stop the Dark Queen in her tracks: the mysterious Dragon Orbs and legendary Dragonlance.<br><br>Another riveting tale in the Dragonlance Chronicles, Dragons of Winter Night is an action-packed adventure in which the true value of love and friendship is measured against the backdrop of a catastrophic war between good and evil.<br><br><br>They won their first real battle in the war for Krynn, but the war has only just begun for the Companions! Friendships born in conflict will be torn apart. Hope will rest on the shoulders of a disgraced Knight and his two inexperienced companions. Worlds long divided by hatred and prejudice will either band together in a last struggle against darkness - or perish for all time.</p>\n<p> </p></div>",
       "timestamp": "2008-12-04T06:00:00-03:00",
       "languages": "eng",
       "identifiers": "google:iEAhkgEACAAJ,goodreads:68380,isbn:9780880386524",
-      "cover": "208_DragonlanceChronicles.jpg",
+      "cover": "208_DragonsofAutumnTwilight.jpg",
       "formats": [
         {
           "type": "EPUB",
-          "url": "https://drive.google.com/uc?export=download&id=1mlNDIRXjqXrtOfvmq4X5ljQj1g_e80UD"
+          "url": "https://drive.google.com/uc?export=download&id=1Y7ifbglf02wtqJzOQK0Zn92oftOtBfWC"
         }
       ]
     },
@@ -1187,8 +1187,8 @@
         "Fantasy & Magic",
         "Fantasy"
       ],
-      "series": "Dragonlance Chronicles",
-      "series_index": 3,
+      "series": "Dragonlance: Chronicles",
+      "series_index": 2,
       "comments": "<div>\n<p>Dragons </p>\n<p>Creatures of legend. Stories told to children. </p>\n<p>But now dragons have returned to Krynn. The darkness of war and destruction threatens to engulf the land. </p>\n<p>A small band of heroes brings hope to the land. But the hope is fragile as a rose and many be lost completely, shattered by the bitter winds of winter. </p>\n<p>Knights and barbarian, warrior and half-elf, dwarf and kender and dark-souled mage; they begin a perilous search for two artifacts that may help them or lead them to their destruction- </p>\n<p>the Dragon Orbs... </p>\n<p>and the legendary Dragonlance.</p></div>",
       "timestamp": "2008-12-16T21:43:48-03:00",
       "languages": "eng",
@@ -1224,8 +1224,8 @@
         "Fantasy & Magic",
         "Fantasy"
       ],
-      "series": "Dragonlance Chronicles",
-      "series_index": 2,
+      "series": "Dragonlance: Chronicles",
+      "series_index": 3,
       "comments": "<div>\n<p>In this second volume of the Chronicles Trilogy, dragons have returned to Krynn and the darkness of war and destruction engulfs the land. Hope dawns with the coming of spring. Armed at last with the dragonlances, the heroes lead the people in the final desperate battle against the dragons.</p></div>",
       "timestamp": "2008-12-17T20:14:00-03:00",
       "languages": "eng",
@@ -1969,8 +1969,8 @@
     {
       "id": "274",
       "uuid": "2417a924-dbe1-41e8-b39f-4a9882754158",
-      "title": "Dragonlance: The Second Generation",
-      "title_sort": "Dragonlance: The Second Generation",
+      "title": "The Second Generation",
+      "title_sort": "Second Generation, The",
       "authors": [
         "Margaret Weis",
         "Tracy Hickman"
@@ -1983,17 +1983,17 @@
       "tags": [
         "Fantasy"
       ],
-      "series": "The Second Generation",
-      "series_index": 1,
+      "series": "Dragonlance: Chronicles",
+      "series_index": 4,
       "comments": "EDITORIAL REVIEW:\n\nYears have passed since the end of the War of the Lance. The people of Ansalon have rebuilt their lives, their houses, their families. The Companions of the Lance, too, have returned to their homes, raising children and putting the days of their heroic deeds behind them.But peace on Krynn comes at a price. The forces of darkness are ever vigilant, searching for ways to erode the balance of power and take control. When subtle changes begin to permeate the fragile peace, new lives are drawn into the web of fate woven around all the races. The time has come to pass the sword -- or the staff -- to the children of the Lance.They are the Second Generation.An all-new repackaged paperback edition of a classic **Dragonlance **novel.This book of five novellas bridges the gap between the Chronicles and Legends trilogies and *Dragons of Summer Flame*. While detailing their adventures, *The Second Generation* also sets up key events and characters in future **Dragonlance **novels.\n\n",
       "timestamp": "2010-07-30T17:06:42-03:00",
       "languages": null,
       "identifiers": "isbn:9780786926947",
-      "cover": "274_DragonlanceTheSecondGeneration.jpg",
+      "cover": "274_TheSecondGeneration.jpg",
       "formats": [
         {
           "type": "EPUB",
-          "url": "https://drive.google.com/uc?export=download&id=19aMTcTUybeqaUTbp3q0NUgeCGqiIfYuB"
+          "url": "https://drive.google.com/uc?export=download&id=13gHJ57CVn_I9Mt__D243P5_lg-LqTyMn"
         }
       ]
     },
@@ -3020,7 +3020,7 @@
       ],
       "series": null,
       "series_index": null,
-      "comments": "<p>En este breve volumen ISAAC ASIMOV pasa revista a las GRANDES IDEAS DE\nLA CIENCIA a través del examen de las hipótesis y descubrimientos\nproducidos a lo largo de la historia en muy diversos campos del\nconocimiento: Tales y la ciencia; Pitágoras y el número; Arquímedes y la\n matemática aplicada; Galileo y la experimentación; Demócrito y los\nátomos; Lavoisier y los gases; Newton y la inercia; Faraday y los\ncampos; Rumford y el calor; Joule y la energía; Planck y los cuantos;\nHipócrates y la medicina; Wöhler y la química orgánica; Linneo y la\nclasificación; Darwin y la evolución; Russell y la evolución estelar.</p>",
+      "comments": "<p>En este breve volumen ISAAC ASIMOV pasa revista a las GRANDES IDEAS DE \nLA CIENCIA a través del examen de las hipótesis y descubrimientos \nproducidos a lo largo de la historia en muy diversos campos del \nconocimiento: Tales y la ciencia; Pitágoras y el número; Arquímedes y la\n matemática aplicada; Galileo y la experimentación; Demócrito y los \nátomos; Lavoisier y los gases; Newton y la inercia; Faraday y los \ncampos; Rumford y el calor; Joule y la energía; Planck y los cuantos; \nHipócrates y la medicina; Wöhler y la química orgánica; Linneo y la \nclasificación; Darwin y la evolución; Russell y la evolución estelar.</p>",
       "timestamp": "2009-11-08T09:11:12-03:00",
       "languages": null,
       "identifiers": "isbn:9788420639819,goodreads:1368404",
@@ -4518,7 +4518,7 @@
       "series": "Rama",
       "series_index": 1,
       "comments": "<div>\n<p>In the year 2130, a mysterious and apparently untenanted alien spaceship, Rama, enters our solar system. The first product of an alien civilisation to be encountered by man, it reveals a world of technological marvels and an unparalleled artificial ecology. But what is its purpose in 2131? Who is inside it? And why?</p></div>",
-      "timestamp": "0101-01-01T00:00:00-03:00",
+      "timestamp": "2012-09-17T00:00:00-03:00",
       "languages": "eng",
       "identifiers": "isbn:9780899684499,google:8l-aAAAAIAAJ,goodreads:112515,amazon:0899684491",
       "cover": "484_RendezvousWithRama.jpg",
@@ -4767,10 +4767,10 @@
       "title": "Rama Revealed",
       "title_sort": "Rama Revealed",
       "authors": [
-        "Arthur Charles Clarke",
+        "Arthur C. Clarke",
         "Gentry Lee"
       ],
-      "authors_sort": "Clarke, Arthur Charles & Lee, Gentry",
+      "authors_sort": "Clarke, Arthur C. & Lee, Gentry",
       "publisher": "Spectra",
       "pubdate": "1993-01-01T00:00:00-03:00",
       "rating": null,
@@ -4789,7 +4789,7 @@
       "formats": [
         {
           "type": "EPUB",
-          "url": "https://drive.google.com/uc?export=download&id=1LFukEMmP5nG4hLA-sTeHC23FQnV65AtX"
+          "url": "https://drive.google.com/uc?export=download&id=1XVcVCxvnrG5Ztogw3xbRSiIYGSMFd1Jk"
         }
       ]
     },
@@ -10912,7 +10912,7 @@
       "id": "772",
       "uuid": "c3dffd92-00e4-4c40-871d-6a836ed87840",
       "title": "A Stitch in Time",
-      "title_sort": "A Stitch in Time",
+      "title_sort": "Stitch in Time, A",
       "authors": [
         "Andrew J. Robinson"
       ],
@@ -10942,10 +10942,6 @@
         {
           "type": "EPUB",
           "url": "https://drive.google.com/uc?export=download&id=1w77e_lHaIxt-duNv1mtmsmBEX8acFAuj"
-        },
-        {
-          "type": "MOBI",
-          "url": "https://drive.google.com/uc?export=download&id=1AS57Inw2fRqCkTdjXd58kRgKaYJ9BVe7"
         }
       ]
     },
@@ -11074,7 +11070,7 @@
       "series": null,
       "series_index": null,
       "comments": "<div>\n<p>El Diccionario de la RAE es la obra de referencia para más de 500 millones de hablantes de español en todo el mundo. La nueva edición del Diccionario, revisado en profundidad, alcanza las 93,000 entradas. Junto a la eliminación de términos muy locales u obsoletos, incorpora nuevos términos que se han generalizado en nuestra lengua, como precuela o pilates. La nueva edición tendrá 6,000 términos más que la de 2001. La RAE ha trabajado con las veintidós academias americanas de la lengua para ofrecer de nuevo una obra panhispánica. La Real Academia Española se fundó hace trescientos años con el objetivo principal de elaborar el Diccionario de la lengua española. En 1726 se publica el primer tomo del Diccionario de autoridades y en 1780 la primera edición del Diccionario de la lengua española.</p>\n<h3>Descripción del Libro</h3>\n<p>El Diccionario de la RAE es la obra de referencia para más de 500 millones de hablantes de español en todo el mundo</p>\n<h3>Biografía del autor</h3>\n<p>La Real Academia Española (RAE) es una institución cultural con sede en Madrid. Junto con otras veintiuna academias correspondientes a sendos países donde se habla español, conforman la Asociación de Academias de la Lengua Española. Se dedica a la regularización lingüística mediante la promulgación de normativas dirigidas a fomentar la unidad idiomática dentro y entre los diversos territorios; garantizar una norma común, en concordancia con sus estatutos fundacionales: «velar por que los cambios que experimente [...] no quiebren la esencial unidad que mantiene en todo el ámbito hispánico». Fue fundada en 1713 por iniciativa del ilustrado Juan Manuel Fernández Pacheco, marqués de Villena y duque de Escalona, a imitación de la Academia Francesa. Al año siguiente, el rey Felipe V aprobó su constitución y la colocó bajo su protección. Las directrices lingüísticas que propone se recogen en diversas obras. Las prioritarias son el diccionario, abreviado DRAE (art. 2.º de sus estatutos), editado periódicamente veintidós veces desde 1780 hasta hoy; y la gramática (4.º), editada finalmente en diciembre 2009.Desempeña sus funciones en la sede principal, inaugurada en 1894, en la calle Felipe IV, 4, en el barrio de Los Jerónimos, y en el Centro de Estudios de la Real Academia Española, en la calle Serrano 187-189, en 2013.<br>La Asociación de Academias de la Lengua Española (ASALE) fue creada en México en 1951 y está integrada por las 22 academias de la lengua española existentes en el mundo. Su Comisión Permanente se encuentra en Madrid (España),ciudad en la que también se encuentran la sede de la Real Academia Española (RAE) y la sede central del Instituto Cervantes. Su lema es «Una estirpe, una lengua y un destino». </p></div>",
-      "timestamp": "0100-12-31T21:00:00-03:00",
+      "timestamp": "2024-02-29T00:00:00-03:00",
       "languages": "spa",
       "identifiers": "amazon:8467041897,mobi-asin:B005064LTK,isbn:9788467041897",
       "cover": "776_DiccionariodelalenguaEspanolaRAE23aEdicion.jpg",

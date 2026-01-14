@@ -40,9 +40,9 @@ For each library, run the commands in [commands.md](commands.md). Example:
 ```bash
 # Sync, export, and convert Lucas's library
 rclone sync ~/eBooksLibraries/eBooks238 gDrive:Backup238/Books/eBooks238 -v --progress &&
-rclone lsjson gDrive:Backup238/Books/eBooks238 -R --files-only --no-mimetype --no-modtime > ./tmp/eBooks238.json &&
-calibredb catalog --library-path ~/eBooksLibraries/eBooks238 ./tmp/eBooks238.xml --catalog-title "Lukas238's eBooks Library" &&
-node scripts/xml2data.js --xml ./tmp/eBooks238.xml --json ./tmp/eBooks238.json --output ./_data --name lukas238
+rclone lsjson gDrive:Backup238/Books/eBooks238 -R --files-only --no-mimetype --no-modtime > ./_exports/eBooks238.json &&
+calibredb catalog --library-path ~/eBooksLibraries/eBooks238 ./_exports/eBooks238.xml &&
+node scripts/xml2data.js --xml ./_exports/eBooks238.xml --json ./_exports/eBooks238.json --output ./_data --name lukas238
 ```
 
 ### Local Development

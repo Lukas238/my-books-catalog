@@ -6,52 +6,12 @@
  *
  * Usage:
  *   node xml2data.js --xml <path> --json <path> --output <path> --name <name>
- *   node xml2data.js (processes all XML/JSON pairs in _exports/)
  */
 
 const fs = require('fs');
 const fsPromises = require('fs').promises;
 const path = require('path');
 const { parseString } = require('xml2js');
-
-// Mapping from file prefixes to catalog names
-const CATALOG_MAPPING = {
-    'eBooks238': 'lukas238',
-    'eBooksIgnacio': 'ignacio',
-    'eBooksCata': 'cata',
-    'eBooksMaripaz': 'maripaz',
-    'eBooksMartin': 'martin'
-};
-
-// Find all XML/JSON pairs in _exports/ folder
-function findCatalogPairs() {
-    const exportsDir = '_exports';
-    if (!fs.existsSync(exportsDir)) {
-        console.error('Error: _exports/ folder not found');
-        return [];
-    }
-
-    const files = fs.readdirSync(exportsDir);
-    const xmlFiles = files.filter(f => f.endsWith('.xml'));
-    const pairs = [];
-
-    xmlFiles.forEach(xmlFile => {
-        const baseName = path.basename(xmlFile, '.xml');
-        const jsonFile = `${baseName}.json`;
-
-        if (files.includes(jsonFile)) {
-            const catalogName = CATALOG_MAPPING[baseName] || baseName.toLowerCase();
-            pairs.push({
-                xml: path.join(exportsDir, xmlFile),
-                json: path.join(exportsDir, jsonFile),
-                name: catalogName,
-                output: '_data'
-            });
-        }
-    });
-
-    return pairs;
-}
 
 // Read and parse XML file
 function readXML(filepath) {
@@ -266,52 +226,28 @@ async function main() {
         options[key] = value;
     }
 
-    // If specific files are provided, process only those
-    if (options.xml && options.json && options.output && options.name) {
-        console.log('📄 Processing specific catalog:\n');
-        console.log(`   XML: ${options.xml}`);
-        console.log(`   JSON: ${options.json}`);
-        console.log(`   Output: ${options.output}`);
-        console.log(`   Name: ${options.name}\n`);
-
-        try {
-            await processData(options);
-            console.log('\n✅ Catalog processed successfully!');
-        } catch (err) {
-            console.error(`❌ Error processing catalog:`, err.message);
-            process.exit(1);
-        }
-        return;
-    }
-
-    // Otherwise, process all catalogs in _exports/
-    console.log('🔍 Searching for catalog files in _exports/ folder...\n');
-
-    const catalogPairs = findCatalogPairs();
-
-    if (catalogPairs.length === 0) {
-        console.error('❌ No XML/JSON pairs found in _exports/ folder');
-        console.error('\nUsage: node xml2data.js --xml <path> --json <path> --output <path> --name <name>');
+    // Check if all required parameters are provided
+    if (!options.xml || !options.json || !options.output || !options.name) {
+        console.error('❌ Missing required parameters\n');
+        console.error('Usage: node xml2data.js --xml <path> --json <path> --output <path> --name <name>');
+        console.error('\nExample:');
+        console.error('  node xml2data.js --xml ./_exports/eBooks238.xml --json ./_exports/eBooks238.json --output ./_data --name lukas238');
         process.exit(1);
     }
 
-    console.log(`📚 Found ${catalogPairs.length} catalog(s) to process:\n`);
-    catalogPairs.forEach(pair => {
-        console.log(`   • ${path.basename(pair.xml)} + ${path.basename(pair.json)} → ${pair.name}`);
-    });
-    console.log('');
+    console.log('📄 Processing catalog:\n');
+    console.log(`   XML: ${options.xml}`);
+    console.log(`   JSON: ${options.json}`);
+    console.log(`   Output: ${options.output}`);
+    console.log(`   Name: ${options.name}\n`);
 
-    // Process all catalogs
-    for (const catalog of catalogPairs) {
-        try {
-            await processData(catalog);
-            console.log('');
-        } catch (err) {
-            console.error(`❌ Error processing ${catalog.name}:`, err.message);
-        }
+    try {
+        await processData(options);
+        console.log('\n✅ Catalog processed successfully!');
+    } catch (err) {
+        console.error(`❌ Error processing catalog:`, err.message);
+        process.exit(1);
     }
-
-    console.log('✅ All catalogs processed successfully!');
 }
 
 main().catch(err => {

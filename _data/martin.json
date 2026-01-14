@@ -1,8 +1,8 @@
 {
   "catalog_title": "Martin",
   "catalog_name": "martin",
-  "total_books": 17,
-  "last_updated": "2026-01-14T18:12:40.413Z",
+  "total_books": 22,
+  "last_updated": "2026-01-14T18:54:58.830Z",
   "books": [
     {
       "id": "1",
@@ -472,7 +472,7 @@
         "Arturo Pérez‑Reverte"
       ],
       "authors_sort": "Pérez‑Reverte, Arturo",
-      "publisher": "Alfaguara",
+      "publisher": "ALFAGUARA",
       "pubdate": "2023-08-21T18:00:31-03:00",
       "rating": null,
       "isbn": null,
@@ -528,14 +528,14 @@
         "Arturo Pérez-Reverte"
       ],
       "authors_sort": "Pérez-Reverte, Arturo",
-      "publisher": "Alfaguara",
+      "publisher": "ALFAGUARA",
       "pubdate": "2021-09-20T19:00:00-03:00",
       "rating": null,
       "isbn": null,
       "tags": [],
       "series": null,
       "series_index": null,
-      "comments": "<div><p><b>LA NUEVA NOVELA DE ARTURO PÉREZ-REVERTE</b></p> <p><b>Una historia de amor, mar y guerra</b></p> <p>«Su estilo elegante se combina con un gran manejo de la lengua española. Pérez-Reverte es un maestro.»<br><i><b>La Stampa</b></i></p> <p><i>«Nada\n traiciona, tanto tiempo después, la mujer que desde hace dos  años vive\n sola junto al mar con un perro y unos libros. Qué otra cosa, decide,\nsería el impulso, o el deseo, de permanecer abrazada a ese hombre para\nsiempre. Ignora qué habrá en su cabeza dentro de un par de horas, cuando\n la claridad del día la despeje del todo e ilumine con más crudeza su\nconciencia. Lo cierto es</i>  <i>que</i><i> en este momento, sin duda alguna, desearía morir si él muriera.»</i><br>En\n los años 1942 y 1943, durante la Segunda Guerra Mundial, buzos de\ncombate italianos hundieron o dañaron catorce barcos aliados en\nGibraltar y la bahía de Algeciras. En esta novela, inspirada en hechos\nreales, sólo algunos personajes y situaciones son</p> <p>imaginarios.\nElena Arbués, una librera de veintisiete años, encuentra  una madrugada\nmientras pasea por la playa a uno de esos buzos, desvanecido entre la\narena y el agua. Al socorrerlo, la joven ignora que esa determinación\ncambiará su vida y que el amor será sólo parte de una peligrosa\naventura.</p></div>",
+      "comments": "<div><p><b>LA NUEVA NOVELA DE ARTURO PÉREZ-REVERTE</b></p> <p><b>Una historia de amor, mar y guerra</b></p> <p>«Su estilo elegante se combina con un gran manejo de la lengua española. Pérez-Reverte es un maestro.»<br><i><b>La Stampa</b></i></p> <p><i>«Nada\n traiciona, tanto tiempo después, la mujer que desde hace dos  años vive\n sola junto al mar con un perro y unos libros. Qué otra cosa, decide, \nsería el impulso, o el deseo, de permanecer abrazada a ese hombre para \nsiempre. Ignora qué habrá en su cabeza dentro de un par de horas, cuando\n la claridad del día la despeje del todo e ilumine con más crudeza su \nconciencia. Lo cierto es</i>  <i>que</i><i> en este momento, sin duda alguna, desearía morir si él muriera.»</i><br>En\n los años 1942 y 1943, durante la Segunda Guerra Mundial, buzos de  \ncombate italianos hundieron o dañaron catorce barcos aliados en \nGibraltar y la bahía de Algeciras. En esta novela, inspirada en hechos \nreales, sólo algunos personajes y situaciones son</p> <p>imaginarios. \nElena Arbués, una librera de veintisiete años, encuentra  una madrugada \nmientras pasea por la playa a uno de esos buzos, desvanecido entre la \narena y el agua. Al socorrerlo, la joven ignora que esa determinación \ncambiará su vida y que el amor será sólo parte de una peligrosa \naventura.</p></div>",
       "timestamp": "2025-09-28T15:55:36-03:00",
       "languages": "spa",
       "identifiers": "mobi-asin:B0973MQ7NT",
@@ -546,6 +546,151 @@
           "url": "https://drive.google.com/uc?export=download&id=1rS-wSykf4zWYGUDbNaY36UJ2AkOk5dF2"
         }
       ]
+    },
+    {
+      "id": "20",
+      "uuid": "1c1eb75b-2845-4faa-a3bc-c650c17b0bea",
+      "title": "El Informe Pelícano",
+      "title_sort": "Informe Pelícano, El",
+      "authors": [
+        "John Grisham"
+      ],
+      "authors_sort": "Grisham, John",
+      "publisher": "Debolsillo",
+      "pubdate": "1992-02-15T00:00:00-03:00",
+      "rating": 4,
+      "isbn": "9788422649106",
+      "tags": [
+        "Thriller",
+        "Mystery",
+        "Crime",
+        "Suspense",
+        "Novela",
+        "Policial"
+      ],
+      "series": null,
+      "series_index": null,
+      "comments": "<div>\n<p>Una historia trepidante del maestro del thriller judicial. Dos jueces del Tribunal Supremo aparecen muertos. Solo una persona ha conectado ambos crímenes, y lo ha hecho por escrito en un informe judicial. En Nueva Orleans, la brillante, bella y ambiciosa estudiante de derecho Darby Shaw intuye que lo especulado en su informe ha llegado a oídos de los más altos poderes de Washington y causará un oleaje difícil de controlar. Un oleaje que reducirá a partículas al novio de Darcy tras la explosión de una bomba, un oleaje que enviará a asesinos a sueldo a por su cabeza, un oleaje que la perseguirá por todo el país mientras ella intenta dar con el reportero de investigación Gray Grantham, el único hombre que está tan cerca de la verdad como ella. Reseña: «No dudo en recomendarla... es realmente imposible dejar de leer esta novela.» Frederick Forsyth</p></div>",
+      "timestamp": "2026-01-13T14:07:12-03:00",
+      "languages": "spa",
+      "identifiers": "goodreads:5000247,isbn:9788422649106,google:NeSVPwAACAAJ",
+      "cover": "20_ElInformePelicano.jpg",
+      "formats": []
+    },
+    {
+      "id": "21",
+      "uuid": "062589e5-4df1-44fc-a2f6-d7a34829e5cf",
+      "title": "El Estafador",
+      "title_sort": "Estafador, El",
+      "authors": [
+        "John Grisham"
+      ],
+      "authors_sort": "Grisham, John",
+      "publisher": "PLAZA & JANÉS",
+      "pubdate": "2012-10-23T00:00:00-03:00",
+      "rating": 4,
+      "isbn": "9788490621622",
+      "tags": [
+        "Fiction",
+        "Thrillers",
+        "Legal",
+        "Novela",
+        "Intriga"
+      ],
+      "series": null,
+      "series_index": null,
+      "comments": "<div>\n<p>Un original thriller legal de John Grisham, donde nada es lo que parece. Ningún lector dejará de sorprenderse. Puesto que los jueces federales se enfrentan a menudo a criminales violentos y a organizaciones corruptas sin ningún escrúpulo, es sorprendente que hasta ahora solo cuatro de ellos hayan sido asesinados. El juez Raymond Fawcett es el número cinco. Sobre el papel, la situación de Malcolm Bannister no pinta nada bien. Pero este ex abogado que cumple condena en el Centro Penitenciario Federal de Frostburg, Maryland, guarda un as en la manga: sabe quién asesinó al juez Fawcett y también sabe por qué. El cadáver fue hallado en su cabaña del lago. La entrada no había sido forzada. Lo único que encontraron fueron dos cuerpos sin vida -el del juez y el de su joven secretaria- y una caja fuerte, abierta y vacía. ¿Qué había dentro? Al FBI le encantaría averiguarlo, y a Malcolm Bannister, contarlo. Pero todo tiene su precio y el estafador no tiene un pelo de tonto. Reseñas: «Con cada nuevo libro admiro un poco más a John Grisham, por las enérgicas críticas del sistema legal, la compasión que profesa por los desfavorecidos y la originalidad de cada obra.» Entertainment Weekly «John Grisham es excepcionalmente bueno en lo que hace. Hoy en día nadie lo supera... Sus libros son inteligentes, imaginativos y divertidos, poblados de gente compleja e interesante, escritos por un hombre que se guía no solo por el deseo de entretener, sino también por su profunda indignación frente a la avaricia y la corrupción humanas.» The Washington Post «Por su propia naturaleza, la ley contiene situaciones dramáticas. Esta novela nos promete una visión íntima de los procesos, a menudo corruptos, de los que tienen el poder.» Los Angeles Times «John Grisham es mucho más que un novelista popular. Es uno de los escritores más queridos de nuestros tiempos. Narra argumentos fascinantes con gran maestría y crea personajes totalmente creíbles.» The Seattle Times</p></div>",
+      "timestamp": "2026-01-13T14:07:12-03:00",
+      "languages": "spa",
+      "identifiers": "revision:1.1,isbn:9788490621622,goodreads:20443250,epl:11558,google:qIInAgAAQBAJ",
+      "cover": "21_ElEstafador.jpg",
+      "formats": []
+    },
+    {
+      "id": "22",
+      "uuid": "283463e0-13f8-451f-ba71-128e0755a83f",
+      "title": "El soborno",
+      "title_sort": "soborno, El",
+      "authors": [
+        "John Grisham"
+      ],
+      "authors_sort": "Grisham, John",
+      "publisher": "Debolsillo",
+      "pubdate": "2016-10-25T00:00:00-03:00",
+      "rating": 4,
+      "isbn": "9788466342537",
+      "tags": [
+        "Fiction",
+        "Thrillers",
+        "Legal",
+        "Novela",
+        "Intriga"
+      ],
+      "series": "The Whistler",
+      "series_index": 1,
+      "comments": "<div>\n<p>El juez más corrupto de la historia, la mafia y una joven investigadora con un informante secreto en el impresionante nuevo thriller del autor favorito de América: John Grisham. «El mejor autor vivo de thriller.» Ken Follett Lacy Stoltz es una joven investigadora y abogada de Florida, y su trabajo consiste en responder a las demandas relacionadas con la mala praxis judicial. Tras nueve años en el puesto, sabe que la mayor parte de los problemas derivan de incompetencias. De repente le llega un caso de corrupción. Greg Myers afirma conocer un juez de Florida que ha robado más dinero que el resto de los jueces poco honestos juntos. Estaba involucrado en secreto con la construcción de un gran casino en tierras indígenas. La mafia financió el casino y ahora se lleva cada mes una buena tajada de la caja mensual. El juez también se lleva su parte y mira hacia otro lado. Todos contentos. Pero ahora Greg quiere poner punto final a esta situación. Su único cliente conoce la verdad y quiere contarlo todo. Greg presenta una denuncia y el caso se le asigna a Lacy Stoltz, quien de inmediato sospecha que puede ser peligroso. Pero el peligro es una cosa y la muerte, otra muy distinta. En los blogs... «En esta novela encontramos ingredientes con los que ya tenemos asegurada la diversión, el entretenimiento y las correspondientes dosis de denuncia social y la honradez, ya características en el autor.» Blog Me gustan los libros «Un thriller intenso sobre la ambición, el poder y el ansia por enriquecerse a toda costa, incluso a expensas de la vida de otras personas.» Blog Sin libros no soy nada « El soborno, la nueva novela de John Grisham, se mantiene fiel a su universo y, por tanto, fiel a sus lectores.» Blog Mil palabras y más « El soborno ocupa por méritos propios un destacado hueco en el largo listado de ficciones legales que continúa haciendo de John Grisham un autor de éxito.» Blog La caverna literaria</p></div>",
+      "timestamp": "2026-01-13T14:07:12-03:00",
+      "languages": "spa",
+      "identifiers": "goodreads:36263198,epl:40082,revision:1.3,isbn:9788466342537,google:ZuIpuwEACAAJ",
+      "cover": "22_Elsoborno.jpg",
+      "formats": []
+    },
+    {
+      "id": "23",
+      "uuid": "059efcd7-245c-4dce-b74e-0c35f8b140d4",
+      "title": "Misión en París",
+      "title_sort": "Misión en París",
+      "authors": [
+        "Arturo Pérez-Reverte"
+      ],
+      "authors_sort": "Pérez-Reverte, Arturo",
+      "publisher": "ALFAGUARA",
+      "pubdate": "2025-09-03T00:00:00-03:00",
+      "rating": 4,
+      "isbn": "9791387846244",
+      "tags": [
+        "Adventure",
+        "Historical Fiction",
+        "Fiction",
+        "Spanish Literature"
+      ],
+      "series": "Las aventuras del capitán Alatriste",
+      "series_index": 8,
+      "comments": "<div>\n<p>VUELVE EL CAPITÁN ALATRISTE La nueva y esperada entrega de la serie de novelas de aventuras que cambió la forma de leer y entender el Siglo de Oro «Me gusta Pérez-Reverte, me recuerda a Dumas y Salgari». Umberto Eco «Sonaba la medianoche en los relojes de París cuando entraron por la puerta de Saint-Jacques cuatro jinetes tan seguros de sí mismos como el trote firme de sus caballos». Es medianoche. Íñigo Balboa, que forma parte de los Correos Reales del rey católico, aguarda expectante la llegada del capitán Alatriste, de Francisco de Quevedo y de Sebastián Copons a París, donde se encuentra para entregar unos despachos al conde de Guadalmedina. Hace casi un año que no se reúnen, cuando acabó la arriesgada encomienda que tuvieron que afrontar en Venecia. Son tiempos complejos para Francia: desde hace unos meses, los hugonotes de La Rochela, con apoyo inglés, están viviendo un duro asedio por parte de las fuerzas francesas a las órdenes del cardenal Richelieu. Por mediación de Quevedo, Alatriste y sus amigos se ven envueltos en una peligrosa misión secreta ideada por el conde-duque de Olivares. Esta vez el objetivo es de tal magnitud, que la aventura a la que se enfrentan podría cambiar para siempre el curso de los acontecimientos. La crítica ha dicho: «El escritor con agallas ha conseguido un doble milagro. Que los personajes hablen como nosotros y nosotros leamos como ellos hablaban. Larga vida al capitán Alatriste». Manuel Rivas, El País «Pérez-Reverte es un hombre de una calidad humana extraordinaria. [...] Un autor eterno, solo como los más grandes». Daniel Múgica, ABC Cultural «No debe defraudar a nadie. Es un prodigioso relato donde Reverte demuestra con maestría su pasión por la novela de aventuras con todos los ingredientes propios. [...] Misión en París no solo mantiene sino que supera la esencia de títulos anteriores». Javier García Recio, El Periódico «Duelo de espadas, intrigas diplomáticas, aventuras y una escritura ágil que equilibra acción con Historia: el lector vuelve a sumergirse en el Siglo de Oro con la sensación de estar allí, junto a los caballos que cruzan París a medianoche». Isabel Loscertales, El Periódico «Pérez-Reverte confirma, una vez más, su maestría para recrear un universo vibrante, lleno de personajes memorables y escenarios que parecen saltar de los lienzos barrocos. Un regreso que hará las delicias de los fieles de la serie y que, además, ofrece un punto de entrada para nuevos lectores deseosos de descubrir a Alatriste». Marta Díaz de Santos, Capital «Pérez-Reverte logra con Alatriste un tipo de novela magistral en su género. [...] Un soberbio narrador. No regatea recursos y trucos para que los sucesos sorprendentes se enhebren en una historia apasionante. [...] El placer de narrar que espolea a Arturo Pérez-Reverte ocasiona un absorbente placer de leer». Santos Sanz Villanueva, El Cultural «Uno de los regresos más esperados de la literatura de nuestro país». Andrés Seoane, El Mundo – La Lectura «Nunca se agradecerá bastante a Reverte haber hecho entrar a tantos lectores en esa literatura y esa historia cautivándolos con unas narraciones apasionantes». Francisco Rico « El capitán Alatriste está escrito con brillantez y un contagioso entusiasmo hacia el género que intenta revivir». Janet Maslin, The New York Times «Un espadachín de nuestro tiempo». Times Literary Supplement</p></div>",
+      "timestamp": "2026-01-13T14:07:12-03:00",
+      "languages": "spa",
+      "identifiers": "goodreads:235072643,google:0zRgEQAAQBAJ,isbn:9791387846244",
+      "cover": "23_MisionenParis.jpg",
+      "formats": []
+    },
+    {
+      "id": "24",
+      "uuid": "416f7c22-5c82-49a0-86d3-613504eaaf7b",
+      "title": "El Socio",
+      "title_sort": "Socio, El",
+      "authors": [
+        "John Grisham"
+      ],
+      "authors_sort": "Grisham, John",
+      "publisher": "DEBOLS!LLO",
+      "pubdate": "1997-02-26T00:00:00-03:00",
+      "rating": 4,
+      "isbn": "9788490621554",
+      "tags": [
+        "Fiction",
+        "Thrillers",
+        "Suspense",
+        "Novela",
+        "Intriga"
+      ],
+      "series": null,
+      "series_index": null,
+      "comments": "<div>\n<p>Un muerto no puede escapar eternamente... Lo encontraron en un pequeño pueblo de Brasil. Tenía otro nombre y otro aspecto, pero estaban seguros de haber dado con él. Cuatro años antes se llamaba Patrick S. Lanigan. Había muerto en un accidente de tráfico en febrero de 1992. Estaba enterrado en un cementerio de Biloxi, Mississippi. Había sido socio en un prometedor bufete de abogados, tenía una esposa guapa, una nueva hija y un futuro espléndido. A las seis semanas de su muerte, noventa millones de dólares desaparecieron de las cuentas de la empresa. Fue entonces cuando sus socios supieron que seguía con vida. La crítica ha dicho... «Tiene suspense, dramatismo y obsesión por el detalle: todos los ingredientes que han convertido las novelas de Grisham en best sellers... Una lectura estupenda.» Sunday Mirror</p></div>",
+      "timestamp": "2026-01-13T14:07:12-03:00",
+      "languages": "spa",
+      "identifiers": "google:XoInAgAAQBAJ,goodreads:22125212,isbn:9788490621554",
+      "cover": "24_ElSocio.jpg",
+      "formats": []
     }
   ]
 }

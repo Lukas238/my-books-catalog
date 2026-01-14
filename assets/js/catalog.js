@@ -233,13 +233,11 @@ books.forEach(book => {
             // Toggle drawer state for grid view adjustment
             toggleDrawerState(true);
 
-            // Wait for grid reflow, then scroll to active book
-            setTimeout(() => {
-                const activeBook = document.querySelector('.book.active');
-                if (activeBook) {
-                    activeBook.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                }
-            }, 550); // Wait for transition (500ms) + small buffer
+            // Scroll to active book
+            const activeBook = document.querySelector('.book.active');
+            if (activeBook) {
+                activeBook.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
 
             // Update URL hash with open book
             updateURLHash();
@@ -254,19 +252,12 @@ if (closePreviewBtn) {
         bookPreview.classList.remove('show');
         toggleDrawerState(false);
 
-        // Wait for grid reflow, then scroll to active book and clear it
-        setTimeout(() => {
-            const activeBook = document.querySelector('.book.active');
-            if (activeBook) {
-                activeBook.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                // Clear active after scroll starts
-                setTimeout(() => {
-                    clearActiveBook();
-                }, 100);
-            } else {
-                clearActiveBook();
-            }
-        }, 550); // Wait for transition (500ms) + small buffer
+        // Scroll to active book and clear it
+        const activeBook = document.querySelector('.book.active');
+        if (activeBook) {
+            activeBook.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+        clearActiveBook();
 
         updateURLHash();
     });
@@ -278,19 +269,12 @@ if (bookPreviewEl) {
     bookPreviewEl.addEventListener('hidden.bs.collapse', () => {
         toggleDrawerState(false);
 
-        // Wait for grid reflow, then scroll to active book and clear it
-        setTimeout(() => {
-            const activeBook = document.querySelector('.book.active');
-            if (activeBook) {
-                activeBook.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                // Clear active after scroll starts
-                setTimeout(() => {
-                    clearActiveBook();
-                }, 100);
-            } else {
-                clearActiveBook();
-            }
-        }, 550); // Wait for transition (500ms) + small buffer
+        // Scroll to active book and clear it
+        const activeBook = document.querySelector('.book.active');
+        if (activeBook) {
+            activeBook.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+        clearActiveBook();
 
         updateURLHash();
     });
@@ -320,7 +304,7 @@ if (headerPrevBtn) {
             // Set active book
             setActiveBook(prevBook.getAttribute('data-id'));
             // Scroll to book if out of view
-            prevBook.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            prevBook.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
     });
 }
@@ -349,7 +333,7 @@ if (headerNextBtn) {
             // Set active book
             setActiveBook(nextBook.getAttribute('data-id'));
             // Scroll to book if out of view
-            nextBook.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            nextBook.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
     });
 }

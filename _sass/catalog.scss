@@ -226,11 +226,10 @@ body[data-bs-theme="dark"] {
 
 // Books list - Grid View (default)
 #books-list {
-    display: flex;
-    flex-wrap: wrap;
-    align-content: start;
-    justify-content: flex-start;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
     gap: 0.5rem;
+    align-content: start;
 }
 
 // Default book styles
@@ -256,8 +255,7 @@ body[data-bs-theme="dark"] {
 
 // Flex sizing for books in the list (not drawer)
 #books-list .book {
-    flex: 0 0 auto;
-    width: 180px;
+    // Grid item, no flex needed
 }
 
 // Cover styles only for books in the list (not drawer)
@@ -477,9 +475,7 @@ body[data-bs-theme="dark"] {
     }
 
     #books-list .book {
-        flex: 1 1 180px;
-        max-width: 220px;
-        min-width: 180px;
+        // Grid handles sizing
     }
 
     #book-preview {

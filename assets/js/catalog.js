@@ -11,10 +11,12 @@ function toggleDrawerState(isOpen) {
     if (isOpen) {
         booksList.classList.add('drawer-open');
         mainContainer.classList.add('drawer-open');
+        document.body.classList.add('drawer-open');
         console.log('Added drawer-open class. Classes:', booksList.className);
     } else {
         booksList.classList.remove('drawer-open');
         mainContainer.classList.remove('drawer-open');
+        document.body.classList.remove('drawer-open');
         console.log('Removed drawer-open class. Classes:', booksList.className);
     }
 }

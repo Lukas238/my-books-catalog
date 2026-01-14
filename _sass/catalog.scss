@@ -135,6 +135,10 @@ body {
     font-weight: lighter;
 }
 
+body.drawer-open {
+    overflow: hidden;
+}
+
 body[data-bs-theme="dark"] {
     #filters-area, #controls-area {
       color: rgba(255,255,255,0.65);
@@ -209,6 +213,11 @@ body[data-bs-theme="dark"] {
             box-shadow: none !important;
         }
     }
+
+    #books-list .book__cover::after {
+        background-color: rgba(255, 255, 255, 0.05);
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='rgba(255,255,255,0.15)' stroke-width='1'%3e%3cpath d='M4 19.5A2.5 2.5 0 0 1 6.5 17H20'/%3e%3cpath d='M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z'/%3e%3c/svg%3e");
+    }
 }
 
 // Books list - Grid View (default)
@@ -252,7 +261,25 @@ body[data-bs-theme="dark"] {
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    min-height: 250px;
+    position: relative;
+        min-height: 250px;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80px;
+        height: 80px;
+        background-color: rgba(0, 0, 0, 0.05);
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='rgba(0,0,0,0.1)' stroke-width='1'%3e%3cpath d='M4 19.5A2.5 2.5 0 0 1 6.5 17H20'/%3e%3cpath d='M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z'/%3e%3c/svg%3e");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 50px 50px;
+        border-radius: 4px;
+        z-index: 0;
+    }
 
     img {
         max-width: 100%;
@@ -262,6 +289,9 @@ body[data-bs-theme="dark"] {
         object-fit: contain;
         box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35) !important;
         transition: transform 0.2s ease;
+        background-color: white;
+        position: relative;
+        z-index: 1;
 
         &:hover {
             transform: scale(1.03);

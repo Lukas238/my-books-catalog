@@ -101,8 +101,24 @@ body {
 }
 
 #controls-area {
-    .form-switch input {
+    .form-switch .form-check-input {
         cursor: pointer;
+        background-color: rgba(0, 0, 0, 0.1) !important;
+        border-color: var(--bs-border-color) !important;
+
+        &:checked {
+            background-color: rgba(0, 0, 0, 0.1) !important;
+            border-color: var(--bs-border-color) !important;
+        }
+
+        // Bolita siempre gris oscuro en light mode
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23495057'/%3e%3c/svg%3e") !important;
+
+        &:focus {
+            background-color: rgba(0, 0, 0, 0.1) !important;
+            border-color: var(--bs-border-color) !important;
+            box-shadow: none !important;
+        }
     }
 
     @media (max-width: 575px) {
@@ -170,6 +186,22 @@ body[data-bs-theme="dark"] {
                 background-color: var(--bs-secondary-bg);
                 color: rgba(255, 255, 255, 1);
             }
+        }
+    }
+
+    #controls-area .form-switch .form-check-input {
+        background-color: rgba(255, 255, 255, 0.1) !important;
+
+        &:checked {
+            background-color: rgba(255, 255, 255, 0.1) !important;
+        }
+
+        // Bolita siempre gris claro en dark mode
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23adb5bd'/%3e%3c/svg%3e") !important;
+
+        &:focus {
+            background-color: rgba(255, 255, 255, 0.1) !important;
+            box-shadow: none !important;
         }
     }
 }

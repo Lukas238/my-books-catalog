@@ -236,7 +236,7 @@ books.forEach(book => {
             // Scroll to active book
             const activeBook = document.querySelector('.book.active');
             if (activeBook) {
-                activeBook.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                activeBook.scrollIntoView({ behavior: 'smooth', block: 'center' });
             }
 
             // Update URL hash with open book
@@ -255,7 +255,7 @@ if (closePreviewBtn) {
         // Scroll to active book and clear it
         const activeBook = document.querySelector('.book.active');
         if (activeBook) {
-            activeBook.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            activeBook.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
         clearActiveBook();
 
@@ -272,7 +272,7 @@ if (bookPreviewEl) {
         // Scroll to active book and clear it
         const activeBook = document.querySelector('.book.active');
         if (activeBook) {
-            activeBook.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            activeBook.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
         clearActiveBook();
 
@@ -304,7 +304,7 @@ if (headerPrevBtn) {
             // Set active book
             setActiveBook(prevBook.getAttribute('data-id'));
             // Scroll to book if out of view
-            prevBook.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            prevBook.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
     });
 }
@@ -333,7 +333,7 @@ if (headerNextBtn) {
             // Set active book
             setActiveBook(nextBook.getAttribute('data-id'));
             // Scroll to book if out of view
-            nextBook.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            nextBook.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
     });
 }

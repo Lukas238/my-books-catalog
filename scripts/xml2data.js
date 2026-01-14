@@ -12,6 +12,7 @@ const fs = require('fs');
 const fsPromises = require('fs').promises;
 const path = require('path');
 const { parseString } = require('xml2js');
+const sharp = require('sharp');
 
 // Read and parse XML file
 function readXML(filepath) {
@@ -86,7 +87,7 @@ function getCoverFilename(coverPath, libraryName, bookId) {
     return `${bookId}_${sanitized}${ext}`;
 }
 
-// Function to copy cover image from Calibre library to local covers folder
+// Function to copy and resize cover image from Calibre library to local covers folder
 async function copyCoverImage(coverPath, destFolder, newFilename) {
     if (!coverPath || !fs.existsSync(coverPath)) {
         console.log(`⚠ Cover not found: ${coverPath}`);
@@ -101,10 +102,17 @@ async function copyCoverImage(coverPath, destFolder, newFilename) {
     const destPath = path.join(destFolder, newFilename);
 
     try {
-        await fsPromises.copyFile(coverPath, destPath);
+        // Resize image to max 350px width while maintaining aspect ratio
+        await sharp(coverPath)
+            .resize(350, null, {
+                fit: 'inside',
+                withoutEnlargement: true // Don't enlarge if already smaller
+            })
+            .jpeg({ quality: 85 }) // Convert to JPEG with good quality
+            .toFile(destPath);
         return true;
     } catch (error) {
-        console.log(`⚠ Error copying cover: ${error.message}`);
+        console.log(`⚠ Error processing cover: ${error.message}`);
         return false;
     }
 }

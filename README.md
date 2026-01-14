@@ -41,7 +41,7 @@ For each library, run the commands in [commands.md](commands.md). Example:
 # Sync, export, and convert Lucas's library
 rclone sync ~/eBooksLibraries/eBooks238 gDrive:Backup238/Books/eBooks238 -v --progress &&
 rclone lsjson gDrive:Backup238/Books/eBooks238 -R --files-only --no-mimetype --no-modtime > ./_exports/eBooks238.json &&
-calibredb catalog --library-path ~/eBooksLibraries/eBooks238 ./_exports/eBooks238.xml &&
+calibredb catalog --library-path ~/eBooksLibraries/eBooks238 ./_exports/eBooks238.xml --catalog-title "Lucas Dasso" &&
 node scripts/xml2data.js --xml ./_exports/eBooks238.xml --json ./_exports/eBooks238.json --output ./_data --name lukas238
 ```
 

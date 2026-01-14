@@ -9,54 +9,52 @@
 
 ```bash
 rclone sync ~/eBooksLibraries/eBooks238 gDrive:Backup238/Books/eBooks238 -v --progress &&
-rclone lsjson gDrive:Backup238/Books/eBooks238 -R --files-only --no-mimetype --no-modtime > ./tmp/eBooks238.json &&
-calibredb catalog --library-path ~/eBooksLibraries/eBooks238 ./tmp/eBooks238.xml  --catalog-title "Lukas238's eBooks Library" &&
-node scripts/xml2data.js --xml ./tmp/eBooks238.xml --json ./tmp/eBooks238.json --output ./_data --name lukas238
+rclone lsjson gDrive:Backup238/Books/eBooks238 -R --files-only --no-mimetype --no-modtime > ./_exports/eBooks238.json &&
+calibredb catalog --library-path ~/eBooksLibraries/eBooks238 ./_exports/eBooks238.xml  --catalog-title "Lucas Dasso" &&
+node scripts/xml2data.js --xml ./_exports/eBooks238.xml --json ./_exports/eBooks238.json --output ./_data --name lukas238
 ```
 
 ## Cata's eBooks Library
 
 ```bash
 rclone sync ~/eBooksLibraries/eBooksCata gDrive:Backup238/Books/eBooksCata -v --progress &&
-rclone lsjson gDrive:Backup238/Books/eBooksCata -R --files-only --no-mimetype --no-modtime > ./tmp/eBooksCata.json &&
-calibredb catalog --library-path ~/eBooksLibraries/eBooksCata ./tmp/eBooksCata.xml  --catalog-title "Cata's eBooks Library" &&
-node scripts/xml2data.js --xml ./tmp/eBooksCata.xml --json ./tmp/eBooksCata.json --output ./_data --name cata
+rclone lsjson gDrive:Backup238/Books/eBooksCata -R --files-only --no-mimetype --no-modtime > ./_exports/eBooksCata.json &&
+calibredb catalog --library-path ~/eBooksLibraries/eBooksCata ./_exports/eBooksCata.xml  --catalog-title "Cata's eBooks Library" &&
+node scripts/xml2data.js --xml ./_exports/eBooksCata.xml --json ./_exports/eBooksCata.json --output ./_data --name cata
 ```
 
 ## Ignacio's eBooks Library
 
 ```bash
 rclone sync ~/eBooksLibraries/eBooksIgnacio gDrive:Backup238/Books/eBooksIgnacio -v --progress &&
-rclone lsjson gDrive:Backup238/Books/eBooksIgnacio -R --files-only --no-mimetype --no-modtime > ./tmp/eBooksIgnacio.json &&
-calibredb catalog --library-path ~/eBooksLibraries/eBooksIgnacio ./tmp/eBooksIgnacio.xml  --catalog-title "Ignacio's eBooks Library" &&
-node scripts/xml2data.js --xml ./tmp/eBooksIgnacio.xml --json ./tmp/eBooksIgnacio.json --output ./_data --name ignacio
+
 ```
 
 ## Maripaz's eBooks Library
 
 ```bash
 rclone sync ~/eBooksLibraries/eBooksMaripaz gDrive:Backup238/Books/eBooksMaripaz -v --progress &&
-rclone lsjson gDrive:Backup238/Books/eBooksMaripaz -R --files-only --no-mimetype --no-modtime > ./tmp/eBooksMaripaz.json &&
-calibredb catalog --library-path ~/eBooksLibraries/eBooksMaripaz ./tmp/eBooksMaripaz.xml  --catalog-title "Maripaz's eBooks Library" &&
-node scripts/xml2data.js --xml ./tmp/eBooksMaripaz.xml --json ./tmp/eBooksMaripaz.json --output ./_data --name maripaz
+rclone lsjson gDrive:Backup238/Books/eBooksMaripaz -R --files-only --no-mimetype --no-modtime > ./_exports/eBooksMaripaz.json &&
+calibredb catalog --library-path ~/eBooksLibraries/eBooksMaripaz ./_exports/eBooksMaripaz.xml  --catalog-title "Maripaz's eBooks Library" &&
+node scripts/xml2data.js --xml ./_exports/eBooksMaripaz.xml --json ./_exports/eBooksMaripaz.json --output ./_data --name maripaz
 ```
 
 ## Martin's eBooks Library
 
 ```bash
 rclone sync ~/eBooksLibraries/eBooksMartin gDrive:Backup238/Books/eBooksMartin -v --progress &&
-rclone lsjson gDrive:Backup238/Books/eBooksMartin -R --files-only --no-mimetype --no-modtime > ./tmp/eBooksMartin.json &&
-calibredb catalog --library-path ~/eBooksLibraries/eBooksMartin ./tmp/eBooksMartin.xml  --catalog-title "Martin's eBooks Library" &&
-node scripts/xml2data.js --xml ./tmp/eBooksMartin.xml --json ./tmp/eBooksMartin.json --output ./_data --name martin
+rclone lsjson gDrive:Backup238/Books/eBooksMartin -R --files-only --no-mimetype --no-modtime > ./_exports/eBooksMartin.json &&
+calibredb catalog --library-path ~/eBooksLibraries/eBooksMartin ./_exports/eBooksMartin.xml  --catalog-title "Martin's eBooks Library" &&
+node scripts/xml2data.js --xml ./_exports/eBooksMartin.xml --json ./_exports/eBooksMartin.json --output ./_data --name martin
 ```
 
 
-## Regenerate all data files (after XML/JSON already exist in tmp/)
+## Regenerate all data files (after XML/JSON already exist in _exports/)
 ```bash
-node scripts/xml2data.js --xml ./tmp/eBooks238.xml --json ./tmp/eBooks238.json --output ./_data --name lukas238 &&
-node scripts/xml2data.js --xml ./tmp/eBooksCata.xml --json ./tmp/eBooksCata.json --output ./_data --name cata &&
-node scripts/xml2data.js --xml ./tmp/eBooksIgnacio.xml --json ./tmp/eBooksIgnacio.json --output ./_data --name ignacio &&
-node scripts/xml2data.js --xml ./tmp/eBooksMaripaz.xml --json ./tmp/eBooksMaripaz.json --output ./_data --name maripaz &&
-node scripts/xml2data.js --xml ./tmp/eBooksMartin.xml --json ./tmp/eBooksMartin.json --output ./_data --name martin
+node scripts/xml2data.js --xml ./_exports/eBooks238.xml --json ./_exports/eBooks238.json --output ./_data --name lukas238 &&
+node scripts/xml2data.js --xml ./_exports/eBooksCata.xml --json ./_exports/eBooksCata.json --output ./_data --name cata &&
+node scripts/xml2data.js --xml ./_exports/eBooksIgnacio.xml --json ./_exports/eBooksIgnacio.json --output ./_data --name ignacio &&
+node scripts/xml2data.js --xml ./_exports/eBooksMaripaz.xml --json ./_exports/eBooksMaripaz.json --output ./_data --name maripaz &&
+node scripts/xml2data.js --xml ./_exports/eBooksMartin.xml --json ./_exports/eBooksMartin.json --output ./_data --name martin
 ```
 

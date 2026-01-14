@@ -3,9 +3,10 @@
 /**
  * xml2data.js
  * Converts Calibre XML catalog and Google Drive JSON to Jekyll data files
- * Automatically processes all XML/JSON pairs found in tmp/ folder
  *
- * Usage: node xml2data.js
+ * Usage:
+ *   node xml2data.js --xml <path> --json <path> --output <path> --name <name>
+ *   node xml2data.js (processes all XML/JSON pairs in _exports/)
  */
 
 const fs = require('fs');
@@ -255,12 +256,43 @@ layout: catalog
 
 // Main execution
 async function main() {
+    // Parse command line arguments
+    const args = process.argv.slice(2);
+    const options = {};
+
+    for (let i = 0; i < args.length; i += 2) {
+        const key = args[i].replace('--', '');
+        const value = args[i + 1];
+        options[key] = value;
+    }
+
+    // If specific files are provided, process only those
+    if (options.xml && options.json && options.output && options.name) {
+        console.log('📄 Processing specific catalog:\n');
+        console.log(`   XML: ${options.xml}`);
+        console.log(`   JSON: ${options.json}`);
+        console.log(`   Output: ${options.output}`);
+        console.log(`   Name: ${options.name}\n`);
+
+        try {
+            await processData(options);
+            console.log('\n✅ Catalog processed successfully!');
+        } catch (err) {
+            console.error(`❌ Error processing catalog:`, err.message);
+            process.exit(1);
+        }
+        return;
+    }
+
+    // Otherwise, process all catalogs in _exports/
     console.log('🔍 Searching for catalog files in _exports/ folder...\n');
 
     const catalogPairs = findCatalogPairs();
 
     if (catalogPairs.length === 0) {
         console.error('❌ No XML/JSON pairs found in _exports/ folder');
+        console.error('\nUsage: node xml2data.js --xml <path> --json <path> --output <path> --name <name>');
+        process.exit(1);
     }
 
     console.log(`📚 Found ${catalogPairs.length} catalog(s) to process:\n`);

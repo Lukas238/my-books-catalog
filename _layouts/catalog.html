@@ -143,7 +143,7 @@ layout: default
                 <div class="book-cell book-cell--date">
                     {% assign pub_year = book.pubdate | date: "%Y" %}
                     {% if book.pubdate and pub_year != "0101" and pub_year != "0100" %}
-                        {{ book.pubdate | date: "%Y" }}
+                        <span class="date-label">Pub:&nbsp;</span>{{ book.pubdate | date: "%Y" }}
                     {% else %}
                         <span class="text-muted">—</span>
                     {% endif %}
@@ -151,7 +151,7 @@ layout: default
                 <div class="book-cell book-cell--added">
                     {% assign added_year = book.timestamp | date: "%Y" %}
                     {% if added_year != "0101" and added_year != "0100" %}
-                        {{ book.timestamp | date: "%Y-%m-%d" }}
+                        <span class="date-label">In:&nbsp;</span>{{ book.timestamp | date: "%Y-%m-%d" }}
                     {% else %}
                         <span class="text-muted">—</span>
                     {% endif %}

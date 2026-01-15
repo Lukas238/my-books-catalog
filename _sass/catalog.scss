@@ -341,7 +341,7 @@ body[data-bs-theme="dark"] {
 // Books list - Table View
 #books-list.-view-list {
     display: grid;
-    grid-template-columns: 80px minmax(200px, 2fr) minmax(150px, 1fr) minmax(150px, 1fr) minmax(200px, 1.5fr) 80px 120px;
+    grid-template-columns: 80px minmax(200px, 2fr) minmax(150px, 1fr) minmax(150px, 1fr) minmax(200px, 1.5fr) 80px 140px;
     gap: 0;
     padding: 0;
 
@@ -386,6 +386,14 @@ body[data-bs-theme="dark"] {
                 font-weight: lighter;
                 font-size: 1.1rem;
                 padding-left: 1rem;
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                    text-decoration-thickness: 1px;
+                    text-underline-offset: 2px;
+                    opacity: 0.8;
+                }
             }
 
             &.book-cell--authors {
@@ -393,6 +401,15 @@ body[data-bs-theme="dark"] {
                 display: flex;
                 flex-wrap: wrap;
                 align-content: center;
+                cursor: pointer;
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                    text-decoration-thickness: 1px;
+                    text-underline-offset: 2px;
+                    opacity: 0.8;
+                }
             }
 
             &.book-cell--series,
@@ -405,12 +422,12 @@ body[data-bs-theme="dark"] {
                 .filter-link {
                     cursor: pointer;
                     color: inherit;
-                    text-decoration: underline;
-                    text-decoration-thickness: 1px;
-                    text-underline-offset: 2px;
+                    text-decoration: none;
 
                     &:hover {
                         text-decoration: underline;
+                        text-decoration-thickness: 1px;
+                        text-underline-offset: 2px;
                         opacity: 0.8;
                     }
                 }
@@ -418,10 +435,20 @@ body[data-bs-theme="dark"] {
 
             &.book-cell--date {
                 font-size: 0.875rem;
+
+                .date-label {
+                    opacity: 0.5;
+                    font-weight: 300;
+                }
             }
 
             &.book-cell--added {
                 font-size: 0.875rem;
+
+                .date-label {
+                    opacity: 0.5;
+                    font-weight: 300;
+                }
             }
         }
     }

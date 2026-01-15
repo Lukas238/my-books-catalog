@@ -749,4 +749,26 @@ function init() {
     }
 }
 
+// Keyboard navigation for drawer
+document.addEventListener('keydown', (e) => {
+    // Only handle arrow keys when drawer is open
+    const isDrawerOpen = document.body.classList.contains('drawer-open');
+    if (!isDrawerOpen) return;
+
+    // Prevent default behavior for arrow keys
+    if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+        e.preventDefault();
+
+        if (e.key === 'ArrowLeft') {
+            // Trigger prev button
+            const prevBtn = document.querySelector('#loadPrevBook-header');
+            if (prevBtn) prevBtn.click();
+        } else if (e.key === 'ArrowRight') {
+            // Trigger next button
+            const nextBtn = document.querySelector('#loadNextBook-header');
+            if (nextBtn) nextBtn.click();
+        }
+    }
+});
+
 init();

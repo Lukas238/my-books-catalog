@@ -499,6 +499,32 @@ document.querySelector('#sort-reset').addEventListener('click', (e) => {
  * ****************************
  */
 const searchBox = document.querySelector('#search-box input');
+const searchWrapper = document.querySelector('#search-box');
+const totalBooks = parseInt(searchWrapper.getAttribute('data-total'));
+
+// Adjust input padding based on counter width
+function adjustSearchPadding() {
+    // Create temporary element to measure counter width
+    const temp = document.createElement('span');
+    temp.style.cssText = 'position: absolute; visibility: hidden; white-space: nowrap; font-size: 0.75rem; font-weight: 200; font-family: system-ui, -apple-system, sans-serif;';
+    temp.textContent = searchWrapper.getAttribute('data-filtered') + '/' + searchWrapper.getAttribute('data-total');
+    document.body.appendChild(temp);
+    const width = temp.offsetWidth;
+    document.body.removeChild(temp);
+
+    // Set padding: base (12px left) + counter width + padding-right (8px)
+    searchBox.style.paddingLeft = (12 + width + 8) + 'px';
+}
+
+// Update counter in search box
+function updateSearchCounter() {
+    const visibleBooks = Array.from(books).filter(book => book.style.display !== 'none').length;
+    searchWrapper.setAttribute('data-filtered', visibleBooks);
+    adjustSearchPadding();
+}
+
+// Initial padding adjustment
+adjustSearchPadding();
 
 function applyFilters() {
     const searchValue = searchBox.value.trim().toLowerCase();
@@ -551,6 +577,9 @@ function applyFilters() {
 
         book.style.display = matches ? '' : 'none';
     });
+
+    // Update counter
+    updateSearchCounter();
 
     // Update URL with filter state
     updateURLHash();

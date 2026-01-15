@@ -50,9 +50,9 @@ layout: default
             <!-- Right side controls -->
             <div id="controls-area" class="d-flex align-items-center gap-2">
                 <div class="view-qr border-start ps-md-2">
-                    <button type="button" class="btn btn-sm" data-bs-toggle="modal" data-bs-target="#qr-modal" title="View catalog QR code">
-                        <i class="bi bi-qr-code"></i>
-                    </button>
+                    <a href="/print-qr/?catalog={{ catalog_name }}" target="_blank" class="btn btn-sm" title="Print QR code to share in real life">
+                        <i class="bi bi-qr-code me-1"></i><span class="d-none d-md-inline">Share IRL</span>
+                    </a>
                 </div>
 
                 <!-- Mobile: Single icon buttons -->
@@ -270,22 +270,4 @@ layout: default
     <div class="book-preview__content"></div>
 </aside>
 
-<div id="qr-modal" class="modal" tabindex="-1">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="h4">Catalog QR code link</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body text-center">
-                <div id="qr-code" class="p-3 bg-white d-inline-block"></div>
-                <p>Share this QR code to acess
-                    <br/><strong>{{ catalog_data.catalog_title }}</strong>
-                    at:
-                    <br/>
-                    <a id="qr-catalog-url" href="" target="_blank"></a>
-                </p>
-            </div>
-        </div>
-    </div>
-</div>
+

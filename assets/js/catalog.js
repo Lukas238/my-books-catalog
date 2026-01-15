@@ -751,23 +751,27 @@ function init() {
 
 // Keyboard navigation for drawer
 document.addEventListener('keydown', (e) => {
-    // Only handle arrow keys when drawer is open
+    // Only handle left/right arrow keys when drawer is open
     const isDrawerOpen = document.body.classList.contains('drawer-open');
     if (!isDrawerOpen) return;
 
-    // Prevent default behavior for arrow keys
-    if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
-        e.preventDefault();
+    // Only handle horizontal arrows (left/right), allow vertical scrolling
+    if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
 
-        if (e.key === 'ArrowLeft') {
-            // Trigger prev button
-            const prevBtn = document.querySelector('#loadPrevBook-header');
-            if (prevBtn) prevBtn.click();
-        } else if (e.key === 'ArrowRight') {
-            // Trigger next button
-            const nextBtn = document.querySelector('#loadNextBook-header');
-            if (nextBtn) nextBtn.click();
-        }
+    // Don't interfere with Command/Ctrl modifiers
+    if (e.metaKey || e.ctrlKey) return;
+
+    // Prevent default behavior only for left/right arrows
+    e.preventDefault();
+
+    if (e.key === 'ArrowLeft') {
+        // Trigger prev button
+        const prevBtn = document.querySelector('#loadPrevBook-header');
+        if (prevBtn) prevBtn.click();
+    } else if (e.key === 'ArrowRight') {
+        // Trigger next button
+        const nextBtn = document.querySelector('#loadNextBook-header');
+        if (nextBtn) nextBtn.click();
     }
 });
 

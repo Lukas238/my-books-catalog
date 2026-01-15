@@ -59,6 +59,15 @@ calibredb catalog --library-path ~/eBooksLibraries/eBooksSofi ./_exports/eBooksS
 node scripts/xml2data.js --xml ./_exports/eBooksSofi.xml --json ./_exports/eBooksSofi.json --output ./_data --name sofi
 ```
 
+## Toli's eBooks Library
+
+```bash
+rclone sync ~/eBooksLibraries/eBooksToli gDrive:Backup238/Books/eBooksToli -v --progress &&
+rclone lsjson gDrive:Backup238/Books/eBooksToli -R --files-only --no-mimetype --no-modtime > ./_exports/eBooksToli.json &&
+calibredb catalog --library-path ~/eBooksLibraries/eBooksToli ./_exports/eBooksToli.xml  --catalog-title "Toli" &&
+node scripts/xml2data.js --xml ./_exports/eBooksToli.xml --json ./_exports/eBooksToli.json --output ./_data --name toli
+```
+
 
 ## Regenerate all data files (after XML/JSON already exist in _exports/)
 ```bash
@@ -68,5 +77,6 @@ node scripts/xml2data.js --xml ./_exports/eBooksIgnacio.xml --json ./_exports/eB
 node scripts/xml2data.js --xml ./_exports/eBooksMaripaz.xml --json ./_exports/eBooksMaripaz.json --output ./_data --name maripaz
 node scripts/xml2data.js --xml ./_exports/eBooksMartin.xml --json ./_exports/eBooksMartin.json --output ./_data --name martin
 node scripts/xml2data.js --xml ./_exports/eBooksSofi.xml --json ./_exports/eBooksSofi.json --output ./_data --name sofi
+node scripts/xml2data.js --xml ./_exports/eBooksToli.xml --json ./_exports/eBooksToli.json --output ./_data --name toli
 ```
 

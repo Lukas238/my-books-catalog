@@ -710,16 +710,12 @@ function init() {
 
     // Apply default sort only if no hash state exists
     const hash = window.location.hash.substring(1);
-    console.log('Init - hash:', hash);
     if (!hash) {
         const btn_sort_added = document.querySelector('#sort-added');
-        console.log('Applying default sort - btn_sort_added:', btn_sort_added);
         btn_sort_added.classList.add('desc');
         sortBooks('added', 'desc');
-        console.log('Default sort applied');
     } else {
         // Restore state from URL
-        console.log('Restoring state from URL');
         restoreStateFromURL();
     }
 }

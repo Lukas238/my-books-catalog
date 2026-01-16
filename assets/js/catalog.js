@@ -38,45 +38,6 @@ function clearActiveBook() {
     books.forEach(b => b.classList.remove('active'));
 }
 
-/**
- * URL State Management
- * Saves and restores: sort, order, search filter, and open book
- */
-function updateURLHash() {
-    const searchBox = document.querySelector('#search-box input');
-    const params = new URLSearchParams();
-
-    // Get active sort button
-    const activeSortBtn = document.querySelector('.btn-sort.desc, .btn-sort.asc');
-    if (activeSortBtn) {
-        const sortId = activeSortBtn.id.replace('sort-', '');
-        const order = activeSortBtn.classList.contains('desc') ? 'desc' : 'asc';
-        params.set('sort', sortId);
-        params.set('order', order);
-    }
-
-    // Get search/filter value
-    if (searchBox.value) {
-        params.set('filter', searchBox.value);
-    }
-
-    // Get open book ID
-    if (bookPreview.classList.contains('show')) {
-        const openBook = bookPreviewConten.querySelector('.book');
-        if (openBook) {
-            params.set('book', openBook.getAttribute('data-id'));
-        }
-    }
-
-    // Update URL without reloading page
-    const newHash = params.toString();
-    if (newHash) {
-        history.replaceState(null, '', '#' + newHash);
-    } else {
-        history.replaceState(null, '', window.location.pathname);
-    }
-}
-
 function restoreStateFromURL() {
     const hash = window.location.hash.substring(1);
     if (!hash) return;
@@ -135,8 +96,12 @@ function updateURLHash() {
     if (activeSortBtn) {
         const sortId = activeSortBtn.id.replace('sort-', '');
         const order = activeSortBtn.classList.contains('desc') ? 'desc' : 'asc';
-        params.set('sort', sortId);
-        params.set('order', order);
+
+        // Only add to URL if it's NOT the default (added:desc)
+        if (sortId !== 'added' || order !== 'desc') {
+            params.set('sort', sortId);
+            params.set('order', order);
+        }
     }
 
     // Get search/filter value
@@ -490,8 +455,13 @@ document.querySelector('#sort-reset').addEventListener('click', (e) => {
     books.forEach(book => book.style.display = '');
 
     // Reset the sort to default (added date, newest first)
+    btn_sort_title.classList.remove('desc', 'asc');
+    btn_sort_author.classList.remove('desc', 'asc');
+    btn_sort_series.classList.remove('desc', 'asc');
+    btn_sort_date.classList.remove('desc', 'asc');
     btn_sort_added.classList.remove('desc', 'asc');
-    btn_sort_added.click();
+    btn_sort_added.classList.add('desc');
+    sortBooks('added', 'desc');
 });
 
 /**
@@ -723,7 +693,7 @@ function init() {
     loadThemeFromCookie();
     loadLayoutFromCookie();
 
-    updateQRLink();
+    // updateQRLink(); // Removed - QR modal no longer exists
 
     new KonamiCode({
         callback: function (konamiCode) {
@@ -740,11 +710,16 @@ function init() {
 
     // Apply default sort only if no hash state exists
     const hash = window.location.hash.substring(1);
+    console.log('Init - hash:', hash);
     if (!hash) {
+        const btn_sort_added = document.querySelector('#sort-added');
+        console.log('Applying default sort - btn_sort_added:', btn_sort_added);
         btn_sort_added.classList.add('desc');
         sortBooks('added', 'desc');
+        console.log('Default sort applied');
     } else {
         // Restore state from URL
+        console.log('Restoring state from URL');
         restoreStateFromURL();
     }
 }
